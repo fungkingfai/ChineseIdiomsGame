@@ -578,12 +578,62 @@ html.overlay-open {
   color: var(--jade-deep);
 }
 
+.idiom-card__pron {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  margin: 0.14rem 0 0.45rem;
+}
+
 .idiom-card__pinyin {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   font-size: 0.76rem;
+  line-height: 1.45;
   letter-spacing: 0.08em;
   color: var(--ink-soft);
-  margin: 0.12rem 0 0.45rem;
+  margin: 0;
   text-transform: lowercase;
+  overflow-wrap: anywhere;
+}
+
+.idiom-card__pinyin--jyut {
+  color: var(--pink-deeper);
+}
+
+/* 「普」／「粵」語言徽章 */
+.pron-badge {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  min-width: 1.45em;
+  height: 1.45em;
+  padding: 0 0.3em;
+  border-radius: 6px;
+  background: var(--jade-tint);
+  border: 1px solid rgba(120, 168, 120, 0.35);
+  color: var(--jade-dark);
+  font-family: var(--font-main);
+  font-size: 0.9em;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.pron-badge--jyut {
+  background: var(--pink-tint);
+  border-color: var(--line-pink);
+  color: var(--pink-deeper);
+}
+
+.pron-badge--tiny {
+  min-width: 1.3em;
+  height: 1.3em;
+  padding: 0 0.24em;
+  border-radius: 5px;
+  font-size: 0.86em;
 }
 
 .idiom-card__meaning {

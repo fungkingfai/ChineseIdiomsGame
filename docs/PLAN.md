@@ -98,6 +98,7 @@ JSON array，**≥ 420 筆**，每筆符合 `Idiom`（見 `src/core/types.ts`）
 - `id`：拼音 kebab-case、全庫唯一（例：`ri-xing-qian-li`）
 - `word`：**正好 4 個繁體漢字**，全庫唯一；唔好用異體字／簡體字
 - `pinyin`：帶聲調，音節以空格分隔（例：`rì xíng qiān lǐ`）
+- `cantonese`：粵拼（香港語言學學會 Jyutping，帶聲調數字），4 個音節以空格分隔（例：`jat1 nok6 cin1 gam1`）；全庫每筆都要有，唔可以留空
 - `meaning`：繁中釋義 15–60 字，準確、易明
 - `origin`：出處說明 15–90 字（引邊部古籍、咩故事）
 - `sourceBook`：`《書名·篇名》` 格式（例：`《史記·項羽本紀》`）
@@ -106,7 +107,8 @@ JSON array，**≥ 420 筆**，每筆符合 `Idiom`（見 `src/core/types.ts`）
 - 分佈建議：tier1 ≥ 70、tier2 ≥ 100、tier3 ≥ 100、tier4 ≥ 80、tier5 ≥ 50。
 - **接龍連通性**：至少 150 筆成語嘅首字／尾字可以同其他成語接龍（例如尾字等於另一成語首字），並涵蓋常用連接字（一、不、人、心、天、大、小、山、水、風、日、月、目、口、手、足、馬、龍、虎、金、玉、正、堂、行、里…）。
 - 出處考證：起碼 50 筆用 `web_search`／`web_fetch` 核對過，並在 `docs/IDIOM_SOURCES.md` 記錄方法、URL 及已核對清單；其餘用可靠古典典籍記憶，唔肯定就唔好亂寫（可用「出處待考」但唔建議）。
-- 驗證：`node scripts/verify-idioms.mjs` 全部通過（4 字、唯一、欄位長度、拼音格式、tier 範圍、數量）。
+- 驗證：`node scripts/verify-idioms.mjs` 全部通過（4 字、唯一、欄位長度、普通話拼音格式、粵拼格式／4 音節、tier 範圍、數量）。
+- 粵拼資料以 CanCLID `to-jyutping`（基於 rime-cantonese，CC BY 4.0）輔助產生基線，再經人手／Agent 逐條核對及修正，詳見 `docs/IDIOM_SOURCES.md`。
 
 ### 5.2 `src/data/chapters.json`（game-designer）
 10 筆 `Chapter`，id 1–10、scene key 必須係 4.1 所列、name/blurb 為繁中；可保留 placeholder 名稱或改良（唔好改 scene key）。

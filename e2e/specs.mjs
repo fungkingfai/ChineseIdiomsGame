@@ -9,6 +9,7 @@
 import {
   assert,
   assertNoHorizontalOverflow,
+  assertNoHorizontalOverflowIn,
   BASE_URL,
   currentLevelId,
   dismissIntroOverlays,
@@ -25,6 +26,15 @@ import {
   waitForResult,
   waitForVisible,
 } from './lib.mjs';
+
+/** 粵拼去聲調數字（jat1 nok6 → jat nok），模擬玩家一般輸入 */
+function stripJyutpingTones(cantonese) {
+  return cantonese
+    .replace(/[1-6]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
 
 /** 拼音去聲調（NFD 去 combining marks；ü → u），模擬玩家一般輸入 */
 function stripPinyinTones(pinyin) {
@@ -120,7 +130,7 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
       const debug = window.__CAT_IDIOM_DEBUG__;
       return ids.map((id) => {
         const idiom = debug.idioms.find((item) => item.id === id);
-        return idiom ? { word: idiom.word, pinyin: idiom.pinyin } : null;
+        return idiom ? { word: idiom.word, pinyin: idiom.pinyin, cantonese: idiom.cantonese } : null;
       });
     }, level1IdiomIds);
     assert(
@@ -162,7 +172,8 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
 
     const stars = await page.getAttribute('[data-testid="result-stars"]', 'data-stars');
     assert(stars === '3', `零錯誤零提示應獲 3 星，實際 ${stars} 星`);
-    const idiomCards = page.locator('[data-testid^="result-idiom-"]');
+    // 用 article 限定成語卡 root；唔好撞到 Issue #1 嘅 result-idiom-jyutping-* 元素
+    const idiomCards = page.locator('article[data-testid^="result-idiom-"]');
     assert(
       (await idiomCards.count()) === level1.slots.length,
       `過關 overlay 應有 ${level1.slots.length} 張成語卡，實際 ${await idiomCards.count()}`,
@@ -175,14 +186,52 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
     }
     const overlayText = await innerTextOf(page, '[data-testid="result-overlay"]');
     assert(overlayText.includes('關卡完成'), '過關 overlay 缺少「關卡完成」標題');
+    assert(!/undefined|null/.test(overlayText), `過關 overlay 出現 undefined／null 文字：「${overlayText.slice(0, 120)}」`);
     for (const word of level1IdiomWords) {
       assert(overlayText.includes(word), `過關 overlay 未顯示成語「${word}」`);
+    }
+    // Issue #1：過關成語卡要同時顯示普通話拼音＋粵拼
+    const jyutpingCards = page.locator('[data-testid^="result-idiom-jyutping-"]');
+    assert(
+      (await jyutpingCards.count()) === level1.slots.length,
+      `過關 overlay 粵拼元素應有 ${level1.slots.length} 個，實際 ${await jyutpingCards.count()}`,
+    );
+    for (let index = 0; index < level1IdiomIds.length; index += 1) {
+      const idiomId = level1IdiomIds[index];
+      const expectedPinyin = level1Idioms[index].pinyin;
+      const expectedJyutping = level1Idioms[index].cantonese;
+      assert(expectedJyutping, `Level 1 成語 ${idiomId} 喺 debug 資料冇 cantonese`);
+
+      // 粵拼行：testid 喺 <p>，內含「粵」徽章 + .pron-text
+      const jyutpingCard = page.locator(`[data-testid="result-idiom-jyutping-${idiomId}"]`);
+      assert((await jyutpingCard.count()) === 1, `過關 overlay 缺少粵拼元素 ${idiomId}`);
+      const jyutAria = (await jyutpingCard.getAttribute('aria-label')) ?? '';
+      assert(jyutAria === `粵拼：${expectedJyutping}`, `過關粵拼 aria-label「${jyutAria}」唔啱`);
+      const jyutText = (
+        (await page.textContent(`[data-testid="result-idiom-jyutping-${idiomId}"] .pron-text`)) ?? ''
+      ).trim();
+      assert(jyutText === expectedJyutping, `過關粵拼「${jyutText}」應為「${expectedJyutping}」`);
+
+      // 普通話拼音行（排除粵拼行，因為兩者共用 .idiom-card__pinyin class）
+      const pinyinText = (
+        (await page.textContent(
+          `[data-testid="result-idiom-${idiomId}"] .idiom-card__pinyin:not(.idiom-card__pinyin--jyut) .pron-text`,
+        )) ?? ''
+      ).trim();
+      assert(pinyinText === expectedPinyin, `過關普通話拼音「${pinyinText}」應為「${expectedPinyin}」`);
     }
     await waitForVisible(page, '[data-testid="next-level-btn"]');
     await waitForVisible(page, '[data-testid="retry-btn"]');
     await waitForVisible(page, '[data-testid="result-map-btn"]');
 
     await shot('result');
+    if (isMobile) {
+      await assertNoHorizontalOverflowIn(
+        page,
+        '[data-testid="result-overlay"] .overlay__panel',
+        `${label}／過關 overlay（雙拼音）`,
+      );
+    }
     checkConsole('過關 overlay');
   });
 
@@ -294,6 +343,14 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
         `圖鑑卡應顯示已收集成語「${level1IdiomWords[index]}」，實際「${cardText}」`,
       );
       assert(!cardText.includes('？？？？'), `已收集成語仍顯示「？？？？」：${level1IdiomWords[index]}`);
+      assert(!/undefined|null/.test(cardText), `圖鑑卡出現 undefined／null：${level1IdiomWords[index]}`);
+      // Issue #1：已收集圖鑑卡要有細字粵拼
+      const cardJyut = page.locator(`[data-testid="codex-item-${level1IdiomIds[index]}"] .codex-card__jyut`);
+      assert((await cardJyut.count()) === 1, `圖鑑卡 ${level1IdiomIds[index]} 缺少粵拼細字`);
+      assert(
+        ((await cardJyut.innerText()) ?? '').includes(level1Idioms[index].cantonese),
+        `圖鑑卡粵拼細字應包含「${level1Idioms[index].cantonese}」`,
+      );
     }
 
     await sleep(350);
@@ -308,7 +365,30 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
     assert(detailText.includes(level1IdiomWords[0]), '成語詳情未顯示成語');
     assert(detailText.includes('釋義'), '成語詳情未顯示釋義');
     assert(detailText.includes('出處'), '成語詳情未顯示出處');
+    assert(!/undefined|null/.test(detailText), '成語詳情出現 undefined／null 文字');
+    // Issue #1：詳情要同時顯示普通話拼音＋粵拼
+    assert(
+      detailText.includes(level1Idioms[0].pinyin),
+      `成語詳情未顯示普通話拼音「${level1Idioms[0].pinyin}」`,
+    );
+    const jyutpingDetail = page.locator('[data-testid="codex-detail-jyutping"]');
+    assert((await jyutpingDetail.count()) === 1, '成語詳情缺少 codex-detail-jyutping 元素');
+    const expectedJyutping = level1Idioms[0].cantonese;
+    const jyutAria = (await jyutpingDetail.getAttribute('aria-label')) ?? '';
+    assert(jyutAria === `粵拼：${expectedJyutping}`, `成語詳情粵拼 aria-label「${jyutAria}」唔啱`);
+    const jyutpingDetailText = ((await jyutpingDetail.innerText()) ?? '').replace(/\s+/g, ' ').trim();
+    assert(
+      jyutpingDetailText.includes(expectedJyutping),
+      `成語詳情粵拼「${jyutpingDetailText}」應包含「${expectedJyutping}」`,
+    );
     await shot('codex-detail');
+    if (isMobile) {
+      await assertNoHorizontalOverflowIn(
+        page,
+        '[data-testid="codex-detail"] .overlay__panel',
+        `${label}／圖鑑詳情（雙拼音）`,
+      );
+    }
     await page.click('[data-testid="codex-detail"] [data-close]');
     await waitForHidden(page, '[data-testid="codex-detail"]');
 
@@ -337,6 +417,26 @@ export async function runSuite({ page, errors, reporter, label, isMobile }) {
       (await page.locator(`[data-testid="codex-item-${level1IdiomIds[0]}"]`).count()) === 1,
       `圖鑑無聲調拼音搜尋「${plainPinyin}」後搵唔到對應成語（BUG-QA-1 回歸）`,
     );
+
+    // 搜尋（粵拼帶聲調）——Issue #1
+    await page.fill('[data-testid="codex-search"]', level1Idioms[0].cantonese);
+    await sleep(200);
+    assert(
+      (await page.locator(`[data-testid="codex-item-${level1IdiomIds[0]}"]`).count()) === 1,
+      `圖鑑粵拼搜尋「${level1Idioms[0].cantonese}」後搵唔到對應成語（Issue #1）`,
+    );
+
+    // 搜尋（粵拼無聲調數字）——Issue #1：玩家通常唔打聲調數字
+    const plainJyutping = stripJyutpingTones(level1Idioms[0].cantonese);
+    assert(plainJyutping.length > 0, '粵拼去除聲調數字後為空');
+    await page.fill('[data-testid="codex-search"]', plainJyutping);
+    await sleep(200);
+    assert(
+      (await page.locator(`[data-testid="codex-item-${level1IdiomIds[0]}"]`).count()) === 1,
+      `圖鑑無聲調粵拼搜尋「${plainJyutping}」後搵唔到對應成語（Issue #1）`,
+    );
+    // Issue #1 截圖：粵拼搜尋結果（桌面＋手機各一張）
+    await shot('codex-search-jyutping');
 
     // 0 結果：顯示空狀態、grid 隱藏且 DOM 無 stale 卡——BUG-QA-2 回歸
     await page.fill('[data-testid="codex-search"]', 'zzzzzz-no-such-idiom');

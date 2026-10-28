@@ -113,7 +113,14 @@ async function desktopFlow(browser) {
   await page.waitForTimeout(500);
   const stars = (await page.locator('[data-testid="result-stars"]').getAttribute('data-stars')) ?? '0';
   check('完成 Level 1 過關', Number(stars) >= 1, `stars=${stars}`);
-  check('過關成語卡', (await page.locator('[data-testid^="result-idiom-"]').count()) === level.slots.length);
+  check(
+    '過關成語卡',
+    (await page.locator('article[data-testid^="result-idiom-"]').count()) === level.slots.length,
+  );
+  check(
+    '過關成語卡粵拼（Issue #1）',
+    (await page.locator('[data-testid^="result-idiom-jyutping-"]').count()) === level.slots.length,
+  );
   await page.screenshot({ path: `${OUT}/desktop-result.png` });
 
   await page.locator('[data-testid="next-level-btn"]').click();
@@ -123,7 +130,19 @@ async function desktopFlow(browser) {
   await page.goto(`${BASE}/?debug=1#/codex`, { waitUntil: 'networkidle' });
   await page.waitForSelector('[data-testid="codex-screen"]', { timeout: 15000 });
   check('圖鑑載入', true);
-  check('圖鑑有已收集成語', (await page.locator('[data-testid^="codex-item-"]').count()) > 0);
+  const collectedCard = page.locator('[data-testid^="codex-item-"][aria-label*="睇詳情"]').first();
+  check('圖鑑有已收集成語', (await collectedCard.count()) > 0);
+  if (await collectedCard.count()) {
+    await collectedCard.click();
+    await page.waitForSelector('[data-testid="codex-detail-jyutping"]', { timeout: 5000 });
+    const jyutping = await page
+      .locator('[data-testid="codex-detail-jyutping"]')
+      .textContent()
+      .catch(() => '');
+    check('圖鑑詳情粵拼（Issue #1）', (jyutping ?? '').trim().length > 0, (jyutping ?? '').trim().slice(0, 48));
+    await page.screenshot({ path: `${OUT}/desktop-codex-detail.png` });
+    await page.keyboard.press('Escape');
+  }
   await page.screenshot({ path: `${OUT}/desktop-codex.png` });
 
   await context.close();

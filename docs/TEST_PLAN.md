@@ -3,7 +3,7 @@
 > 擁有者：**qa-tester**｜最後更新：2026-10-28（Phase 2）
 > 規格來源：`docs/PLAN.md` §4（玩法）、§5（資料契約）、§6（核心 API）、§7（UI/testid）、§9（測試要求）
 > 本文件描述測試策略、覆蓋範圍、指令、案例清單及已知限制；執行結果與 bug 清單見 `docs/QA_REPORT.md`。
-> **現況（2026-10-28 定稿）**：成語 488 條、100 關最終版已寫入，全套測試全綠；早期 interim 資料限制已消除（詳見 QA_REPORT）。
+> **現況（2026-10-28 22:20 最終）**：成語 488 條（含 **Issue #1 粵拼 `cantonese` 488/488**）、100 關最終版已寫入；unit 63/63、E2E 22/22、verify-levels 17/17、qa-testids 43/43 全綠；早期 interim 資料限制已消除（詳見 QA_REPORT §13）。
 
 ## 1. 目標與範圍
 
@@ -41,6 +41,7 @@
 - `id`：kebab-case、全庫唯一、等於拼音去聲調（`ü/ǖǘǚǜ` → `v`）。
 - `word`：正好 4 個漢字（CJK 擴充 A＋基本區）、全庫唯一、不含常見簡體字黑名單。
 - `pinyin`：4 個音節、每節有且只有一個聲調符號、只含 `a-zü` 與元音。
+- **`cantonese`（Issue #1 粵拼）**：每筆必須存在且非空；正好 4 個音節（空格分隔、單空格）；每音節符合 `^[a-z]+[1-6]$`（帶聲調數字，例 `jat1 nok6 cin1 gam1`）；覆蓋率 488/488。
 - `meaning` 漢字數 15–60；`origin` 漢字數 15–90；`sourceBook` 為 `《…》` 格式。
 - `tier` 為 1–5 整數；tier 分佈下限：tier1 ≥ 70、tier2 ≥ 100、tier3 ≥ 100、tier4 ≥ 80、tier5 ≥ 50。
 - `tags`（如有）1–3 個、漢字。
@@ -124,12 +125,12 @@
 1. 首頁：`home-screen`、`home-start`、`home-continue`（開始第 1 關）、`home-progress`；截圖 `home-desktop.png`。
 2. 地圖：`map-screen`、`chapter-1`…`chapter-10`、`level-btn-1` 可用、`level-btn-2` 未解鎖、`map-stars-total` 0/300；截圖 `map-desktop.png`。
 3. 入 Level 1：處理 `chapter-intro`（`chapter-intro-ok`）→ `tutorial-overlay`（`tutorial-ok`）；`game-screen`／`game-title`／`cell-*`／`bank-*` 出現；截圖 `game-desktop.png`。
-4. 由 `?debug=1` 讀 Level 1 正解 → 逐格點 `cell` 再點對應 `bank`（字卡 index 依 multiset 分配）→ `result-overlay` 出現、`result-stars` 3 星、`result-idiom-<id>` 數量 = 本關成語數；截圖 `result-desktop.png`。
+4. 由 `?debug=1` 讀 Level 1 正解 → 逐格點 `cell` 再點對應 `bank`（字卡 index 依 multiset 分配）→ `result-overlay` 出現、`result-stars` 3 星、`result-idiom-<id>` 數量 = 本關成語數；**Issue #1：每張卡有普通話拼音＋`result-idiom-jyutping-<idiomId>`（aria-label／文字＝debug `cantonese`）**；截圖 `result-desktop.png`。
 5. 點 `next-level-btn` → Level 2 `game-screen`（hash `#/game/2`）。
 6. `game-back` → 地圖：`level-btn-1` 有星（aria-label「已過關，獲得 3 星」）、`map-stars-total` 3/300。
 7. `map-back` → 首頁：`home-continue` 顯示「繼續第 2 關」、`home-progress` 顯示已過 1/100。
 8. reload（`?debug=1#/home`）→ 進度保留（已過 1 關、3 星）。
-9. 圖鑑：`home-codex` → `codex-screen`、`codex-count` 顯示已收集 ≥ Level 1 成語數、`codex-item-<已收集 id>` 文字為成語（非「？？？？」）；中文／帶聲調／**無聲調拼音**搜尋都要命中（BUG-QA-1 回歸）；0 結果時空狀態＋`[data-grid]` DOM 清空（BUG-QA-2 回歸）；截圖 `codex-desktop.png`；點卡片開 `codex-detail`；關閉。
+9. 圖鑑：`home-codex` → `codex-screen`、`codex-count` 顯示已收集 ≥ Level 1 成語數、`codex-item-<已收集 id>` 文字為成語（非「？？？？」）＋`.codex-card__jyut` 粵拼細字；中文／帶聲調／**無聲調拼音**搜尋都要命中（BUG-QA-1 回歸）；**Issue #1：粵拼（帶聲調／無聲調）搜尋命中並截圖 `codex-search-jyutping-desktop.png`**；0 結果時空狀態＋`[data-grid]` DOM 清空（BUG-QA-2 回歸）；截圖 `codex-desktop.png`；點卡片開 `codex-detail`（**普通話拼音＋`codex-detail-jyutping`**）；關閉。
 10. 設定：`home-settings` → `settings-screen`；切換 `settings-sound` 取消、`settings-motion` 開啟 → reload → 兩個 toggle 狀態保留；截圖 `settings-desktop.png`。
 11. 重置：`settings-reset` → `reset-confirm` 出現 → `reset-cancel` 取消 → 再開 → `reset-confirm` 確認 → localStorage 進度清空。
 12. 錯誤路由：`#/game/2`（未解鎖，重置後）→ 地圖＋提示 toast；`#/game/999`（不存在）→ 地圖＋提示 toast；`#/unknown-route` → 首頁（BUG-QA-3 回歸）。
@@ -138,11 +139,13 @@
 ### 5.3 手機流程（390×844, isMobile）
 
 - 流程同桌面（首頁→地圖→Level 1→過關→下一關→地圖→首頁→圖鑑→設定→reload 持久化），另加：
-  - 每個畫面斷言 `document.documentElement.scrollWidth <= window.innerWidth + 1`（無橫向溢出）。
-  - 截圖 `home-mobile.png`、`map-mobile.png`、`game-mobile.png`、`result-mobile.png`、`codex-mobile.png`、`settings-mobile.png`。
+  - 每個畫面斷言 `document.documentElement.scrollWidth <= window.innerWidth + 1`（無橫向溢出）；Issue #1 另加過關 overlay／圖鑑詳情 panel 內無橫向溢出（雙拼音行）。
+  - 截圖 `home-mobile.png`、`map-mobile.png`、`game-mobile.png`、`result-mobile.png`、`codex-mobile.png`、`settings-mobile.png`、`codex-search-jyutping-mobile.png`。
 - 手機版 overlays（章節故事／教學）要可點擊、不被畫面裁切。
 
 ### 5.4 回歸斷言（低 bug 修正後加入）
+
+- **Issue #1 粵拼**：過關成語卡需有普通話拼音全文＋`result-idiom-jyutping-<idiomId>`（數量＝關卡成語數、內容等於資料 `cantonese`）；圖鑑詳情需有 `codex-detail-jyutping` 且等於資料值；圖鑑搜尋以粵拼（帶／無聲調）命中；手機無 overflow、0 console error。
 
 - **BUG-QA-1**：圖鑑搜尋需同時支援中文、帶聲調拼音、無聲調拼音。
 - **BUG-QA-2**：圖鑑 0 結果時 grid hidden、empty state 顯示、`[data-grid].childElementCount === 0`，清空搜尋恢復全部卡。
@@ -150,7 +153,7 @@
 
 ### 5.5 截圖清單（自動生成）
 
-`screenshots/home-desktop.png`、`map-desktop.png`、`game-desktop.png`、`result-desktop.png`、`codex-desktop.png`、`settings-desktop.png`，以及同名 `-mobile` 版本；另外 overlay 補充：`tutorial-*`、`chapter-intro-*`、`reset-confirm-*`。
+`screenshots/home-desktop.png`、`map-desktop.png`、`game-desktop.png`、`result-desktop.png`、`codex-desktop.png`、`settings-desktop.png`，以及同名 `-mobile` 版本；overlay 補充：`tutorial-*`、`chapter-intro-*`、`reset-confirm-*`、`codex-detail-*`；**Issue #1 補充：`codex-search-jyutping-desktop.png`、`codex-search-jyutping-mobile.png`**。共 **22 張**，由 `npm run shots` 自動生成。
 
 ## 6. 指令
 
@@ -177,6 +180,7 @@ E2E 環境變數（可選）：`E2E_HEADED=1` 開有頭瀏覽器、`E2E_SKIP_BUI
 | IDI-05 | 成語 | meaning 15–60／origin 15–90 漢字 | 全部合格 |
 | IDI-06 | 成語 | tier 1–5 及分佈下限 | 全部合格 |
 | IDI-07 | 成語 | 接龍連通性 ≥150、連接字覆蓋 | 全部合格 |
+| IDI-08 | 成語 | 粵拼 `cantonese`：每筆必有、4 音節、`^[a-z]+[1-6]$`、488/488（Issue #1） | 全部合格 |
 | CHA-01 | 章節 | 10 章、scene key 正確 | PASS |
 | LVL-01 | 關卡 | 100 關、id/chapter 連續 | PASS |
 | LVL-02 | 關卡 | 模式分佈（18 chain、1–10 fill） | PASS |
@@ -204,13 +208,33 @@ E2E 環境變數（可選）：`E2E_HEADED=1` 開有頭瀏覽器、`E2E_SKIP_BUI
 | E2E-D-* | E2E | 桌面流程 1–11 | 全 PASS |
 | E2E-M-* | E2E | 手機流程＋無橫向溢出 | 全 PASS |
 | E2E-R-* | E2E | 錯誤路由／未解鎖關卡安全引導 | PASS |
+| E2E-J-01 | E2E | 過關成語卡同時顯示普通話拼音＋粵拼（`result-idiom-jyutping-<id>` 數量＝關卡成語數） | 全 PASS |
+| E2E-J-02 | E2E | 圖鑑詳情顯示普通話拼音＋粵拼（`codex-detail-jyutping`） | 全 PASS |
+| E2E-J-03 | E2E | 圖鑑以粵拼搜尋（帶聲調數字／無聲調數字）可命中（如 UI 支援） | 全 PASS |
+
+## 7.1 Issue #1 專項驗收（粵拼 / 廣東話拼音）
+
+GitHub Issue #1：成語同時提供**普通話拼音**與**粵拼（Jyutping）**，過關成語卡、成語圖鑑及搜尋均支援兩種。
+
+| 驗收項 | 測試位置 | 標準 | 結果（2026-10-28） |
+| --- | --- | --- | --- |
+| 資料欄位 | `tests/unit/idioms.test.ts`「cantonese 粵拼」 | 488/488 筆有 `cantonese`、4 音節、`^[a-z]+[1-6]$`、無空值、無多餘空格 | ✅ PASS（488/488） |
+| 契約檢查 | `node scripts/verify-idioms.mjs`（idiom-scholar） | 粵拼格式／4 音節檢查 PASS | ✅ PASS（粵拼 488/488） |
+| 過關成語卡 | `e2e/specs.mjs` 完成 Level 1 步驟 | 每張卡同時有普通話拼音＋粵拼；`result-idiom-jyutping-<idiomId>` 數量＝成語數、內容等於 `cantonese` | ✅ desktop＋mobile |
+| 圖鑑詳情 | `e2e/specs.mjs` 圖鑑詳情步驟 | 同時顯示普通話拼音＋`codex-detail-jyutping`（內容等於 `cantonese`） | ✅ desktop＋mobile |
+| 圖鑑卡細字 | `e2e/specs.mjs` 圖鑑清單步驟 | 已收集卡 `.codex-card__jyut` 含 `cantonese` | ✅ desktop＋mobile |
+| 圖鑑搜尋 | `e2e/specs.mjs` 圖鑑搜尋步驟 | 粵拼帶聲調數字、無聲調數字都能命中 | ✅ 兩種都命中（另截圖） |
+| 響應式／穩定性 | E2E 每步 | 手機 390×844 無橫向溢出；0 console error／pageerror／failed request | ✅（overlay panel 亦無溢出） |
+| 截圖 | `npm run shots` | 過關／圖鑑詳情／粵拼搜尋截圖可見雙拼音 | ✅ 22 張（含 2 張粵拼搜尋） |
+
+> 最終狀態：資料與 UI 已 ready，全套 PASS；失敗分類（資料未 ready／UI 未 ready）只作開發期指引，最終冇殘留失敗。詳見 `docs/QA_REPORT.md` §13。
 
 ## 8. 通過標準
 
 - `npm test`：0 failed（資料定稿後）。
 - `npm run verify:levels`：exit code 0，全部檢查 PASS（warning 允許）。
 - `npm run test:e2e`：desktop＋mobile 全 PASS；任何 console error／pageerror＝FAIL。
-- `screenshots/` 12 張主截圖齊全且人手檢查無亂碼、無爆版。
+- `screenshots/` 12 張主截圖（共 22 張，含 Issue #1 粵拼搜尋 2 張）齊全且人手檢查無亂碼、無爆版、雙拼音無截字。
 
 ## 9. 已知限制與風險
 
@@ -222,3 +246,5 @@ E2E 環境變數（可選）：`E2E_HEADED=1` 開有頭瀏覽器、`E2E_SKIP_BUI
 6. **截圖屬「有冇爆版」檢查**，視覺美感由 Lead／ui-dev 人手 review。
 7. **E2E 依賴 testid 契約**（PLAN §7.4）：任何 testid 改名／移除會令 E2E 失敗，屬 UI 契約破壞，需通知 ui-dev。
 8. E2E 完成 Level 1 依賴 `?debug=1` 暴露正解；唔會喺正式版 URL 使用。
+9. **粵拼讀音約定**：文白異讀採「香港通行讀音」（例 坐井觀天 `co5`、車水馬龍 `ce1`、後生可畏 `saang1`），記錄於 `docs/IDIOM_SOURCES.md` §11；E2E 由 debug 資料讀預期值，不 hardcode 粵拼。
+10. E2E 曾出現一次 mobile context 首屏偶發 timeout（合併流程、desktop 先中止後）；單獨重跑及之後多次全套均 PASS，runner 已加 failure 診斷輸出及自動清理舊 `failure-*.png`。

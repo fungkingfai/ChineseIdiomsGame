@@ -4,6 +4,12 @@ import type { Idiom } from '../core/types';
 import { esc } from './dom';
 import { icon } from './icons';
 
+/** 安全讀取粵拼（資料未 ready 時 cantonese 可能係 undefined）。 */
+export function jyutpingOf(idiom: Idiom): string {
+  const value = (idiom.cantonese ?? '') as string;
+  return typeof value === 'string' ? value.trim() : '';
+}
+
 export interface IdiomCardOptions {
   testId?: string;
   compact?: boolean;
@@ -43,13 +49,35 @@ export function idiomCardHtml(idiom: Idiom, options: IdiomCardOptions = {}): str
       ? `<span class="idiom-card__collected">${icon.check} 已收集</span>`
       : '';
 
+  const jyutping = jyutpingOf(idiom);
+  const pronRows = `
+    <div class="idiom-card__pron">
+      <p class="idiom-card__pinyin" aria-label="普通話拼音：${esc(idiom.pinyin)}">
+        <span class="pron-badge" aria-hidden="true">普</span><span class="pron-text">${esc(
+          idiom.pinyin,
+        )}</span>
+      </p>
+      ${
+        jyutping
+          ? `<p class="idiom-card__pinyin idiom-card__pinyin--jyut" data-testid="result-idiom-jyutping-${
+              idiom.id
+            }" aria-label="粵拼：${esc(jyutping)}">
+        <span class="pron-badge pron-badge--jyut" aria-hidden="true">粵</span><span class="pron-text">${esc(
+          jyutping,
+        )}</span>
+      </p>`
+          : ''
+      }
+    </div>
+  `;
+
   return `
     <article class="${classes.join(' ')}"${
       options.testId ? ` data-testid="${esc(options.testId)}"` : ''
     }>
       ${badge}
       <h3 class="idiom-card__word">${esc(idiom.word)}</h3>
-      <p class="idiom-card__pinyin">${esc(idiom.pinyin)}</p>
+      ${pronRows}
       <p class="idiom-card__meaning">${esc(idiom.meaning)}</p>
       ${meta.length > 0 ? `<dl class="idiom-card__meta">${meta.join('')}</dl>` : ''}
       ${tags}

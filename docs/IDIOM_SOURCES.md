@@ -10,6 +10,7 @@
 | --- | --- |
 | 成語總數 | **488** 條（合約下限 420） |
 | tier 分佈 | tier1 70、tier2 107、tier3 165、tier4 96、tier5 50（全部達到 PLAN §5.1 建議下限） |
+| 粵拼（cantonese） | **488/488** 條（4 音節、帶聲調數字，例 `jat1 nok6 cin1 gam1`；見 §11） |
 | 分類標籤 | 31 種，每條 1–3 個 |
 | id／word 唯一 | 488／488（id 由帶聲調拼音去掉聲調得出） |
 | 可接龍成語 | **174** 條（尾字＝另一成語首字），578 條接龍鏈接，最長接龍估算 37 步 |
@@ -34,6 +35,8 @@
 3. `origin` 全部自行改寫，只引用古籍短句（屬公有領域），不抄現代辭書或網站的版權內容。
 4. 同一成語有多個出處時，取較早或最直接出現該成語者，並在 `origin` 交代典故。
 5. 釋義 15–60 個漢字、出處說明 15–90 個漢字，繁體中文、香港用語。
+
+粵拼（Issue #1）另以 `to-jyutping@3.1.1` 產生基線，再逐條對照香港中文大學《粵語審音配詞字庫》「讀音＋詞例」、粵語辭叢（彙集粵典／維基辭典）及 rime-cantonese 字表校訂，詳見 §11。
 
 ## 3. 自動化核對結果（2026-10-28）
 
@@ -195,3 +198,83 @@
 
 - `meaning`、`origin` 為本專案自行撰寫；引用的古籍原文屬公有領域。
 - 考證參考網站：教育部《成語典》、漢典（zdic.net）、中國哲學書電子化計劃（ctext.org）、維基文庫、香港教育局教材。僅作查證來源，不複製其版權內容。
+
+## 11. 粵拼（Jyutping）資料（Issue #1：同時提供廣東話與普通話拼音）
+
+### 11.1 方法
+
+1. **基線自動轉換**：以 CanCLID `to-jyutping@3.1.1` 將 488 條成語逐條轉換為粵拼（Lead 提供 `/tmp` 基線檔）。轉換工具只在開發期使用，**不會加入 repo 的 npm 依賴**。
+2. **逐條覆核 488/488**：
+   - 抓取香港中文大學《粵語審音配詞字庫》887 個用字的讀音與「詞例」，程式自動比對每條成語是否出現於某讀音的詞例（例：「嘔心瀝血」列於「瀝 lik6」詞例、「敬而遠之」列於「遠 jyun6」詞例）。
+   - 對照「粵語辭叢」（jyutjyu.com，彙集粵典 words.hk 與維基辭典讀音）核對有條目的成語（155 條）。
+   - 對照 rime-cantonese 字表與 to-jyutping 候選讀音，審核：音節是否在該字讀音表內、有否誤選罕用／廢棄讀音、工具選了非預設讀音的位置，以及 60 個真多義字（上、生、為、行、長、重、樂、數、中、興、應、相、看、勝、見、車、玉、朝、易…）在成語語境的取捨。
+3. **採成語語境讀音**（非單字預設）：例如「葉公好龍」好 = hou3（喜愛）、「敬而遠之」遠 = jyun6（遠離）、「天衣無縫」縫 = fung6（縫隙）、「出奇制勝」勝 = sing3（勝利）、「不亦樂乎」樂 = lok6（快樂）。
+4. 全部 488 條以 `node scripts/verify-idioms.mjs` 驗證（存在、4 音節、`^[a-z]+[1-6]$`、對應 4 字）。
+
+### 11.2 授權與鳴謝（Attribution）
+
+- 粵拼基線：**CanCLID `to-jyutping` 3.1.1**（BSD-2-Clause）；其粵拼詞庫部分源自 **`rime-cantonese`**（CanCLID，**CC BY 4.0**）。本專案以工具產生基線後經人手逐條校訂；此粵拼資料如再散布，須保留本 attribution 及 CC BY 4.0 授權聲明。
+- 校對參考：香港中文大學《粵語審音配詞字庫》（`humanum.arts.cuhk.edu.hk/Lexis/lexi-can/`）、粵語辭叢 `jyutjyu.com`（彙集粵典 words.hk、維基辭典等開放資料）、`rime-cantonese`（CC BY 4.0）。以上僅作查證參考，沒有大量複製其受版權保護的內容。
+- 成語詞條、普通話拼音、釋義與出處文字仍為本專案自行整理（見 §2、§10）。
+
+### 11.3 修正清單（31 條，相對 to-jyutping 基線）
+
+| # | 成語 | 修正前（to-jyutping） | 修正後 | 依據 |
+| --- | --- | --- | --- | --- |
+| 1 | 車水馬龍 | `geoi1 seoi2 maa5 lung4` | `ce1 seoi2 maa5 lung4` | 詞典收 geoi1（文讀）與 ce1 兩讀；依 Issue 審核及香港通行讀法採 ce1 |
+| 2 | 拋磚引玉 | `paau1 zyun1 jan5 juk2` | `paau1 zyun1 jan5 juk6` | 玉只有 juk6 一讀，工具 juk2 有誤 |
+| 3 | 出奇制勝 | `ceot1 kei4 zai3 sing1` | `ceot1 kei4 zai3 sing3` | 「勝」解勝利讀 sing3（sing1 為「勝任」） |
+| 4 | 刮目相看 | `gwaat3 muk6 soeng1 hon1` | `gwaat3 muk6 soeng1 hon3` | 「看」解觀看讀 hon3（hon1 為「看守」） |
+| 5 | 後生可畏 | `hau6 sang1 ho2 wai3` | `hau6 saang1 ho2 wai3` | 「後生」指年輕人，口語讀 saang1；工具 sang1 為文讀（本庫從審核意見） |
+| 6 | 嘔心瀝血 | `au2 sam1 lik1 hyut3` | `au2 sam1 lik6 hyut3` | 字庫詞例「嘔心瀝血」列於瀝 lik6 |
+| 7 | 坐井觀天 | `zo6 zeng2 gun1 tin1` | `co5 zeng2 gun1 tin1` | 依 Issue 審核採口語讀法 co5（字庫/粵典亦列文讀 zo6） |
+| 8 | 圖窮匕見 | `tou4 kung4 bei3 jin6` | `tou4 kung4 bei6 jin6` | 「匕」匕首讀 bei6；「見」＝現，保留 jin6（粵語辭叢/維基辭典） |
+| 9 | 敬而遠之 | `ging3 ji4 jyun5 zi1` | `ging3 ji4 jyun6 zi1` | 「遠」作動詞（遠離）讀 jyun6，字庫詞例「敬而遠之」 |
+| 10 | 運籌帷幄 | `wan6 cau4 wai4 aak1` | `wan6 cau4 wai4 ak1` | 字庫詞例「運籌帷幄」列於幄 ak1 |
+| 11 | 朝乾夕惕 | `ciu4 gon1 zik6 tik1` | `ziu1 gon1 zik6 tik1` | 「朝」解早晨讀 ziu1，字庫詞例「朝乾夕惕」 |
+| 12 | 目瞪口呆 | `muk6 dang1 hau2 ngoi4` | `muk6 cing4 hau2 ngoi4` | 字庫詞例「目瞪口呆」列於瞪 cing4 |
+| 13 | 天衣無縫 | `tin1 ji1 mou4 fung4` | `tin1 ji1 mou4 fung6` | 「縫」解縫隙讀 fung6，字庫詞例「天衣無縫」 |
+| 14 | 水滴石穿 | `seoi2 dik6 sek6 cyun1` | `seoi2 dik1 sek6 cyun1` | 字庫詞例「水滴石穿」列於滴 dik1 |
+| 15 | 目不暇給 | `muk6 bat1 haa4 kap1` | `muk6 bat1 haa6 kap1` | 字庫詞例「目不暇給」列於暇 haa6 |
+| 16 | 龍騰虎躍 | `lung4 tang4 fu2 joek3` | `lung4 tang4 fu2 joek6` | 躍標準讀 joek6（joek3 為罕用） |
+| 17 | 有條不紊 | `jau5 tiu4 bat1 man5` | `jau5 tiu4 bat1 man6` | 紊標準讀 man6，字庫詞例「有條不紊」 |
+| 18 | 咄咄逼人 | `cyut3 cyut3 bik1 jan4` | `deot1 deot1 bik1 jan4` | 字庫詞例「咄咄逼人」列於咄 deot1（粵典作 cyut3，屬異讀） |
+| 19 | 睚眥必報 | `ngaai4 zi6 bit1 bou3` | `ngaai4 zaai6 bit1 bou3` | 字庫詞例「睚眥」列於眥 zaai6 |
+| 20 | 九牛一毛 | `gau2 ngau4 jat1 mou1` | `gau2 ngau4 jat1 mou4` | 毛標準讀 mou4（工具 mou1 不在讀音表） |
+| 21 | 歷歷在目 | `lik1 lik1 zoi6 muk6` | `lik6 lik6 zoi6 muk6` | 歷只有 lik6 一讀（工具 lik1 有誤） |
+| 22 | 後來居上 | `hau6 loi4 geoi1 soeng5` | `hau6 loi4 geoi1 soeng6` | 「上」表位置在上讀 soeng6，字庫詞例「後來居上」 |
+| 23 | 石破天驚 | `sek6 po3 tin1 geng1` | `sek6 po3 tin1 ging1` | 文言成語「驚」讀 ging1（geng1 為口語白讀） |
+| 24 | 無為而治 | `mou4 wai6 ji4 zi6` | `mou4 wai4 ji4 zi6` | 「為」解作為讀 wai4（wai6 為「為了」） |
+| 25 | 以鄰為壑 | `ji5 leon4 wai6 kok3` | `ji5 leon4 wai4 kok3` | 「為」解當作讀 wai4；壑讀 kok3 |
+| 26 | 行成於思 | `haang4 sing4 jyu1 si1` | `hang4 sing4 jyu1 si1` | 「行」解實行讀 hang4（文讀） |
+| 27 | 雲行雨施 | `wan4 haang4 jyu5 si1` | `wan4 hang4 jyu5 si1` | 「行」解運行讀 hang4（文讀） |
+| 28 | 上行下效 | `soeng6 haang4 haa6 haau6` | `soeng6 hang4 haa6 haau6` | 「上行」之「行」解實行讀 hang4（文讀） |
+| 29 | 行雲流水 | `haang4 wan4 lau4 seoi2` | `hang4 wan4 lau4 seoi2` | 「行」解流動讀 hang4（文讀） |
+| 30 | 韋編三絕 | `wai5 pin1 saam1 zyut6` | `wai4 pin1 saam1 zyut6` | 韋讀 wai4（工具 wai5 為異讀） |
+| 31 | 郢書燕說 | `jing5 syu1 jin3 syut3` | `jing5 syu1 jin1 syut3` | 燕國之「燕」讀 jin1（jin3 為燕子） |
+
+### 11.4 詞典分歧與取捨
+
+粵語存在文白異讀，不同詞典對個別成語的標音未完全一致。本庫探討後按「香港通行成語讀音」取捨，並在此記錄：
+
+- **車水馬龍**：粵典／rime 列 geoi1（文讀）、ce1（口語）；依 Issue 審核意見及通行讀法採 `ce1`。
+- **坐井觀天**：審音字庫／粵典標 zo6（文讀）；依 Issue 審核意見採通行口語 `co5`。
+- **後生可畏**：多數詞典標 sang1（文讀）；「後生」作「年輕人」解時讀 `saang1`（依 Issue 審核意見）。
+- **圖窮匕見**：見＝現，粵語辭叢／維基辭典標 `jin6`（部分人口語讀 gin3，本庫採 jin6）。
+- **咄咄逼人**：審音字庫詞例作 deot1，粵典作 cyut3（亦收 deot1）；本庫採 `deot1`。
+- **運籌帷幄**：幄 ak1／aak1 並見，採 `ak1`（審音字庫詞例）。
+- **七上八下**：上作「升上」動詞讀 `soeng5`（部分詞典作 soeng6，屬位置義）。
+- **金石為開**：「為」表「因為」讀 `wai6`（wai4 為「作為」義）。
+
+### 11.5 統計
+
+- 粵拼覆蓋：**488/488** 條；全部 4 音節、每節符合 `^[a-z]+[1-6]$`。
+- 與粵語辭叢有讀音的 155 條比對：**143 條完全一致**；12 條差異逐一覆核（6 條為其他詞典／OCR 的非標準羅馬字或異體，6 條屬文白／異讀取捨，見 §11.4）。
+- 驗證結果：`node scripts/verify-idioms.mjs` → **PASS**（原有資料契約＋粵拼檢查）。
+
+### 11.6 限制
+
+- 粵拼為靜態文字資料，遊戲暫未接粵語語音朗讀。
+- 少數成語在粵語詞典間沒有唯一讀音；本庫已記錄取捨（§11.4），如日後有更權威共識可更新。
+- 粵拼一律標本調，不標連讀變調（與粵拼輸入法及字典慣例一致）。
+- 更新成語資料時必須同步更新 `cantonese` 欄位並重跑 `node scripts/verify-idioms.mjs`。

@@ -16,8 +16,11 @@
  *   E2E_ONLY=mobile npm run test:e2e     # 只跑手機
  *   E2E_SKIP_BUILD=1 npm run test:e2e    # 唔重新 build（用現有 dist）
  */
+import { existsSync, readdirSync, rmSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { chromium } from 'playwright';
 import {
+  PROJECT_ROOT,
   Reporter,
   collectPageErrors,
   runBuild,
@@ -66,6 +69,10 @@ async function runViewport(browser, reporter, viewportConfig) {
     result.error = error instanceof Error ? error.message : String(error);
     console.log('');
     console.log(`  ⚠ ${label} 流程中止：${result.error.split('\n')[0]}`);
+    if (errors.errors.length > 0) {
+      console.log(`  ⚠ ${label} 期間收集到 ${errors.errors.length} 個 console／page error：`);
+      for (const message of errors.errors.slice(0, 12)) console.log(`      ${message}`);
+    }
     try {
       await page.screenshot({ path: `screenshots/failure-${label}.png`, fullPage: false });
     } catch {
@@ -77,7 +84,19 @@ async function runViewport(browser, reporter, viewportConfig) {
   return result;
 }
 
+/** 清走上次失敗遺留嘅 failure-*.png（避免污染 screenshots/ 清單） */
+function clearStaleFailureShots() {
+  const dir = resolve(PROJECT_ROOT, 'screenshots');
+  if (!existsSync(dir)) return;
+  for (const name of readdirSync(dir)) {
+    if (name.startsWith('failure-') && name.endsWith('.png')) {
+      rmSync(resolve(dir, name), { force: true });
+    }
+  }
+}
+
 async function main() {
+  clearStaleFailureShots();
   const reporter = new Reporter();
   const results = [];
   let server = null;

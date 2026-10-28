@@ -30,7 +30,7 @@
 ### 進度與收集
 - 100 關／10 章，難度隨章節上升：成語更多、空格更多、提示更少、誘餌字更多。
 - 自動儲存進度（localStorage），重玩取最高星。
-- 過關成語自動收入**成語圖鑑**：可搜尋、睇拼音、釋義、出處（sourceBook）同例句。
+- 過關成語自動收入**成語圖鑑**：可搜尋、睇**普通話拼音＋粵拼（廣東話）**、釋義、出處（sourceBook）同例句。
 - 首次進入第 1 關有新手教學；每章第一次進入有貓貓章節故事。
 
 ### 章節
@@ -56,7 +56,7 @@
 - **首頁**：阿墨＋糰子 hero、櫻花花瓣、繼續冒險、圖鑑、設定。
 - **關卡地圖**：10 章卡片（場景插畫＋星星進度）、100 個關卡腳印、自動定位當前章。
 - **遊戲**：棋盤＋字庫（手機 sticky bottom）、提示、重玩、音效；逐成語判定動畫。
-- **過關**：星星動畫、成語卡（成語／拼音／釋義／出處）、下一關。
+- **過關**：星星動畫、成語卡（成語／普通話拼音／粵拼／釋義／出處）、下一關。
 - **成語圖鑑**：收集進度、搜尋、成語詳情。
 - **設定**：音效、減少動態效果、重置進度。
 
@@ -87,7 +87,7 @@ src/
     audio.ts         # WebAudio 音效合成
     context.ts       # AppContext
   data/
-    idioms.json      # 成語資料庫（含拼音、釋義、出處）
+    idioms.json      # 成語資料庫（含普通話拼音、粵拼、釋義、出處）
     chapters.json    # 10 章設定
     levels.json      # 100 關（由生成器產生）
     index.ts         # 資料存取 API
@@ -122,10 +122,10 @@ npm run generate:levels         # 由 idioms + chapters 重新生成 100 關
 | 項目 | 結果 |
 | --- | --- |
 | `npm run check`（TypeScript strict） | ✅ |
-| `npm test`（Vitest：成語／關卡資料、引擎、存檔） | ✅ **62 / 62** |
+| `npm test`（Vitest：成語／關卡資料、引擎、存檔） | ✅ **63 / 63** |
 | `node scripts/verify-levels.mjs`（獨立關卡驗證） | ✅ **17 / 17，0 警告** |
 | `node scripts/verify-idioms.mjs`（成語契約） | ✅ PASS |
-| `node scripts/qa-testids.mjs`（testid 契約） | ✅ **43 / 43** |
+| `node scripts/qa-testids.mjs`（testid 契約） | ✅ **43 / 43**（新增 2 個粵拼 testid） |
 | `npm run test:e2e`（Playwright 桌面＋手機） | ✅ **22 / 22 步驟**，全程 0 console error |
 | 全關卡可解性模擬 | ✅ **100 / 100 關**（真引擎填正解全部 3 星） |
 
@@ -148,8 +148,9 @@ Workers Builds 冇獨立 build step，因此：
 
 ## 成語資料與出處
 
-- 成語資料庫收錄 **488 條**成語：每條均有帶聲調拼音、繁中釋義、出處（sourceBook＋原文典故）、難度分級（tier 1–5）及分類標籤。
+- 成語資料庫收錄 **488 條**成語：每條均有**普通話拼音（漢語拼音）＋粵拼（Jyutping）**、繁中釋義、出處（sourceBook＋原文典故）、難度分級（tier 1–5）及分類標籤。
 - 接龍資料：**174 條**成語可與其他成語首尾相接，共 578 條接龍連結，最長可接 37 步；常用連接字（一、不、人、心、天、金、玉、正、堂…）齊備。
+- **粵拼（廣東話）**：以 CanCLID [to-jyutping](https://github.com/CanCLID/to-jyutping)（基於 [rime-cantonese](https://github.com/rime/rime-cantonese)，CC BY 4.0）自動標註作基線，再經逐條人手校對；詳見 [`docs/IDIOM_SOURCES.md`](docs/IDIOM_SOURCES.md)。
 - 出處以**古典典籍原文**（《史記》《戰國策》《韓非子》《呂氏春秋》《孫子兵法》《世說新語》等）為主；開發時以漢典、教育部成語典、ctext、維基文庫等 **84 條逐條上網核對**（詳見 [`docs/IDIOM_SOURCES.md`](docs/IDIOM_SOURCES.md)）。
 - 開發時亦參考坊間常用成語辭書（《成語辭海》《漢語成語源流大詞典》《漢語成語大詞典》《中國成語大辭典》《商務成語大詞典》《遠流活用成語辭典》）作對照；本專案唔會複製辭書內文。
 - 部分成語有多種出處說法，已盡量採用學界常見版本；如有錯漏，歡迎開 GitHub issue 指正。
@@ -165,6 +166,15 @@ Workers Builds 冇獨立 build step，因此：
 - **qa-tester**：單元測試、資料驗證、E2E、視覺 QA
 
 詳細規劃見 [`docs/PLAN.md`](docs/PLAN.md)。
+
+## 更新紀錄
+
+### v1.0.1（2026-10-28）
+- 🗣️ 處理 GitHub Issue #1：成語同時提供**普通話拼音**與**粵拼（廣東話 Jyutping）**；過關成語卡、成語圖鑑及搜尋均支援兩種拼音。
+- 488 條成語全部加上粵拼，加入驗證腳本檢查、E2E 迴歸及文件。
+
+### v1.0.0（2026-10-28）
+- 首次上線：100 關、10 章、488 條成語、貓貓角色／場景／2D 動畫、PC＋手機介面。
 
 ## License
 

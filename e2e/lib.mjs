@@ -188,6 +188,24 @@ export async function assertNoHorizontalOverflow(page, label = '') {
   return metrics;
 }
 
+/**
+ * 檢查某個元素（例如 overlay panel）內容冇橫向溢出。
+ * 用於手機上「多一行粵拼」後嘅結算卡／圖鑑詳情 layout 回歸。
+ */
+export async function assertNoHorizontalOverflowIn(page, selector, label = '') {
+  const metrics = await page.evaluate((sel) => {
+    const element = document.querySelector(sel);
+    if (!element) return null;
+    return { scrollWidth: element.scrollWidth, clientWidth: element.clientWidth };
+  }, selector);
+  assert(metrics, `${label ? `${label}：` : ''}搵唔到元素 ${selector}`);
+  assert(
+    metrics.scrollWidth <= metrics.clientWidth + 1,
+    `${label ? `${label}：` : ''}${selector} 橫向溢出（scrollWidth=${metrics.scrollWidth} > clientWidth=${metrics.clientWidth}）`,
+  );
+  return metrics;
+}
+
 /* ------------------------------------------------------------------ */
 /* 遊戲畫面操作輔助                                                    */
 /* ------------------------------------------------------------------ */

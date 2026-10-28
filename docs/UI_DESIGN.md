@@ -2,7 +2,7 @@
 
 > 擁有者：ui-dev。實作範圍：`src/app.ts`、`src/router.ts`、`src/screens/**`、`src/ui/**`、`src/styles/**`（`cats.css` 除外）。
 > 對應契約：`docs/PLAN.md` §6（core API）、§7（UI/UX 契約）、§7.4（必需 testid）。
-> 最後更新：ui-dev（2026-10-28）。狀態：**全部畫面已實作並通過 Playwright 本機驗證（100 關 interim 資料）**。
+> 最後更新：ui-dev（2026-10-29，v1.0.1 雙拼音）。狀態：**全部畫面已實作並通過 Playwright 本機驗證（100 關／488 成語）**；Issue #1 加入普通話拼音＋粵拼（Jyutping）顯示與搜尋。
 
 ---
 
@@ -15,7 +15,7 @@
 | 視覺關鍵詞 | 玉綠庭園、櫻花粉、奶油紙感、柔和圓角、貓爪印、櫻花花瓣、金色星星、手繪卡片感。 |
 | 排版 | Mobile-first；字體只用系統繁中 stack（`--font-main`／`--font-serif`），唔載入外部字體、唔 fetch 外部資源（貓貓／場景 SVG 由 `src/cats/**` inline 提供）。 |
 | 動畫原則 | 短（120–600ms）、有目的（回饋／引導），尊重 `prefers-reduced-motion` 同 `ctx.save.settings.reducedMotion`。 |
-| 資料驅動 | **唔 hardcode 關卡數／成語內容**：所有畫面由 `ctx.levels`（100 關，含 fill／chain）＋`ctx.chapters`（10 章）＋`ctx.idioms`（488 條）動態產生；棋盤 cell size 會依 `level.rows/cols` 自動收縮（最大 7×7），任何關卡都唔會爆 layout。 |
+| 資料驅動 | **唔 hardcode 關卡數／成語內容**：所有畫面由 `ctx.levels`（100 關，含 fill／chain）＋`ctx.chapters`（10 章）＋`ctx.idioms`（488 條，含 `pinyin` 普通話拼音＋`cantonese` 粵拼）動態產生；棋盤 cell size 會依 `level.rows/cols` 自動收縮（最大 7×7），任何關卡都唔會爆 layout。 |
 
 ### 1.1 Color tokens（`src/styles/tokens.css`）
 
@@ -131,7 +131,7 @@ PLAYING（可放字／退字／提示／重玩）
 │  │  🗺 開始冒險            │  │ ← home-start（→ 地圖）
 │  └────────────────────────┘  │
 │  [📖 成語圖鑑]  [⚙ 設定]      │ ← home-codex / home-settings
-│  v1.0.0 · 貓貓製作 · 100% 離線可玩 │
+│  v1.0.1 · 貓貓製作 · 100% 離線可玩 │
 └──────────────────────────────┘
 ```
 **桌面（≥900px）**：hero 左（garden 場景卡 560px 高）／資訊面板右，內容 max-width 1120px。
@@ -247,7 +247,7 @@ PLAYING（可放字／退字／提示／重玩）
 - Panel 用 flex column：head（星星／統計）固定、成語列表可捲、按鈕永遠可見（唔會被推到 fold 以下）。
 - 背景 backdrop blur＋半透明墨綠；彩紙 `burstConfetti`（reduced motion 時停用）。
 - 星星逐粒 delay 0.1s、`star-pop`＋`audio.play('star')`；入 overlay 前清走遊戲期間 toast；`fanfare()`。
-- 成語卡顯示 word／pinyin／meaning／origin／sourceBook／tags，新收集有「新收集」徽章。
+- 成語卡顯示 word／**普通話拼音（「普」徽章）＋粵拼（「粵」徽章）**／meaning／origin／sourceBook／tags，新收集有「新收集」徽章；粵拼元素 `data-testid="result-idiom-jyutping-<idiomId>"`，資料未有 `cantonese` 時整行唔顯示。
 - 最後一關：`next-level-btn` 文字變「全部完成！返回地圖」，仍存在並導航地圖。
 - 過關即 `recordLevelClear(ctx.save, ...)`＋`ctx.persist()`，圖鑑自動更新（重玩取最高星）。
 
@@ -272,9 +272,9 @@ PLAYING（可放字／退字／提示／重玩）
 └──────────────────────────────────┘
 ```
 - 收集進度：`已收集 X / Y 條`（`codex-count`）＋進度條。
-- **已收集成語排最前**；卡片：已收集 = 成語＋拼音＋釋義摘要＋tier 點＋tag，點擊開詳情；未收集 = 「？？？？」＋鎖頭，點擊 toast「過關就會收集到呢個成語喵～」。
-- `codex-search` 即時過濾（成語／拼音／釋義／tags；未收集只用成語／拼音比對，唔劇透）；**拼音唔使打聲調**（`normalizeSearch` 做 NFD 去調，`yu gong` 都搵到「愚公移山」）；無結果顯示貓貓空狀態，同時清空 grid 舊 DOM（避免 stale nodes）。
-- 詳情 modal `codex-detail`：成語、拼音、釋義、出處＋典籍、例句、tags、難度；Esc／backdrop／「知道喇喵」可關。
+- **已收集成語排最前**；卡片：已收集 = 成語＋普通話拼音＋細字粵拼（「粵」徽章，空間許可）＋釋義摘要＋tier 點＋tag，點擊開詳情；未收集 = 「？？？？」＋鎖頭，點擊 toast「過關就會收集到呢個成語喵～」。
+- `codex-search` 即時過濾（成語／普通話拼音／粵拼／釋義／tags；未收集只用成語／拼音／粵拼比對，唔劇透）；**拼音唔使打聲調**（`normalizeSearch` 做 NFD 去調，`yu gong` 都搵到「愚公移山」）；**粵拼聲調數字可有可無**（`normalizeJyutping` 去 1–6 同空格：`jat1 nok6`／`jat nok`／`jat1nok6` 都搵到）；無結果顯示貓貓空狀態，同時清空 grid 舊 DOM（避免 stale nodes）。
+- 詳情 modal `codex-detail`：成語、**普通話拼音（「普」）＋粵拼（「粵」，`data-testid="codex-detail-jyutping"`）**、釋義、出處＋典籍、例句、tags、難度；Esc／backdrop／「知道喇喵」可關。
 - 桌面 ≥900px 4 欄；600–899px 3 欄；手機 2 欄。
 
 ### 3.7 設定（`#/settings`，testid `settings-screen`）
@@ -288,25 +288,25 @@ PLAYING（可放字／退字／提示／重玩）
 │ │ 關閉花瓣、彈跳、彩紙動畫    │    │
 │ │ 重置進度          [重置]   │    │ ← settings-reset → confirm modal
 │ └────────────────────────────┘    │
-│ 關於貓貓：阿墨＋糰子、v1.0.0、離線可玩 │
+│ 關於貓貓：阿墨＋糰子、v1.0.1、離線可玩 │
 └──────────────────────────────────┘
 ```
 - 開關即時生效＋寫入存檔；音效同步 `audio.setEnabled`；減少動態同步 `html.reduced-motion` class。
 - 重置：`settings-reset` → confirm modal（`reset-confirm` / `reset-cancel`，Esc／backdrop 可取消）；確認後 `resetProgress()` 清 localStorage、覆寫 `ctx.save` 內容、重設 audio/motion、更新開關狀態、toast；停留設定頁。
-- 版本／credit 卡：v1.0.0、角色 credit、「所有資料同音效都喺你部機度產生」。
+- 版本／credit 卡：v1.0.1、角色 credit、「所有資料同音效都喺你部機度產生」。
 
 ### 3.8 共用元件（`src/ui/**`）
 
 | 檔案 | 元件／職責 |
 | --- | --- |
-| `dom.ts` | `el()` 建 DOM、`fromHtml()`、`esc()`、`qs/qsa/on()`、`TimerBag`（screen destroy 時清 timer）、`normalizeSearch` |
+| `dom.ts` | `el()` 建 DOM、`fromHtml()`、`esc()`、`qs/qsa/on()`、`TimerBag`（screen destroy 時清 timer）、`normalizeSearch`（拼音去聲調）、`normalizeJyutping`（粵拼去聲調數字／空格） |
 | `icons.ts` | inline SVG icon set（back／hint／restart／sound／star／lock／close／paw…）；全部自帶 `width="1em" height="1em"`，任何 inline 位置都唔會撐爆 layout |
 | `buttons.ts` | `btnHtml` / `iconBtnHtml` 工廠（variant、size、testId、aria-label） |
 | `stars.ts` | `starsHtml`、`resultStarsHtml`（`data-testid=result-stars`＋`data-stars`）、`starGlyphs` |
 | `progress.ts` | `progressHtml`（role=progressbar＋aria-valuenow） |
 | `modal.ts` | overlay stack、focus trap、Esc、backdrop、scroll lock、`confirmDialog`、`closeAllOverlays` |
 | `toast.ts` | `showToast`（role=status aria-live=polite，最多 3 個）＋`clearToasts`（轉畫面／開過關 overlay 時清） |
-| `idiomCard.ts` | 成語卡（word／pinyin／meaning／origin／sourceBook／example／tags／新收集章） |
+| `idiomCard.ts` | 成語卡（word／普通話拼音+粵拼雙行（「普」「粵」徽章）／meaning／origin／sourceBook／example／tags／新收集章）；`jyutpingOf()` 安全讀 cantonese（fallback undefined） |
 | `catBubble.ts` | 貓貓對話框（角色＋mood＋對白） |
 | `board.ts` | 棋盤 view（fill grid／chain 逐行）、cell 狀態、震動／閃光；只用 `render(g, selected)` 重畫 |
 | `bank.ts` | 字庫 grid、每張卡固定 testid、使用狀態同步、已用卡輕搖 |
@@ -389,12 +389,14 @@ PLAYING（可放字／退字／提示／重玩）
 | | `next-level-btn` | 下一關 | 最後一關仍存在（文字變「全部完成」→ 地圖） |
 | | `retry-btn` / `result-map-btn` | 重玩／返回地圖 | |
 | | `result-idiom-<idiomId>` | 本關成語卡 | 每 slot 一張 |
+| | `result-idiom-jyutping-<idiomId>` | 成語卡粵拼行 | Issue #1；有 `cantonese` 先出現 |
 | 教學／故事 | `tutorial-overlay` / `tutorial-ok` | 教學 modal／明白掣 | 首次 Level 1 |
 | | `chapter-intro` / `chapter-intro-ok` | 章節故事／出發掣 | 每章第一次 |
 | 圖鑑 | `codex-screen` / `codex-search` | 畫面／搜尋框 | |
 | | `codex-item-<idiomId>` | 成語卡 | 全庫每條一個（未收集顯示 ????） |
 | | `codex-count` | 收集進度 | `已收集 X / Y 條成語` |
 | | `codex-detail` | 詳情 modal | 點已收集卡後出現 |
+| | `codex-detail-jyutping` | 詳情粵拼行 | Issue #1；有 `cantonese` 先出現 |
 | 設定 | `settings-screen` / `settings-back` | 畫面／返回 | |
 | | `settings-sound` / `settings-motion` | 開關 checkbox | 原生 checkbox，reload 保留 |
 | | `settings-reset` | 重置掣 | |
@@ -453,6 +455,7 @@ Playwright 覆蓋（1280×800 及 390×844，?debug=1 讀正解，唔 hardcode �
 - 320px 無橫向溢出；手機 390px 所有畫面無橫向溢出；sticky 字庫（短 viewport 捲動實測）。
 - 極端棋盤：7 欄（Level 41/94/98）、8 行（Level 82）喺 390／320／1280 都完整顯示兼可完成過關；17 張字卡 bank 自動換行。
 - 圖鑑拼音搜尋（無聲調 `yu gong`／帶聲調 `yú gōng`／中文／0 結果清 DOM）回歸測試。
+- **Issue #1 雙拼音**：合成資料（debug 注入 `cantonese`）及最終 488 條真實資料下——過關 overlay 有「普」＋「粵」兩行及 `result-idiom-jyutping-<id>`；圖鑑卡細字粵拼；詳情 `codex-detail-jyutping`；粵拼搜尋 `jat1 nok6`／`jat nok`／`jat1nok6` 全中；中文／普通話搜尋唔受影響；`cantonese` undefined 時自動隱藏；desktop／mobile 390 無橫向溢出、0 console error。
 - 全部 flow 0 console error／0 page error；鍵盤 Esc／Tab／skip-link 正常。
 - 截圖：`screenshots-local/ui-dev/*.png`（home／map／game／chain／wrong／level10／level100／result／codex／codex-detail／settings／tutorial／chapter-intro／reset-confirm × desktop/mobile）。
 
@@ -467,4 +470,5 @@ Playwright 覆蓋（1280×800 及 390×844，?debug=1 讀正解，唔 hardcode �
 5. **overlay stack**：modal 由 `ui/modal.ts` 統一管理（`#overlay-root`），focus trap、Esc、scroll lock；route 切換時 `closeAllOverlays()`＋`clearToasts()`，screen destroy 亦會關自己開嘅 overlay。
 6. **toast 唔會遮住結算**：入過關 overlay 前 `clearToasts()`，避免遊戲期間「啱晒喵」toast 疊喺星星／標題上面。
 7. **唔 hardcode 關卡數**：所有畫面用 `ctx.levels`／`ctx.chapters` 長度同內容；`levels.json` 由 2 關 → 100 關 → 最終版都唔需要改 UI。
-8. **QA 回饋修正（2026-10-28）**：圖鑑拼音搜尋支援無聲調輸入（NFD 去調）；0 結果時清空 grid 舊 DOM（避免 E2E locator count 誤判）；deep link 到未解鎖／不存在關卡改成「先 `replaceRoute('#/map')`、後 `showToast`」，避免 toast 喺同一次 render 被 `clearToasts()` 清走（BUG-QA-3）。
+8. **粵拼 fallback（Issue #1）**：`Idiom.cantonese` 資料未 ready 或空字串時，`jyutpingOf()` 回傳空字串，UI 完全唔顯示粵拼行／徽章；有值先顯示。搜尋 haystack 亦只加有值嘅粵拼。
+9. **QA 回饋修正（2026-10-28）**：圖鑑拼音搜尋支援無聲調輸入（NFD 去調）；0 結果時清空 grid 舊 DOM（避免 E2E locator count 誤判）；deep link 到未解鎖／不存在關卡改成「先 `replaceRoute('#/map')`、後 `showToast`」，避免 toast 喺同一次 render 被 `clearToasts()` 清走（BUG-QA-3）。

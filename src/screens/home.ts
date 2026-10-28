@@ -74,7 +74,7 @@ export function createHomeScreen(ctx: AppContext): Screen {
               </button>
             </div>
           </div>
-          <p class="home__credit">v1.0.0 · 貓貓製作 · 100% 離線可玩</p>
+          <p class="home__credit">v1.0.1 · 貓貓製作 · 100% 離線可玩</p>
         </section>
       </div>
     </main>

@@ -1,6 +1,7 @@
 /**
  * 成語資料庫驗證（src/data/idioms.json）— 按 docs/PLAN.md §5.1 最終規格。
- * 資料未達 420 條時呢組測試會 FAIL，屬「待資料定稿」，詳見 docs/QA_REPORT.md。
+ * 另含 GitHub Issue #1：粵拼（Jyutping）`cantonese` 欄位驗證。
+ * 資料未達標時呢組測試會 FAIL，屬「待資料定稿」，詳見 docs/QA_REPORT.md。
  */
 import { describe, expect, it } from 'vitest';
 import { idioms } from '../../src/data/index';
@@ -170,6 +171,37 @@ describe('成語資料（idioms.json）', () => {
       }
     }
     expect(issues, issues.slice(0, 12).join('\n')).toEqual([]);
+  });
+
+  it('cantonese 粵拼：每筆必有、4 音節、每音節 `^[a-z]+[1-6]$`（Issue #1）', () => {
+    const issues: string[] = [];
+    let withCantonese = 0;
+    for (const [index, idiom] of idioms.entries()) {
+      const at = `第 ${index + 1} 條（${idiom.word}）`;
+      const value = idiom.cantonese;
+      if (typeof value !== 'string' || value.trim() === '') {
+        issues.push(`${at} 缺少粵拼 cantonese（Issue #1 要求每筆必有）`);
+        continue;
+      }
+      withCantonese += 1;
+      if (/\s{2,}|^\s|\s$/.test(value)) {
+        issues.push(`${at} 粵拼音節之間只可以有一個空格：${value}`);
+      }
+      const syllables = value.trim().split(/\s+/);
+      if (syllables.length !== 4) {
+        issues.push(`${at} 粵拼應有 4 個音節，實際 ${syllables.length} 個：${value}`);
+        continue;
+      }
+      for (const syllable of syllables) {
+        if (!/^[a-z]+[1-6]$/.test(syllable)) {
+          issues.push(`${at} 粵拼音節「${syllable}」格式唔啱（要求 ^[a-z]+[1-6]$）：${value}`);
+        }
+      }
+    }
+    expect(issues, issues.slice(0, 12).join('\n')).toEqual([]);
+    // 統計：全部成語都要有粵拼（定稿 488/488）
+    expect(withCantonese, `粵拼覆蓋 ${withCantonese}/${idioms.length} 條`).toBe(idioms.length);
+    expect(withCantonese).toBeGreaterThanOrEqual(488);
   });
 
   it('meaning 15–60 漢字、origin 15–90 漢字', () => {

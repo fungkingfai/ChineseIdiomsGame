@@ -113,6 +113,20 @@ export function nextFrame(callback: () => void): void {
 }
 
 /**
+ * 粵拼搜尋正規化：去聲調數字（1–6）、去所有空白、lowercase，
+ * 令「jat1 nok6」「jat nok」「jat1nok6」都對得上。
+ */
+export function normalizeJyutping(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[1-6]/g, '')
+    .replace(/\s+/g, '')
+    .trim();
+}
+
+/**
  * 搜尋用正規化：去除拼音聲調（NFD 拆字 → 去 combining marks）、
  * 全形空白收窄、lowercase。玩家打「yu gong」都搵到「yú gōng」。
  */

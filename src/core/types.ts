@@ -13,6 +13,8 @@ export interface Idiom {
   word: string;
   /** 漢語拼音（帶聲調，音節以空格分隔），例如 rì xíng qiān lǐ */
   pinyin: string;
+  /** 粵拼（香港語言學學會 Jyutping，帶聲調數字），音節以空格分隔，例如 jat1 nok6 cin1 gam1 */
+  cantonese: string;
   /** 釋義（繁體中文，15–60 字，適合小學生至中學生理解） */
   meaning: string;
   /** 出處說明（原文書名＋簡述，15–90 字） */

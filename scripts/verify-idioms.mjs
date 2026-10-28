@@ -11,10 +11,11 @@
  *   2. 每筆必需欄位、id/word 唯一、id 與拼音一致
  *   3. word 正好 4 個繁體漢字（黑名單擋簡體字）
  *   4. pinyin 4 個音節、每節有且只有一個聲調符號
- *   5. meaning / origin 的漢字數（15–60 / 15–90）
- *   6. sourceBook 格式《…》、tier 1–5、tags 1–3 個
- *   7. 總數、tier 分佈
- *   8. 接龍連通性：可接龍成語數、接龍鏈數、常用連接字覆蓋
+ *   5. cantonese（粵拼）每筆都要有、4 個音節、每個音節符合 ^[a-z]+[1-6]$
+ *   6. meaning / origin 的漢字數（15–60 / 15–90）
+ *   7. sourceBook 格式《…》、tier 1–5、tags 1–3 個
+ *   8. 總數、tier 分佈
+ *   9. 接龍連通性：可接龍成語數、接龍鏈數、常用連接字覆蓋
  *
  * 全部通過 → exit 0；任何錯誤 → 列出後 exit 1。
  */
@@ -29,6 +30,7 @@ const DATA_PATH = resolve(ROOT, 'src/data/idioms.json');
 const MIN_TOTAL = Number(process.env.IDIOM_MIN_TOTAL ?? 420);
 const MIN_TIER = { 1: 70, 2: 100, 3: 100, 4: 80, 5: 50 };
 const MIN_CHAINED = 150; // 尾字＝另一成語首字的成語數下限
+const CANTONESE_SYLLABLE = /^[a-z]+[1-6]$/;
 const MEANING_MIN = 15;
 const MEANING_MAX = 60;
 const ORIGIN_MIN = 15;
@@ -100,7 +102,8 @@ const hanBase = (syllable) =>
 const idSeen = new Map();
 const wordSeen = new Map();
 const tiers = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-const REQUIRED_FIELDS = ['id', 'word', 'pinyin', 'meaning', 'origin', 'sourceBook', 'tier', 'tags'];
+const REQUIRED_FIELDS = ['id', 'word', 'pinyin', 'cantonese', 'meaning', 'origin', 'sourceBook', 'tier', 'tags'];
+let cantoneseCount = 0;
 const byChar = new Map(); // 字 → { heads: [idiom], tails: [idiom] }
 
 idioms.forEach((item, index) => {
@@ -170,6 +173,24 @@ idioms.forEach((item, index) => {
     if (/[\s]{2,}|^\s|\s$/.test(item.pinyin)) fail(`${at}：pinyin 音節之間只可以有一個空格`);
   }
 
+  // cantonese（粵拼，香港語言學學會 Jyutping，帶聲調數字）
+  if (typeof item.cantonese !== 'string' || item.cantonese.trim() === '') {
+    fail(`${at}：cantonese 必須是非空字串（粵拼，例 jat1 nok6 cin1 gam1）`);
+  } else {
+    const wordLength = typeof item.word === 'string' ? Array.from(item.word).length : 4;
+    const syllables = item.cantonese.trim().split(/\s+/);
+    if (syllables.length !== wordLength) {
+      fail(`${at}：cantonese 必須有 ${wordLength} 個音節（對應 word 字數），實際 ${syllables.length}：${item.cantonese}`);
+    }
+    for (const syllable of syllables) {
+      if (!CANTONESE_SYLLABLE.test(syllable)) {
+        fail(`${at}：粵拼音節「${syllable}」格式錯誤（應為小寫字母＋1–6 聲調，例 jat1）：${item.cantonese}`);
+      }
+    }
+    if (/\s{2,}|^\s|\s$/.test(item.cantonese)) fail(`${at}：cantonese 音節之間只可以有一個空格`);
+    if (syllables.length === wordLength && syllables.every((syllable) => CANTONESE_SYLLABLE.test(syllable))) cantoneseCount += 1;
+  }
+
   // meaning / origin
   if (typeof item.meaning !== 'string') fail(`${at}：meaning 必須是字串`);
   else {
@@ -221,6 +242,7 @@ idioms.forEach((item, index) => {
 
 // ---- 總數與 tier 分佈 ----
 if (idioms.length < MIN_TOTAL) fail(`成語總數 ${idioms.length} 少於下限 ${MIN_TOTAL}`);
+if (cantoneseCount !== idioms.length) fail(`粵拼覆蓋不足：${cantoneseCount}/${idioms.length} 條（每筆都必須有合法粵拼）`);
 for (const tier of [1, 2, 3, 4, 5]) {
   if (tiers[tier] < MIN_TIER[tier]) fail(`tier ${tier} 只有 ${tiers[tier]} 筆，少於下限 ${MIN_TIER[tier]}`);
 }
@@ -285,6 +307,7 @@ console.log(`資料檔：src/data/idioms.json`);
 console.log(`成語總數：${idioms.length} 筆（下限 ${MIN_TOTAL}）`);
 console.log(`tier 分佈：${[1, 2, 3, 4, 5].map((t) => `tier${t} ${tiers[t]}/${MIN_TIER[t]}`).join('、')}`);
 console.log(`id／word 唯一：${idSeen.size} 個 id、${wordSeen.size} 個成語`);
+console.log(`粵拼（cantonese）：${cantoneseCount}/${idioms.length} 條（4 音節、帶聲調數字）`);
 line();
 console.log(`接龍統計：${chainedCount} 筆可接龍（下限 ${MIN_CHAINED}）、${linkCount} 條接龍鏈接`);
 console.log(`參與接龍的成語：${participants.size} 筆；最長接龍（估算）：${longestChain} 步`);

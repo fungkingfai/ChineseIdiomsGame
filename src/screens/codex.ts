@@ -4,8 +4,9 @@ import type { AppContext } from '../core/context';
 import type { Idiom } from '../core/types';
 import { navigate, ROUTE_HOME } from '../router';
 import { catSVG } from '../cats/catAssets';
-import { esc, fromHtml, normalizeSearch, qs, qsa } from '../ui/dom';
+import { esc, fromHtml, normalizeJyutping, normalizeSearch, qs, qsa } from '../ui/dom';
 import { icon } from '../ui/icons';
+import { jyutpingOf } from '../ui/idiomCard';
 import { openOverlay, type OverlayHandle } from '../ui/modal';
 import { playSfx } from '../ui/prefs';
 import { progressHtml } from '../ui/progress';
@@ -28,6 +29,7 @@ function tierDots(tier: number): string {
 function cardHtml(idiom: Idiom, isCollected: boolean): string {
   const tags = idiom.tags ?? [];
   const firstTag = tags.length > 0 ? tags[0] : '';
+  const jyutping = jyutpingOf(idiom);
   return `
     <button type="button" class="codex-card${isCollected ? '' : ' codex-card--locked'}" data-testid="codex-item-${
       idiom.id
@@ -36,6 +38,13 @@ function cardHtml(idiom: Idiom, isCollected: boolean): string {
     }">
       <span class="codex-card__word">${isCollected ? esc(idiom.word) : '？？？？'}</span>
       <span class="codex-card__pinyin">${isCollected ? esc(idiom.pinyin) : '未解鎖'}</span>
+      ${
+        isCollected && jyutping
+          ? `<span class="codex-card__jyut" aria-label="粵拼：${esc(jyutping)}"><span class="pron-badge pron-badge--jyut pron-badge--tiny" aria-hidden="true">粵</span>${esc(
+              jyutping,
+            )}</span>`
+          : ''
+      }
       ${
         isCollected
           ? `<span class="codex-card__meaning">${esc(idiom.meaning)}</span>`
@@ -53,12 +62,24 @@ function detailHtml(idiom: Idiom): string {
   const tags = (idiom.tags ?? [])
     .map((tag) => `<span class="idiom-card__tag">${esc(tag)}</span>`)
     .join('');
+  const jyutping = jyutpingOf(idiom);
   return `
     <div class="codex-detail">
       <div class="codex-detail__head">
         <div>
           <div class="codex-detail__word">${esc(idiom.word)}</div>
-          <div class="codex-detail__pinyin">${esc(idiom.pinyin)}</div>
+          <div class="codex-detail__pron">
+            <div class="codex-detail__pinyin" aria-label="普通話拼音：${esc(idiom.pinyin)}">
+              <span class="pron-badge" aria-hidden="true">普</span>${esc(idiom.pinyin)}
+            </div>
+            ${
+              jyutping
+                ? `<div class="codex-detail__pinyin codex-detail__pinyin--jyut" data-testid="codex-detail-jyutping" aria-label="粵拼：${esc(jyutping)}">
+              <span class="pron-badge pron-badge--jyut" aria-hidden="true">粵</span>${esc(jyutping)}
+            </div>`
+                : ''
+            }
+          </div>
         </div>
         <span class="codex-detail__stamp">${icon.paw} 已收集</span>
       </div>
@@ -110,7 +131,7 @@ export function createCodexScreen(ctx: AppContext): Screen {
       <div class="codex__toolbar">
         <div class="codex__search">
           <span class="codex__search-icon" aria-hidden="true">${icon.search}</span>
-          <input type="search" data-testid="codex-search" placeholder="搵成語、拼音（唔使聲調）或意思……" aria-label="搜尋成語" autocomplete="off" />
+          <input type="search" data-testid="codex-search" placeholder="搵成語、拼音／粵拼或意思……" aria-label="搜尋成語（中文、普通話拼音或粵拼，聲調可省略）" autocomplete="off" />
           <button type="button" class="codex__clear" data-clear hidden aria-label="清除搜尋">
             ${icon.close}
           </button>
@@ -154,10 +175,18 @@ export function createCodexScreen(ctx: AppContext): Screen {
     if (filter === 'locked' && isCollected) return false;
     const normalized = normalizeSearch(query);
     if (!normalized) return true;
+    const jyutping = jyutpingOf(idiom);
     const haystack = isCollected
-      ? `${idiom.word} ${idiom.pinyin} ${idiom.meaning} ${(idiom.tags ?? []).join(' ')}`
-      : `${idiom.word} ${idiom.pinyin}`;
-    return normalizeSearch(haystack).includes(normalized);
+      ? `${idiom.word} ${idiom.pinyin} ${jyutping} ${idiom.meaning} ${(idiom.tags ?? []).join(' ')}`
+      : `${idiom.word} ${idiom.pinyin} ${jyutping}`;
+    if (normalizeSearch(haystack).includes(normalized)) return true;
+
+    // 粵拼：聲調數字可有可無（「jat1 nok6」「jat nok」「jat1nok6」都中）
+    const queryJyut = normalizeJyutping(query);
+    if (jyutping && /[a-z]/.test(queryJyut) && queryJyut.length >= 2) {
+      return normalizeJyutping(jyutping).includes(queryJyut);
+    }
+    return false;
   }
 
   function renderEmpty(): void {
