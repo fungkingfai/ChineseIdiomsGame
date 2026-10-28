@@ -3,8 +3,398 @@
     "id": 1,
     "chapter": 1,
     "mode": "fill",
-    "title": "第一課：畫中有話",
-    "story": "糰子第一次踏進櫻花小徑，發現石板路上刻着發光的成語，店長阿墨笑着說：「想學成語，先由填字開始喵。」",
+    "title": "第 1 課：花下尋字",
+    "story": "櫻花樹下，阿墨用尾巴掃開落花，露出刻字的石板。糰子發現有幾個位置空着，正等人補上喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "風" },
+      { "r": 0, "c": 1, "char": "花" },
+      { "r": 0, "c": 2, "char": "雪" },
+      { "r": 0, "c": 3, "char": "月" },
+      { "r": 1, "c": 2, "char": "中" },
+      { "r": 2, "c": 2, "char": "送" },
+      { "r": 3, "c": 2, "char": "炭" }
+    ],
+    "slots": [
+      { "idiomId": "xue-zhong-song-tan", "row": 0, "col": 2, "dir": "v", "blanks": [1] },
+      { "idiomId": "feng-hua-xue-yue", "row": 0, "col": 0, "dir": "h", "blanks": [3] }
+    ],
+    "bank": ["中", "月"],
+    "hintLimit": 3
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 2 課：春風識字",
+    "story": "櫻花樹下，阿墨用尾巴掃開落花，露出刻字的石板。糰子發現有幾個位置空着，正等人補上喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "溫" },
+      { "r": 0, "c": 1, "char": "故" },
+      { "r": 0, "c": 2, "char": "知" },
+      { "r": 0, "c": 3, "char": "新" },
+      { "r": 1, "c": 2, "char": "己" },
+      { "r": 2, "c": 2, "char": "知" },
+      { "r": 3, "c": 2, "char": "彼" }
+    ],
+    "slots": [
+      { "idiomId": "wen-gu-zhi-xin", "row": 0, "col": 0, "dir": "h", "blanks": [0] },
+      { "idiomId": "zhi-ji-zhi-bi", "row": 0, "col": 2, "dir": "v", "blanks": [3] }
+    ],
+    "bank": ["溫", "彼"],
+    "hintLimit": 3
+  },
+  {
+    "id": 3,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 3 課：櫻語初開",
+    "story": "阿墨把字卡撒在草地上，笑說：「填字好似拼花，一筆一畫都要對位。」糰子已經伸出貓爪。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "守" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "如" },
+      { "r": 0, "c": 3, "char": "瓶" },
+      { "r": 1, "c": 0, "char": "株" },
+      { "r": 2, "c": 0, "char": "待" },
+      { "r": 3, "c": 0, "char": "兔" }
+    ],
+    "slots": [
+      { "idiomId": "shou-zhu-dai-tu", "row": 0, "col": 0, "dir": "v", "blanks": [3] },
+      { "idiomId": "shou-kou-ru-ping", "row": 0, "col": 0, "dir": "h", "blanks": [1] }
+    ],
+    "bank": ["兔", "口"],
+    "hintLimit": 3
+  },
+  {
+    "id": 4,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 4 課：石徑藏書",
+    "story": "春風吹過小徑，花瓣在石板上排成奇怪的形狀。糰子歪着頭問：「呢啲空缺，要填咩字先啱呀？」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "火" },
+      { "r": 1, "c": 2, "char": "樹" },
+      { "r": 2, "c": 2, "char": "銀" },
+      { "r": 3, "c": 0, "char": "春" },
+      { "r": 3, "c": 1, "char": "暖" },
+      { "r": 3, "c": 2, "char": "花" },
+      { "r": 3, "c": 3, "char": "開" }
+    ],
+    "slots": [
+      { "idiomId": "chun-nuan-hua-kai", "row": 3, "col": 0, "dir": "h", "blanks": [3] },
+      { "idiomId": "huo-shu-yin-hua", "row": 0, "col": 2, "dir": "v", "blanks": [2] }
+    ],
+    "bank": ["開", "銀"],
+    "hintLimit": 3
+  },
+  {
+    "id": 5,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 5 課：貓爪點墨",
+    "story": "春風吹過小徑，花瓣在石板上排成奇怪的形狀。糰子歪着頭問：「呢啲空缺，要填咩字先啱呀？」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "驚" },
+      { "r": 1, "c": 2, "char": "天" },
+      { "r": 2, "c": 2, "char": "動" },
+      { "r": 3, "c": 0, "char": "天" },
+      { "r": 3, "c": 1, "char": "羅" },
+      { "r": 3, "c": 2, "char": "地" },
+      { "r": 3, "c": 3, "char": "網" }
+    ],
+    "slots": [
+      { "idiomId": "jing-tian-dong-di", "row": 0, "col": 2, "dir": "v", "blanks": [1] },
+      { "idiomId": "tian-luo-di-wang", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1] }
+    ],
+    "bank": ["天", "天", "羅"],
+    "hintLimit": 3
+  },
+  {
+    "id": 6,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 6 課：花瓣拼字",
+    "story": "櫻花樹下，阿墨用尾巴掃開落花，露出刻字的石板。糰子發現有幾個位置空着，正等人補上喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "五" },
+      { "r": 1, "c": 0, "char": "湖" },
+      { "r": 2, "c": 0, "char": "四" },
+      { "r": 2, "c": 1, "char": "面" },
+      { "r": 2, "c": 2, "char": "楚" },
+      { "r": 2, "c": 3, "char": "歌" },
+      { "r": 3, "c": 0, "char": "海" }
+    ],
+    "slots": [
+      { "idiomId": "wu-hu-si-hai", "row": 0, "col": 0, "dir": "v", "blanks": [0, 1] },
+      { "idiomId": "si-mian-chu-ge", "row": 2, "col": 0, "dir": "h", "blanks": [1] }
+    ],
+    "bank": ["五", "面", "湖"],
+    "hintLimit": 3
+  },
+  {
+    "id": 7,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 7 課：樹下聽課",
+    "story": "春風吹過小徑，花瓣在石板上排成奇怪的形狀。糰子歪着頭問：「呢啲空缺，要填咩字先啱呀？」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "破" },
+      { "r": 1, "c": 1, "char": "釜" },
+      { "r": 2, "c": 1, "char": "沉" },
+      { "r": 3, "c": 0, "char": "刻" },
+      { "r": 3, "c": 1, "char": "舟" },
+      { "r": 3, "c": 2, "char": "求" },
+      { "r": 3, "c": 3, "char": "劍" }
+    ],
+    "slots": [
+      { "idiomId": "ke-zhou-qiu-jian", "row": 3, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "po-fu-chen-zhou", "row": 0, "col": 1, "dir": "v", "blanks": [0, 1] }
+    ],
+    "bank": ["求", "破", "釜"],
+    "hintLimit": 3
+  },
+  {
+    "id": 8,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 8 課：粉櫻書聲",
+    "story": "阿墨把字卡撒在草地上，笑說：「填字好似拼花，一筆一畫都要對位。」糰子已經伸出貓爪。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "目" },
+      { "r": 0, "c": 1, "char": "中" },
+      { "r": 0, "c": 2, "char": "無" },
+      { "r": 0, "c": 3, "char": "人" },
+      { "r": 1, "c": 0, "char": "瞪" },
+      { "r": 2, "c": 0, "char": "口" },
+      { "r": 3, "c": 0, "char": "呆" }
+    ],
+    "slots": [
+      { "idiomId": "mu-deng-kou-dai", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2] },
+      { "idiomId": "mu-zhong-wu-ren", "row": 0, "col": 0, "dir": "h", "blanks": [3] }
+    ],
+    "bank": ["瞪", "人", "口"],
+    "hintLimit": 3
+  },
+  {
+    "id": 9,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 9 課：庭前對句",
+    "story": "阿墨把字卡撒在草地上，笑說：「填字好似拼花，一筆一畫都要對位。」糰子已經伸出貓爪。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "興" },
+      { "r": 0, "c": 1, "char": "高" },
+      { "r": 0, "c": 2, "char": "采" },
+      { "r": 0, "c": 3, "char": "烈" },
+      { "r": 1, "c": 1, "char": "枕" },
+      { "r": 2, "c": 1, "char": "無" },
+      { "r": 3, "c": 1, "char": "憂" }
+    ],
+    "slots": [
+      { "idiomId": "xing-gao-cai-lie", "row": 0, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "gao-zhen-wu-you", "row": 0, "col": 1, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["憂", "采", "枕"],
+    "hintLimit": 3
+  },
+  {
+    "id": 10,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第 10 課：小徑通文",
+    "story": "櫻花小徑盡頭立着一塊大石碑，阿墨說這是第一章最後的考驗。糰子深吸一口氣，把學過的字都想了出來喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "五" },
+      { "r": 1, "c": 3, "char": "光" },
+      { "r": 2, "c": 3, "char": "十" },
+      { "r": 3, "c": 0, "char": "五" },
+      { "r": 3, "c": 1, "char": "顏" },
+      { "r": 3, "c": 2, "char": "六" },
+      { "r": 3, "c": 3, "char": "色" }
+    ],
+    "slots": [
+      { "idiomId": "wu-yan-liu-se", "row": 3, "col": 0, "dir": "h", "blanks": [1] },
+      { "idiomId": "wu-guang-shi-se", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1] }
+    ],
+    "bank": ["五", "光", "顏"],
+    "hintLimit": 3
+  },
+  {
+    "id": 11,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 1 課：竹影排字",
+    "story": "阿墨撥開竹枝，指着地面：「呢度每塊石都藏住一句成語，填啱晒先過得去喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "捨" },
+      { "r": 0, "c": 1, "char": "生" },
+      { "r": 0, "c": 2, "char": "取" },
+      { "r": 0, "c": 3, "char": "義" },
+      { "r": 1, "c": 1, "char": "龍" },
+      { "r": 2, "c": 1, "char": "活" },
+      { "r": 3, "c": 1, "char": "虎" }
+    ],
+    "slots": [
+      { "idiomId": "sheng-long-huo-hu", "row": 0, "col": 1, "dir": "v", "blanks": [1, 2] },
+      { "idiomId": "she-sheng-qu-yi", "row": 0, "col": 0, "dir": "h", "blanks": [3] }
+    ],
+    "bank": ["龍", "義", "天", "活"],
+    "hintLimit": 3
+  },
+  {
+    "id": 12,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 2 課：風過竹林",
+    "story": "竹林迷宮裏，竹葉沙沙作響，石筍上浮現一行行缺字的句子。糰子要靜下心，逐個字補回去。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "應" },
+      { "r": 0, "c": 1, "char": "有" },
+      { "r": 0, "c": 2, "char": "盡" },
+      { "r": 0, "c": 3, "char": "有" },
+      { "r": 1, "c": 1, "char": "聲" },
+      { "r": 2, "c": 1, "char": "有" },
+      { "r": 3, "c": 1, "char": "色" }
+    ],
+    "slots": [
+      { "idiomId": "ying-you-jin-you", "row": 0, "col": 0, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "you-sheng-you-se", "row": 0, "col": 1, "dir": "v", "blanks": [3] }
+    ],
+    "bank": ["睛", "色", "有", "應"],
+    "hintLimit": 3
+  },
+  {
+    "id": 13,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 3 課：迷宮聽風",
+    "story": "竹林迷宮裏，竹葉沙沙作響，石筍上浮現一行行缺字的句子。糰子要靜下心，逐個字補回去。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "誨" },
+      { "r": 1, "c": 1, "char": "人" },
+      { "r": 2, "c": 0, "char": "馬" },
+      { "r": 2, "c": 1, "char": "不" },
+      { "r": 2, "c": 2, "char": "停" },
+      { "r": 2, "c": 3, "char": "蹄" },
+      { "r": 3, "c": 1, "char": "倦" }
+    ],
+    "slots": [
+      { "idiomId": "ma-bu-ting-ti", "row": 2, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "hui-ren-bu-juan", "row": 0, "col": 1, "dir": "v", "blanks": [0, 3] }
+    ],
+    "bank": ["倦", "於", "誨", "停"],
+    "hintLimit": 3
+  },
+  {
+    "id": 14,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 4 課：竹節接龍",
+    "story": "陽光穿過竹葉灑成點點光斑，糰子追着光點跑，差點忘了手上還有字卡。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "愛" },
+      { "r": 1, "c": 0, "char": "不" },
+      { "r": 1, "c": 1, "char": "學" },
+      { "r": 1, "c": 2, "char": "無" },
+      { "r": 1, "c": 3, "char": "術" },
+      { "r": 2, "c": 0, "char": "釋" },
+      { "r": 3, "c": 0, "char": "手" }
+    ],
+    "slots": [
+      { "idiomId": "ai-bu-shi-shou", "row": 0, "col": 0, "dir": "v", "blanks": [0, 2] },
+      { "idiomId": "bu-xue-wu-shu", "row": 1, "col": 0, "dir": "h", "blanks": [3] }
+    ],
+    "bank": ["術", "釋", "來", "愛"],
+    "hintLimit": 3
+  },
+  {
+    "id": 15,
+    "chapter": 2,
+    "mode": "chain",
+    "title": "第 5 課：青竹點頭",
+    "story": "糰子把字卡排在竹葉上，一條接一條，總算看見出口的亮光。",
+    "rows": 3,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "夜" },
+      { "r": 0, "c": 1, "char": "郎" },
+      { "r": 0, "c": 2, "char": "自" },
+      { "r": 0, "c": 3, "char": "大" },
+      { "r": 1, "c": 0, "char": "大" },
+      { "r": 1, "c": 1, "char": "快" },
+      { "r": 1, "c": 2, "char": "人" },
+      { "r": 1, "c": 3, "char": "心" },
+      { "r": 2, "c": 0, "char": "心" },
+      { "r": 2, "c": 1, "char": "曠" },
+      { "r": 2, "c": 2, "char": "神" },
+      { "r": 2, "c": 3, "char": "怡" }
+    ],
+    "slots": [
+      { "idiomId": "ye-lang-zi-da", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "da-kuai-ren-xin", "row": 1, "col": 0, "dir": "h", "blanks": [1] },
+      { "idiomId": "xin-kuang-shen-yi", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["神", "而", "快", "曠", "怡"],
+    "hintLimit": 3
+  },
+  {
+    "id": 16,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 6 課：筍尖露字",
+    "story": "竹林迷宮裏，竹葉沙沙作響，石筍上浮現一行行缺字的句子。糰子要靜下心，逐個字補回去。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "人" },
+      { "r": 1, "c": 0, "char": "山" },
+      { "r": 2, "c": 0, "char": "人" },
+      { "r": 2, "c": 1, "char": "傑" },
+      { "r": 2, "c": 2, "char": "地" },
+      { "r": 2, "c": 3, "char": "靈" },
+      { "r": 3, "c": 0, "char": "海" }
+    ],
+    "slots": [
+      { "idiomId": "ren-shan-ren-hai", "row": 0, "col": 0, "dir": "v", "blanks": [0] },
+      { "idiomId": "ren-jie-di-ling", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] }
+    ],
+    "bank": ["地", "人", "傑", "咻"],
+    "hintLimit": 3
+  },
+  {
+    "id": 17,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 7 課：竹林深處",
+    "story": "阿墨撥開竹枝，指着地面：「呢度每塊石都藏住一句成語，填啱晒先過得去喵。」",
     "rows": 4,
     "cols": 4,
     "cells": [
@@ -12,29 +402,2034 @@
       { "r": 0, "c": 1, "char": "蛇" },
       { "r": 0, "c": 2, "char": "添" },
       { "r": 0, "c": 3, "char": "足" },
-      { "r": 1, "c": 0, "char": "龍" },
-      { "r": 2, "c": 0, "char": "點" },
-      { "r": 3, "c": 0, "char": "睛" }
+      { "r": 1, "c": 3, "char": "不" },
+      { "r": 2, "c": 3, "char": "出" },
+      { "r": 3, "c": 3, "char": "戶" }
     ],
     "slots": [
-      { "idiomId": "hua-she-tian-zu", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
-      { "idiomId": "hua-long-dian-jing", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2, 3] }
+      { "idiomId": "hua-she-tian-zu", "row": 0, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "zu-bu-chu-hu", "row": 0, "col": 3, "dir": "v", "blanks": [2] }
     ],
-    "bank": ["蛇", "添", "足", "龍", "點", "睛"],
+    "bank": ["畫", "出", "備", "添"],
     "hintLimit": 3
   },
   {
-    "id": 2,
-    "chapter": 1,
-    "mode": "chain",
-    "title": "第二課：一諾千金",
-    "story": "石板上的字串成一條發光小路，糰子要沿着「接龍」把成語一環一環接起來。",
-    "rows": 3,
+    "id": 18,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 8 課：葉響成句",
+    "story": "阿墨撥開竹枝，指着地面：「呢度每塊石都藏住一句成語，填啱晒先過得去喵。」",
+    "rows": 4,
     "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "自" },
+      { "r": 0, "c": 1, "char": "強" },
+      { "r": 0, "c": 2, "char": "不" },
+      { "r": 0, "c": 3, "char": "息" },
+      { "r": 1, "c": 2, "char": "遠" },
+      { "r": 2, "c": 2, "char": "千" },
+      { "r": 3, "c": 2, "char": "里" }
+    ],
+    "slots": [
+      { "idiomId": "zi-qiang-bu-xi", "row": 0, "col": 0, "dir": "h", "blanks": [3] },
+      { "idiomId": "bu-yuan-qian-li", "row": 0, "col": 2, "dir": "v", "blanks": [2, 3] }
+    ],
+    "bank": ["里", "隔", "息", "千"],
+    "hintLimit": 3
+  },
+  {
+    "id": 19,
+    "chapter": 2,
+    "mode": "fill",
+    "title": "第 9 課：竹籬尋章",
+    "story": "陽光穿過竹葉灑成點點光斑，糰子追着光點跑，差點忘了手上還有字卡。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "鵬" },
+      { "r": 1, "c": 2, "char": "程" },
+      { "r": 2, "c": 0, "char": "千" },
+      { "r": 2, "c": 1, "char": "變" },
+      { "r": 2, "c": 2, "char": "萬" },
+      { "r": 2, "c": 3, "char": "化" },
+      { "r": 3, "c": 2, "char": "里" }
+    ],
+    "slots": [
+      { "idiomId": "qian-bian-wan-hua", "row": 2, "col": 0, "dir": "h", "blanks": [1] },
+      { "idiomId": "peng-cheng-wan-li", "row": 0, "col": 2, "dir": "v", "blanks": [0, 1] }
+    ],
+    "bank": ["鵬", "夕", "變", "程"],
+    "hintLimit": 3
+  },
+  {
+    "id": 20,
+    "chapter": 2,
+    "mode": "chain",
+    "title": "第 10 課：迷宮出口",
+    "story": "竹林迷宮最深處，竹節排成一道大門，門上滿是缺字。過了這關，就能走出迷宮喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "水" },
+      { "r": 0, "c": 1, "char": "漲" },
+      { "r": 0, "c": 2, "char": "船" },
+      { "r": 0, "c": 3, "char": "高" },
+      { "r": 1, "c": 0, "char": "高" },
+      { "r": 1, "c": 1, "char": "山" },
+      { "r": 1, "c": 2, "char": "流" },
+      { "r": 1, "c": 3, "char": "水" },
+      { "r": 2, "c": 0, "char": "水" },
+      { "r": 2, "c": 1, "char": "落" },
+      { "r": 2, "c": 2, "char": "石" },
+      { "r": 2, "c": 3, "char": "出" },
+      { "r": 3, "c": 0, "char": "出" },
+      { "r": 3, "c": 1, "char": "類" },
+      { "r": 3, "c": 2, "char": "拔" },
+      { "r": 3, "c": 3, "char": "萃" }
+    ],
+    "slots": [
+      { "idiomId": "shui-zhang-chuan-gao", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "gao-shan-liu-shui", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-luo-shi-chu", "row": 2, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "chu-lei-ba-cui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["山", "拾", "拔", "萃", "石", "流", "類"],
+    "hintLimit": 3
+  },
+  {
+    "id": 21,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 1 課：月下翻書",
+    "story": "月下書齋，古籍自動翻頁，書頁間浮起點點靈光。糰子趴在桌邊，替阿墨補上缺去的字。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "後" },
+      { "r": 1, "c": 1, "char": "來" },
+      { "r": 2, "c": 1, "char": "居" },
+      { "r": 3, "c": 0, "char": "七" },
+      { "r": 3, "c": 1, "char": "上" },
+      { "r": 3, "c": 2, "char": "八" },
+      { "r": 3, "c": 3, "char": "下" }
+    ],
+    "slots": [
+      { "idiomId": "qi-shang-ba-xia", "row": 3, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "hou-lai-ju-shang", "row": 0, "col": 1, "dir": "v", "blanks": [0, 1] }
+    ],
+    "bank": ["身", "八", "後", "來"],
+    "hintLimit": 3
+  },
+  {
+    "id": 22,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 2 課：銀漢無聲",
+    "story": "月光把硯台照成銀色，阿墨執筆輕點：「字要放啱位，句先會通順喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "心" },
+      { "r": 0, "c": 1, "char": "平" },
+      { "r": 0, "c": 2, "char": "氣" },
+      { "r": 0, "c": 3, "char": "和" },
+      { "r": 1, "c": 0, "char": "照" },
+      { "r": 2, "c": 0, "char": "不" },
+      { "r": 3, "c": 0, "char": "宣" }
+    ],
+    "slots": [
+      { "idiomId": "xin-ping-qi-he", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "xin-zhao-bu-xuan", "row": 0, "col": 0, "dir": "v", "blanks": [2] }
+    ],
+    "bank": ["氣", "平", "不", "書"],
+    "hintLimit": 3
+  },
+  {
+    "id": 23,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 3 課：書齋夜讀",
+    "story": "窗外蟲鳴陣陣，糰子打了個呵欠，又被書頁上的亮字吸引住。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "滄" },
+      { "r": 1, "c": 0, "char": "海" },
+      { "r": 2, "c": 0, "char": "一" },
+      { "r": 2, "c": 1, "char": "葉" },
+      { "r": 2, "c": 2, "char": "知" },
+      { "r": 2, "c": 3, "char": "秋" },
+      { "r": 3, "c": 0, "char": "粟" }
+    ],
+    "slots": [
+      { "idiomId": "yi-ye-zhi-qiu", "row": 2, "col": 0, "dir": "h", "blanks": [1] },
+      { "idiomId": "cang-hai-yi-su", "row": 0, "col": 0, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["葉", "海", "粟", "廢"],
+    "hintLimit": 3
+  },
+  {
+    "id": 24,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 4 課：月照靈珠",
+    "story": "月光把硯台照成銀色，阿墨執筆輕點：「字要放啱位，句先會通順喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "坐" },
+      { "r": 1, "c": 3, "char": "井" },
+      { "r": 2, "c": 3, "char": "觀" },
+      { "r": 3, "c": 0, "char": "人" },
+      { "r": 3, "c": 1, "char": "定" },
+      { "r": 3, "c": 2, "char": "勝" },
+      { "r": 3, "c": 3, "char": "天" }
+    ],
+    "slots": [
+      { "idiomId": "zuo-jing-guan-tian", "row": 0, "col": 3, "dir": "v", "blanks": [0] },
+      { "idiomId": "ren-ding-sheng-tian", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2] }
+    ],
+    "bank": ["坐", "勝", "櫪", "人"],
+    "hintLimit": 3
+  },
+  {
+    "id": 25,
+    "chapter": 3,
+    "mode": "chain",
+    "title": "第 5 課：墨香伴月",
+    "story": "阿墨翻開古卷，靈珠的光沿着文字流動：一句接一句，光芒就越來越盛。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "虎" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "餘" },
+      { "r": 0, "c": 3, "char": "生" },
+      { "r": 1, "c": 0, "char": "生" },
+      { "r": 1, "c": 1, "char": "龍" },
+      { "r": 1, "c": 2, "char": "活" },
+      { "r": 1, "c": 3, "char": "虎" },
+      { "r": 2, "c": 0, "char": "虎" },
+      { "r": 2, "c": 1, "char": "頭" },
+      { "r": 2, "c": 2, "char": "蛇" },
+      { "r": 2, "c": 3, "char": "尾" },
+      { "r": 3, "c": 0, "char": "尾" },
+      { "r": 3, "c": 1, "char": "大" },
+      { "r": 3, "c": 2, "char": "不" },
+      { "r": 3, "c": 3, "char": "掉" }
+    ],
+    "slots": [
+      { "idiomId": "hu-kou-yu-sheng", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "sheng-long-huo-hu", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "hu-tou-she-wei", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "wei-da-bu-diao", "row": 3, "col": 0, "dir": "h", "blanks": [1, 3] }
+    ],
+    "bank": ["龍", "蛇", "掉", "頭", "活", "大", "親"],
+    "hintLimit": 3
+  },
+  {
+    "id": 26,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 6 課：窗前一課",
+    "story": "月光把硯台照成銀色，阿墨執筆輕點：「字要放啱位，句先會通順喵。」",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 2, "char": "應" },
+      { "r": 1, "c": 2, "char": "有" },
+      { "r": 1, "c": 3, "char": "條" },
+      { "r": 1, "c": 4, "char": "不" },
+      { "r": 1, "c": 5, "char": "紊" },
+      { "r": 2, "c": 2, "char": "盡" },
+      { "r": 3, "c": 0, "char": "有" },
+      { "r": 3, "c": 1, "char": "始" },
+      { "r": 3, "c": 2, "char": "有" },
+      { "r": 3, "c": 3, "char": "終" }
+    ],
+    "slots": [
+      { "idiomId": "you-shi-you-zhong", "row": 3, "col": 0, "dir": "h", "blanks": [1] },
+      { "idiomId": "ying-you-jin-you", "row": 0, "col": 2, "dir": "v", "blanks": [0] },
+      { "idiomId": "you-tiao-bu-wen", "row": 1, "col": 2, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["不", "紊", "始", "囊", "應", "條"],
+    "hintLimit": 3
+  },
+  {
+    "id": 27,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 7 課：月華解字",
+    "story": "月光把硯台照成銀色，阿墨執筆輕點：「字要放啱位，句先會通順喵。」",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 3, "char": "秀" },
+      { "r": 1, "c": 2, "char": "世" },
+      { "r": 1, "c": 3, "char": "外" },
+      { "r": 1, "c": 4, "char": "桃" },
+      { "r": 1, "c": 5, "char": "源" },
+      { "r": 2, "c": 3, "char": "慧" },
+      { "r": 3, "c": 0, "char": "樂" },
+      { "r": 3, "c": 1, "char": "在" },
+      { "r": 3, "c": 2, "char": "其" },
+      { "r": 3, "c": 3, "char": "中" }
+    ],
+    "slots": [
+      { "idiomId": "shi-wai-tao-yuan", "row": 1, "col": 2, "dir": "h", "blanks": [1, 3] },
+      { "idiomId": "xiu-wai-hui-zhong", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1] },
+      { "idiomId": "le-zai-qi-zhong", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2] }
+    ],
+    "bank": ["七", "樂", "外", "源", "秀", "其"],
+    "hintLimit": 3
+  },
+  {
+    "id": 28,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 8 課：古籍微光",
+    "story": "窗外蟲鳴陣陣，糰子打了個呵欠，又被書頁上的亮字吸引住。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "任" },
+      { "r": 1, "c": 2, "char": "夸" },
+      { "r": 1, "c": 3, "char": "重" },
+      { "r": 2, "c": 2, "char": "父" },
+      { "r": 2, "c": 3, "char": "道" },
+      { "r": 3, "c": 0, "char": "慎" },
+      { "r": 3, "c": 1, "char": "終" },
+      { "r": 3, "c": 2, "char": "追" },
+      { "r": 3, "c": 3, "char": "遠" },
+      { "r": 4, "c": 2, "char": "日" }
+    ],
+    "slots": [
+      { "idiomId": "kua-fu-zhui-ri", "row": 1, "col": 2, "dir": "v", "blanks": [2] },
+      { "idiomId": "shen-zhong-zhui-yuan", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "ren-zhong-dao-yuan", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 2] }
+    ],
+    "bank": ["追", "道", "蜉", "慎", "重", "任"],
+    "hintLimit": 3
+  },
+  {
+    "id": 29,
+    "chapter": 3,
+    "mode": "fill",
+    "title": "第 9 課：夜闌成語",
+    "story": "窗外蟲鳴陣陣，糰子打了個呵欠，又被書頁上的亮字吸引住。",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 0, "char": "花" },
+      { "r": 0, "c": 1, "char": "容" },
+      { "r": 0, "c": 2, "char": "月" },
+      { "r": 0, "c": 3, "char": "貌" },
+      { "r": 1, "c": 2, "char": "白" },
+      { "r": 2, "c": 2, "char": "風" },
+      { "r": 2, "c": 3, "char": "調" },
+      { "r": 2, "c": 4, "char": "雨" },
+      { "r": 2, "c": 5, "char": "順" },
+      { "r": 3, "c": 2, "char": "清" }
+    ],
+    "slots": [
+      { "idiomId": "feng-tiao-yu-shun", "row": 2, "col": 2, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "yue-bai-feng-qing", "row": 0, "col": 2, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "hua-rong-yue-mao", "row": 0, "col": 0, "dir": "h", "blanks": [0, 2] }
+    ],
+    "bank": ["花", "直", "順", "月", "清", "雨"],
+    "hintLimit": 3
+  },
+  {
+    "id": 30,
+    "chapter": 3,
+    "mode": "chain",
+    "title": "第 10 課：月圓珠現",
+    "story": "月下書齋最深一層，古籍圍成一圈，中間的靈珠微微發亮。阿墨說：「呢個係月下最後一課喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "一" },
+      { "r": 0, "c": 1, "char": "意" },
+      { "r": 0, "c": 2, "char": "孤" },
+      { "r": 0, "c": 3, "char": "行" },
+      { "r": 1, "c": 0, "char": "行" },
+      { "r": 1, "c": 1, "char": "雲" },
+      { "r": 1, "c": 2, "char": "流" },
+      { "r": 1, "c": 3, "char": "水" },
+      { "r": 2, "c": 0, "char": "水" },
+      { "r": 2, "c": 1, "char": "落" },
+      { "r": 2, "c": 2, "char": "石" },
+      { "r": 2, "c": 3, "char": "出" },
+      { "r": 3, "c": 0, "char": "出" },
+      { "r": 3, "c": 1, "char": "類" },
+      { "r": 3, "c": 2, "char": "拔" },
+      { "r": 3, "c": 3, "char": "萃" }
+    ],
+    "slots": [
+      { "idiomId": "yi-yi-gu-xing", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "xing-yun-liu-shui", "row": 1, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "shui-luo-shi-chu", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "chu-lei-ba-cui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["類", "落", "萃", "流", "石", "渭", "拔"],
+    "hintLimit": 3
+  },
+  {
+    "id": 31,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 1 課：雪落溫泉",
+    "story": "溫泉邊的水聲答答，糰子把字卡排在石頭上，一邊抖一邊填。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "大" },
+      { "r": 1, "c": 0, "char": "大" },
+      { "r": 1, "c": 1, "char": "吃" },
+      { "r": 1, "c": 2, "char": "一" },
+      { "r": 1, "c": 3, "char": "驚" },
+      { "r": 2, "c": 0, "char": "公" },
+      { "r": 2, "c": 3, "char": "小" },
+      { "r": 3, "c": 0, "char": "無" },
+      { "r": 3, "c": 3, "char": "怪" },
+      { "r": 4, "c": 0, "char": "私" }
+    ],
+    "slots": [
+      { "idiomId": "da-chi-yi-jing", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "da-jing-xiao-guai", "row": 0, "col": 3, "dir": "v", "blanks": [1, 2] },
+      { "idiomId": "da-gong-wu-si", "row": 1, "col": 0, "dir": "v", "blanks": [3] }
+    ],
+    "bank": ["隔", "一", "汀", "小", "驚", "吃", "私"],
+    "hintLimit": 2
+  },
+  {
+    "id": 32,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 2 課：白雪山碑",
+    "story": "阿墨捧着熱茶，指着霧氣中的石碑：「字就藏在雪裏，慢慢睇就見到喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "龍" },
+      { "r": 0, "c": 1, "char": "飛" },
+      { "r": 0, "c": 2, "char": "鳳" },
+      { "r": 0, "c": 3, "char": "舞" },
+      { "r": 1, "c": 0, "char": "騰" },
+      { "r": 2, "c": 0, "char": "虎" },
+      { "r": 2, "c": 1, "char": "背" },
+      { "r": 2, "c": 2, "char": "熊" },
+      { "r": 2, "c": 3, "char": "腰" },
+      { "r": 3, "c": 0, "char": "躍" }
+    ],
+    "slots": [
+      { "idiomId": "long-teng-hu-yue", "row": 0, "col": 0, "dir": "v", "blanks": [1] },
+      { "idiomId": "hu-bei-xiong-yao", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "long-fei-feng-wu", "row": 0, "col": 0, "dir": "h", "blanks": [1, 3] }
+    ],
+    "bank": ["舞", "騰", "背", "是", "熊", "沆", "飛"],
+    "hintLimit": 2
+  },
+  {
+    "id": 33,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 3 課：霧中辨字",
+    "story": "溫泉邊的水聲答答，糰子把字卡排在石頭上，一邊抖一邊填。",
+    "rows": 7,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "積" },
+      { "r": 1, "c": 1, "char": "少" },
+      { "r": 2, "c": 0, "char": "行" },
+      { "r": 2, "c": 1, "char": "成" },
+      { "r": 2, "c": 2, "char": "於" },
+      { "r": 2, "c": 3, "char": "思" },
+      { "r": 3, "c": 1, "char": "多" },
+      { "r": 4, "c": 1, "char": "多" },
+      { "r": 5, "c": 1, "char": "益" },
+      { "r": 6, "c": 1, "char": "善" }
+    ],
+    "slots": [
+      { "idiomId": "ji-shao-cheng-duo", "row": 0, "col": 1, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "xing-cheng-yu-si", "row": 2, "col": 0, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "duo-duo-yi-shan", "row": 3, "col": 1, "dir": "v", "blanks": [0, 2] }
+    ],
+    "bank": ["思", "多", "於", "事", "益", "人", "積"],
+    "hintLimit": 2
+  },
+  {
+    "id": 34,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 4 課：溫泉暖語",
+    "story": "阿墨捧着熱茶，指着霧氣中的石碑：「字就藏在雪裏，慢慢睇就見到喵。」",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "大" },
+      { "r": 1, "c": 0, "char": "驚" },
+      { "r": 1, "c": 1, "char": "心" },
+      { "r": 1, "c": 2, "char": "動" },
+      { "r": 1, "c": 3, "char": "魄" },
+      { "r": 2, "c": 0, "char": "小" },
+      { "r": 2, "c": 1, "char": "灰" },
+      { "r": 3, "c": 0, "char": "怪" },
+      { "r": 3, "c": 1, "char": "意" },
+      { "r": 4, "c": 1, "char": "冷" }
+    ],
+    "slots": [
+      { "idiomId": "jing-xin-dong-po", "row": 1, "col": 0, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "xin-hui-yi-leng", "row": 1, "col": 1, "dir": "v", "blanks": [3] },
+      { "idiomId": "da-jing-xiao-guai", "row": 0, "col": 0, "dir": "v", "blanks": [0, 3] }
+    ],
+    "bank": ["雪", "動", "螳", "怪", "魄", "冷", "大"],
+    "hintLimit": 2
+  },
+  {
+    "id": 35,
+    "chapter": 4,
+    "mode": "chain",
+    "title": "第 5 課：雪花拼句",
+    "story": "糰子把凍僵的貓爪呵暖，繼續把成語一句一句接落去。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "水" },
+      { "r": 0, "c": 1, "char": "漲" },
+      { "r": 0, "c": 2, "char": "船" },
+      { "r": 0, "c": 3, "char": "高" },
+      { "r": 1, "c": 0, "char": "高" },
+      { "r": 1, "c": 1, "char": "山" },
+      { "r": 1, "c": 2, "char": "流" },
+      { "r": 1, "c": 3, "char": "水" },
+      { "r": 2, "c": 0, "char": "水" },
+      { "r": 2, "c": 1, "char": "落" },
+      { "r": 2, "c": 2, "char": "石" },
+      { "r": 2, "c": 3, "char": "出" },
+      { "r": 3, "c": 0, "char": "出" },
+      { "r": 3, "c": 1, "char": "奇" },
+      { "r": 3, "c": 2, "char": "制" },
+      { "r": 3, "c": 3, "char": "勝" }
+    ],
+    "slots": [
+      { "idiomId": "shui-zhang-chuan-gao", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "gao-shan-liu-shui", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-luo-shi-chu", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "chu-qi-zhi-sheng", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["勝", "石", "中", "流", "制", "山", "於", "落", "奇"],
+    "hintLimit": 2
+  },
+  {
+    "id": 36,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 6 課：山頂石碑",
+    "story": "雪山溫泉冒着白煙，石碑上結了一層薄霜。糰子用肉球抹開霜花，露出缺字的碑文。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 0, "char": "良" },
+      { "r": 0, "c": 1, "char": "藥" },
+      { "r": 0, "c": 2, "char": "苦" },
+      { "r": 0, "c": 3, "char": "口" },
+      { "r": 0, "c": 4, "char": "蜜" },
+      { "r": 0, "c": 5, "char": "腹" },
+      { "r": 0, "c": 6, "char": "劍" },
+      { "r": 1, "c": 3, "char": "誅" },
+      { "r": 2, "c": 3, "char": "筆" },
+      { "r": 3, "c": 3, "char": "伐" }
+    ],
+    "slots": [
+      { "idiomId": "liang-yao-ku-kou", "row": 0, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "kou-zhu-bi-fa", "row": 0, "col": 3, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "kou-mi-fu-jian", "row": 0, "col": 3, "dir": "h", "blanks": [1, 2] }
+    ],
+    "bank": ["一", "屍", "伐", "筆", "苦", "腹", "蜜"],
+    "hintLimit": 2
+  },
+  {
+    "id": 37,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 7 課：熱湯書聲",
+    "story": "阿墨捧着熱茶，指着霧氣中的石碑：「字就藏在雪裏，慢慢睇就見到喵。」",
+    "rows": 4,
+    "cols": 7,
     "cells": [
       { "r": 0, "c": 0, "char": "一" },
       { "r": 0, "c": 1, "char": "諾" },
       { "r": 0, "c": 2, "char": "千" },
+      { "r": 0, "c": 3, "char": "金" },
+      { "r": 0, "c": 4, "char": "蟬" },
+      { "r": 0, "c": 5, "char": "脫" },
+      { "r": 0, "c": 6, "char": "殼" },
+      { "r": 1, "c": 0, "char": "視" },
+      { "r": 2, "c": 0, "char": "同" },
+      { "r": 3, "c": 0, "char": "仁" }
+    ],
+    "slots": [
+      { "idiomId": "yi-nuo-qian-jin", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "jin-chan-tuo-qiao", "row": 0, "col": 3, "dir": "h", "blanks": [1] },
+      { "idiomId": "yi-shi-tong-ren", "row": 0, "col": 0, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["決", "桃", "視", "仁", "諾", "蟬", "千"],
+    "hintLimit": 2
+  },
+  {
+    "id": 38,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 8 課：雪徑貓蹤",
+    "story": "雪山溫泉冒着白煙，石碑上結了一層薄霜。糰子用肉球抹開霜花，露出缺字的碑文。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "見" },
+      { "r": 1, "c": 2, "char": "義" },
+      { "r": 1, "c": 3, "char": "豁" },
+      { "r": 2, "c": 2, "char": "勇" },
+      { "r": 2, "c": 3, "char": "然" },
+      { "r": 3, "c": 0, "char": "金" },
+      { "r": 3, "c": 1, "char": "石" },
+      { "r": 3, "c": 2, "char": "為" },
+      { "r": 3, "c": 3, "char": "開" },
+      { "r": 4, "c": 3, "char": "朗" }
+    ],
+    "slots": [
+      { "idiomId": "huo-ran-kai-lang", "row": 1, "col": 3, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "jin-shi-wei-kai", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "jian-yi-yong-wei", "row": 0, "col": 2, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["龍", "石", "為", "豁", "朗", "盲", "義"],
+    "hintLimit": 2
+  },
+  {
+    "id": 39,
+    "chapter": 4,
+    "mode": "fill",
+    "title": "第 9 課：冰晶文字",
+    "story": "阿墨捧着熱茶，指着霧氣中的石碑：「字就藏在雪裏，慢慢睇就見到喵。」",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 0, "char": "堂" },
+      { "r": 0, "c": 1, "char": "堂" },
+      { "r": 0, "c": 2, "char": "正" },
+      { "r": 0, "c": 3, "char": "正" },
+      { "r": 1, "c": 3, "char": "大" },
+      { "r": 2, "c": 3, "char": "光" },
+      { "r": 3, "c": 2, "char": "月" },
+      { "r": 3, "c": 3, "char": "明" },
+      { "r": 3, "c": 4, "char": "星" },
+      { "r": 3, "c": 5, "char": "稀" }
+    ],
+    "slots": [
+      { "idiomId": "tang-tang-zheng-zheng", "row": 0, "col": 0, "dir": "h", "blanks": [0] },
+      { "idiomId": "zheng-da-guang-ming", "row": 0, "col": 3, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "yue-ming-xing-xi", "row": 3, "col": 2, "dir": "h", "blanks": [1, 2] }
+    ],
+    "bank": ["明", "光", "惡", "星", "金", "堂", "大"],
+    "hintLimit": 2
+  },
+  {
+    "id": 40,
+    "chapter": 4,
+    "mode": "chain",
+    "title": "第 10 課：雪融珠明",
+    "story": "雪山溫泉的山頂，石碑被雪覆蓋，只露出幾個字。糰子要用一路所學，把碑文補完先落得山。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "一" },
+      { "r": 0, "c": 1, "char": "字" },
+      { "r": 0, "c": 2, "char": "千" },
+      { "r": 0, "c": 3, "char": "金" },
+      { "r": 1, "c": 0, "char": "金" },
+      { "r": 1, "c": 1, "char": "戈" },
+      { "r": 1, "c": 2, "char": "鐵" },
+      { "r": 1, "c": 3, "char": "馬" },
+      { "r": 2, "c": 0, "char": "馬" },
+      { "r": 2, "c": 1, "char": "到" },
+      { "r": 2, "c": 2, "char": "成" },
+      { "r": 2, "c": 3, "char": "功" },
+      { "r": 3, "c": 0, "char": "功" },
+      { "r": 3, "c": 1, "char": "成" },
+      { "r": 3, "c": 2, "char": "身" },
+      { "r": 3, "c": 3, "char": "退" }
+    ],
+    "slots": [
+      { "idiomId": "yi-zi-qian-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "jin-ge-tie-ma", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ma-dao-cheng-gong", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gong-cheng-shen-tui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["山", "退", "身", "鐵", "戈", "成", "再", "成", "到"],
+    "hintLimit": 2
+  },
+  {
+    "id": 41,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 1 課：燈塔照字",
+    "story": "海邊燈塔一閃一閃，漁夫貓在岸邊補網，順便考糰子幾個成語。糰子盯着濕漉漉的石板努力想。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "出" },
+      { "r": 0, "c": 2, "char": "夜" },
+      { "r": 1, "c": 1, "char": "其" },
+      { "r": 1, "c": 2, "char": "郎" },
+      { "r": 2, "c": 0, "char": "情" },
+      { "r": 2, "c": 1, "char": "不" },
+      { "r": 2, "c": 2, "char": "自" },
+      { "r": 2, "c": 3, "char": "禁" },
+      { "r": 3, "c": 1, "char": "意" },
+      { "r": 3, "c": 2, "char": "大" }
+    ],
+    "slots": [
+      { "idiomId": "qing-bu-zi-jin", "row": 2, "col": 0, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "chu-qi-bu-yi", "row": 0, "col": 1, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "ye-lang-zi-da", "row": 0, "col": 2, "dir": "v", "blanks": [2] }
+    ],
+    "bank": ["自", "艾", "坐", "禁", "出", "致", "意", "其"],
+    "hintLimit": 2
+  },
+  {
+    "id": 42,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 2 課：海浪接句",
+    "story": "海邊燈塔一閃一閃，漁夫貓在岸邊補網，順便考糰子幾個成語。糰子盯着濕漉漉的石板努力想。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 0, "char": "膾" },
+      { "r": 0, "c": 1, "char": "炙" },
+      { "r": 0, "c": 2, "char": "人" },
+      { "r": 0, "c": 3, "char": "口" },
+      { "r": 0, "c": 4, "char": "是" },
+      { "r": 0, "c": 5, "char": "心" },
+      { "r": 0, "c": 6, "char": "非" },
+      { "r": 1, "c": 5, "char": "花" },
+      { "r": 2, "c": 5, "char": "怒" },
+      { "r": 3, "c": 5, "char": "放" }
+    ],
+    "slots": [
+      { "idiomId": "xin-hua-nu-fang", "row": 0, "col": 5, "dir": "v", "blanks": [1, 2] },
+      { "idiomId": "kou-shi-xin-fei", "row": 0, "col": 3, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "kuai-zhi-ren-kou", "row": 0, "col": 0, "dir": "h", "blanks": [2, 3] }
+    ],
+    "bank": ["怒", "素", "口", "人", "非", "槍", "窮", "花"],
+    "hintLimit": 2
+  },
+  {
+    "id": 43,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 3 課：漁火夜話",
+    "story": "浪花拍上石灘，帶來幾張濕透的字卡。阿墨說：「睇清楚字嘅位置，先擺得啱喵。」",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "莫" },
+      { "r": 1, "c": 2, "char": "驚" },
+      { "r": 1, "c": 3, "char": "逆" },
+      { "r": 2, "c": 2, "char": "弓" },
+      { "r": 2, "c": 3, "char": "之" },
+      { "r": 3, "c": 0, "char": "貧" },
+      { "r": 3, "c": 1, "char": "賤" },
+      { "r": 3, "c": 2, "char": "之" },
+      { "r": 3, "c": 3, "char": "交" },
+      { "r": 4, "c": 2, "char": "鳥" }
+    ],
+    "slots": [
+      { "idiomId": "jing-gong-zhi-niao", "row": 1, "col": 2, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "pin-jian-zhi-jiao", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1] },
+      { "idiomId": "mo-ni-zhi-jiao", "row": 0, "col": 3, "dir": "v", "blanks": [0] }
+    ],
+    "bank": ["莫", "堂", "功", "驚", "貧", "位", "鳥", "賤"],
+    "hintLimit": 2
+  },
+  {
+    "id": 44,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 4 課：潮聲誦文",
+    "story": "浪花拍上石灘，帶來幾張濕透的字卡。阿墨說：「睇清楚字嘅位置，先擺得啱喵。」",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "水" },
+      { "r": 1, "c": 0, "char": "上" },
+      { "r": 1, "c": 2, "char": "到" },
+      { "r": 2, "c": 0, "char": "行" },
+      { "r": 2, "c": 2, "char": "渠" },
+      { "r": 3, "c": 0, "char": "下" },
+      { "r": 3, "c": 1, "char": "筆" },
+      { "r": 3, "c": 2, "char": "成" },
+      { "r": 3, "c": 3, "char": "章" },
+      { "r": 4, "c": 0, "char": "效" }
+    ],
+    "slots": [
+      { "idiomId": "shui-dao-qu-cheng", "row": 0, "col": 2, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "xia-bi-cheng-zhang", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "shang-xing-xia-xiao", "row": 1, "col": 0, "dir": "v", "blanks": [1] }
+    ],
+    "bank": ["章", "成", "水", "底", "筆", "鮒", "闊", "行"],
+    "hintLimit": 2
+  },
+  {
+    "id": 45,
+    "chapter": 5,
+    "mode": "chain",
+    "title": "第 5 課：海風翻頁",
+    "story": "燈塔下的石階濕滑，糰子小心翼翼，把成語一句接一句排上階梯。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "積" },
+      { "r": 0, "c": 1, "char": "土" },
+      { "r": 0, "c": 2, "char": "成" },
+      { "r": 0, "c": 3, "char": "山" },
+      { "r": 1, "c": 0, "char": "山" },
+      { "r": 1, "c": 1, "char": "明" },
+      { "r": 1, "c": 2, "char": "水" },
+      { "r": 1, "c": 3, "char": "秀" },
+      { "r": 2, "c": 0, "char": "秀" },
+      { "r": 2, "c": 1, "char": "外" },
+      { "r": 2, "c": 2, "char": "慧" },
+      { "r": 2, "c": 3, "char": "中" },
+      { "r": 3, "c": 0, "char": "中" },
+      { "r": 3, "c": 1, "char": "流" },
+      { "r": 3, "c": 2, "char": "砥" },
+      { "r": 3, "c": 3, "char": "柱" }
+    ],
+    "slots": [
+      { "idiomId": "ji-tu-cheng-shan", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "shan-ming-shui-xiu", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "xiu-wai-hui-zhong", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "zhong-liu-di-zhu", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["效", "晚", "鄲", "慧", "外", "柱", "砥", "明", "流", "水"],
+    "hintLimit": 2
+  },
+  {
+    "id": 46,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 6 課：燈塔守句",
+    "story": "浪花拍上石灘，帶來幾張濕透的字卡。阿墨說：「睇清楚字嘅位置，先擺得啱喵。」",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "一" },
+      { "r": 1, "c": 0, "char": "海" },
+      { "r": 1, "c": 2, "char": "敗" },
+      { "r": 2, "c": 0, "char": "闊" },
+      { "r": 2, "c": 2, "char": "塗" },
+      { "r": 3, "c": 0, "char": "天" },
+      { "r": 3, "c": 1, "char": "翻" },
+      { "r": 3, "c": 2, "char": "地" },
+      { "r": 3, "c": 3, "char": "覆" },
+      { "r": 4, "c": 0, "char": "空" }
+    ],
+    "slots": [
+      { "idiomId": "hai-kuo-tian-kong", "row": 1, "col": 0, "dir": "v", "blanks": [1, 3] },
+      { "idiomId": "tian-fan-di-fu", "row": 3, "col": 0, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "yi-bai-tu-di", "row": 0, "col": 2, "dir": "v", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["相", "禁", "覆", "塗", "一", "闊", "仁", "空", "地"],
+    "hintLimit": 2
+  },
+  {
+    "id": 47,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 7 課：貝殼藏書",
+    "story": "海邊燈塔一閃一閃，漁夫貓在岸邊補網，順便考糰子幾個成語。糰子盯着濕漉漉的石板努力想。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "道" },
+      { "r": 1, "c": 1, "char": "聽" },
+      { "r": 1, "c": 2, "char": "死" },
+      { "r": 2, "c": 0, "char": "半" },
+      { "r": 2, "c": 1, "char": "途" },
+      { "r": 2, "c": 2, "char": "而" },
+      { "r": 2, "c": 3, "char": "廢" },
+      { "r": 3, "c": 1, "char": "說" },
+      { "r": 3, "c": 2, "char": "後" },
+      { "r": 4, "c": 2, "char": "已" }
+    ],
+    "slots": [
+      { "idiomId": "ban-tu-er-fei", "row": 2, "col": 0, "dir": "h", "blanks": [0] },
+      { "idiomId": "si-er-hou-yi", "row": 1, "col": 2, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "dao-ting-tu-shuo", "row": 0, "col": 1, "dir": "v", "blanks": [0, 1, 3] }
+    ],
+    "bank": ["已", "聽", "半", "後", "備", "說", "道", "義", "興"],
+    "hintLimit": 2
+  },
+  {
+    "id": 48,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 8 課：浪花成章",
+    "story": "燈塔的光掃過海面，糰子數着浪聲，一筆一筆把字填好。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "約" },
+      { "r": 1, "c": 3, "char": "法" },
+      { "r": 2, "c": 0, "char": "舉" },
+      { "r": 2, "c": 1, "char": "一" },
+      { "r": 2, "c": 2, "char": "反" },
+      { "r": 2, "c": 3, "char": "三" },
+      { "r": 3, "c": 1, "char": "丘" },
+      { "r": 3, "c": 3, "char": "章" },
+      { "r": 4, "c": 1, "char": "之" },
+      { "r": 5, "c": 1, "char": "貉" }
+    ],
+    "slots": [
+      { "idiomId": "ju-yi-fan-san", "row": 2, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "yi-qiu-zhi-he", "row": 2, "col": 1, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "yue-fa-san-zhang", "row": 0, "col": 3, "dir": "v", "blanks": [0] }
+    ],
+    "bank": ["貉", "丘", "之", "帷", "反", "約", "舉", "諾", "定"],
+    "hintLimit": 2
+  },
+  {
+    "id": 49,
+    "chapter": 5,
+    "mode": "fill",
+    "title": "第 9 課：海鷗傳語",
+    "story": "浪花拍上石灘，帶來幾張濕透的字卡。阿墨說：「睇清楚字嘅位置，先擺得啱喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "望" },
+      { "r": 0, "c": 1, "char": "洋" },
+      { "r": 0, "c": 2, "char": "興" },
+      { "r": 0, "c": 3, "char": "嘆" },
+      { "r": 1, "c": 2, "char": "致" },
+      { "r": 1, "c": 3, "char": "為" },
+      { "r": 2, "c": 2, "char": "勃" },
+      { "r": 2, "c": 3, "char": "觀" },
+      { "r": 3, "c": 2, "char": "勃" },
+      { "r": 3, "c": 3, "char": "止" }
+    ],
+    "slots": [
+      { "idiomId": "xing-zhi-bo-bo", "row": 0, "col": 2, "dir": "v", "blanks": [1, 3] },
+      { "idiomId": "wang-yang-xing-tan", "row": 0, "col": 0, "dir": "h", "blanks": [0, 1] },
+      { "idiomId": "tan-wei-guan-zhi", "row": 0, "col": 3, "dir": "v", "blanks": [2, 3] }
+    ],
+    "bank": ["止", "東", "焚", "望", "致", "洋", "勃", "紅", "觀"],
+    "hintLimit": 2
+  },
+  {
+    "id": 50,
+    "chapter": 5,
+    "mode": "chain",
+    "title": "第 10 課：燈明珠現",
+    "story": "燈塔最頂層的房間，漁夫貓留下的最後一道謎題就刻在牆上。海風從窗口灌入，糰子抓緊字卡喵。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "一" },
+      { "r": 0, "c": 1, "char": "字" },
+      { "r": 0, "c": 2, "char": "千" },
+      { "r": 0, "c": 3, "char": "金" },
+      { "r": 1, "c": 0, "char": "金" },
+      { "r": 1, "c": 1, "char": "枝" },
+      { "r": 1, "c": 2, "char": "玉" },
+      { "r": 1, "c": 3, "char": "葉" },
+      { "r": 2, "c": 0, "char": "葉" },
+      { "r": 2, "c": 1, "char": "公" },
+      { "r": 2, "c": 2, "char": "好" },
+      { "r": 2, "c": 3, "char": "龍" },
+      { "r": 3, "c": 0, "char": "龍" },
+      { "r": 3, "c": 1, "char": "潭" },
+      { "r": 3, "c": 2, "char": "虎" },
+      { "r": 3, "c": 3, "char": "穴" }
+    ],
+    "slots": [
+      { "idiomId": "yi-zi-qian-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "jin-zhi-yu-ye", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ye-gong-hao-long", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "long-tan-hu-xue", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["虎", "厚", "迴", "好", "公", "穴", "玉", "潭", "效", "枝"],
+    "hintLimit": 2
+  },
+  {
+    "id": 51,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 1 課：星光排句",
+    "story": "流星劃過，糰子連忙許願：「希望今晚啲字都乖乖歸位！」惹得眾貓笑起來。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "小" },
+      { "r": 0, "c": 1, "char": "心" },
+      { "r": 0, "c": 2, "char": "翼" },
+      { "r": 0, "c": 3, "char": "翼" },
+      { "r": 1, "c": 0, "char": "國" },
+      { "r": 1, "c": 1, "char": "直" },
+      { "r": 2, "c": 0, "char": "寡" },
+      { "r": 2, "c": 1, "char": "口" },
+      { "r": 3, "c": 0, "char": "民" },
+      { "r": 3, "c": 1, "char": "快" }
+    ],
+    "slots": [
+      { "idiomId": "xiao-xin-yi-yi", "row": 0, "col": 0, "dir": "h", "blanks": [2] },
+      { "idiomId": "xiao-guo-gua-min", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "xin-zhi-kou-kuai", "row": 0, "col": 1, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["笑", "快", "翼", "寡", "恃", "直", "國", "民", "墜"],
+    "hintLimit": 2
+  },
+  {
+    "id": 52,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 2 課：夜空吟詩",
+    "story": "流星劃過，糰子連忙許願：「希望今晚啲字都乖乖歸位！」惹得眾貓笑起來。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "言" },
+      { "r": 1, "c": 2, "char": "井" },
+      { "r": 1, "c": 3, "char": "歸" },
+      { "r": 2, "c": 2, "char": "底" },
+      { "r": 2, "c": 3, "char": "於" },
+      { "r": 3, "c": 0, "char": "秦" },
+      { "r": 3, "c": 1, "char": "晉" },
+      { "r": 3, "c": 2, "char": "之" },
+      { "r": 3, "c": 3, "char": "好" },
+      { "r": 4, "c": 2, "char": "蛙" }
+    ],
+    "slots": [
+      { "idiomId": "jing-di-zhi-wa", "row": 1, "col": 2, "dir": "v", "blanks": [0] },
+      { "idiomId": "qin-jin-zhi-hao", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1] },
+      { "idiomId": "yan-gui-yu-hao", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 2] }
+    ],
+    "bank": ["途", "秦", "井", "歸", "言", "晉", "旁", "食", "於"],
+    "hintLimit": 2
+  },
+  {
+    "id": 53,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 3 課：星軌成章",
+    "story": "星空詩會開始了，貓貓圍坐草地，天上星星排成缺字的句子，等大家一齊補完。",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 3, "char": "盲" },
+      { "r": 1, "c": 2, "char": "三" },
+      { "r": 1, "c": 3, "char": "人" },
+      { "r": 1, "c": 4, "char": "成" },
+      { "r": 1, "c": 5, "char": "虎" },
+      { "r": 2, "c": 3, "char": "瞎" },
+      { "r": 3, "c": 0, "char": "塞" },
+      { "r": 3, "c": 1, "char": "翁" },
+      { "r": 3, "c": 2, "char": "失" },
+      { "r": 3, "c": 3, "char": "馬" }
+    ],
+    "slots": [
+      { "idiomId": "sai-weng-shi-ma", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "mang-ren-xia-ma", "row": 0, "col": 3, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "san-ren-cheng-hu", "row": 1, "col": 2, "dir": "h", "blanks": [0, 2] }
+    ],
+    "bank": ["華", "塞", "頓", "益", "馬", "失", "成", "三", "瞎"],
+    "hintLimit": 2
+  },
+  {
+    "id": 54,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 4 課：草坪詩會",
+    "story": "阿墨仰頭數星，說每顆星都係一個字：「擺啱位，滿天就係一篇好文章喵。」",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 3, "char": "枯" },
+      { "r": 0, "c": 4, "char": "木" },
+      { "r": 0, "c": 5, "char": "逢" },
+      { "r": 0, "c": 6, "char": "春" },
+      { "r": 1, "c": 0, "char": "緣" },
+      { "r": 1, "c": 1, "char": "木" },
+      { "r": 1, "c": 2, "char": "求" },
+      { "r": 1, "c": 3, "char": "魚" },
+      { "r": 2, "c": 3, "char": "之" },
+      { "r": 3, "c": 3, "char": "肆" }
+    ],
+    "slots": [
+      { "idiomId": "yuan-mu-qiu-yu", "row": 1, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "ku-yu-zhi-si", "row": 0, "col": 3, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "ku-mu-feng-chun", "row": 0, "col": 3, "dir": "h", "blanks": [0, 1] }
+    ],
+    "bank": ["求", "爭", "緣", "木", "肆", "湖", "之", "亡", "枯"],
+    "hintLimit": 2
+  },
+  {
+    "id": 55,
+    "chapter": 6,
+    "mode": "chain",
+    "title": "第 5 課：流星許願",
+    "story": "星星一顆接一顆，連成一條銀河。糰子要順住星軌，把成語一句接一句串起來。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "心" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "如" },
+      { "r": 0, "c": 3, "char": "一" },
+      { "r": 1, "c": 0, "char": "一" },
+      { "r": 1, "c": 1, "char": "字" },
+      { "r": 1, "c": 2, "char": "千" },
+      { "r": 1, "c": 3, "char": "金" },
+      { "r": 2, "c": 0, "char": "金" },
+      { "r": 2, "c": 1, "char": "戈" },
+      { "r": 2, "c": 2, "char": "鐵" },
+      { "r": 2, "c": 3, "char": "馬" },
+      { "r": 3, "c": 0, "char": "馬" },
+      { "r": 3, "c": 1, "char": "到" },
+      { "r": 3, "c": 2, "char": "成" },
+      { "r": 3, "c": 3, "char": "功" },
+      { "r": 4, "c": 0, "char": "功" },
+      { "r": 4, "c": 1, "char": "成" },
+      { "r": 4, "c": 2, "char": "身" },
+      { "r": 4, "c": 3, "char": "退" }
+    ],
+    "slots": [
+      { "idiomId": "xin-kou-ru-yi", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "yi-zi-qian-jin", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "jin-ge-tie-ma", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ma-dao-cheng-gong", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gong-cheng-shen-tui", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["鐵", "退", "成", "成", "到", "談", "群", "千", "字", "網", "戈", "身"],
+    "hintLimit": 2
+  },
+  {
+    "id": 56,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 6 課：銀河對句",
+    "story": "流星劃過，糰子連忙許願：「希望今晚啲字都乖乖歸位！」惹得眾貓笑起來。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 3, "char": "百" },
+      { "r": 1, "c": 3, "char": "發" },
+      { "r": 1, "c": 4, "char": "憤" },
+      { "r": 1, "c": 5, "char": "忘" },
+      { "r": 1, "c": 6, "char": "食" },
+      { "r": 2, "c": 3, "char": "百" },
+      { "r": 3, "c": 0, "char": "曳" },
+      { "r": 3, "c": 1, "char": "尾" },
+      { "r": 3, "c": 2, "char": "塗" },
+      { "r": 3, "c": 3, "char": "中" }
+    ],
+    "slots": [
+      { "idiomId": "bai-fa-bai-zhong", "row": 0, "col": 3, "dir": "v", "blanks": [0, 2] },
+      { "idiomId": "ye-wei-tu-zhong", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1] },
+      { "idiomId": "fa-fen-wang-shi", "row": 1, "col": 3, "dir": "h", "blanks": [2, 3] }
+    ],
+    "bank": ["尾", "瞻", "百", "瞪", "食", "百", "曳", "冬", "忘"],
+    "hintLimit": 2
+  },
+  {
+    "id": 57,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 7 課：星垂平野",
+    "story": "阿墨仰頭數星，說每顆星都係一個字：「擺啱位，滿天就係一篇好文章喵。」",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 3, "char": "得" },
+      { "r": 1, "c": 2, "char": "嘔" },
+      { "r": 1, "c": 3, "char": "心" },
+      { "r": 1, "c": 4, "char": "瀝" },
+      { "r": 1, "c": 5, "char": "血" },
+      { "r": 2, "c": 3, "char": "應" },
+      { "r": 3, "c": 0, "char": "上" },
+      { "r": 3, "c": 1, "char": "下" },
+      { "r": 3, "c": 2, "char": "其" },
+      { "r": 3, "c": 3, "char": "手" }
+    ],
+    "slots": [
+      { "idiomId": "de-xin-ying-shou", "row": 0, "col": 3, "dir": "v", "blanks": [0, 3] },
+      { "idiomId": "ou-xin-li-xue", "row": 1, "col": 2, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "shang-xia-qi-shou", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["衛", "作", "血", "上", "添", "得", "手", "其", "嘔"],
+    "hintLimit": 2
+  },
+  {
+    "id": 58,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 8 課：星語連珠",
+    "story": "星空詩會開始了，貓貓圍坐草地，天上星星排成缺字的句子，等大家一齊補完。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 0, "char": "狼" },
+      { "r": 0, "c": 1, "char": "子" },
+      { "r": 0, "c": 2, "char": "野" },
+      { "r": 0, "c": 3, "char": "心" },
+      { "r": 0, "c": 4, "char": "口" },
+      { "r": 0, "c": 5, "char": "如" },
+      { "r": 0, "c": 6, "char": "一" },
+      { "r": 1, "c": 3, "char": "甘" },
+      { "r": 2, "c": 3, "char": "情" },
+      { "r": 3, "c": 3, "char": "願" }
+    ],
+    "slots": [
+      { "idiomId": "xin-gan-qing-yuan", "row": 0, "col": 3, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "lang-zi-ye-xin", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "xin-kou-ru-yi", "row": 0, "col": 3, "dir": "h", "blanks": [2, 3] }
+    ],
+    "bank": ["情", "如", "願", "子", "野", "一", "盾", "弓", "新"],
+    "hintLimit": 2
+  },
+  {
+    "id": 59,
+    "chapter": 6,
+    "mode": "fill",
+    "title": "第 9 課：繁星入卷",
+    "story": "星空詩會開始了，貓貓圍坐草地，天上星星排成缺字的句子，等大家一齊補完。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 0, "char": "上" },
+      { "r": 0, "c": 1, "char": "下" },
+      { "r": 0, "c": 2, "char": "一" },
+      { "r": 0, "c": 3, "char": "心" },
+      { "r": 1, "c": 2, "char": "鼓" },
+      { "r": 2, "c": 2, "char": "作" },
+      { "r": 3, "c": 1, "char": "血" },
+      { "r": 3, "c": 2, "char": "氣" },
+      { "r": 3, "c": 3, "char": "方" },
+      { "r": 3, "c": 4, "char": "剛" }
+    ],
+    "slots": [
+      { "idiomId": "yi-gu-zuo-qi", "row": 0, "col": 2, "dir": "v", "blanks": [2] },
+      { "idiomId": "xue-qi-fang-gang", "row": 3, "col": 1, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "shang-xia-yi-xin", "row": 0, "col": 0, "dir": "h", "blanks": [0, 1] }
+    ],
+    "bank": ["方", "恐", "血", "燕", "舊", "剛", "上", "下", "作"],
+    "hintLimit": 2
+  },
+  {
+    "id": 60,
+    "chapter": 6,
+    "mode": "chain",
+    "title": "第 10 課：星聚珠成",
+    "story": "星空詩會的最後一首詩還未完成，眾貓都望着糰子。阿墨笑說：「今晚嘅壓軸，交畀你喵。」",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "眾" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "鑠" },
+      { "r": 0, "c": 3, "char": "金" },
+      { "r": 1, "c": 0, "char": "金" },
+      { "r": 1, "c": 1, "char": "戈" },
+      { "r": 1, "c": 2, "char": "鐵" },
+      { "r": 1, "c": 3, "char": "馬" },
+      { "r": 2, "c": 0, "char": "馬" },
+      { "r": 2, "c": 1, "char": "到" },
+      { "r": 2, "c": 2, "char": "成" },
+      { "r": 2, "c": 3, "char": "功" },
+      { "r": 3, "c": 0, "char": "功" },
+      { "r": 3, "c": 1, "char": "成" },
+      { "r": 3, "c": 2, "char": "身" },
+      { "r": 3, "c": 3, "char": "退" },
+      { "r": 4, "c": 0, "char": "退" },
+      { "r": 4, "c": 1, "char": "避" },
+      { "r": 4, "c": 2, "char": "三" },
+      { "r": 4, "c": 3, "char": "舍" }
+    ],
+    "slots": [
+      { "idiomId": "zhong-kou-shuo-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "jin-ge-tie-ma", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ma-dao-cheng-gong", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gong-cheng-shen-tui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "tui-bi-san-she", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["避", "三", "成", "舍", "到", "桃", "豁", "鐵", "成", "戈", "衛", "身"],
+    "hintLimit": 2
+  },
+  {
+    "id": 61,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 1 課：燈謎猜字",
+    "story": "紅燈籠高掛，阿墨在攤位前挑字卡，笑說：「猜燈謎同填字一樣，要眼利心細喵。」",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 2, "char": "實" },
+      { "r": 1, "c": 2, "char": "事" },
+      { "r": 1, "c": 3, "char": "半" },
+      { "r": 1, "c": 4, "char": "功" },
+      { "r": 1, "c": 5, "char": "倍" },
+      { "r": 2, "c": 2, "char": "求" },
+      { "r": 3, "c": 0, "char": "唯" },
+      { "r": 3, "c": 1, "char": "命" },
+      { "r": 3, "c": 2, "char": "是" },
+      { "r": 3, "c": 3, "char": "從" }
+    ],
+    "slots": [
+      { "idiomId": "shi-ban-gong-bei", "row": 1, "col": 2, "dir": "h", "blanks": [1, 3] },
+      { "idiomId": "shi-shi-qiu-shi", "row": 0, "col": 2, "dir": "v", "blanks": [2] },
+      { "idiomId": "wei-ming-shi-cong", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1, 3] }
+    ],
+    "bank": ["唯", "土", "八", "倍", "從", "刮", "半", "求", "命", "咀"],
+    "hintLimit": 1
+  },
+  {
+    "id": 62,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 2 課：紅燈高掛",
+    "story": "燈會市集人山人海，猜燈謎的貓貓排成長龍。糰子擠到最前面，發現謎面是一句缺字的成語。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "風" },
+      { "r": 0, "c": 2, "char": "兵" },
+      { "r": 1, "c": 0, "char": "和" },
+      { "r": 1, "c": 1, "char": "而" },
+      { "r": 1, "c": 2, "char": "不" },
+      { "r": 1, "c": 3, "char": "同" },
+      { "r": 2, "c": 0, "char": "日" },
+      { "r": 2, "c": 2, "char": "厭" },
+      { "r": 3, "c": 0, "char": "麗" },
+      { "r": 3, "c": 2, "char": "詐" }
+    ],
+    "slots": [
+      { "idiomId": "feng-he-ri-li", "row": 0, "col": 0, "dir": "v", "blanks": [0, 1, 2] },
+      { "idiomId": "he-er-bu-tong", "row": 1, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "bing-bu-yan-zha", "row": 0, "col": 2, "dir": "v", "blanks": [3] }
+    ],
+    "bank": ["廢", "詐", "眥", "而", "同", "風", "容", "日", "和", "秦"],
+    "hintLimit": 1
+  },
+  {
+    "id": 63,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 3 課：市集尋章",
+    "story": "糖葫蘆的甜味飄過來，糰子一邊流口水，一邊努力把字放回燈謎紙上。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 2, "char": "旁" },
+      { "r": 1, "c": 1, "char": "呆" },
+      { "r": 1, "c": 2, "char": "若" },
+      { "r": 1, "c": 3, "char": "木" },
+      { "r": 1, "c": 4, "char": "雞" },
+      { "r": 2, "c": 0, "char": "仁" },
+      { "r": 2, "c": 1, "char": "者" },
+      { "r": 2, "c": 2, "char": "無" },
+      { "r": 2, "c": 3, "char": "敵" },
+      { "r": 3, "c": 2, "char": "人" }
+    ],
+    "slots": [
+      { "idiomId": "dai-ruo-mu-ji", "row": 1, "col": 1, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "pang-ruo-wu-ren", "row": 0, "col": 2, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "ren-zhe-wu-di", "row": 2, "col": 0, "dir": "h", "blanks": [0, 2] }
+    ],
+    "bank": ["化", "無", "人", "作", "仁", "大", "旁", "呆", "木", "樓"],
+    "hintLimit": 1
+  },
+  {
+    "id": 64,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 4 課：花燈造句",
+    "story": "糖葫蘆的甜味飄過來，糰子一邊流口水，一邊努力把字放回燈謎紙上。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "天" },
+      { "r": 0, "c": 1, "char": "花" },
+      { "r": 0, "c": 2, "char": "亂" },
+      { "r": 0, "c": 3, "char": "墜" },
+      { "r": 1, "c": 0, "char": "壤" },
+      { "r": 1, "c": 1, "char": "紅" },
+      { "r": 2, "c": 0, "char": "之" },
+      { "r": 2, "c": 1, "char": "柳" },
+      { "r": 3, "c": 0, "char": "別" },
+      { "r": 3, "c": 1, "char": "綠" }
+    ],
+    "slots": [
+      { "idiomId": "hua-hong-liu-lv", "row": 0, "col": 1, "dir": "v", "blanks": [0, 2] },
+      { "idiomId": "tian-hua-luan-zhui", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "tian-rang-zhi-bie", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["別", "花", "之", "任", "柳", "亂", "暖", "壤", "門", "巴"],
+    "hintLimit": 1
+  },
+  {
+    "id": 65,
+    "chapter": 7,
+    "mode": "chain",
+    "title": "第 5 課：舞獅聽文",
+    "story": "花燈一盞接一盞，燈謎一句接一句。糰子沿着燈串走，把成語逐句接好。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "若" },
+      { "r": 0, "c": 1, "char": "有" },
+      { "r": 0, "c": 2, "char": "若" },
+      { "r": 0, "c": 3, "char": "無" },
+      { "r": 1, "c": 0, "char": "無" },
+      { "r": 1, "c": 1, "char": "中" },
+      { "r": 1, "c": 2, "char": "生" },
+      { "r": 1, "c": 3, "char": "有" },
+      { "r": 2, "c": 0, "char": "有" },
+      { "r": 2, "c": 1, "char": "求" },
+      { "r": 2, "c": 2, "char": "必" },
+      { "r": 2, "c": 3, "char": "應" },
+      { "r": 3, "c": 0, "char": "應" },
+      { "r": 3, "c": 1, "char": "有" },
+      { "r": 3, "c": 2, "char": "盡" },
+      { "r": 3, "c": 3, "char": "有" },
+      { "r": 4, "c": 0, "char": "有" },
+      { "r": 4, "c": 1, "char": "勇" },
+      { "r": 4, "c": 2, "char": "無" },
+      { "r": 4, "c": 3, "char": "謀" }
+    ],
+    "slots": [
+      { "idiomId": "ruo-you-ruo-wu", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "wu-zhong-sheng-you", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "you-qiu-bi-ying", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ying-you-jin-you", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "you-yong-wu-mou", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["勇", "盡", "游", "興", "謀", "生", "曠", "鈴", "中", "有", "必", "無", "求"],
+    "hintLimit": 1
+  },
+  {
+    "id": 66,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 6 課：糖葫蘆字",
+    "story": "糖葫蘆的甜味飄過來，糰子一邊流口水，一邊努力把字放回燈謎紙上。",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 2, "char": "有" },
+      { "r": 0, "c": 3, "char": "口" },
+      { "r": 0, "c": 4, "char": "皆" },
+      { "r": 0, "c": 5, "char": "碑" },
+      { "r": 1, "c": 2, "char": "教" },
+      { "r": 2, "c": 0, "char": "攻" },
+      { "r": 2, "c": 1, "char": "其" },
+      { "r": 2, "c": 2, "char": "無" },
+      { "r": 2, "c": 3, "char": "備" },
+      { "r": 3, "c": 2, "char": "類" }
+    ],
+    "slots": [
+      { "idiomId": "you-jiao-wu-lei", "row": 0, "col": 2, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "you-kou-jie-bei", "row": 0, "col": 2, "dir": "h", "blanks": [0, 1] },
+      { "idiomId": "gong-qi-wu-bei", "row": 2, "col": 0, "dir": "h", "blanks": [0, 1] }
+    ],
+    "bank": ["畫", "暇", "類", "法", "有", "教", "其", "攻", "口", "蚍"],
+    "hintLimit": 1
+  },
+  {
+    "id": 67,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 7 課：燈會聯句",
+    "story": "糖葫蘆的甜味飄過來，糰子一邊流口水，一邊努力把字放回燈謎紙上。",
+    "rows": 7,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "盲" },
+      { "r": 1, "c": 1, "char": "人" },
+      { "r": 2, "c": 1, "char": "瞎" },
+      { "r": 3, "c": 0, "char": "龍" },
+      { "r": 3, "c": 1, "char": "馬" },
+      { "r": 3, "c": 2, "char": "精" },
+      { "r": 3, "c": 3, "char": "神" },
+      { "r": 4, "c": 1, "char": "首" },
+      { "r": 5, "c": 1, "char": "是" },
+      { "r": 6, "c": 1, "char": "瞻" }
+    ],
+    "slots": [
+      { "idiomId": "long-ma-jing-shen", "row": 3, "col": 0, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "ma-shou-shi-zhan", "row": 3, "col": 1, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "mang-ren-xia-ma", "row": 0, "col": 1, "dir": "v", "blanks": [0, 2] }
+    ],
+    "bank": ["達", "盲", "瞎", "龍", "瞻", "螳", "巧", "神", "傅", "是"],
+    "hintLimit": 1
+  },
+  {
+    "id": 68,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 8 課：猜謎貓群",
+    "story": "糖葫蘆的甜味飄過來，糰子一邊流口水，一邊努力把字放回燈謎紙上。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 2, "char": "皓" },
+      { "r": 1, "c": 0, "char": "日" },
+      { "r": 1, "c": 1, "char": "新" },
+      { "r": 1, "c": 2, "char": "月" },
+      { "r": 1, "c": 3, "char": "異" },
+      { "r": 2, "c": 2, "char": "千" },
+      { "r": 3, "c": 1, "char": "下" },
+      { "r": 3, "c": 2, "char": "里" },
+      { "r": 3, "c": 3, "char": "巴" },
+      { "r": 3, "c": 4, "char": "人" }
+    ],
+    "slots": [
+      { "idiomId": "ri-xin-yue-yi", "row": 1, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "hao-yue-qian-li", "row": 0, "col": 2, "dir": "v", "blanks": [3] },
+      { "idiomId": "xia-li-ba-ren", "row": 3, "col": 1, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["若", "新", "巴", "里", "章", "異", "魑", "安", "日", "人"],
+    "hintLimit": 1
+  },
+  {
+    "id": 69,
+    "chapter": 7,
+    "mode": "fill",
+    "title": "第 9 課：燈影書香",
+    "story": "燈會市集人山人海，猜燈謎的貓貓排成長龍。糰子擠到最前面，發現謎面是一句缺字的成語。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 3, "char": "兵" },
+      { "r": 1, "c": 3, "char": "不" },
+      { "r": 1, "c": 4, "char": "亦" },
+      { "r": 1, "c": 5, "char": "樂" },
+      { "r": 1, "c": 6, "char": "乎" },
+      { "r": 2, "c": 0, "char": "學" },
+      { "r": 2, "c": 1, "char": "而" },
+      { "r": 2, "c": 2, "char": "不" },
+      { "r": 2, "c": 3, "char": "厭" },
+      { "r": 3, "c": 3, "char": "詐" }
+    ],
+    "slots": [
+      { "idiomId": "bu-yi-le-hu", "row": 1, "col": 3, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "bing-bu-yan-zha", "row": 0, "col": 3, "dir": "v", "blanks": [0] },
+      { "idiomId": "xue-er-bu-yan", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] }
+    ],
+    "bank": ["後", "翁", "不", "徙", "而", "乎", "完", "亦", "樂", "兵"],
+    "hintLimit": 1
+  },
+  {
+    "id": 70,
+    "chapter": 7,
+    "mode": "chain",
+    "title": "第 10 課：元宵珠圓",
+    "story": "燈會尾聲，最大的一盞花燈仍未亮起，燈謎紙上滿是空白。阿墨說解開它就係今晚嘅壓軸喵。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "心" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "如" },
+      { "r": 0, "c": 3, "char": "一" },
+      { "r": 1, "c": 0, "char": "一" },
+      { "r": 1, "c": 1, "char": "字" },
+      { "r": 1, "c": 2, "char": "千" },
+      { "r": 1, "c": 3, "char": "金" },
+      { "r": 2, "c": 0, "char": "金" },
+      { "r": 2, "c": 1, "char": "枝" },
+      { "r": 2, "c": 2, "char": "玉" },
+      { "r": 2, "c": 3, "char": "葉" },
+      { "r": 3, "c": 0, "char": "葉" },
+      { "r": 3, "c": 1, "char": "公" },
+      { "r": 3, "c": 2, "char": "好" },
+      { "r": 3, "c": 3, "char": "龍" },
+      { "r": 4, "c": 0, "char": "龍" },
+      { "r": 4, "c": 1, "char": "潭" },
+      { "r": 4, "c": 2, "char": "虎" },
+      { "r": 4, "c": 3, "char": "穴" }
+    ],
+    "slots": [
+      { "idiomId": "xin-kou-ru-yi", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "yi-zi-qian-jin", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "jin-zhi-yu-ye", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "ye-gong-hao-long", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "long-tan-hu-xue", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["枝", "玄", "公", "玉", "位", "字", "潭", "穴", "偷", "千", "虎", "好", "香"],
+    "hintLimit": 1
+  },
+  {
+    "id": 71,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 1 課：雨後青苔",
+    "story": "雨後石巷反着光，屋簷滴水答答。青苔爬滿牆角，石板上的字卻格外清楚。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 0, "char": "再" },
+      { "r": 0, "c": 1, "char": "衰" },
+      { "r": 0, "c": 2, "char": "三" },
+      { "r": 0, "c": 3, "char": "竭" },
+      { "r": 1, "c": 2, "char": "思" },
+      { "r": 2, "c": 1, "char": "群" },
+      { "r": 2, "c": 2, "char": "而" },
+      { "r": 2, "c": 3, "char": "不" },
+      { "r": 2, "c": 4, "char": "黨" },
+      { "r": 3, "c": 2, "char": "行" }
+    ],
+    "slots": [
+      { "idiomId": "san-si-er-xing", "row": 0, "col": 2, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "zai-shuai-san-jie", "row": 0, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "qun-er-bu-dang", "row": 2, "col": 1, "dir": "h", "blanks": [0, 1] }
+    ],
+    "bank": ["再", "東", "行", "潔", "思", "衰", "龍", "而", "竭", "臨", "皓", "群"],
+    "hintLimit": 1
+  },
+  {
+    "id": 72,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 2 課：石巷聽雨",
+    "story": "糰子撐着小傘，跳過水氹，替阿墨把濕石板上的字卡擺好。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "付" },
+      { "r": 1, "c": 0, "char": "不" },
+      { "r": 1, "c": 1, "char": "虞" },
+      { "r": 1, "c": 2, "char": "之" },
+      { "r": 1, "c": 3, "char": "譽" },
+      { "r": 2, "c": 0, "char": "恥" },
+      { "r": 2, "c": 2, "char": "一" },
+      { "r": 3, "c": 0, "char": "下" },
+      { "r": 3, "c": 2, "char": "炬" },
+      { "r": 4, "c": 0, "char": "問" }
+    ],
+    "slots": [
+      { "idiomId": "bu-chi-xia-wen", "row": 1, "col": 0, "dir": "v", "blanks": [1, 3] },
+      { "idiomId": "bu-yu-zhi-yu", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "fu-zhi-yi-ju", "row": 0, "col": 2, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["虞", "敬", "一", "輒", "問", "譽", "恥", "厚", "炬", "白", "厭", "之"],
+    "hintLimit": 1
+  },
+  {
+    "id": 73,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 3 課：滴答成句",
+    "story": "糰子撐着小傘，跳過水氹，替阿墨把濕石板上的字卡擺好。",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "決" },
+      { "r": 1, "c": 0, "char": "百" },
+      { "r": 1, "c": 1, "char": "戰" },
+      { "r": 1, "c": 2, "char": "百" },
+      { "r": 1, "c": 3, "char": "勝" },
+      { "r": 2, "c": 3, "char": "千" },
+      { "r": 3, "c": 0, "char": "拒" },
+      { "r": 3, "c": 1, "char": "人" },
+      { "r": 3, "c": 2, "char": "千" },
+      { "r": 3, "c": 3, "char": "里" }
+    ],
+    "slots": [
+      { "idiomId": "bai-zhan-bai-sheng", "row": 1, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "jue-sheng-qian-li", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1] },
+      { "idiomId": "ju-ren-qian-li", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1, 2] }
+    ],
+    "bank": ["禍", "戰", "拒", "勝", "照", "百", "虞", "啞", "千", "采", "人", "決"],
+    "hintLimit": 1
+  },
+  {
+    "id": 74,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 4 課：傘下讀書",
+    "story": "糰子撐着小傘，跳過水氹，替阿墨把濕石板上的字卡擺好。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 3, "char": "目" },
+      { "r": 0, "c": 4, "char": "不" },
+      { "r": 0, "c": 5, "char": "暇" },
+      { "r": 0, "c": 6, "char": "給" },
+      { "r": 1, "c": 0, "char": "鑿" },
+      { "r": 1, "c": 1, "char": "壁" },
+      { "r": 1, "c": 2, "char": "偷" },
+      { "r": 1, "c": 3, "char": "光" },
+      { "r": 2, "c": 3, "char": "如" },
+      { "r": 3, "c": 3, "char": "炬" }
+    ],
+    "slots": [
+      { "idiomId": "zao-bi-tou-guang", "row": 1, "col": 0, "dir": "h", "blanks": [1, 3] },
+      { "idiomId": "mu-guang-ru-ju", "row": 0, "col": 3, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "mu-bu-xia-ji", "row": 0, "col": 3, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["給", "光", "吃", "不", "壁", "如", "膽", "暇", "拾", "炬", "忙", "薦"],
+    "hintLimit": 1
+  },
+  {
+    "id": 75,
+    "chapter": 8,
+    "mode": "chain",
+    "title": "第 5 課：雨簾藏字",
+    "story": "石巷盡頭有塊老石碑，刻住一疊成語，尾字連住下一句開頭，一直延伸到巷口。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "積" },
+      { "r": 0, "c": 1, "char": "土" },
+      { "r": 0, "c": 2, "char": "成" },
+      { "r": 0, "c": 3, "char": "山" },
+      { "r": 1, "c": 0, "char": "山" },
+      { "r": 1, "c": 1, "char": "明" },
+      { "r": 1, "c": 2, "char": "水" },
+      { "r": 1, "c": 3, "char": "秀" },
+      { "r": 2, "c": 0, "char": "秀" },
+      { "r": 2, "c": 1, "char": "外" },
+      { "r": 2, "c": 2, "char": "慧" },
+      { "r": 2, "c": 3, "char": "中" },
+      { "r": 3, "c": 0, "char": "中" },
+      { "r": 3, "c": 1, "char": "庸" },
+      { "r": 3, "c": 2, "char": "之" },
+      { "r": 3, "c": 3, "char": "道" },
+      { "r": 4, "c": 0, "char": "道" },
+      { "r": 4, "c": 1, "char": "不" },
+      { "r": 4, "c": 2, "char": "拾" },
+      { "r": 4, "c": 3, "char": "遺" }
+    ],
+    "slots": [
+      { "idiomId": "ji-tu-cheng-shan", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "shan-ming-shui-xiu", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "xiu-wai-hui-zhong", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "zhong-yong-zhi-dao", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "dao-bu-shi-yi", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["拾", "庸", "玉", "外", "遺", "星", "俱", "傑", "明", "慧", "之", "水", "不", "疑"],
+    "hintLimit": 1
+  },
+  {
+    "id": 76,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 6 課：屋簷水聲",
+    "story": "雨後石巷反着光，屋簷滴水答答。青苔爬滿牆角，石板上的字卻格外清楚。",
+    "rows": 5,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 1, "char": "隔" },
+      { "r": 1, "c": 1, "char": "岸" },
+      { "r": 1, "c": 2, "char": "刮" },
+      { "r": 2, "c": 1, "char": "觀" },
+      { "r": 2, "c": 2, "char": "目" },
+      { "r": 2, "c": 3, "char": "光" },
+      { "r": 2, "c": 4, "char": "如" },
+      { "r": 2, "c": 5, "char": "炬" },
+      { "r": 3, "c": 0, "char": "薪" },
+      { "r": 3, "c": 1, "char": "火" },
+      { "r": 3, "c": 2, "char": "相" },
+      { "r": 3, "c": 3, "char": "傳" },
+      { "r": 4, "c": 2, "char": "看" }
+    ],
+    "slots": [
+      { "idiomId": "gua-mu-xiang-kan", "row": 1, "col": 2, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "xin-huo-xiang-chuan", "row": 3, "col": 0, "dir": "h", "blanks": [1, 3] },
+      { "idiomId": "ge-an-guan-huo", "row": 0, "col": 1, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "mu-guang-ru-ju", "row": 2, "col": 2, "dir": "h", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["八", "目", "方", "飯", "晉", "如", "炬", "觀", "看", "岸", "傳", "炙", "火", "刮"],
+    "hintLimit": 1
+  },
+  {
+    "id": 77,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 7 課：濕石刻文",
+    "story": "雨後石巷反着光，屋簷滴水答答。青苔爬滿牆角，石板上的字卻格外清楚。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "項" },
+      { "r": 1, "c": 2, "char": "禍" },
+      { "r": 1, "c": 3, "char": "莊" },
+      { "r": 2, "c": 0, "char": "聞" },
+      { "r": 2, "c": 1, "char": "雞" },
+      { "r": 2, "c": 2, "char": "起" },
+      { "r": 2, "c": 3, "char": "舞" },
+      { "r": 3, "c": 1, "char": "鳴" },
+      { "r": 3, "c": 2, "char": "蕭" },
+      { "r": 3, "c": 3, "char": "劍" },
+      { "r": 4, "c": 1, "char": "狗" },
+      { "r": 4, "c": 2, "char": "牆" },
+      { "r": 5, "c": 1, "char": "盜" }
+    ],
+    "slots": [
+      { "idiomId": "wen-ji-qi-wu", "row": 2, "col": 0, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "huo-qi-xiao-qiang", "row": 1, "col": 2, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "xiang-zhuang-wu-jian", "row": 0, "col": 3, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "ji-ming-gou-dao", "row": 2, "col": 1, "dir": "v", "blanks": [1, 3] }
+    ],
+    "bank": ["舞", "牆", "庖", "項", "盜", "蕭", "禍", "劍", "聞", "土", "伏", "解", "鳴", "收"],
+    "hintLimit": 1
+  },
+  {
+    "id": 78,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 8 課：雨停尋句",
+    "story": "糰子撐着小傘，跳過水氹，替阿墨把濕石板上的字卡擺好。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "小" },
+      { "r": 1, "c": 1, "char": "秋" },
+      { "r": 1, "c": 3, "char": "國" },
+      { "r": 2, "c": 0, "char": "曲" },
+      { "r": 2, "c": 1, "char": "高" },
+      { "r": 2, "c": 2, "char": "和" },
+      { "r": 2, "c": 3, "char": "寡" },
+      { "r": 3, "c": 0, "char": "突" },
+      { "r": 3, "c": 1, "char": "氣" },
+      { "r": 3, "c": 3, "char": "民" },
+      { "r": 4, "c": 0, "char": "徙" },
+      { "r": 4, "c": 1, "char": "爽" },
+      { "r": 5, "c": 0, "char": "薪" }
+    ],
+    "slots": [
+      { "idiomId": "qiu-gao-qi-shuang", "row": 1, "col": 1, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "qu-gao-he-gua", "row": 2, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "qu-tu-xi-xin", "row": 2, "col": 0, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "xiao-guo-gua-min", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 3] }
+    ],
+    "bank": ["飯", "爽", "鬻", "薪", "教", "氣", "民", "和", "小", "彈", "國", "徙", "可", "曲"],
+    "hintLimit": 1
+  },
+  {
+    "id": 79,
+    "chapter": 8,
+    "mode": "fill",
+    "title": "第 9 課：苔痕成語",
+    "story": "雨後石巷反着光，屋簷滴水答答。青苔爬滿牆角，石板上的字卻格外清楚。",
+    "rows": 4,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 3, "char": "青" },
+      { "r": 1, "c": 0, "char": "人" },
+      { "r": 1, "c": 1, "char": "才" },
+      { "r": 1, "c": 2, "char": "輩" },
+      { "r": 1, "c": 3, "char": "出" },
+      { "r": 2, "c": 2, "char": "疲" },
+      { "r": 2, "c": 3, "char": "於" },
+      { "r": 2, "c": 4, "char": "奔" },
+      { "r": 2, "c": 5, "char": "命" },
+      { "r": 3, "c": 1, "char": "篳" },
+      { "r": 3, "c": 2, "char": "路" },
+      { "r": 3, "c": 3, "char": "藍" },
+      { "r": 3, "c": 4, "char": "縷" }
+    ],
+    "slots": [
+      { "idiomId": "qing-chu-yu-lan", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 2] },
+      { "idiomId": "pi-yu-ben-ming", "row": 2, "col": 2, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "bi-lu-lan-lv", "row": 3, "col": 1, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "ren-cai-bei-chu", "row": 1, "col": 0, "dir": "h", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["奔", "兵", "人", "撼", "冬", "輩", "業", "路", "縷", "出", "於", "青", "自", "篳"],
+    "hintLimit": 1
+  },
+  {
+    "id": 80,
+    "chapter": 8,
+    "mode": "chain",
+    "title": "第 10 課：雨霽珠明",
+    "story": "雨後石巷的盡頭，老石碑上的字被雨水沖得模糊。糰子要用一路記住的成語，把碑文重新填好。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "三" },
+      { "r": 0, "c": 1, "char": "人" },
+      { "r": 0, "c": 2, "char": "成" },
+      { "r": 0, "c": 3, "char": "虎" },
+      { "r": 1, "c": 0, "char": "虎" },
+      { "r": 1, "c": 1, "char": "口" },
+      { "r": 1, "c": 2, "char": "餘" },
+      { "r": 1, "c": 3, "char": "生" },
+      { "r": 2, "c": 0, "char": "生" },
+      { "r": 2, "c": 1, "char": "龍" },
+      { "r": 2, "c": 2, "char": "活" },
+      { "r": 2, "c": 3, "char": "虎" },
+      { "r": 3, "c": 0, "char": "虎" },
+      { "r": 3, "c": 1, "char": "頭" },
+      { "r": 3, "c": 2, "char": "蛇" },
+      { "r": 3, "c": 3, "char": "尾" },
+      { "r": 4, "c": 0, "char": "尾" },
+      { "r": 4, "c": 1, "char": "大" },
+      { "r": 4, "c": 2, "char": "不" },
+      { "r": 4, "c": 3, "char": "掉" }
+    ],
+    "slots": [
+      { "idiomId": "san-ren-cheng-hu", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "hu-kou-yu-sheng", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "sheng-long-huo-hu", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "hu-tou-she-wei", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "wei-da-bu-diao", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["掉", "學", "蛇", "口", "餘", "不", "舊", "蜉", "拱", "頭", "大", "龍", "活", "玄"],
+    "hintLimit": 1
+  },
+  {
+    "id": 81,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 1 課：雲海書樓",
+    "story": "白雲從窗外飄過，糰子伸手想捉，卻只捉到一張字卡。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "決" },
+      { "r": 0, "c": 1, "char": "勝" },
+      { "r": 0, "c": 2, "char": "千" },
+      { "r": 0, "c": 3, "char": "里" },
+      { "r": 1, "c": 2, "char": "鈞" },
+      { "r": 1, "c": 3, "char": "血" },
+      { "r": 2, "c": 0, "char": "沆" },
+      { "r": 2, "c": 1, "char": "瀣" },
+      { "r": 2, "c": 2, "char": "一" },
+      { "r": 2, "c": 3, "char": "氣" },
+      { "r": 3, "c": 2, "char": "髮" },
+      { "r": 3, "c": 3, "char": "方" },
+      { "r": 4, "c": 3, "char": "剛" }
+    ],
+    "slots": [
+      { "idiomId": "qian-jun-yi-fa", "row": 0, "col": 2, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "hang-xie-yi-qi", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "jue-sheng-qian-li", "row": 0, "col": 0, "dir": "h", "blanks": [0, 3] },
+      { "idiomId": "xue-qi-fang-gang", "row": 1, "col": 3, "dir": "v", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["紙", "瀣", "髮", "齊", "血", "曝", "剛", "決", "雲", "里", "一", "方", "聲", "鈞"],
+    "hintLimit": 1
+  },
+  {
+    "id": 82,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 2 課：翻雲閱卷",
+    "story": "白雲從窗外飄過，糰子伸手想捉，卻只捉到一張字卡。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 0, "char": "精" },
+      { "r": 0, "c": 2, "char": "城" },
+      { "r": 1, "c": 0, "char": "益" },
+      { "r": 1, "c": 1, "char": "胯" },
+      { "r": 1, "c": 2, "char": "下" },
+      { "r": 1, "c": 3, "char": "之" },
+      { "r": 1, "c": 4, "char": "辱" },
+      { "r": 2, "c": 0, "char": "求" },
+      { "r": 2, "c": 1, "char": "全" },
+      { "r": 2, "c": 2, "char": "之" },
+      { "r": 2, "c": 3, "char": "毀" },
+      { "r": 3, "c": 0, "char": "精" },
+      { "r": 3, "c": 2, "char": "盟" }
+    ],
+    "slots": [
+      { "idiomId": "jing-yi-qiu-jing", "row": 0, "col": 0, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "qiu-quan-zhi-hui", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "cheng-xia-zhi-meng", "row": 0, "col": 2, "dir": "v", "blanks": [0, 2] },
+      { "idiomId": "kua-xia-zhi-ru", "row": 1, "col": 1, "dir": "h", "blanks": [0, 3] }
+    ],
+    "bank": ["賣", "牛", "益", "之", "洋", "胯", "啞", "毀", "精", "城", "精", "全", "底", "辱"],
+    "hintLimit": 1
+  },
+  {
+    "id": 83,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 3 課：雲端對句",
+    "story": "雲端書樓浮在雲海之上，書頁被風吹得獵獵作響。糰子踏着雲梯，一層一層往上填字。",
+    "rows": 6,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 2, "char": "指" },
+      { "r": 1, "c": 2, "char": "鹿" },
+      { "r": 2, "c": 0, "char": "以" },
+      { "r": 2, "c": 1, "char": "鄰" },
+      { "r": 2, "c": 2, "char": "為" },
+      { "r": 2, "c": 3, "char": "壑" },
+      { "r": 3, "c": 0, "char": "暴" },
+      { "r": 3, "c": 2, "char": "馬" },
+      { "r": 3, "c": 3, "char": "革" },
+      { "r": 3, "c": 4, "char": "裹" },
+      { "r": 3, "c": 5, "char": "屍" },
+      { "r": 4, "c": 0, "char": "易" },
+      { "r": 5, "c": 0, "char": "暴" }
+    ],
+    "slots": [
+      { "idiomId": "zhi-lu-wei-ma", "row": 0, "col": 2, "dir": "v", "blanks": [1, 2] },
+      { "idiomId": "yi-lin-wei-he", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "yi-bao-yi-bao", "row": 2, "col": 0, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "ma-ge-guo-shi", "row": 3, "col": 2, "dir": "h", "blanks": [2, 3] }
+    ],
+    "bank": ["暴", "月", "代", "尾", "易", "火", "鄰", "為", "壑", "裹", "屍", "鹿", "暴", "翻"],
+    "hintLimit": 1
+  },
+  {
+    "id": 84,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 4 課：書樓高處",
+    "story": "白雲從窗外飄過，糰子伸手想捉，卻只捉到一張字卡。",
+    "rows": 7,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "螓" },
+      { "r": 1, "c": 3, "char": "首" },
+      { "r": 2, "c": 2, "char": "各" },
+      { "r": 2, "c": 3, "char": "蛾" },
+      { "r": 3, "c": 2, "char": "自" },
+      { "r": 3, "c": 3, "char": "眉" },
+      { "r": 4, "c": 0, "char": "金" },
+      { "r": 4, "c": 1, "char": "石" },
+      { "r": 4, "c": 2, "char": "為" },
+      { "r": 4, "c": 3, "char": "開" },
+      { "r": 5, "c": 2, "char": "政" },
+      { "r": 5, "c": 3, "char": "眼" },
+      { "r": 6, "c": 3, "char": "笑" }
+    ],
+    "slots": [
+      { "idiomId": "mei-kai-yan-xiao", "row": 3, "col": 3, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "jin-shi-wei-kai", "row": 4, "col": 0, "dir": "h", "blanks": [0, 1, 2] },
+      { "idiomId": "ge-zi-wei-zheng", "row": 2, "col": 2, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "qin-shou-e-mei", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 2] }
+    ],
+    "bank": ["雨", "題", "眼", "石", "螓", "金", "政", "怙", "負", "蛾", "誨", "首", "為", "笑"],
+    "hintLimit": 1
+  },
+  {
+    "id": 85,
+    "chapter": 9,
+    "mode": "chain",
+    "title": "第 5 課：雲梯拾字",
+    "story": "雲海翻湧，阿墨扶穩書架：「接龍要穩，唔好急，一句接好先想下一句喵。」",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "眾" },
+      { "r": 0, "c": 1, "char": "口" },
+      { "r": 0, "c": 2, "char": "鑠" },
       { "r": 0, "c": 3, "char": "金" },
       { "r": 1, "c": 0, "char": "金" },
       { "r": 1, "c": 1, "char": "玉" },
@@ -43,14 +2438,548 @@
       { "r": 2, "c": 0, "char": "堂" },
       { "r": 2, "c": 1, "char": "堂" },
       { "r": 2, "c": 2, "char": "正" },
-      { "r": 2, "c": 3, "char": "正" }
+      { "r": 2, "c": 3, "char": "正" },
+      { "r": 3, "c": 0, "char": "正" },
+      { "r": 3, "c": 1, "char": "襟" },
+      { "r": 3, "c": 2, "char": "危" },
+      { "r": 3, "c": 3, "char": "坐" },
+      { "r": 4, "c": 0, "char": "坐" },
+      { "r": 4, "c": 1, "char": "井" },
+      { "r": 4, "c": 2, "char": "觀" },
+      { "r": 4, "c": 3, "char": "天" },
+      { "r": 5, "c": 0, "char": "天" },
+      { "r": 5, "c": 1, "char": "翻" },
+      { "r": 5, "c": 2, "char": "地" },
+      { "r": 5, "c": 3, "char": "覆" }
     ],
     "slots": [
-      { "idiomId": "yi-nuo-qian-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
-      { "idiomId": "jin-yu-man-tang", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
-      { "idiomId": "tang-tang-zheng-zheng", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+      { "idiomId": "zhong-kou-shuo-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "jin-yu-man-tang", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "tang-tang-zheng-zheng", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "zheng-jin-wei-zuo", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "zuo-jing-guan-tian", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "tian-fan-di-fu", "row": 5, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
     ],
-    "bank": ["玉", "滿", "堂", "堂", "正", "正"],
-    "hintLimit": 3
+    "bank": ["井", "危", "滿", "螂", "襟", "假", "正", "觀", "覆", "翻", "玉", "堂", "竭", "倦", "炭", "地"],
+    "hintLimit": 1
+  },
+  {
+    "id": 86,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 6 課：霧海藏書",
+    "story": "白雲從窗外飄過，糰子伸手想捉，卻只捉到一張字卡。",
+    "rows": 5,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "東" },
+      { "r": 1, "c": 0, "char": "雲" },
+      { "r": 1, "c": 1, "char": "行" },
+      { "r": 1, "c": 2, "char": "雨" },
+      { "r": 1, "c": 3, "char": "施" },
+      { "r": 2, "c": 0, "char": "蒸" },
+      { "r": 2, "c": 1, "char": "色" },
+      { "r": 2, "c": 3, "char": "效" },
+      { "r": 3, "c": 0, "char": "霞" },
+      { "r": 3, "c": 1, "char": "匆" },
+      { "r": 3, "c": 3, "char": "顰" },
+      { "r": 4, "c": 0, "char": "蔚" },
+      { "r": 4, "c": 1, "char": "匆" }
+    ],
+    "slots": [
+      { "idiomId": "dong-shi-xiao-pin", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "yun-xing-yu-shi", "row": 1, "col": 0, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "yun-zheng-xia-wei", "row": 1, "col": 0, "dir": "v", "blanks": [0, 1, 3] },
+      { "idiomId": "xing-se-cong-cong", "row": 1, "col": 1, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["雲", "匆", "蒸", "施", "東", "碧", "匆", "謀", "豁", "色", "無", "顰", "七", "雨", "蔚"],
+    "hintLimit": 1
+  },
+  {
+    "id": 87,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 7 課：雲上課堂",
+    "story": "雲端書樓浮在雲海之上，書頁被風吹得獵獵作響。糰子踏着雲梯，一層一層往上填字。",
+    "rows": 4,
+    "cols": 7,
+    "cells": [
+      { "r": 0, "c": 5, "char": "怙" },
+      { "r": 1, "c": 2, "char": "不" },
+      { "r": 1, "c": 3, "char": "念" },
+      { "r": 1, "c": 4, "char": "舊" },
+      { "r": 1, "c": 5, "char": "惡" },
+      { "r": 2, "c": 0, "char": "鶴" },
+      { "r": 2, "c": 1, "char": "立" },
+      { "r": 2, "c": 2, "char": "雞" },
+      { "r": 2, "c": 3, "char": "群" },
+      { "r": 2, "c": 4, "char": "而" },
+      { "r": 2, "c": 5, "char": "不" },
+      { "r": 2, "c": 6, "char": "黨" },
+      { "r": 3, "c": 5, "char": "悛" }
+    ],
+    "slots": [
+      { "idiomId": "he-li-ji-qun", "row": 2, "col": 0, "dir": "h", "blanks": [0, 1, 2] },
+      { "idiomId": "qun-er-bu-dang", "row": 2, "col": 3, "dir": "h", "blanks": [2, 3] },
+      { "idiomId": "hu-e-bu-quan", "row": 0, "col": 5, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "bu-nian-jiu-e", "row": 1, "col": 2, "dir": "h", "blanks": [0, 1, 2] }
+    ],
+    "bank": ["舊", "卑", "怙", "雞", "不", "念", "說", "立", "四", "蛙", "十", "不", "悛", "黨", "鶴"],
+    "hintLimit": 1
+  },
+  {
+    "id": 88,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 8 課：書頁生雲",
+    "story": "白雲從窗外飄過，糰子伸手想捉，卻只捉到一張字卡。",
+    "rows": 5,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 2, "char": "草" },
+      { "r": 1, "c": 0, "char": "若" },
+      { "r": 1, "c": 1, "char": "墓" },
+      { "r": 1, "c": 2, "char": "木" },
+      { "r": 1, "c": 3, "char": "已" },
+      { "r": 1, "c": 4, "char": "拱" },
+      { "r": 2, "c": 0, "char": "有" },
+      { "r": 2, "c": 1, "char": "口" },
+      { "r": 2, "c": 2, "char": "皆" },
+      { "r": 2, "c": 3, "char": "碑" },
+      { "r": 3, "c": 0, "char": "若" },
+      { "r": 3, "c": 2, "char": "兵" },
+      { "r": 4, "c": 0, "char": "無" }
+    ],
+    "slots": [
+      { "idiomId": "cao-mu-jie-bing", "row": 0, "col": 2, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "mu-mu-yi-gong", "row": 1, "col": 1, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "you-kou-jie-bei", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "ruo-you-ruo-wu", "row": 1, "col": 0, "dir": "v", "blanks": [2, 3] }
+    ],
+    "bank": ["狼", "蹄", "若", "亦", "皆", "已", "無", "墓", "碑", "牛", "口", "兵", "拱", "安", "草"],
+    "hintLimit": 1
+  },
+  {
+    "id": 89,
+    "chapter": 9,
+    "mode": "fill",
+    "title": "第 9 課：雲開見句",
+    "story": "雲端書樓浮在雲海之上，書頁被風吹得獵獵作響。糰子踏着雲梯，一層一層往上填字。",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 1, "char": "目" },
+      { "r": 0, "c": 2, "char": "光" },
+      { "r": 0, "c": 3, "char": "如" },
+      { "r": 0, "c": 4, "char": "炬" },
+      { "r": 1, "c": 0, "char": "為" },
+      { "r": 1, "c": 1, "char": "淵" },
+      { "r": 1, "c": 2, "char": "驅" },
+      { "r": 1, "c": 3, "char": "魚" },
+      { "r": 2, "c": 1, "char": "探" },
+      { "r": 2, "c": 2, "char": "驪" },
+      { "r": 2, "c": 3, "char": "得" },
+      { "r": 2, "c": 4, "char": "珠" },
+      { "r": 3, "c": 3, "char": "水" }
+    ],
+    "slots": [
+      { "idiomId": "ru-yu-de-shui", "row": 0, "col": 3, "dir": "v", "blanks": [2, 3] },
+      { "idiomId": "wei-yuan-qu-yu", "row": 1, "col": 0, "dir": "h", "blanks": [0, 1, 2] },
+      { "idiomId": "tan-li-de-zhu", "row": 2, "col": 1, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "mu-guang-ru-ju", "row": 0, "col": 1, "dir": "h", "blanks": [0, 1, 3] }
+    ],
+    "bank": ["淵", "水", "得", "炬", "驅", "山", "珠", "畏", "驪", "好", "為", "否", "光", "徑", "目"],
+    "hintLimit": 1
+  },
+  {
+    "id": 90,
+    "chapter": 9,
+    "mode": "chain",
+    "title": "第 10 課：雲深珠亮",
+    "story": "雲端書樓最高一層，書架圍成圓環，阿墨把最後一本書放到糰子面前：「溫習完就可以上山頂喵。」",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "甚" },
+      { "r": 0, "c": 1, "char": "囂" },
+      { "r": 0, "c": 2, "char": "塵" },
+      { "r": 0, "c": 3, "char": "上" },
+      { "r": 1, "c": 0, "char": "上" },
+      { "r": 1, "c": 1, "char": "善" },
+      { "r": 1, "c": 2, "char": "若" },
+      { "r": 1, "c": 3, "char": "水" },
+      { "r": 2, "c": 0, "char": "水" },
+      { "r": 2, "c": 1, "char": "漲" },
+      { "r": 2, "c": 2, "char": "船" },
+      { "r": 2, "c": 3, "char": "高" },
+      { "r": 3, "c": 0, "char": "高" },
+      { "r": 3, "c": 1, "char": "山" },
+      { "r": 3, "c": 2, "char": "流" },
+      { "r": 3, "c": 3, "char": "水" },
+      { "r": 4, "c": 0, "char": "水" },
+      { "r": 4, "c": 1, "char": "落" },
+      { "r": 4, "c": 2, "char": "石" },
+      { "r": 4, "c": 3, "char": "出" },
+      { "r": 5, "c": 0, "char": "出" },
+      { "r": 5, "c": 1, "char": "生" },
+      { "r": 5, "c": 2, "char": "入" },
+      { "r": 5, "c": 3, "char": "死" }
+    ],
+    "slots": [
+      { "idiomId": "shen-xiao-chen-shang", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "shang-shan-ruo-shui", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-zhang-chuan-gao", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gao-shan-liu-shui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-luo-shi-chu", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "chu-sheng-ru-si", "row": 5, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["漲", "死", "入", "簇", "流", "落", "旁", "生", "若", "走", "編", "善", "嘆", "石", "船", "山"],
+    "hintLimit": 1
+  },
+  {
+    "id": 91,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 1 課：成語之巔",
+    "story": "頂峰的石碑刻滿一路走來的成語，阿墨說：「填好呢幾句，靈珠就會醒喵。」",
+    "rows": 7,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 2, "char": "川" },
+      { "r": 1, "c": 2, "char": "流" },
+      { "r": 2, "c": 0, "char": "四" },
+      { "r": 2, "c": 1, "char": "體" },
+      { "r": 2, "c": 2, "char": "不" },
+      { "r": 2, "c": 3, "char": "勤" },
+      { "r": 3, "c": 0, "char": "望" },
+      { "r": 3, "c": 1, "char": "峰" },
+      { "r": 3, "c": 2, "char": "息" },
+      { "r": 3, "c": 3, "char": "心" },
+      { "r": 4, "c": 0, "char": "塵" },
+      { "r": 5, "c": 0, "char": "莫" },
+      { "r": 6, "c": 0, "char": "及" }
+    ],
+    "slots": [
+      { "idiomId": "chuan-liu-bu-xi", "row": 0, "col": 2, "dir": "v", "blanks": [0, 1] },
+      { "idiomId": "si-ti-bu-qin", "row": 2, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "wang-feng-xi-xin", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "wang-chen-mo-ji", "row": 3, "col": 0, "dir": "v", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["流", "望", "體", "卷", "心", "別", "及", "四", "鑠", "翁", "郢", "川", "莫", "勤", "滄", "峰"],
+    "hintLimit": 1
+  },
+  {
+    "id": 92,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 2 課：頂峰一課",
+    "story": "雲在腳下流動，糰子深吸一口氣，覺得自己好像長高了一點。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 3, "char": "乘" },
+      { "r": 1, "c": 0, "char": "運" },
+      { "r": 1, "c": 1, "char": "斤" },
+      { "r": 1, "c": 2, "char": "成" },
+      { "r": 1, "c": 3, "char": "風" },
+      { "r": 2, "c": 0, "char": "牢" },
+      { "r": 2, "c": 1, "char": "不" },
+      { "r": 2, "c": 2, "char": "可" },
+      { "r": 2, "c": 3, "char": "破" },
+      { "r": 3, "c": 1, "char": "虞" },
+      { "r": 3, "c": 3, "char": "浪" },
+      { "r": 4, "c": 1, "char": "之" },
+      { "r": 5, "c": 1, "char": "譽" }
+    ],
+    "slots": [
+      { "idiomId": "cheng-feng-po-lang", "row": 0, "col": 3, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "lao-bu-ke-po", "row": 2, "col": 0, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "yun-jin-cheng-feng", "row": 1, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "bu-yu-zhi-yu", "row": 2, "col": 1, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["成", "牢", "可", "虞", "運", "目", "破", "美", "之", "浪", "囂", "清", "乘", "智", "譽", "碑"],
+    "hintLimit": 1
+  },
+  {
+    "id": 93,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 3 課：靈珠綻放",
+    "story": "穿過雲層，成語之巔就在眼前。山風很大，糰子按住帽子，把最後幾塊石碑上的字補好。",
+    "rows": 7,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "俾" },
+      { "r": 1, "c": 0, "char": "晝" },
+      { "r": 2, "c": 0, "char": "作" },
+      { "r": 3, "c": 0, "char": "夜" },
+      { "r": 4, "c": 0, "char": "以" },
+      { "r": 4, "c": 1, "char": "鄰" },
+      { "r": 4, "c": 2, "char": "為" },
+      { "r": 4, "c": 3, "char": "壑" },
+      { "r": 5, "c": 0, "char": "繼" },
+      { "r": 6, "c": 0, "char": "日" },
+      { "r": 6, "c": 1, "char": "上" },
+      { "r": 6, "c": 2, "char": "三" },
+      { "r": 6, "c": 3, "char": "竿" }
+    ],
+    "slots": [
+      { "idiomId": "ye-yi-ji-ri", "row": 3, "col": 0, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "bi-zhou-zuo-ye", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "ri-shang-san-gan", "row": 6, "col": 0, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "yi-lin-wei-he", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["鄰", "攻", "繼", "竿", "刻", "戰", "壑", "日", "疲", "好", "夜", "晝", "涯", "作", "為", "三"],
+    "hintLimit": 1
+  },
+  {
+    "id": 94,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 4 課：山高句長",
+    "story": "頂峰的石碑刻滿一路走來的成語，阿墨說：「填好呢幾句，靈珠就會醒喵。」",
+    "rows": 4,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 0, "char": "尾" },
+      { "r": 0, "c": 1, "char": "大" },
+      { "r": 0, "c": 2, "char": "不" },
+      { "r": 0, "c": 3, "char": "掉" },
+      { "r": 0, "c": 4, "char": "罄" },
+      { "r": 1, "c": 1, "char": "勢" },
+      { "r": 1, "c": 2, "char": "如" },
+      { "r": 1, "c": 3, "char": "破" },
+      { "r": 1, "c": 4, "char": "竹" },
+      { "r": 2, "c": 1, "char": "所" },
+      { "r": 2, "c": 4, "char": "難" },
+      { "r": 3, "c": 1, "char": "趨" },
+      { "r": 3, "c": 4, "char": "書" }
+    ],
+    "slots": [
+      { "idiomId": "shi-ru-po-zhu", "row": 1, "col": 1, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "qing-zhu-nan-shu", "row": 0, "col": 4, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "da-shi-suo-qu", "row": 0, "col": 1, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "wei-da-bu-diao", "row": 0, "col": 0, "dir": "h", "blanks": [0, 2, 3] }
+    ],
+    "bank": ["趨", "衣", "書", "兩", "勢", "罄", "所", "餐", "難", "野", "破", "尾", "掉", "蜃", "怒", "不"],
+    "hintLimit": 1
+  },
+  {
+    "id": 95,
+    "chapter": 10,
+    "mode": "chain",
+    "title": "第 5 課：最後考驗",
+    "story": "最後一段山路是成語砌成的階梯，每級都以尾字連住下一級，一直通往山頂。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "跋" },
+      { "r": 0, "c": 1, "char": "前" },
+      { "r": 0, "c": 2, "char": "躓" },
+      { "r": 0, "c": 3, "char": "後" },
+      { "r": 1, "c": 0, "char": "後" },
+      { "r": 1, "c": 1, "char": "來" },
+      { "r": 1, "c": 2, "char": "居" },
+      { "r": 1, "c": 3, "char": "上" },
+      { "r": 2, "c": 0, "char": "上" },
+      { "r": 2, "c": 1, "char": "善" },
+      { "r": 2, "c": 2, "char": "若" },
+      { "r": 2, "c": 3, "char": "水" },
+      { "r": 3, "c": 0, "char": "水" },
+      { "r": 3, "c": 1, "char": "漲" },
+      { "r": 3, "c": 2, "char": "船" },
+      { "r": 3, "c": 3, "char": "高" },
+      { "r": 4, "c": 0, "char": "高" },
+      { "r": 4, "c": 1, "char": "山" },
+      { "r": 4, "c": 2, "char": "流" },
+      { "r": 4, "c": 3, "char": "水" },
+      { "r": 5, "c": 0, "char": "水" },
+      { "r": 5, "c": 1, "char": "天" },
+      { "r": 5, "c": 2, "char": "一" },
+      { "r": 5, "c": 3, "char": "色" }
+    ],
+    "slots": [
+      { "idiomId": "ba-qian-zhi-hou", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "hou-lai-ju-shang", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shang-shan-ruo-shui", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-zhang-chuan-gao", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gao-shan-liu-shui", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-tian-yi-se", "row": 5, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["一", "色", "流", "株", "要", "理", "居", "船", "山", "連", "來", "死", "天", "善", "瓶", "漲", "若"],
+    "hintLimit": 1
+  },
+  {
+    "id": 96,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 6 課：雲端決戰",
+    "story": "頂峰的石碑刻滿一路走來的成語，阿墨說：「填好呢幾句，靈珠就會醒喵。」",
+    "rows": 5,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 1, "char": "天" },
+      { "r": 0, "c": 2, "char": "壤" },
+      { "r": 0, "c": 3, "char": "之" },
+      { "r": 0, "c": 4, "char": "別" },
+      { "r": 1, "c": 1, "char": "涯" },
+      { "r": 1, "c": 2, "char": "涸" },
+      { "r": 2, "c": 1, "char": "海" },
+      { "r": 2, "c": 2, "char": "轍" },
+      { "r": 3, "c": 0, "char": "蝸" },
+      { "r": 3, "c": 1, "char": "角" },
+      { "r": 3, "c": 2, "char": "之" },
+      { "r": 3, "c": 3, "char": "爭" },
+      { "r": 4, "c": 2, "char": "鮒" }
+    ],
+    "slots": [
+      { "idiomId": "tian-ya-hai-jiao", "row": 0, "col": 1, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "wo-jiao-zhi-zheng", "row": 3, "col": 0, "dir": "h", "blanks": [0, 1, 3] },
+      { "idiomId": "he-zhe-zhi-fu", "row": 1, "col": 2, "dir": "v", "blanks": [1, 3] },
+      { "idiomId": "tian-rang-zhi-bie", "row": 0, "col": 1, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["角", "趙", "潔", "蝸", "綠", "別", "鮒", "暇", "海", "轍", "涯", "壤", "爭", "賤", "之", "深"],
+    "hintLimit": 1
+  },
+  {
+    "id": 97,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 7 課：集句成山",
+    "story": "雲在腳下流動，糰子深吸一口氣，覺得自己好像長高了一點。",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 1, "char": "怙" },
+      { "r": 1, "c": 0, "char": "郢" },
+      { "r": 1, "c": 1, "char": "惡" },
+      { "r": 2, "c": 0, "char": "書" },
+      { "r": 2, "c": 1, "char": "不" },
+      { "r": 2, "c": 2, "char": "盡" },
+      { "r": 2, "c": 3, "char": "言" },
+      { "r": 3, "c": 0, "char": "燕" },
+      { "r": 3, "c": 1, "char": "悛" },
+      { "r": 3, "c": 3, "char": "而" },
+      { "r": 4, "c": 0, "char": "說" },
+      { "r": 4, "c": 3, "char": "有" },
+      { "r": 5, "c": 3, "char": "信" }
+    ],
+    "slots": [
+      { "idiomId": "yan-er-you-xin", "row": 2, "col": 3, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "shu-bu-jin-yan", "row": 2, "col": 0, "dir": "h", "blanks": [0, 1, 2] },
+      { "idiomId": "hu-e-bu-quan", "row": 0, "col": 1, "dir": "v", "blanks": [0, 1, 2] },
+      { "idiomId": "ying-shu-yan-shuo", "row": 1, "col": 0, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["信", "盡", "調", "惡", "說", "蜃", "狗", "散", "川", "有", "書", "不", "而", "盲", "燕", "怙"],
+    "hintLimit": 1
+  },
+  {
+    "id": 98,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 8 課：珠光滿路",
+    "story": "穿過雲層，成語之巔就在眼前。山風很大，糰子按住帽子，把最後幾塊石碑上的字補好。",
+    "rows": 7,
+    "cols": 5,
+    "cells": [
+      { "r": 0, "c": 3, "char": "行" },
+      { "r": 1, "c": 3, "char": "成" },
+      { "r": 2, "c": 3, "char": "於" },
+      { "r": 3, "c": 1, "char": "樂" },
+      { "r": 3, "c": 2, "char": "不" },
+      { "r": 3, "c": 3, "char": "思" },
+      { "r": 3, "c": 4, "char": "蜀" },
+      { "r": 4, "c": 2, "char": "虞" },
+      { "r": 5, "c": 0, "char": "蝸" },
+      { "r": 5, "c": 1, "char": "角" },
+      { "r": 5, "c": 2, "char": "之" },
+      { "r": 5, "c": 3, "char": "爭" },
+      { "r": 6, "c": 2, "char": "譽" }
+    ],
+    "slots": [
+      { "idiomId": "le-bu-si-shu", "row": 3, "col": 1, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "bu-yu-zhi-yu", "row": 3, "col": 2, "dir": "v", "blanks": [1, 2, 3] },
+      { "idiomId": "wo-jiao-zhi-zheng", "row": 5, "col": 0, "dir": "h", "blanks": [0, 2, 3] },
+      { "idiomId": "xing-cheng-yu-si", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 3] }
+    ],
+    "bank": ["虞", "之", "極", "蝸", "成", "雁", "錦", "蜀", "否", "思", "譽", "樂", "行", "爭", "炙", "大"],
+    "hintLimit": 1
+  },
+  {
+    "id": 99,
+    "chapter": 10,
+    "mode": "fill",
+    "title": "第 9 課：登頂對句",
+    "story": "穿過雲層，成語之巔就在眼前。山風很大，糰子按住帽子，把最後幾塊石碑上的字補好。",
+    "rows": 6,
+    "cols": 6,
+    "cells": [
+      { "r": 0, "c": 3, "char": "青" },
+      { "r": 1, "c": 3, "char": "梅" },
+      { "r": 2, "c": 1, "char": "拒" },
+      { "r": 2, "c": 2, "char": "罄" },
+      { "r": 2, "c": 3, "char": "竹" },
+      { "r": 2, "c": 4, "char": "難" },
+      { "r": 2, "c": 5, "char": "書" },
+      { "r": 3, "c": 0, "char": "盲" },
+      { "r": 3, "c": 1, "char": "人" },
+      { "r": 3, "c": 2, "char": "瞎" },
+      { "r": 3, "c": 3, "char": "馬" },
+      { "r": 4, "c": 1, "char": "千" },
+      { "r": 5, "c": 1, "char": "里" }
+    ],
+    "slots": [
+      { "idiomId": "qing-mei-zhu-ma", "row": 0, "col": 3, "dir": "v", "blanks": [0, 1, 2] },
+      { "idiomId": "mang-ren-xia-ma", "row": 3, "col": 0, "dir": "h", "blanks": [0, 2] },
+      { "idiomId": "ju-ren-qian-li", "row": 2, "col": 1, "dir": "v", "blanks": [0, 2, 3] },
+      { "idiomId": "qing-zhu-nan-shu", "row": 2, "col": 2, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["睚", "糟", "辱", "八", "梅", "千", "盲", "書", "秋", "里", "青", "拒", "瞎", "竹", "容", "難"],
+    "hintLimit": 1
+  },
+  {
+    "id": 100,
+    "chapter": 10,
+    "mode": "chain",
+    "title": "第 10 課：貓語成章",
+    "story": "穿過雲層，阿墨與糰子終於站在成語之巔。十個場景的靈珠在腳下亮起，最後一串成語接好，整個貓貓世界都會亮起來喵！",
+    "rows": 6,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "狼" },
+      { "r": 0, "c": 1, "char": "子" },
+      { "r": 0, "c": 2, "char": "野" },
+      { "r": 0, "c": 3, "char": "心" },
+      { "r": 1, "c": 0, "char": "心" },
+      { "r": 1, "c": 1, "char": "口" },
+      { "r": 1, "c": 2, "char": "如" },
+      { "r": 1, "c": 3, "char": "一" },
+      { "r": 2, "c": 0, "char": "一" },
+      { "r": 2, "c": 1, "char": "意" },
+      { "r": 2, "c": 2, "char": "孤" },
+      { "r": 2, "c": 3, "char": "行" },
+      { "r": 3, "c": 0, "char": "行" },
+      { "r": 3, "c": 1, "char": "雲" },
+      { "r": 3, "c": 2, "char": "流" },
+      { "r": 3, "c": 3, "char": "水" },
+      { "r": 4, "c": 0, "char": "水" },
+      { "r": 4, "c": 1, "char": "漲" },
+      { "r": 4, "c": 2, "char": "船" },
+      { "r": 4, "c": 3, "char": "高" },
+      { "r": 5, "c": 0, "char": "高" },
+      { "r": 5, "c": 1, "char": "枕" },
+      { "r": 5, "c": 2, "char": "無" },
+      { "r": 5, "c": 3, "char": "憂" }
+    ],
+    "slots": [
+      { "idiomId": "lang-zi-ye-xin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "xin-kou-ru-yi", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "yi-yi-gu-xing", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "xing-yun-liu-shui", "row": 3, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "shui-zhang-chuan-gao", "row": 4, "col": 0, "dir": "h", "blanks": [1, 2] },
+      { "idiomId": "gao-zhen-wu-you", "row": 5, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["流", "懸", "口", "憂", "孤", "耳", "如", "船", "枕", "無", "日", "螂", "舟", "漲", "意", "牛", "雲"],
+    "hintLimit": 1
   }
 ]

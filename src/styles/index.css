@@ -1,61 +1,12 @@
-:root {
-  --cream: #fdf6ec;
-  --cream-2: #f7e9df;
-  --jade: #78a878;
-  --jade-dark: #4f7a58;
-  --jade-deep: #2f4a38;
-  --pink: #f4a7bb;
-  --pink-deep: #e88aa8;
-  --ink: #2f3a2f;
-  --gold: #e8b64c;
-  --card: #fffdf8;
-  --shadow: 0 10px 30px rgba(47, 58, 47, 0.12);
-  --radius: 20px;
-  --font-main: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
-  --font-serif: 'Noto Serif TC', 'PingFang TC', 'Microsoft JhengHei', serif;
-}
+/* ==========================================================================
+   樣式入口（ui-dev 擁有）
+   main.ts 只 import 呢個檔同 cats.css；cats.css 由 cat-animator 擁有，會後載入
+   並可覆寫以下 petal / confetti fallback 風格。
+   @import 必須放喺所有規則之前。
+   ========================================================================== */
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-}
-
-body {
-  background: radial-gradient(circle at 12% 8%, #fde7ef 0%, transparent 42%),
-    radial-gradient(circle at 88% 0%, #e6f1e3 0%, transparent 40%), var(--cream);
-  color: var(--ink);
-  font-family: var(--font-main);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-#app {
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-/* 載入中的臨時樣式；UI 完成後仍保留基本 reset */
-.boot-placeholder {
-  min-height: 80vh;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.boot-placeholder h1 {
-  font-family: var(--font-serif);
-  letter-spacing: 0.08em;
-  margin: 0 0 0.5rem;
-}
-
-.boot-hint {
-  opacity: 0.6;
-  font-size: 0.9rem;
-}
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './screens.css';
+@import './game.css';

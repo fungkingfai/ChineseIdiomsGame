@@ -18,7 +18,8 @@
     "verify:data": "node scripts/verify-data.mjs",
     "shots": "node scripts/qa-screenshots.mjs",
     "deploy": "npm run build && wrangler deploy",
-    "postinstall": "node scripts/ci-build.mjs"
+    "postinstall": "node scripts/ci-build.mjs",
+    "verify:live": "node scripts/lead-live-check.mjs"
   },
   "author": "DSH Agent Team",
   "license": "MIT",

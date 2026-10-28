@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Design tokens — 貓咪成語大冒險
+   玉綠 × 櫻花粉 × 奶油紙感 × 金色星星
+   ========================================================================== */
+
+:root {
+  /* ---- palette：玉綠 ---- */
+  --jade: #78a878;
+  --jade-dark: #4f7a58;
+  --jade-deep: #2f4a38;
+  --jade-soft: #b9d3a8;
+  --jade-tint: #e8f2e3;
+
+  /* ---- palette：櫻花粉 ---- */
+  --pink: #f4a7bb;
+  --pink-deep: #e88aa8;
+  --pink-deeper: #cf6f8e;
+  --pink-tint: #fdeaf0;
+
+  /* ---- palette：奶油紙 ---- */
+  --cream: #fdf6ec;
+  --cream-2: #f7e9df;
+  --cream-3: #f0dccd;
+  --card: #fffdf8;
+
+  /* ---- palette：墨綠／金 ---- */
+  --ink: #2f3a2f;
+  --ink-soft: #5c6b5c;
+  --ink-faint: rgba(47, 58, 47, 0.42);
+  --gold: #e8b64c;
+  --gold-deep: #b98a26;
+  --gold-tint: #fdf1d3;
+
+  /* ---- 線條 ---- */
+  --line: rgba(47, 74, 56, 0.13);
+  --line-strong: rgba(47, 74, 56, 0.26);
+  --line-pink: rgba(232, 138, 168, 0.4);
+
+  /* ---- 陰影 ---- */
+  --shadow-xs: 0 1px 2px rgba(47, 58, 47, 0.07);
+  --shadow-sm: 0 2px 8px rgba(47, 58, 47, 0.08);
+  --shadow-md: 0 10px 26px rgba(47, 58, 47, 0.13);
+  --shadow-lg: 0 22px 54px rgba(47, 58, 47, 0.2);
+  --shadow-jade: 0 8px 18px rgba(79, 122, 88, 0.3);
+  --shadow-pink: 0 8px 18px rgba(207, 111, 142, 0.3);
+  --ring-gold: 0 0 0 3px var(--gold);
+  --ring-pink: 0 0 0 3px rgba(244, 167, 187, 0.4);
+
+  /* ---- 字體 ---- */
+  --font-main: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Heiti TC',
+    'Noto Sans CJK TC', sans-serif;
+  --font-serif: 'Noto Serif TC', 'Songti TC', 'PingFang TC', 'Microsoft JhengHei',
+    'Heiti TC', serif;
+
+  /* ---- 圓角 ---- */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---- 佈局 ---- */
+  --gutter: 16px;
+  --maxw: 1120px;
+  --hud-h: 58px;
+  --cell: clamp(52px, 16.6vw, 74px);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* ---- 動態 ---- */
+  --dur-fast: 0.14s;
+  --dur: 0.2s;
+  --ease-out: cubic-bezier(0.22, 0.9, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  color-scheme: light;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --gutter: 24px;
+    --cell: clamp(60px, 8.6vw, 78px);
+    --hud-h: 62px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --gutter: 32px;
+    --cell: 78px;
+    --hud-h: 66px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --cell: 82px;
+  }
+}

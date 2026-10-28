@@ -63,51 +63,55 @@ function checkSolved(g: GameState, events: GameEvent[]): void {
 
 /** 完成一個成語後判定：正確 → 鎖定；錯誤 → 清空該成語玩家填入的字並記錯。 */
 function settleWords(g: GameState, touchedKeys: Set<string>, events: GameEvent[]): void {
+  // 兩階段：先鎖定正確成語，再處理錯誤成語。
+  // 咁樣交叉格屬於已正確成語時，就唔會被錯誤成語清走。
+  const complete: Array<{ index: number; word: WordState; correct: boolean }> = [];
   for (let i = 0; i < g.words.length; i += 1) {
     const word = g.words[i];
     if (word.locked) continue;
     if (!word.cells.some((key) => touchedKeys.has(key))) continue;
     if (!allFilled(g, word.cells)) continue;
-
-    if (isCorrect(g, word.slot)) {
-      for (const key of word.cells) {
-        const cell = g.cells[key];
-        if (cell) cell.locked = true;
-      }
-      word.locked = true;
-      events.push({
-        type: 'word-correct',
-        slotIndex: i,
-        idiomId: word.slot.idiomId,
-        cells: [...word.cells],
-      });
-    } else {
-      g.mistakes += 1;
-      for (const key of word.cells) {
-        const cell = g.cells[key];
-        if (!cell || cell.source !== 'given') continue;
-        // given 格唔會清
-      }
-      const cleared: string[] = [];
-      for (const key of word.cells) {
-        const cell = g.cells[key];
-        if (!cell || cell.source === 'given' || cell.locked) continue;
-        if (cell.char !== '') {
-          cell.char = '';
-          cell.source = 'word';
-          delete cell.bankIndex;
-          cleared.push(key);
-        }
-      }
-      events.push({
-        type: 'word-wrong',
-        slotIndex: i,
-        idiomId: word.slot.idiomId,
-        cells: cleared,
-        mistakes: g.mistakes,
-      });
-    }
+    complete.push({ index: i, word, correct: isCorrect(g, word.slot) });
   }
+
+  for (const item of complete) {
+    if (!item.correct) continue;
+    for (const key of item.word.cells) {
+      const cell = g.cells[key];
+      if (cell) cell.locked = true;
+    }
+    item.word.locked = true;
+    events.push({
+      type: 'word-correct',
+      slotIndex: item.index,
+      idiomId: item.word.slot.idiomId,
+      cells: [...item.word.cells],
+    });
+  }
+
+  for (const item of complete) {
+    if (item.correct) continue;
+    g.mistakes += 1;
+    const cleared: string[] = [];
+    for (const key of item.word.cells) {
+      const cell = g.cells[key];
+      if (!cell || cell.source === 'given' || cell.locked) continue;
+      if (cell.char !== '') {
+        cell.char = '';
+        cell.source = 'word';
+        delete cell.bankIndex;
+        cleared.push(key);
+      }
+    }
+    events.push({
+      type: 'word-wrong',
+      slotIndex: item.index,
+      idiomId: item.word.slot.idiomId,
+      cells: cleared,
+      mistakes: g.mistakes,
+    });
+  }
+
   checkSolved(g, events);
 }
 
@@ -128,7 +132,8 @@ export function createGame(level: Level): GameState {
     slotIndex: index,
     slot,
     cells: slotCellKeys(slot),
-    locked: false,
+    // 冇空格嘅成語（例如接龍第一句全顯示）一開始就當已完成
+    locked: slot.blanks.length === 0,
   }));
 
   return {
@@ -193,8 +198,9 @@ export function useHint(g: GameState): HintResult | null {
     return !!cell && !cell.locked;
   });
   if (candidates.length === 0) return null;
-  const openOnly = candidates.filter((key) => g.cells[key].char === '');
-  const pool = openOnly.length > 0 ? openOnly : candidates;
+  // 只揭示未填嘅格；若有格已填但成語未完成，代表同一個成語仲有空格，呢度一定搵到未填格。
+  const pool = candidates.filter((key) => g.cells[key].char === '');
+  if (pool.length === 0) return null;
   const key = pool[Math.floor(Math.random() * pool.length)];
 
   const solution = solutionMap(g.level);
@@ -208,6 +214,7 @@ export function useHint(g: GameState): HintResult | null {
   g.hintsUsed += 1;
 
   const bankIndex = currentBankIndexFor(g, key);
+  if (bankIndex >= 0) cell.bankIndex = bankIndex;
   const events: GameEvent[] = [{ type: 'hint', key, char: answer }];
   settleWords(g, new Set([key]), events);
   return { key, char: answer, bankIndex, events };
