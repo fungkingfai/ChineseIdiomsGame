@@ -1,0 +1,34 @@
+/* 貓貓角色動畫樣式（cat-animator 擁有；目前為 Lead 的臨時 placeholder） */
+
+.cat-svg {
+  display: block;
+  overflow: visible;
+}
+
+.cat-breathe {
+  animation: cat-breathe 3.6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+@keyframes cat-breathe {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.012);
+  }
+}
+
+.petal-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-breathe {
+    animation: none;
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+.vite/
+*.log
+.DS_Store
+.wrangler/
+*.tsbuildinfo
+screenshots-local/
+
+# dist/ 係刻意 commit：Cloudflare Workers Builds 只行 `npx wrangler deploy`，
+# postinstall 會嘗試重新 build，失敗時用 repo 內 dist/ 作 fallback。

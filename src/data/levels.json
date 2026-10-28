@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "chapter": 1,
+    "mode": "fill",
+    "title": "第一課：畫中有話",
+    "story": "糰子第一次踏進櫻花小徑，發現石板路上刻着發光的成語，店長阿墨笑着說：「想學成語，先由填字開始喵。」",
+    "rows": 4,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "畫" },
+      { "r": 0, "c": 1, "char": "蛇" },
+      { "r": 0, "c": 2, "char": "添" },
+      { "r": 0, "c": 3, "char": "足" },
+      { "r": 1, "c": 0, "char": "龍" },
+      { "r": 2, "c": 0, "char": "點" },
+      { "r": 3, "c": 0, "char": "睛" }
+    ],
+    "slots": [
+      { "idiomId": "hua-she-tian-zu", "row": 0, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "hua-long-dian-jing", "row": 0, "col": 0, "dir": "v", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["蛇", "添", "足", "龍", "點", "睛"],
+    "hintLimit": 3
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "mode": "chain",
+    "title": "第二課：一諾千金",
+    "story": "石板上的字串成一條發光小路，糰子要沿着「接龍」把成語一環一環接起來。",
+    "rows": 3,
+    "cols": 4,
+    "cells": [
+      { "r": 0, "c": 0, "char": "一" },
+      { "r": 0, "c": 1, "char": "諾" },
+      { "r": 0, "c": 2, "char": "千" },
+      { "r": 0, "c": 3, "char": "金" },
+      { "r": 1, "c": 0, "char": "金" },
+      { "r": 1, "c": 1, "char": "玉" },
+      { "r": 1, "c": 2, "char": "滿" },
+      { "r": 1, "c": 3, "char": "堂" },
+      { "r": 2, "c": 0, "char": "堂" },
+      { "r": 2, "c": 1, "char": "堂" },
+      { "r": 2, "c": 2, "char": "正" },
+      { "r": 2, "c": 3, "char": "正" }
+    ],
+    "slots": [
+      { "idiomId": "yi-nuo-qian-jin", "row": 0, "col": 0, "dir": "h", "blanks": [] },
+      { "idiomId": "jin-yu-man-tang", "row": 1, "col": 0, "dir": "h", "blanks": [1, 2, 3] },
+      { "idiomId": "tang-tang-zheng-zheng", "row": 2, "col": 0, "dir": "h", "blanks": [1, 2, 3] }
+    ],
+    "bank": ["玉", "滿", "堂", "堂", "正", "正"],
+    "hintLimit": 3
+  }
+]
