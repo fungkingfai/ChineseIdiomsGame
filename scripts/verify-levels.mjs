@@ -3,8 +3,9 @@
  * 《貓咪成語大冒險》關卡資料獨立驗證（QA 擁有）
  * =================================================================
  * 只讀 src/data/{levels,idioms,chapters}.json，獨立重新實作 docs/PLAN.md
- * §4／§5 嘅資料契約檢查。**刻意唔 import scripts/generate-levels.mjs**，
- * 避免「生成器自己驗自己」；兩邊結果應該一致（可以互相對照）。
+ * §4（含 Issue #2 進階篇 Level 101–200）／§5 嘅資料契約檢查。
+ * **刻意唔 import scripts/generate-levels.mjs**，避免「生成器自己驗自己」；
+ * 兩邊結果應該一致（可以互相對照）。
  *
  * 用法：
  *   node scripts/verify-levels.mjs            # 人類可讀報告（預設）
@@ -26,24 +27,45 @@ const CHAPTERS_PATH = resolve(ROOT, 'src/data/chapters.json');
 /* ------------------------------------------------------------------ */
 /* 設計常數（由 docs/PLAN.md §4 及 docs/LEVEL_DESIGN.md 規格得出）      */
 /* ------------------------------------------------------------------ */
-const TOTAL_LEVELS = 100;
+const TOTAL_LEVELS = 200;
 const LEVELS_PER_CHAPTER = 10;
-const CHAPTER_COUNT = 10;
-const EXPECTED_CHAIN_COUNT = 18;
+const CHAPTER_COUNT = 20;
+const BASIC_CHAPTER_COUNT = 10;
+const FIRST_ADVANCED_LEVEL = 101;
+const LAST_BASIC_LEVEL = 100;
+const EXPECTED_CHAIN_COUNT = 38;
 const CHAIN_START_LEVEL = 11;
 const CHAIN_EVERY = 5;
 const MIN_FILL_WORDS = 2;
 const MAX_FILL_WORDS = 4;
 const MIN_CHAIN_WORDS = 3;
 const MAX_CHAIN_WORDS = 6;
-const BLANK_RATIO_START = 0.3;
-const BLANK_RATIO_END = 0.65;
-/** 每章提示次數（PLAN §4.4：3 → 1，必須單調不增） */
-const HINTS_BY_CHAPTER = [3, 3, 3, 2, 2, 2, 1, 1, 1, 1];
-/** 每章誘餌字數（PLAN §4.4：0 → 6，必須單調不減） */
+/* 進階篇（Issue #2）：docs/PLAN.md §4.5 */
+const ADV_MIN_FILL_WORDS = 4;
+const ADV_MAX_FILL_WORDS = 5;
+const ADV_MIN_CHAIN_WORDS = 6;
+const ADV_MAX_CHAIN_WORDS = 7;
+const BASIC_BLANK_RATIO_START = 0.3;
+const BASIC_BLANK_RATIO_END = 0.65;
+const ADVANCED_BLANK_RATIO_START = 0.6;
+const ADVANCED_BLANK_RATIO_END = 0.72;
+const ADVANCED_BANK_MAX = 22;
+const ADVANCED_DECOY_MIN = 6;
+const ADVANCED_DECOY_MAX = 10;
+/** 每章提示次數（基礎 3 → 1；進階 2 → 1，PLAN §4.4／4.5） */
+const HINTS_BY_CHAPTER = [
+  3, 3, 3, 2, 2, 2, 1, 1, 1, 1,
+  2, 2, 2, 2, 2, 1, 1, 1, 1, 1,
+];
+/** 基礎篇每章誘餌字數（進階篇 6 → 10，見 §4.5） */
 const DECOYS_BY_CHAPTER = [0, 1, 1, 2, 3, 3, 4, 5, 5, 6];
-/** 章節場景 key（PLAN §4.1，順序固定） */
+/** 進階篇每章誘餌目標（GAME_DESIGN §10.1／§19.6）；實際 = min(目標, 22 − 空格數) */
+const ADVANCED_DECOYS_BY_CHAPTER = [6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+/** 進階篇每關最少 given 字數 */
+const ADVANCED_MIN_GIVEN = 2;
+/** 章節場景 key（PLAN §4.1，順序固定，共 20 章） */
 const CHAPTER_SCENES = [
+  // 基礎篇
   'garden',
   'bamboo',
   'moon',
@@ -54,6 +76,17 @@ const CHAPTER_SCENES = [
   'rain',
   'cloud',
   'summit',
+  // 進階篇（Issue #2）
+  'library',
+  'volcano',
+  'desert',
+  'aurora',
+  'underwater',
+  'skycastle',
+  'shrine',
+  'harbor',
+  'firefly',
+  'zenith',
 ];
 /** 常用接龍連接字（PLAN §5.1） */
 const CONNECTORS = [
@@ -83,10 +116,49 @@ const round = (value, digits = 3) => {
   return Math.round(value * factor) / factor;
 };
 const keyOf = (r, c) => `${r}:${c}`;
-const difficultyOf = (id) => (id - 1) / (TOTAL_LEVELS - 1);
+const isAdvanced = (id) => id >= FIRST_ADVANCED_LEVEL;
+const basicDifficulty = (id) => (id - 1) / (LAST_BASIC_LEVEL - 1);
+const advancedDifficulty = (id) =>
+  (id - FIRST_ADVANCED_LEVEL) / (TOTAL_LEVELS - FIRST_ADVANCED_LEVEL);
+/** 整體難度（基礎 0–0.5、進階 0.5–1），用嚟做跨 200 關趨勢統計 */
+const difficultyOf = (id) =>
+  isAdvanced(id) ? 0.5 + advancedDifficulty(id) * 0.5 : basicDifficulty(id) * 0.5;
 const chapterOf = (id) => Math.floor((id - 1) / LEVELS_PER_CHAPTER) + 1;
 const isChainLevel = (id) => id >= CHAIN_START_LEVEL && id % CHAIN_EVERY === 0;
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+/** fill 成語數：基礎 min(4, 2+round(2d))；進階 min(5, 4+round(d2)) */
+function fillWordCountFor(id) {
+  if (isAdvanced(id)) return Math.min(ADV_MAX_FILL_WORDS, ADV_MIN_FILL_WORDS + Math.round(advancedDifficulty(id)));
+  return Math.min(MAX_FILL_WORDS, MIN_FILL_WORDS + Math.round(2 * basicDifficulty(id)));
+}
+/** chain 長度：基礎 min(6, 3+round(3d))；進階 min(7, 6+round(d2)) */
+function chainWordCountFor(id) {
+  if (isAdvanced(id)) return Math.min(ADV_MAX_CHAIN_WORDS, ADV_MIN_CHAIN_WORDS + Math.round(advancedDifficulty(id)));
+  return Math.min(MAX_CHAIN_WORDS, MIN_CHAIN_WORDS + Math.round(3 * basicDifficulty(id)));
+}
+/** 目標空格比例：基礎 0.30→0.65；進階 0.60→0.72 */
+function blankRatioFor(id) {
+  if (isAdvanced(id)) {
+    return ADVANCED_BLANK_RATIO_START + (ADVANCED_BLANK_RATIO_END - ADVANCED_BLANK_RATIO_START) * advancedDifficulty(id);
+  }
+  return BASIC_BLANK_RATIO_START + (BASIC_BLANK_RATIO_END - BASIC_BLANK_RATIO_START) * basicDifficulty(id);
+}
+/** 目標空格數（分母＝4×成語數；chain 因連接位有結構上限） */
+function targetBlankCountFor(level) {
+  const ratio = blankRatioFor(level.id);
+  const totalChars = level.slots.length * 4;
+  if (level.mode === 'chain') {
+    return clamp(
+      Math.round(ratio * totalChars),
+      Math.max(2, level.slots.length - 1),
+      2 * level.slots.length - 1,
+    );
+  }
+  return clamp(Math.round(ratio * totalChars), 1, 3 * level.slots.length);
+}
+/** 每關錨 tier 上限：基礎 tier ≤2；進階 tier ≤3（PLAN §4.4／4.5） */
+const anchorTierMaxFor = (id) => (isAdvanced(id) ? 3 : 2);
 
 /** 一個 slot 的 4 個格 key（依成語字序） */
 const slotCellKeys = (slot) => {
@@ -245,7 +317,7 @@ function verify(levels, idioms, chapters) {
   details.stats = stats;
 
   /* ---- 章節資料 --------------------------------------------------- */
-  check('章節資料：10 章、scene key 正確', () => {
+  check('章節資料：20 章、scene key 正確（含進階篇）', () => {
     assert(Array.isArray(chapters), 'chapters.json 頂層必須係 array');
     assert(
       chapters.length === CHAPTER_COUNT,
@@ -260,7 +332,7 @@ function verify(levels, idioms, chapters) {
       assert(typeof chapter.name === 'string' && cjkCount(chapter.name) >= 2, `第 ${chapter.id} 章缺少繁中名稱`);
       assert(typeof chapter.blurb === 'string' && cjkCount(chapter.blurb) >= 8, `第 ${chapter.id} 章 blurb 太短`);
     });
-    return `10 章，scene 依序 ${CHAPTER_SCENES.join(' → ')}`;
+    return `20 章，scene 依序 ${CHAPTER_SCENES.join(' → ')}`;
   });
 
   /* ---- 基本結構 --------------------------------------------------- */
@@ -283,7 +355,7 @@ function verify(levels, idioms, chapters) {
       const chapter = chapters.find((item) => item.id === level.chapter);
       assert(Boolean(chapter), `Level ${level.id} 對應嘅章節 ${level.chapter} 唔存在`);
     }
-    return '每 10 關一章（chapter = ceil(id/10)），全部章節存在';
+    return '每 10 關一章（chapter = ceil(id/10)，1–20），全部章節存在';
   });
 
   /* ---- 模式 ------------------------------------------------------- */
@@ -298,7 +370,7 @@ function verify(levels, idioms, chapters) {
     for (let id = 1; id <= LEVELS_PER_CHAPTER; id += 1) {
       assert(levelById.get(id)?.mode === 'fill', `Level ${id} 教學期必須係 fill`);
     }
-    return `chain ${chainCount} 關（id ≥ ${CHAIN_START_LEVEL} 且 ${CHAIN_EVERY} 的倍數）；Level 1–10 全 fill`;
+    return `chain ${chainCount} 關（id ≥ ${CHAIN_START_LEVEL} 且 ${CHAIN_EVERY} 的倍數，共 38 關）；Level 1–10 全 fill`;
   });
 
   /* ---- 幾何 ------------------------------------------------------- */
@@ -331,6 +403,12 @@ function verify(levels, idioms, chapters) {
           level.rows === level.slots.length && level.cols === 4,
           `Level ${level.id} chain 盤面必須 rows=成語數、cols=4（實際 ${level.rows}x${level.cols}）`,
         );
+      } else if (isAdvanced(level.id)) {
+        // 進階篇：棋盤上限 10×10（PLAN §4.5）
+        assert(
+          level.rows <= 10 && level.cols <= 10,
+          `Level ${level.id} 進階 fill 盤面過大（${level.rows}x${level.cols}，上限 10×10）`,
+        );
       } else if (level.rows > 12 || level.cols > 12) {
         warn(`Level ${level.id} fill 盤面偏大（${level.rows}x${level.cols}），手機可能難玩`);
       }
@@ -356,9 +434,11 @@ function verify(levels, idioms, chapters) {
     for (const level of levels) {
       assert(Array.isArray(level.slots), `Level ${level.id} slots 唔係 array`);
       if (level.mode === 'fill') {
+        const minWords = isAdvanced(level.id) ? ADV_MIN_FILL_WORDS : MIN_FILL_WORDS;
+        const maxWords = isAdvanced(level.id) ? ADV_MAX_FILL_WORDS : MAX_FILL_WORDS;
         assert(
-          level.slots.length >= MIN_FILL_WORDS && level.slots.length <= MAX_FILL_WORDS,
-          `Level ${level.id} fill 成語數 ${level.slots.length} 唔喺 ${MIN_FILL_WORDS}–${MAX_FILL_WORDS}`,
+          level.slots.length >= minWords && level.slots.length <= maxWords,
+          `Level ${level.id} ${isAdvanced(level.id) ? '進階 ' : ''}fill 成語數 ${level.slots.length} 唔喺 ${minWords}–${maxWords}`,
         );
         const solution = new Map(level.cells.map((cell) => [keyOf(cell.r, cell.c), cell.char]));
         const seenCells = new Set();
@@ -381,9 +461,11 @@ function verify(levels, idioms, chapters) {
           for (const key of keys) seenCells.add(key);
         });
       } else {
+        const minWords = isAdvanced(level.id) ? ADV_MIN_CHAIN_WORDS : MIN_CHAIN_WORDS;
+        const maxWords = isAdvanced(level.id) ? ADV_MAX_CHAIN_WORDS : MAX_CHAIN_WORDS;
         assert(
-          level.slots.length >= MIN_CHAIN_WORDS && level.slots.length <= MAX_CHAIN_WORDS,
-          `Level ${level.id} chain 成語數 ${level.slots.length} 唔喺 ${MIN_CHAIN_WORDS}–${MAX_CHAIN_WORDS}`,
+          level.slots.length >= minWords && level.slots.length <= maxWords,
+          `Level ${level.id} ${isAdvanced(level.id) ? '進階 ' : ''}chain 成語數 ${level.slots.length} 唔喺 ${minWords}–${maxWords}`,
         );
         level.slots.forEach((slot, index) => {
           const idiom = idiomById.get(slot.idiomId);
@@ -431,9 +513,11 @@ function verify(levels, idioms, chapters) {
           `Level ${level.id} slot ${slotIndex} blanks 未排序：${JSON.stringify(slot.blanks)}`,
         );
         if (level.mode === 'fill') {
+          // 進階篇每句最多 4 空格（Issue #2：0.60→0.72 比例需要）；基礎篇維持 1–3
+          const maxBlanks = isAdvanced(level.id) ? 4 : 3;
           assert(
-            slot.blanks.length >= 1 && slot.blanks.length <= 3,
-            `Level ${level.id} fill slot ${slotIndex} 空格數 ${slot.blanks.length} 唔喺 1–3`,
+            slot.blanks.length >= 1 && slot.blanks.length <= maxBlanks,
+            `Level ${level.id} ${isAdvanced(level.id) ? '進階 ' : ''}fill slot ${slotIndex} 空格數 ${slot.blanks.length} 唔喺 1–${maxBlanks}`,
           );
         } else {
           if (slotIndex === 0) {
@@ -447,8 +531,21 @@ function verify(levels, idioms, chapters) {
           }
         }
       });
+      if (isAdvanced(level.id)) {
+        // 進階篇：每關最少 2 個 given 字（GAME_DESIGN §19.6）
+        const blankKeys = new Set();
+        for (const slot of level.slots) {
+          const keys = slotCellKeys(slot);
+          for (const index of slot.blanks) blankKeys.add(keys[index]);
+        }
+        const givenCount = level.cells.length - blankKeys.size;
+        assert(
+          givenCount >= ADVANCED_MIN_GIVEN,
+          `Level ${level.id} 進階關卡只有 ${givenCount} 個 given 字（最少 ${ADVANCED_MIN_GIVEN} 個）`,
+        );
+      }
     }
-    return 'fill 每個成語 1–3 空格；chain row0 全顯示、連接位（首／尾字）保留';
+    return '基礎 fill 每句 1–3 空格、進階 1–4 空格（每關 ≥2 given）；chain row0 全顯示、連接位保留';
   });
 
   /* ---- bank ------------------------------------------------------- */
@@ -493,8 +590,25 @@ function verify(levels, idioms, chapters) {
         realDecoys === decoyCount,
         `Level ${level.id} 字庫有 ${realDecoys} 張誘餌字，但差額應為 ${decoyCount}（有誘餌字同答案字相同）`,
       );
+      if (isAdvanced(level.id)) {
+        // 進階篇：bank 上限 ≤22；實際誘餌 = min(章節目標, 22 − 空格數)（GAME_DESIGN §19.6）
+        assert(
+          level.bank.length <= ADVANCED_BANK_MAX,
+          `Level ${level.id} 進階 bank ${level.bank.length} 張超過上限 ${ADVANCED_BANK_MAX}`,
+        );
+        const targetDecoys = ADVANCED_DECOYS_BY_CHAPTER[level.chapter - BASIC_CHAPTER_COUNT - 1];
+        const expectedDecoys = Math.min(targetDecoys, ADVANCED_BANK_MAX - blankKeys.size);
+        assert(
+          decoyCount === expectedDecoys,
+          `Level ${level.id} 進階誘餌 ${decoyCount} 張，預期 min(${targetDecoys}, 22−${blankKeys.size})=${expectedDecoys}`,
+        );
+        assert(
+          decoyCount >= ADVANCED_DECOY_MIN && decoyCount <= ADVANCED_DECOY_MAX,
+          `Level ${level.id} 進階誘餌 ${decoyCount} 張唔喺 ${ADVANCED_DECOY_MIN}–${ADVANCED_DECOY_MAX}`,
+        );
+      }
     }
-    return '每個空格所需字卡數量足夠；誘餌字唔會同空格答案字混淆';
+    return '每個空格所需字卡數量足夠；基礎誘餌逐章精確、進階誘餌=min(目標, 22−空格)；進階 bank ≤22';
   });
 
   /* ---- 提示次數 --------------------------------------------------- */
@@ -508,78 +622,95 @@ function verify(levels, idioms, chapters) {
         `Level ${level.id} hintLimit=${level.hintLimit}，第 ${level.chapter} 章應為 ${expected}`,
       );
     }
-    return `提示次數每章 ${HINTS_BY_CHAPTER.join(' → ')}（1–3 次）`;
+    return `提示次數每章 ${HINTS_BY_CHAPTER.join(' → ')}（基礎 3→1、進階 2→1）`;
   });
 
   /* ---- 誘餌字曲線 ------------------------------------------------- */
-  check('誘餌字數量符合曲線', () => {
+  check('誘餌字數量符合曲線（基礎 0→6、進階 6→10，受 bank ≤22 截）', () => {
+    const advancedChapterDecoys = [];
     for (const level of levels) {
-      const expected = DECOYS_BY_CHAPTER[level.chapter - 1];
       const metrics = levelMetrics(level, idiomById);
+      if (isAdvanced(level.id)) {
+        assert(
+          metrics.decoyCount >= ADVANCED_DECOY_MIN && metrics.decoyCount <= ADVANCED_DECOY_MAX,
+          `Level ${level.id} 進階誘餌字 ${metrics.decoyCount} 張唔喺 ${ADVANCED_DECOY_MIN}–${ADVANCED_DECOY_MAX}`,
+        );
+      } else {
+        const expected = DECOYS_BY_CHAPTER[level.chapter - 1];
+        assert(
+          metrics.decoyCount === expected,
+          `Level ${level.id} 誘餌字 ${metrics.decoyCount} 張，第 ${level.chapter} 章應為 ${expected} 張`,
+        );
+      }
+    }
+    // 公式目標逐章不減（實際數字可因 bank ≤22 上限回落）
+    for (let index = 1; index < ADVANCED_DECOYS_BY_CHAPTER.length; index += 1) {
       assert(
-        metrics.decoyCount === expected,
-        `Level ${level.id} 誘餌字 ${metrics.decoyCount} 張，第 ${level.chapter} 章應為 ${expected} 張`,
+        ADVANCED_DECOYS_BY_CHAPTER[index] >= ADVANCED_DECOYS_BY_CHAPTER[index - 1],
+        '進階篇誘餌目標公式應該逐章不減',
       );
     }
-    return `誘餌字每章 ${DECOYS_BY_CHAPTER.join(' → ')}`;
+    for (let chapter = BASIC_CHAPTER_COUNT + 1; chapter <= CHAPTER_COUNT; chapter += 1) {
+      const list = stats.levels.filter((item) => item.chapter === chapter);
+      advancedChapterDecoys.push(mean(list.map((item) => item.decoyCount)));
+    }
+    return `基礎 ${DECOYS_BY_CHAPTER.join('→')}；進階目標 ${ADVANCED_DECOYS_BY_CHAPTER.join('→')}，實際每章平均 ${advancedChapterDecoys.map((value) => value.toFixed(2)).join('→')}（後期受 22 張上限輕微回落屬設計）`;
   });
 
   /* ---- 成語數／空格數符合難度公式 ---------------------------------- */
-  check('每關成語數、空格數符合難度公式', () => {
+  check('每關成語數、空格數符合難度公式（基礎＋進階）', () => {
     for (const level of levels) {
-      const d = difficultyOf(level.id);
-      if (level.mode === 'fill') {
-        const expectedWords = Math.min(MAX_FILL_WORDS, MIN_FILL_WORDS + Math.round(2 * d));
-        assert(
-          level.slots.length === expectedWords,
-          `Level ${level.id} fill 成語數 ${level.slots.length}，公式預期 ${expectedWords}（d=${d.toFixed(3)}）`,
-        );
-      } else {
-        const expectedWords = Math.min(MAX_CHAIN_WORDS, MIN_CHAIN_WORDS + Math.round(3 * d));
-        if (level.slots.length !== expectedWords) {
-          warn(
-            `Level ${level.id} chain 長度 ${level.slots.length}（公式預期 ${expectedWords}）：接龍資料不足時屬 interim fallback`,
-          );
-        }
-        assert(
-          level.slots.length >= MIN_CHAIN_WORDS && level.slots.length <= MAX_CHAIN_WORDS,
-          `Level ${level.id} chain 長度 ${level.slots.length} 唔喺 3–6`,
-        );
-      }
+      const expectedWords = level.mode === 'fill' ? fillWordCountFor(level.id) : chainWordCountFor(level.id);
+      assert(
+        level.slots.length === expectedWords,
+        `Level ${level.id} ${level.mode} 成語數 ${level.slots.length}，公式預期 ${expectedWords}`,
+      );
       const metrics = levelMetrics(level, idiomById);
-      const ratio = BLANK_RATIO_START + (BLANK_RATIO_END - BLANK_RATIO_START) * d;
-      const totalChars = level.slots.length * 4;
-      let target;
-      let tolerance;
-      if (level.mode === 'fill') {
-        target = clamp(Math.round(ratio * totalChars), 1, 3 * level.slots.length);
-        tolerance = 1;
-      } else {
-        target = clamp(Math.round(ratio * totalChars), Math.max(2, level.slots.length - 1), 2 * level.slots.length - 1);
-        tolerance = 0;
-      }
+      const target = targetBlankCountFor(level);
+      const tolerance = level.mode === 'fill' ? 1 : 0;
       assert(
         Math.abs(metrics.blankCount - target) <= tolerance,
         `Level ${level.id} 空格數 ${metrics.blankCount}，公式預期 ${target}（±${tolerance}）`,
       );
     }
-    return '每關成語數、空格數符合 d=(id-1)/99 難度公式（chain fallback 只列警告）';
+    return '每關成語數、空格數符合基礎（d=(id-1)/99）＋進階（d2=(id-101)/99）難度公式';
   });
 
   /* ---- 成語數下限／tier 錨 ---------------------------------------- */
-  check('每關至少 2 成語、至少一個 tier ≤ 2 錨', () => {
+  check('每關至少 2 成語、錨 tier 合格（基礎 ≤2／進階 ≤3）', () => {
     for (const level of levels) {
       assert(level.slots.length >= 2, `Level ${level.id} 只有 ${level.slots.length} 個成語（最少 2 個）`);
       const tiers = level.slots.map((slot) => idiomById.get(slot.idiomId)?.tier);
       for (const tier of tiers) {
         assert(isInt(tier) && tier >= 1 && tier <= 5, `Level ${level.id} 有成語 tier 非法：${tier}`);
       }
+      const anchorMax = anchorTierMaxFor(level.id);
       assert(
-        Math.min(...tiers) <= 2,
-        `Level ${level.id} 冇 tier ≤ 2 成語做錨（tiers=${tiers.join(',')}）`,
+        Math.min(...tiers) <= anchorMax,
+        `Level ${level.id} 冇 tier ≤ ${anchorMax} 成語做錨（tiers=${tiers.join(',')}）`,
       );
     }
-    return `${levels.length} 關全部 ≥2 成語，且有 tier 1／2 錨`;
+    return `${levels.length} 關全部 ≥2 成語；基礎有 tier ≤2 錨、進階有 tier ≤3 錨`;
+  });
+
+  /* ---- 進階篇 tier 水平 ------------------------------------------- */
+  check('進階篇 tier 以 4/5 為主（平均 ≥3.8、tier4/5 ≥50%）', () => {
+    const advanced = stats.levels.filter((item) => isAdvanced(item.id));
+    assert(advanced.length === TOTAL_LEVELS - LAST_BASIC_LEVEL, `進階篇應有 100 關，實際 ${advanced.length}`);
+    const advancedTiers = advanced.flatMap((item) => item.tiers);
+    const overall = mean(advancedTiers);
+    assert(overall >= 3.8, `進階篇平均 tier ${overall.toFixed(2)} 應 ≥ 3.8`);
+    const highTierRatio = advancedTiers.filter((tier) => tier >= 4).length / advancedTiers.length;
+    assert(highTierRatio >= 0.5, `進階篇 tier 4/5 比例 ${(highTierRatio * 100).toFixed(1)}% 應 ≥ 50%`);
+    for (let chapter = BASIC_CHAPTER_COUNT + 1; chapter <= CHAPTER_COUNT; chapter += 1) {
+      const list = advanced.filter((item) => item.chapter === chapter);
+      const chapterAvg = mean(list.flatMap((item) => item.tiers));
+      assert(
+        chapterAvg >= 3.6 && chapterAvg <= 4.8,
+        `第 ${chapter} 章進階平均 tier ${chapterAvg.toFixed(2)} 應介乎 3.6–4.8`,
+      );
+    }
+    return `進階篇平均 tier ${overall.toFixed(2)}、tier4/5 佔 ${(highTierRatio * 100).toFixed(1)}%`;
   });
 
   /* ---- 標題／故事 ------------------------------------------------- */
@@ -603,7 +734,7 @@ function verify(levels, idioms, chapters) {
   });
 
   /* ---- 唯一性 ------------------------------------------------------ */
-  check('100 關唯一', () => {
+  check('200 關唯一（完整＋成語組合，含基礎／進階）', () => {
     const fullSignatures = new Set();
     const compositions = new Map();
     let compositionDuplicates = 0;
@@ -616,7 +747,7 @@ function verify(levels, idioms, chapters) {
       if (compositions.has(key)) {
         compositionDuplicates += 1;
         warn(
-          `Level ${level.id} 成語組合與 Level ${compositions.get(key)} 重複（${key}）；資料 ≥420 條後應重新生成消除`,
+          `Level ${level.id} 成語組合與 Level ${compositions.get(key)} 重複（${key}）；資料充足後應重新生成消除`,
         );
       } else {
         compositions.set(key, level.id);
@@ -625,7 +756,7 @@ function verify(levels, idioms, chapters) {
     if (compositionDuplicates > 0) {
       warn(`共 ${compositionDuplicates} 關成語組合重複（interim fallback，待資料定稿後重跑生成器）`);
     }
-    return `100 關完整內容全部不同；成語組合重複 ${compositionDuplicates} 關（見警告）`;
+    return `200 關完整內容全部不同；成語組合重複 ${compositionDuplicates} 關（見警告）`;
   });
 
   /* ---- 難度趨勢 ---------------------------------------------------- */
@@ -640,10 +771,16 @@ function verify(levels, idioms, chapters) {
         issues.push(`第 ${current.chapter} 章平均空格比例下降`);
       }
       if (current.avgTier + 0.2 < previous.avgTier) issues.push(`第 ${current.chapter} 章平均 tier 下降`);
-      if (Math.max(...current.hintLimits) > Math.max(...previous.hintLimits)) {
-        issues.push(`第 ${current.chapter} 章提示次數上升`);
+      // 進階篇第 11 章可以重新由 2 次提示開始；其餘章節提示只可下降或不變
+      if (current.chapter !== BASIC_CHAPTER_COUNT + 1) {
+        if (Math.max(...current.hintLimits) > Math.max(...previous.hintLimits)) {
+          issues.push(`第 ${current.chapter} 章提示次數上升`);
+        }
       }
-      if (current.avgDecoys + 1e-9 < previous.avgDecoys) issues.push(`第 ${current.chapter} 章誘餌字數下降`);
+      // 基礎篇誘餌逐章不減；進階篇受 bank ≤22 上限約束，容許實際平均輕微回落
+      if (index < BASIC_CHAPTER_COUNT && current.avgDecoys + 1e-9 < previous.avgDecoys) {
+        issues.push(`第 ${current.chapter} 章誘餌字數下降`);
+      }
     }
     const diffs = stats.levels.map((item) => difficultyOf(item.id));
     const correlations = {
@@ -662,7 +799,7 @@ function verify(levels, idioms, chapters) {
     }
     assert(issues.length === 0, issues.join('；'));
     details.correlations = correlations;
-    return `章節平均單調遞進；r(空格比例)=${correlations.blankRatio.toFixed(2)}、r(成語數)=${correlations.idioms.toFixed(2)}、r(tier)=${correlations.tier.toFixed(2)}`;
+    return `20 章平均單調遞進；r(空格比例)=${correlations.blankRatio.toFixed(2)}、r(成語數)=${correlations.idioms.toFixed(2)}、r(tier)=${correlations.tier.toFixed(2)}`;
   });
 
   /* ---- 可解性（資料角度） ------------------------------------------ */
@@ -712,21 +849,21 @@ function verify(levels, idioms, chapters) {
       const tail = idiom.word?.[3];
       if ((byFirst.get(tail) ?? []).some((other) => other.id !== idiom.id)) chained += 1;
     }
-    // 成語資料未達 420 條時屬 interim：連通性不足只警告，唔當 levels 資料錯。
-    const dataReady = idioms.length >= 420;
+    // 成語資料未達 688 條時屬 interim：連通性不足只警告，唔當 levels 資料錯。
+    const dataReady = idioms.length >= 688;
     if (!dataReady) {
       warn(
-        `成語資料只有 ${idioms.length} 條（未達 420），可接龍 ${chained} 筆（正式下限 150）；chain 關卡長度縮短屬預期，待資料定稿。`,
+        `成語資料只有 ${idioms.length} 條（Issue #2 目標 688），可接龍 ${chained} 筆（正式下限 250）；chain 關卡長度縮短屬預期，待資料定稿。`,
       );
     } else {
-      assert(chained >= 150, `可接龍成語只有 ${chained} 筆（下限 150），chain 關卡選擇會不足`);
+      assert(chained >= 250, `可接龍成語只有 ${chained} 筆（下限 250），進階 chain 7 選擇會不足`);
     }
-    // 所有 chain 關卡都要求至少 3 步；這裡檢查最長鏈（DFS，上限 8 步）
+    // 進階篇需要 7 句 chain；這裡檢查全庫最長鏈（DFS，上限 10 步）
     const longest = (() => {
       let best = 1;
       const walk = (idiom, used, depth) => {
         best = Math.max(best, depth);
-        if (depth >= 8 || best >= 8) return;
+        if (depth >= 10 || best >= 10) return;
         for (const next of byFirst.get(idiom.word[3]) ?? []) {
           if (used.has(next.id)) continue;
           used.add(next.id);
@@ -736,14 +873,14 @@ function verify(levels, idioms, chapters) {
       };
       for (const idiom of idioms) {
         walk(idiom, new Set([idiom.id]), 1);
-        if (best >= 8) break;
+        if (best >= 10) break;
       }
       return best;
     })();
     if (dataReady) {
-      assert(longest >= 6, `最長接龍只有 ${longest} 步，不足 6 步（第 10 章 chain 需要）`);
+      assert(longest >= 7, `最長接龍只有 ${longest} 步，不足 7 步（進階篇 chain 7 需要）`);
     }
-    return `${idioms.length} 條成語、${chained} 筆可接龍（正式下限 150）；最長接龍 ≥ ${longest} 步`;
+    return `${idioms.length} 條成語、${chained} 筆可接龍（正式下限 250）；最長接龍 ≥ ${longest} 步`;
   });
 
   return { stats, correlations: details.correlations ?? null };
@@ -764,7 +901,7 @@ function printTextReport(result, options) {
   }
   console.log('');
   line();
-  console.log('《貓咪成語大冒險》關卡資料獨立驗證（scripts/verify-levels.mjs）');
+  console.log('《貓咪成語大冒險》關卡資料獨立驗證（scripts/verify-levels.mjs）— 200 關／20 章（Issue #2）');
   line();
   console.log('檢查項目：');
   for (const item of checks) {

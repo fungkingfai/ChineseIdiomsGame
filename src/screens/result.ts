@@ -33,6 +33,9 @@ export function showResultOverlay(
 ): OverlayHandle {
   const reduced = effectiveReducedMotion(ctx);
   const nextLevel = ctx.levels.find((item) => item.id === level.id + 1);
+  const totalLevels = ctx.levels.length;
+  const lastLevelId = totalLevels > 0 ? ctx.levels[totalLevels - 1].id : level.id;
+  const isFinalLevel = level.id === lastLevelId;
   const idiomCards = level.slots
     .map((slot) => ctx.idioms.find((idiom) => idiom.id === slot.idiomId))
     .filter((idiom): idiom is NonNullable<typeof idiom> => Boolean(idiom))
@@ -65,6 +68,14 @@ export function showResultOverlay(
           ${resultStarsHtml(data.stars, reduced)}
           <p class="result__meta">獲得 <b>${data.stars}</b> 星 · 錯誤 <b>${data.mistakes}</b> 次 · 提示 <b>${data.hints}</b> 次</p>
           <p class="result__collect">${icon.book} 本關 ${level.slots.length} 個成語已收入圖鑑</p>
+          ${
+            isFinalLevel
+              ? `<div class="result__final" data-testid="result-final-all">
+                  ${icon.trophy}
+                  <span>恭喜完成全部 ${totalLevels} 關！你係成語大師喵～</span>
+                </div>`
+              : ''
+          }
         </div>
         <div class="result__cat" aria-hidden="true">
           ${catSVG('dango', 'celebrate', { size: 96 })}

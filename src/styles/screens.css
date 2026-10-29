@@ -407,6 +407,71 @@
   color: var(--ink-soft);
 }
 
+.map__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.map__section-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding-inline: 0.15rem;
+}
+
+.map__section-title {
+  position: relative;
+  margin: 0;
+  padding-left: 0.85rem;
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--jade-deep);
+}
+
+.map__section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 1.15em;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--jade), var(--pink));
+  transform: translateY(-50%);
+}
+
+.map__section-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.map__section-sub {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+}
+
+.map__section--advanced {
+  margin-top: 1.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.map__section--advanced .map__section-title {
+  color: #a84966;
+}
+
+.map__section--advanced .map__section-title::before {
+  background: linear-gradient(180deg, var(--pink-deep), var(--gold));
+}
+
 .map__list {
   display: grid;
   grid-template-columns: 1fr;
@@ -418,6 +483,10 @@
   overflow: hidden;
   padding: 0;
   scroll-margin-top: calc(var(--hud-h) + var(--safe-top) + 12px);
+  /* 20 章 × 場景 SVG：offscreen 章節跳過 layout/paint，配合 IntersectionObserver
+     只 animate 可見章節（手機捲動 p95 更穩定） */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
   transition:
     box-shadow var(--dur) var(--ease-out),
     transform var(--dur) var(--ease-out);
@@ -428,7 +497,18 @@
 }
 
 .chapter--locked {
-  filter: saturate(0.72);
+  /* 用低透明度代替 CSS filter（filter 喺低階機會拖慢捲動） */
+  background: rgba(255, 253, 248, 0.9);
+}
+
+.chapter--advanced {
+  border-color: rgba(232, 138, 168, 0.42);
+}
+
+.chapter--advanced:not(.chapter--locked) .chapter__scene-badge {
+  background: linear-gradient(160deg, #fff6f9, var(--pink-tint));
+  color: #a84966;
+  border: 1px solid var(--line-pink);
 }
 
 .chapter__scene {
@@ -444,8 +524,7 @@
 }
 
 .chapter--locked .chapter__scene svg {
-  opacity: 0.7;
-  filter: grayscale(0.35);
+  opacity: 0.62;
 }
 
 .chapter__scene-badge {

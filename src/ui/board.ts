@@ -48,6 +48,9 @@ export function createBoard(level: Level, onCellClick: (key: string) => void): B
     boardEl.className = 'board';
     boardEl.style.setProperty('--rows', String(Math.max(1, level.rows)));
     boardEl.style.setProperty('--cols', String(Math.max(1, level.cols)));
+    // 進階篇棋盤可以去到 10×10：密啲嘅 gap，等手機都放得落
+    if (level.cols >= 7) boardEl.classList.add('board--dense');
+    if (level.cols >= 10) boardEl.classList.add('board--ultra');
   }
   boardEl.setAttribute('role', 'group');
   boardEl.setAttribute(
@@ -130,7 +133,7 @@ export function createBoard(level: Level, onCellClick: (key: string) => void): B
   }
 
   /** 依實際可用寬度收縮 cell，支援最多 8 行 × 7 欄嘅填字關（手機唔會爆橫） */
-  const MIN_CELL = 30;
+  const MIN_CELL = 26;
   let fittedCell = 0;
   let idealCell = 0;
   let resizeObserver: ResizeObserver | null = null;
@@ -171,7 +174,8 @@ export function createBoard(level: Level, onCellClick: (key: string) => void): B
         (bank?.offsetHeight ?? 150) +
         96; // layout padding + 棋盤 label + 少少呼吸位
       const byHeight = Math.floor((window.innerHeight - reserved - gap * (rows - 1)) / rows);
-      if (byHeight > 0) cell = Math.max(MIN_CELL, Math.min(cell, byHeight));
+      // 太矮就唔好夾硬縮：寧願頁面捲，都要保住可讀性
+      if (byHeight >= 38) cell = Math.max(MIN_CELL, Math.min(cell, byHeight));
     }
     if (cell === fittedCell) return;
     fittedCell = cell;

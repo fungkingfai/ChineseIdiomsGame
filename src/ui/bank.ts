@@ -20,7 +20,8 @@ export function createBank(level: Level, onPick: (index: number) => void): BankV
   const timers = new Set<number>();
 
   const el = document.createElement('div');
-  el.className = 'bank';
+  // 進階篇 bank 可以多達 22 張：compact layout 免得字庫佔半個畫面
+  el.className = level.bank.length > 14 ? 'bank bank--compact' : 'bank';
 
   const head = document.createElement('div');
   head.className = 'bank__head';

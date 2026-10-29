@@ -15,6 +15,7 @@ export function openChapterIntroOverlay(
   level: Level,
   onDone: () => void,
 ): OverlayHandle {
+  const isAdvanced = chapter.id > 10;
   const handle = openOverlay({
     testId: 'chapter-intro',
     ariaLabel: `第 ${chapter.id} 章：${chapter.name}`,
@@ -24,7 +25,7 @@ export function openChapterIntroOverlay(
       <div class="chapter-intro">
         <div class="chapter-intro__scene">
           ${chapterSceneSVG(chapter.scene)}
-          <span class="chapter-intro__badge">第 ${chapter.id} 章</span>
+          <span class="chapter-intro__badge${isAdvanced ? ' chapter-intro__badge--advanced' : ''}">第 ${chapter.id} 章${isAdvanced ? ' · 進階篇' : ''}</span>
         </div>
         <div class="chapter-intro__body">
           <h2 class="chapter-intro__name">${esc(chapter.name)}</h2>

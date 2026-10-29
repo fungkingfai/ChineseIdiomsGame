@@ -12,8 +12,9 @@
  *   catMood(el, mood)
  *   prefersReducedMotion()
  * 另外新增：
- *   spawnFireflies / spawnSnow / spawnRain / spawnStars
- *   spawnSceneFx(container, scene) — 跟章節場景自動配環境效果
+ *   spawnFireflies / spawnSnow / spawnRain / spawnStars / spawnEmbers / spawnBubbles
+ *   spawnSceneFx(container, scene) — 跟章節場景自動配環境效果（支援 20 個場景）
+ *   autoPauseOffscreenScenes(root?) — 自動暫停 offscreen 場景動畫（地圖縮圖效能）
  *   playClearCinematic(container) — 過關星光＋彩紙小演出
  *   clearFx(container) — 清走所有特效 layer
  *   setReducedMotion(enabled) — 切換 html.reduced-motion（給設定頁用）
@@ -46,6 +47,8 @@ const FX_LAYERS = {
   snow: 'snow-layer',
   rain: 'rain-layer',
   star: 'star-layer',
+  ember: 'ember-layer',
+  bubble: 'bubble-layer',
   cinematic: 'cinematic-layer',
 } as const;
 
@@ -282,6 +285,49 @@ export function spawnStars(container: HTMLElement | null, count = 14): void {
   layer.appendChild(fragment);
 }
 
+/* ────────────────────────── 火山餘燼 ────────────────────────── */
+
+export function spawnEmbers(container: HTMLElement | null, count = 18): void {
+  if (!container || prefersReducedMotion()) return;
+  const layer = ensureLayer(container, 'ember');
+  if (!layer || layer.childElementCount > 0) return;
+  const total = clampCount(count, 18, 6, 30);
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < total; i += 1) {
+    const mote = document.createElement('span');
+    const tone = i % 3 === 0 ? 'ember-mote--gold' : i % 3 === 1 ? 'ember-mote--red' : '';
+    mote.className = `ember-mote ${tone}`.trim();
+    mote.style.left = `${rand(0, 100).toFixed(1)}%`;
+    mote.style.setProperty('--ember-size', `${rand(3, 7).toFixed(1)}px`);
+    mote.style.setProperty('--ember-drift', `${rand(-44, 44).toFixed(0)}px`);
+    mote.style.animationDuration = `${rand(5, 10).toFixed(1)}s`;
+    mote.style.animationDelay = `-${rand(0, 8).toFixed(1)}s`;
+    fragment.appendChild(mote);
+  }
+  layer.appendChild(fragment);
+}
+
+/* ────────────────────────── 海底氣泡 ────────────────────────── */
+
+export function spawnBubbles(container: HTMLElement | null, count = 18): void {
+  if (!container || prefersReducedMotion()) return;
+  const layer = ensureLayer(container, 'bubble');
+  if (!layer || layer.childElementCount > 0) return;
+  const total = clampCount(count, 18, 6, 28);
+  const fragment = document.createDocumentFragment();
+  for (let i = 0; i < total; i += 1) {
+    const bubbleEl = document.createElement('span');
+    bubbleEl.className = 'bubble-mote';
+    bubbleEl.style.left = `${rand(0, 100).toFixed(1)}%`;
+    bubbleEl.style.setProperty('--bubble-size', `${rand(5, 13).toFixed(1)}px`);
+    bubbleEl.style.setProperty('--bubble-drift', `${rand(-30, 30).toFixed(0)}px`);
+    bubbleEl.style.animationDuration = `${rand(6, 12).toFixed(1)}s`;
+    bubbleEl.style.animationDelay = `-${rand(0, 10).toFixed(1)}s`;
+    fragment.appendChild(bubbleEl);
+  }
+  layer.appendChild(fragment);
+}
+
 /* ────────────────────────── 場景環境效果 ────────────────────────── */
 
 /**
@@ -322,10 +368,106 @@ export function spawnSceneFx(container: HTMLElement | null, scene: string): void
     case 'summit':
       spawnStars(container, 10);
       break;
+    /* ── 進階篇（第 11–20 章） ── */
+    case 'library':
+      spawnStars(container, 8);
+      break;
+    case 'volcano':
+      spawnEmbers(container, 18);
+      break;
+    case 'desert':
+      spawnStars(container, 6);
+      break;
+    case 'aurora':
+      spawnSnow(container, 12);
+      spawnStars(container, 10);
+      break;
+    case 'underwater':
+      spawnBubbles(container, 18);
+      break;
+    case 'skycastle':
+      spawnPetals(container, 10);
+      break;
+    case 'shrine':
+      spawnFireflies(container, 12);
+      break;
+    case 'harbor':
+      spawnStars(container, 10);
+      break;
+    case 'firefly':
+      spawnFireflies(container, 16);
+      break;
+    case 'zenith':
+      spawnStars(container, 20);
+      break;
     default:
       spawnPetals(container, 10);
       break;
   }
+}
+
+/* ────────────────────────── 場景動畫效能 ────────────────────────── */
+
+export interface AutoPauseScenesOptions {
+  /** IntersectionObserver rootMargin；預設 '160px 0px'（早少少入畫面就恢復） */
+  rootMargin?: string;
+}
+
+/**
+ * 自動暫停 offscreen 場景動畫（地圖 20 個章節縮圖時特別有用）。
+ *
+ * 做法：用 IntersectionObserver 觀察 `.chapter-scene`；離開畫面 → 加 `.is-static`
+ * （CSS 會 animation: none），入返畫面 → 移除，動畫自動繼續。
+ * 亦會用 MutationObserver 監察之後 SPA 換畫面新加入嘅場景。
+ *
+ * UI 唔需要一定要手動呼叫：`scenes.ts` 載入時會自動啟動一次；
+ * 想自己控制生命週期可以呼叫呢個 function 並保留回傳嘅 cleanup。
+ */
+export function autoPauseOffscreenScenes(
+  root?: ParentNode,
+  options: AutoPauseScenesOptions = {},
+): () => void {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return () => undefined;
+  const IO = window.IntersectionObserver;
+  if (typeof IO !== 'function') return () => undefined;
+
+  const host: ParentNode = root ?? document;
+  const observed = new WeakSet<Element>();
+  const observer = new IO(
+    (entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle('is-static', !entry.isIntersecting);
+      }
+    },
+    { rootMargin: options.rootMargin ?? '160px 0px', threshold: 0 },
+  );
+
+  const observeAll = (): void => {
+    const nodes = host.querySelectorAll?.('.chapter-scene');
+    if (!nodes) return;
+    nodes.forEach((el) => {
+      if (observed.has(el)) return;
+      observed.add(el);
+      observer.observe(el);
+    });
+  };
+
+  observeAll();
+
+  let mutationObserver: MutationObserver | undefined;
+  if (typeof MutationObserver === 'function') {
+    const moRoot: Node | null =
+      host instanceof Document ? (host.body ?? host.documentElement) : (host as Node);
+    if (moRoot) {
+      mutationObserver = new MutationObserver(() => observeAll());
+      mutationObserver.observe(moRoot, { childList: true, subtree: true });
+    }
+  }
+
+  return () => {
+    observer.disconnect();
+    mutationObserver?.disconnect();
+  };
 }
 
 /* ────────────────────────── 過關小演出 ────────────────────────── */

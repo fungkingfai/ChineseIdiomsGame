@@ -1,6 +1,7 @@
 /**
  * 成語資料庫驗證（src/data/idioms.json）— 按 docs/PLAN.md §5.1 最終規格。
  * 另含 GitHub Issue #1：粵拼（Jyutping）`cantonese` 欄位驗證。
+ * 以及 GitHub Issue #2（進階篇）之後嘅規模門檻：≥ 688 條、接龍 ≥ 250／最長 ≥ 7。
  * 資料未達標時呢組測試會 FAIL，屬「待資料定稿」，詳見 docs/QA_REPORT.md。
  */
 import { describe, expect, it } from 'vitest';
@@ -61,7 +62,7 @@ function chainedIdioms(list: Idiom[]): Idiom[] {
 }
 
 /** 最長接龍步數（DFS，上限 8 步足夠檢查 6 步 chain） */
-function longestChain(list: Idiom[], cap = 8): number {
+function longestChain(list: Idiom[], cap = 10): number {
   const byHead = new Map<string, string[]>();
   for (const idiom of list) {
     byHead.set(idiom.word[0], [...(byHead.get(idiom.word[0]) ?? []), idiom.word]);
@@ -88,8 +89,8 @@ function longestChain(list: Idiom[], cap = 8): number {
 /* 測試                                                                */
 /* ------------------------------------------------------------------ */
 describe('成語資料（idioms.json）', () => {
-  it('數量 ≥ 420 條（PLAN §5.1）', () => {
-    expect(idioms.length).toBeGreaterThanOrEqual(420);
+  it('數量 ≥ 688 條（Issue #2：基礎 488＋進階 ≥200）', () => {
+    expect(idioms.length).toBeGreaterThanOrEqual(688);
   });
 
   it('id 為 kebab-case、全庫唯一，且等於拼音去聲調', () => {
@@ -201,7 +202,7 @@ describe('成語資料（idioms.json）', () => {
     expect(issues, issues.slice(0, 12).join('\n')).toEqual([]);
     // 統計：全部成語都要有粵拼（定稿 488/488）
     expect(withCantonese, `粵拼覆蓋 ${withCantonese}/${idioms.length} 條`).toBe(idioms.length);
-    expect(withCantonese).toBeGreaterThanOrEqual(488);
+    expect(withCantonese).toBeGreaterThanOrEqual(688);
   });
 
   it('meaning 15–60 漢字、origin 15–90 漢字', () => {
@@ -242,7 +243,7 @@ describe('成語資料（idioms.json）', () => {
     }
     expect(issues, issues.slice(0, 12).join('\n')).toEqual([]);
 
-    const minimum: Record<number, number> = { 1: 70, 2: 100, 3: 100, 4: 80, 5: 50 };
+    const minimum: Record<number, number> = { 1: 70, 2: 110, 3: 185, 4: 185, 5: 120 };
     const distribution = [1, 2, 3, 4, 5].map((tier) => ({
       tier,
       count: counts[tier],
@@ -274,10 +275,10 @@ describe('成語資料（idioms.json）', () => {
     expect(issues, issues.slice(0, 12).join('\n')).toEqual([]);
   });
 
-  it('接龍連通性：可接龍成語 ≥ 150、最長 ≥ 6', () => {
+  it('接龍連通性：可接龍成語 ≥ 250、最長 ≥ 7（Issue #2 進階 chain 7）', () => {
     const chained = chainedIdioms(idioms);
-    expect(chained.length).toBeGreaterThanOrEqual(150);
-    expect(longestChain(idioms)).toBeGreaterThanOrEqual(6);
+    expect(chained.length).toBeGreaterThanOrEqual(250);
+    expect(longestChain(idioms, 10)).toBeGreaterThanOrEqual(7);
   });
 
   it('接龍連通性：常用連接字兩端齊備（PLAN §5.1）', () => {

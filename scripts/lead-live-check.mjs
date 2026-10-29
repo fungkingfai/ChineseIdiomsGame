@@ -61,11 +61,16 @@ async function solveCurrentLevel(page) {
 
   const solution = new Map(level.cells.map((cell) => [`${cell.r}:${cell.c}`, cell.char]));
   const usedBank = new Set();
+  const processedCells = new Set();
   for (const slot of level.slots) {
     for (const blankIndex of slot.blanks) {
       const r = slot.dir === 'h' ? slot.row : slot.row + blankIndex;
       const c = slot.dir === 'h' ? slot.col + blankIndex : slot.col;
-      const expected = solution.get(`${r}:${c}`);
+      const cellKey = `${r}:${c}`;
+      // 5 成語 fill 關可能有交叉空格：同一格只可以填一次
+      if (processedCells.has(cellKey)) continue;
+      processedCells.add(cellKey);
+      const expected = solution.get(cellKey);
       if (!expected) continue;
       let bankIndex = -1;
       for (let i = 0; i < level.bank.length; i += 1) {
@@ -187,10 +192,87 @@ async function mobileFlow(browser) {
   await context.close();
 }
 
+async function advancedFlow(browser) {
+  // Issue #2：seed 進度到 Level 104，檢查 200 關地圖、進階篇 Level 101（fill 5）同 Level 105（chain 7）。
+  const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const seed = {
+    version: 1,
+    levels: {},
+    collected: [],
+    settings: { sound: false, reducedMotion: false },
+    seenChapters: [1],
+    tutorialSeen: true,
+  };
+  for (let id = 1; id <= 104; id += 1) {
+    seed.levels[String(id)] = { stars: 3, mistakes: 0, hints: 0, clearedAt: 1700000000000 + id };
+  }
+  await context.addInitScript((data) => {
+    try {
+      localStorage.setItem('cat-idioms-save-v1', JSON.stringify(data));
+    } catch {
+      /* ignore */
+    }
+  }, seed);
+
+  const page = await context.newPage();
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(`[advanced console] ${msg.text()}`);
+  });
+  page.on('pageerror', (error) => errors.push(`[advanced pageerror] ${String(error)}`));
+
+  await page.goto(`${BASE}/?debug=1#/home`, { waitUntil: 'networkidle', timeout: 30000 });
+  await page.waitForSelector('[data-testid="home-screen"]', { timeout: 15000 });
+  const continueText = (await page.locator('[data-testid="home-continue"]').textContent()) ?? '';
+  check('首頁繼續第 105 關（seed 進度）', continueText.includes('105'), continueText.trim());
+
+  await page.goto(`${BASE}/?debug=1#/map`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-testid="map-screen"]', { timeout: 15000 });
+  await page.waitForTimeout(900);
+  const chapterCount = await page.locator('[data-testid^="chapter-"]').count();
+  check('地圖 20 章', chapterCount === 20, `chapters=${chapterCount}`);
+  const levelButtonCount = await page.locator('[data-testid^="level-btn-"]').count();
+  check('地圖 200 關', levelButtonCount === 200, `levels=${levelButtonCount}`);
+  await page.screenshot({ path: `${OUT}/desktop-map-200.png` });
+
+  // Level 101：進階篇第一章，fill 4–5 成語
+  await page.goto(`${BASE}/?debug=1#/game/101`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-testid="game-screen"]', { timeout: 15000 });
+  await page.waitForTimeout(700);
+  const hadAdvancedIntro = (await page.locator('[data-testid="chapter-intro"]').count()) > 0;
+  check('第 11 章章節故事（新場景）', hadAdvancedIntro);
+  await dismissOverlays(page);
+  const level101 = await solveCurrentLevel(page);
+  await page.waitForSelector('[data-testid="result-overlay"]', { timeout: 15000 });
+  await page.waitForTimeout(400);
+  const stars101 = (await page.locator('[data-testid="result-stars"]').getAttribute('data-stars')) ?? '0';
+  check('完成進階 Level 101', Number(stars101) >= 1, `slots=${level101.slots.length}, stars=${stars101}`);
+  await page.screenshot({ path: `${OUT}/desktop-level101-result.png` });
+
+  // Level 105：chain 7 行
+  await page.goto(`${BASE}/?debug=1#/game/105`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-testid="game-screen"]', { timeout: 15000 });
+  await page.waitForTimeout(700);
+  await dismissOverlays(page);
+  const level105 = await solveCurrentLevel(page);
+  await page.waitForSelector('[data-testid="result-overlay"]', { timeout: 15000 });
+  await page.waitForTimeout(400);
+  const stars105 = (await page.locator('[data-testid="result-stars"]').getAttribute('data-stars')) ?? '0';
+  check('完成進階 chain Level 105（k=6–7）', Number(stars105) >= 1 && level105.slots.length >= 6, `k=${level105.slots.length}, stars=${stars105}`);
+  await page.screenshot({ path: `${OUT}/desktop-level105-result.png` });
+
+  await page.goto(`${BASE}/?debug=1#/codex`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('[data-testid="codex-screen"]', { timeout: 15000 });
+  const codexCountText = (await page.locator('[data-testid="codex-count"]').textContent()) ?? '';
+  check('成語圖鑑總數 ≥ 688（Issue #2）', /688|[7-9]\d\d/.test(codexCountText), codexCountText.trim());
+
+  await context.close();
+}
+
 const browser = await chromium.launch({ headless: true });
 try {
   await desktopFlow(browser);
   await mobileFlow(browser);
+  await advancedFlow(browser);
 } catch (error) {
   failures.push(`流程中斷：${String(error)}`);
   console.error(error);

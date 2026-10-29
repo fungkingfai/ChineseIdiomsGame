@@ -73,7 +73,9 @@ export function createGameScreen(ctx: AppContext, level: Level): Screen {
           ${icon.back}
         </button>
         <div class="game__hud-title">
-          <span class="game__hud-chapter">第 ${level.chapter} 章 · ${esc(chapter?.name ?? '')}</span>
+          <span class="game__hud-chapter">第 ${level.chapter} 章 · ${esc(chapter?.name ?? '')}${
+            level.chapter > 10 ? ' · 進階篇' : ''
+          }</span>
           <h1 data-testid="game-title">${esc(level.title)}</h1>
         </div>
         <div class="game__hud-actions">

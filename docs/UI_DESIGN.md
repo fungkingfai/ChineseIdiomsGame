@@ -2,7 +2,7 @@
 
 > 擁有者：ui-dev。實作範圍：`src/app.ts`、`src/router.ts`、`src/screens/**`、`src/ui/**`、`src/styles/**`（`cats.css` 除外）。
 > 對應契約：`docs/PLAN.md` §6（core API）、§7（UI/UX 契約）、§7.4（必需 testid）。
-> 最後更新：ui-dev（2026-10-29，v1.0.1 雙拼音）。狀態：**全部畫面已實作並通過 Playwright 本機驗證（100 關／488 成語）**；Issue #1 加入普通話拼音＋粵拼（Jyutping）顯示與搜尋。
+> 最後更新：ui-dev（2026-10-30，v1.1.0）。狀態：**全部畫面已實作並通過 Playwright 本機驗證（200 關／20 章／733 成語／20 場景）**；Issue #1 普通話拼音＋粵拼、Issue #2 進階篇（第 101–200 關、第 11–20 章）、地圖場景 lazy 效能優化。
 
 ---
 
@@ -15,7 +15,7 @@
 | 視覺關鍵詞 | 玉綠庭園、櫻花粉、奶油紙感、柔和圓角、貓爪印、櫻花花瓣、金色星星、手繪卡片感。 |
 | 排版 | Mobile-first；字體只用系統繁中 stack（`--font-main`／`--font-serif`），唔載入外部字體、唔 fetch 外部資源（貓貓／場景 SVG 由 `src/cats/**` inline 提供）。 |
 | 動畫原則 | 短（120–600ms）、有目的（回饋／引導），尊重 `prefers-reduced-motion` 同 `ctx.save.settings.reducedMotion`。 |
-| 資料驅動 | **唔 hardcode 關卡數／成語內容**：所有畫面由 `ctx.levels`（100 關，含 fill／chain）＋`ctx.chapters`（10 章）＋`ctx.idioms`（488 條，含 `pinyin` 普通話拼音＋`cantonese` 粵拼）動態產生；棋盤 cell size 會依 `level.rows/cols` 自動收縮（最大 7×7），任何關卡都唔會爆 layout。 |
+| 資料驅動 | **唔 hardcode 關卡數／成語內容**：所有畫面由 `ctx.levels`（200 關，162 fill／38 chain）＋`ctx.chapters`（20 章：基礎 1–10／進階 11–20）＋`ctx.idioms`（733 條，含 `pinyin` 普通話拼音＋`cantonese` 粵拼）動態產生；棋盤 cell size 依 `level.rows/cols` 自動收縮（支援 8×8 進階盤、chain 7 行；PLAN 上限 10×10 envelope），任何關卡都唔會爆 layout。 |
 
 ### 1.1 Color tokens（`src/styles/tokens.css`）
 
@@ -121,9 +121,9 @@ PLAYING（可放字／退字／提示／重玩）
 │ ╰──────────────────────────────╯│
 │  喵～歡迎嚟到（kicker）           │
 │  貓咪成語大冒險（serif 大標題，粉紅強調）│
-│  跟住阿墨同糰子，收集百關成語……       │
-│  ⭐ 已過 0/100 關   冒險進度 bar      │ ← home-progress
-│  總星數 0 / 300     下一站 第 1 關    │
+│  喺二十個和風／奇幻場景收集成語靈珠…  │
+│  ⭐ 已過 0/200 關   冒險進度 bar      │ ← home-progress
+│  總星數 0 / 600     下一站 第 1 關    │
 │  ┌────────────────────────┐  │
 │  │  🐾 開始第 1 關（粉紅 CTA）│  │ ← home-continue
 │  └────────────────────────┘  │
@@ -131,13 +131,14 @@ PLAYING（可放字／退字／提示／重玩）
 │  │  🗺 開始冒險            │  │ ← home-start（→ 地圖）
 │  └────────────────────────┘  │
 │  [📖 成語圖鑑]  [⚙ 設定]      │ ← home-codex / home-settings
-│  v1.0.1 · 貓貓製作 · 100% 離線可玩 │
+│  v1.1.0 · 貓貓製作 · 100% 離線可玩 │
 └──────────────────────────────┘
 ```
 **桌面（≥900px）**：hero 左（garden 場景卡 560px 高）／資訊面板右，內容 max-width 1120px。
 
 - hero 貓貓：`catSVG('amo','happy')` 大、`catSVG('dango','wink')` 細並微微重疊；`spawnPetals(hero, 12)`（reduced motion 時跳過）。
-- `home-progress`：總星數／總關數／已過關數／下一關＋進度條（`totalStars / (TOTAL_LEVELS*3)`）。
+- `home-progress`：總星數／總關數／已過關數／下一關＋進度條（`totalStars / (ctx.levels.length*3)`，200 關＝600 星）。
+- tagline 動態：「喺二十個和風／奇幻場景收集成語靈珠，一齊挑戰二百關喵」；版本 v1.1.0（Issue #2）。
 - `home-continue` 文字：有進度 → `繼續第 N 關`，新玩家 → `開始第 1 關`；→ 直接入 `#/game/<nextPlayableLevel>`。
 - `home-start` 固定「開始冒險」→ `#/map`。
 
@@ -145,25 +146,30 @@ PLAYING（可放字／退字／提示／重玩）
 
 ```
 ┌──────────────────────────────────┐
-│ ← map-back │ 成語地圖 │ ★ 0/300 map-stars-total │
+│ ← map-back │ 成語地圖 │ ★ 0/600 map-stars-total │
 ├──────────────────────────────────┤
-│ 十個和風場景、100 個關卡……（動態）  │
-│ ╔══════════════════════════════╗ │
+│ 二十個場景、200 個關卡……（動態）    │
+│ ┃ 基礎篇      第 1–10 章 · 櫻花小徑 → 成語之巔
+│ ╔══════════════════════════════╗ │ ← map-section-basic
 │ ║ [chapterSceneSVG 16:9 縮圖]  ║ │
 │ ║ 第 1 章 · 櫻花小徑   ★ 0/30  ║ │ ← chapter-1
-│ ║ blurb……                       ║ │
-│ ║ ①🐾 ②🔒 ③🔒 ④🔒 ⑤🔒         ║ │ ← level-btn-<id>
-│ ║ ⑥🔒 ⑦🔒 ⑧🔒 ⑨🔒 ⑩🔒         ║ │
+│ ║ ①🐾 ②🔒 … ⑩🔒               ║ │ ← level-btn-<id>
 │ ╚══════════════════════════════╝ │
-│ ╔══════════════════════════════╗ │
-│ ║ 第 2 章 · 竹林迷宮（鎖定）    ║ │
+│ ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ │
+│ ┃ 進階篇 [✦ 進階] 第 11–20 章 · 藏經閣 → 蒼穹之巔
+│ ╔══════════════════════════════╗ │ ← map-section-advanced
+│ ║ 第 11 章 · 進階  藏經閣 ★ 0/30 ║ │ ← chapter-11
+│ ║ ⑪🐾 ⑫🔒 … ⑳🔒               ║ │
 │ ╚══════════════════════════════╝ │
 └──────────────────────────────────┘
 ```
-- 每章一張 `chapter-<id>` 卡：場景 SVG、章號、章名、章內星數、blurb、該章所有關卡按鈕（由 `ctx.levels` 分組，現時每章 10 關）。
+- 20 張 `chapter-<id>` 卡，分兩個 section：`map-section-basic`（第 1–10 章，標題「基礎篇」）／`map-section-advanced`（第 11–20 章，標題「進階篇」＋「進階」badge、虛線分隔、粉紅 accent）。進階章卡 scene badge 顯示「第 N 章 · 進階」。
+- 每章：場景 SVG、章號、章名、章內星數、blurb、該章 10 個關卡按鈕（`ctx.levels` 動態分組，共 200 個 `level-btn-<id>`）。
 - 關卡狀態：`已過關`（玉綠底＋★★☆）、`當前關`（櫻花粉光圈 pulse＋貓爪）、`未解鎖`（奶油灰＋鎖頭）。未解鎖關卡仍存在 DOM 並可點（顯示 toast），唔用 `disabled`。
-- 載入後 `scrollIntoView` 到當前章（reduced motion 時即時跳）。
-- 桌面 ≥900px：章節卡兩欄；第一章跨兩欄，10 個關卡同一行。
+- 字幕動態：「二十個場景、200 個關卡」由 `ctx.chapters.length`／`ctx.levels.length` 計；總星數分母 `levels.length*3 = 600`。
+- 載入後 `scrollIntoView` 到當前章（包括第 11–20 章；reduced motion 時即時跳）。
+- **場景 lazy**：所有章節場景 SVG 初始 `.is-static`（cats.css 停環境動畫）；`IntersectionObserver` 只為「已解鎖＋進入 viewport」章節移除 static；鎖定章節永遠 static。配合 `.chapter { content-visibility:auto; contain-intrinsic-size }` 跳過 offscreen layout/paint；手機 sticky topbar／HUD／字庫停用 `backdrop-filter`。實測 390×844 捲動地圖 p95 = 17.2ms（20 場景只有 3 個 animate）。
+- 桌面 ≥900px：章節卡兩欄；每個 section 嘅第一章跨兩欄，10 個關卡同一行。
 
 ### 3.3 遊戲（`#/game/<id>`，testid `game-screen`）
 
@@ -192,7 +198,7 @@ PLAYING（可放字／退字／提示／重玩）
 - 右：棋盤面板（fit-content 置中）＋字庫（非 sticky）。
 
 **HUD**
-- `game-back`（← 返回地圖）、`game-title`（關卡 title；上方細字「第 N 章 · 章名」）。
+- `game-back`（← 返回地圖）、`game-title`（關卡 title；上方細字「第 N 章 · 章名」，第 11–20 章加「· 進階篇」）。
 - `hint-btn` 內 `hint-count` = 剩餘提示數（`hintLimit - hintsUsed`）；用完變灰＋toast。
 - `restart-btn`（即時重開本關）、`sound-btn`（`aria-pressed`＋icon 切換寫入存檔）、`mistake-count`（純數字，出錯時彈跳）。
 - 手機（≤600px）：隱藏章節細字、標題可 2 行、icon 掣縮到 40px；所有 testid 保留。
@@ -225,7 +231,8 @@ PLAYING（可放字／退字／提示／重玩）
 5. 點鎖定／given 格 → no-op（唔會 disabled，方便自動化）。
 6. 提示：`useHint` 隨機揭示一格、扣次數、標記字卡、提示字鎖定；若提示令成語完成，照樣觸發 word-correct/wrong 流程。
 7. 重玩：state 重設，HUD／貓貓／棋盤／字庫全部 refresh。
-8. 棋盤自適應：`board.ts` 用 `ResizeObserver` 依 `.board-panel` 可用闊度收縮 `--cell`（下限 30px；桌面再依 viewport 高度收縮），支援最多 7 欄 × 7 列／8 行嘅關卡；390px／320px 都唔會橫向溢出。
+8. 棋盤自適應：`board.ts` 用 `ResizeObserver` 依 `.board-panel` 可用闊度收縮 `--cell`（下限 26px；桌面高度足夠先再按 viewport 高度收縮，太矮寧願頁面捲），支援進階篇 8×8 fill、chain 7 行；7 欄以上用 `.board--dense`（gap 3px）／10 欄 `.board--ultra`（gap 2px）；390px 無橫向溢出。
+9. 進階篇字庫：`level.bank.length > 14` 加 `.bank--compact`（手機卡 34–46px、3 行內放晒 22 張；桌面 46–56px），testid 不變。
 
 ### 3.4 過關 overlay（testid `result-overlay`）
 
@@ -248,13 +255,13 @@ PLAYING（可放字／退字／提示／重玩）
 - 背景 backdrop blur＋半透明墨綠；彩紙 `burstConfetti`（reduced motion 時停用）。
 - 星星逐粒 delay 0.1s、`star-pop`＋`audio.play('star')`；入 overlay 前清走遊戲期間 toast；`fanfare()`。
 - 成語卡顯示 word／**普通話拼音（「普」徽章）＋粵拼（「粵」徽章）**／meaning／origin／sourceBook／tags，新收集有「新收集」徽章；粵拼元素 `data-testid="result-idiom-jyutping-<idiomId>"`，資料未有 `cantonese` 時整行唔顯示。
-- 最後一關：`next-level-btn` 文字變「全部完成！返回地圖」，仍存在並導航地圖。
+- 最後一關（第 200 關）：`next-level-btn` 文字變「全部完成！返回地圖」，仍存在並導航地圖；`result-final-all` 金色 banner 顯示「恭喜完成全部 200 關！你係成語大師喵～」（`ctx.levels.length` 動態），head 固定、7 張成語卡喺可捲區、按鈕永遠可見。
 - 過關即 `recordLevelClear(ctx.save, ...)`＋`ctx.persist()`，圖鑑自動更新（重玩取最高星）。
 
 ### 3.5 教學 overlay（`tutorial-overlay`）／章節故事（`chapter-intro`）
 
 - 教學：阿墨＋糰子 SVG、3 個步驟（點空格→字卡／自動判定／提示），`tutorial-ok` 關閉並 `markTutorialSeen`。首次入 Level 1 時出現。
-- 章節故事：`chapterSceneSVG(chapter.scene)` 場景大圖（flush panel）、`第 N 章 · 章名`、blurb、糰子＋level.story 對話卡、`chapter-intro-ok` 出發；每章第一次入關卡時出現，`markChapterSeen`。
+- 章節故事：`chapterSceneSVG(chapter.scene)` 場景大圖（flush panel）、`第 N 章 · 章名`（第 11–20 章 badge 加「· 進階篇」＋粉紅樣式）、blurb、糰子＋level.story 對話卡、`chapter-intro-ok` 出發；每章第一次入關卡時出現，`markChapterSeen`。新場景 key（library／volcano／…／zenith）由 cat-animator 提供，資料未 ready 時 `chapterSceneSVG` fallback garden。
 - 兩者都係 modal（不可 Esc／backdrop 關，必須按掣），順序：chapter-intro → tutorial。
 
 ### 3.6 圖鑑（`#/codex`，testid `codex-screen`）
@@ -288,12 +295,12 @@ PLAYING（可放字／退字／提示／重玩）
 │ │ 關閉花瓣、彈跳、彩紙動畫    │    │
 │ │ 重置進度          [重置]   │    │ ← settings-reset → confirm modal
 │ └────────────────────────────┘    │
-│ 關於貓貓：阿墨＋糰子、v1.0.1、離線可玩 │
+│ 關於貓貓：阿墨＋糰子、v1.1.0、離線可玩 │
 └──────────────────────────────────┘
 ```
 - 開關即時生效＋寫入存檔；音效同步 `audio.setEnabled`；減少動態同步 `html.reduced-motion` class。
 - 重置：`settings-reset` → confirm modal（`reset-confirm` / `reset-cancel`，Esc／backdrop 可取消）；確認後 `resetProgress()` 清 localStorage、覆寫 `ctx.save` 內容、重設 audio/motion、更新開關狀態、toast；停留設定頁。
-- 版本／credit 卡：v1.0.1、角色 credit、「所有資料同音效都喺你部機度產生」。
+- 版本／credit 卡：v1.1.0、角色 credit、「所有資料同音效都喺你部機度產生」。
 
 ### 3.8 共用元件（`src/ui/**`）
 
@@ -318,7 +325,7 @@ PLAYING（可放字／退字／提示／重玩）
 
 | 斷點 | 佈局 | 其他 |
 | --- | --- | --- |
-| 基準（≤599px） | 單欄；`--gutter: 16px`；HUD sticky top、字庫 sticky bottom（grid item sticky，內容再長都釘住）；safe-area padding | cell `clamp(52px, 16.6vw, 74px)`；390px 4 欄棋盤 285px；320px 亦無橫向溢出 |
+| 基準（≤599px） | 單欄；`--gutter: 16px`；HUD sticky top、字庫 sticky bottom（grid item sticky，內容再長都釘住）；safe-area padding | cell 由 fit 計算（下限 26px）；390px 8×8 棋盤、chain 7 行、22 張 compact 字庫都無橫向溢出 |
 | 600–899px（平板） | 單欄加闊（max 720–900px）；首頁 hero／面板並排；地圖 2 欄區塊；字庫非 sticky | cell 60–78px |
 | ≥900px（桌面） | 遊戲雙欄（aside 336px＋棋盤）；首頁雙欄；地圖章節 2 欄（第一章全寬）；圖鑑 4 欄；內容 max-width 1120px | cell 78–82px；HUD 顯示章節細字 |
 | 細機（≤380px） | HUD 更精簡、隱藏底部操作提示行 | 地圖/圖鑑仍 2 欄 |
@@ -326,7 +333,7 @@ PLAYING（可放字／退字／提示／重玩）
 
 - 所有 screen：`width:100%; max-width; margin-inline:auto; padding-inline: var(--gutter)`；`.app` `overflow-x:hidden`。
 - HUD `position: sticky; top: 0`＋safe-area top；字庫 `.game__bank-zone` `position: sticky; bottom: 0`（desktop 重設 static）。
-- 直向 390×844、320×720、鏈 3–6 行、11 張字卡都實測無橫向溢出。
+- 直向 390×844、320×720、鏈 3–7 行、8×8 棋盤、22 張字卡都實測無橫向溢出；手機 sticky 區停用 backdrop-filter，捲動更順。
 
 ---
 
@@ -346,8 +353,11 @@ PLAYING（可放字／退字／提示／重玩）
 | 按鈕 hover／press | 全站 | 140–200ms ease | 只變色 |
 | 畫面進場 | 每次路由 | 360ms fade-up | 即時 |
 | 當前關卡 pulse | 地圖 | 2.6s 低頻 | 停用 |
+| 章節場景環境動畫 | 地圖 | cats.css；只有「已解鎖＋可見」章節 animate | `.is-static` + reduced-motion 停用 |
 
 `prefers-reduced-motion: reduce` 或 `html.reduced-motion` 時：CSS animation／transition 縮到 0.001ms、`scroll-behavior:auto`；JS 花瓣／彩紙／平滑捲動由 `prefs.effectiveReducedMotion()` 跳過。設定頁 toggle 會即時加／移除 `html.reduced-motion`。
+
+**效能（Issue #2）**：20 場景 × 6–18 動畫節點唔可以一次過 animate——地圖 lazy/static（見 §3.2）＋`content-visibility`＋停用 sticky blur／CSS filter。實測 mobile 390×844 地圖捲動 rAF p95 = **17.2ms**（p99 19.3ms，20 場景中 3 個 animate）；build 主 JS 693KB（gzip 205KB），主要係 20 場景 SVG＋733 成語 JSON。
 
 ---
 
@@ -371,10 +381,12 @@ PLAYING（可放字／退字／提示／重玩）
 | | `home-codex` / `home-settings` | 圖鑑／設定按鈕 | |
 | | `home-progress` | 進度卡 | 文字含總星數／已過關數／下一站 |
 | 地圖 | `map-screen` | `<main>` | |
-| | `chapter-<chapterId>` | 章節卡 | 1–10 全部存在 |
-| | `level-btn-<levelId>` | 關卡按鈕 | 1–100 全部存在（鎖定亦可點→toast） |
+| | `chapter-<chapterId>` | 章節卡 | 1–20 全部存在（分基礎／進階 section） |
+| | `level-btn-<levelId>` | 關卡按鈕 | 1–200 全部存在（鎖定亦可點→toast） |
 | | `map-back` | 返回掣 | → `#/home` |
-| | `map-stars-total` | 總星數 | `★ X / Y` |
+| | `map-stars-total` | 總星數 | `★ X / Y`，200 關時分母 600 |
+| | `map-section-basic` | 基礎篇 section（Issue #2） | 第 1–10 章 |
+| | `map-section-advanced` | 進階篇 section（Issue #2） | 第 11–20 章＋「進階」badge |
 | 遊戲 | `game-screen` | `<main>` | `data-level-id` / `data-mode` |
 | | `game-back` | 返回地圖 | |
 | | `game-title` | 關卡標題 | 文字 = `level.title` |
@@ -390,6 +402,7 @@ PLAYING（可放字／退字／提示／重玩）
 | | `retry-btn` / `result-map-btn` | 重玩／返回地圖 | |
 | | `result-idiom-<idiomId>` | 本關成語卡 | 每 slot 一張 |
 | | `result-idiom-jyutping-<idiomId>` | 成語卡粵拼行 | Issue #1；有 `cantonese` 先出現 |
+| | `result-final-all` | 完成全部 200 關祝賀 banner | Issue #2；最後一關先出現，文字動態 |
 | 教學／故事 | `tutorial-overlay` / `tutorial-ok` | 教學 modal／明白掣 | 首次 Level 1 |
 | | `chapter-intro` / `chapter-intro-ok` | 章節故事／出發掣 | 每章第一次 |
 | 圖鑑 | `codex-screen` / `codex-search` | 畫面／搜尋框 | |
@@ -414,7 +427,7 @@ src/
   router.ts              # parseRoute / navigate / replaceRoute / Router class
   screens/
     home.ts              # 首頁（garden scene hero + petals + 進度）
-    map.ts               # 章節地圖（ctx.chapters × ctx.levels 動態分組）
+    map.ts               # 章節地圖（20 章分基礎／進階 section、場景 lazy/static、自動捲當前章）
     game.ts              # 遊戲 orchestrator（引擎、字庫同步、事件、overlay 流程）
     codex.ts             # 圖鑑 + 搜尋／篩選 + 詳情 modal
     settings.ts          # 設定 + 重置確認
@@ -443,6 +456,7 @@ npx vite preview --port 4301   # 用 dist 實測
 node screenshots-local/qa-ui-v2.mjs   # 全流程
 node screenshots-local/qa-ui-v3.mjs   # polish（level 10 / reduced motion / 320px / keyboard）
 node screenshots-local/qa-extreme.mjs # level 100 + 極端 layout
+node screenshots-local/qa-issue2-final.mjs  # Issue #2：20 章／200 關／進階篇／最終關
 ```
 
 Playwright 覆蓋（1280×800 及 390×844，?debug=1 讀正解，唔 hardcode 關卡）：
@@ -455,7 +469,8 @@ Playwright 覆蓋（1280×800 及 390×844，?debug=1 讀正解，唔 hardcode �
 - 320px 無橫向溢出；手機 390px 所有畫面無橫向溢出；sticky 字庫（短 viewport 捲動實測）。
 - 極端棋盤：7 欄（Level 41/94/98）、8 行（Level 82）喺 390／320／1280 都完整顯示兼可完成過關；17 張字卡 bank 自動換行。
 - 圖鑑拼音搜尋（無聲調 `yu gong`／帶聲調 `yú gōng`／中文／0 結果清 DOM）回歸測試。
-- **Issue #1 雙拼音**：合成資料（debug 注入 `cantonese`）及最終 488 條真實資料下——過關 overlay 有「普」＋「粵」兩行及 `result-idiom-jyutping-<id>`；圖鑑卡細字粵拼；詳情 `codex-detail-jyutping`；粵拼搜尋 `jat1 nok6`／`jat nok`／`jat1nok6` 全中；中文／普通話搜尋唔受影響；`cantonese` undefined 時自動隱藏；desktop／mobile 390 無橫向溢出、0 console error。
+- **Issue #1 雙拼音**：合成資料（debug 注入 `cantonese`）及最終 733 條真實資料下——過關 overlay 有「普」＋「粵」兩行及 `result-idiom-jyutping-<id>`；圖鑑卡細字粵拼；詳情 `codex-detail-jyutping`；粵拼搜尋 `jat1 nok6`／`jat nok`／`jat1nok6` 全中；中文／普通話搜尋唔受影響；`cantonese` undefined 時自動隱藏；desktop／mobile 390 無橫向溢出、0 console error。
+- **Issue #2 進階篇（最終 733 成語／200 關／20 章／20 場景）**：地圖 20 章、200 個 level-btn、兩個 section＋「進階」badge、字幕「二十個場景、200 個關卡」、總星數 /600、桌面＋mobile 無 overflow；`IntersectionObserver` lazy（20 場景只有 3–4 個 animate；chapter-1 捲走後變 static、chapter-20 入 viewport 開動畫）；mobile 390 地圖捲動 p95 17.2ms。seed 100 → 首頁「繼續第 101 關」、第 11 章解鎖＋current 101、入 L101 顯示新場景藏經閣 chapter-intro（第 11 章 · 進階篇）→ 完成過關。進階 5 成語 fill（L151）＋chain k=6（L105）／k=7（L155、L200）desktop＋mobile：board auto-fit（cell ≥26px）、bank compact（22 張）、無 overflow、過關卡數正確。L200 `result-final-all`「完成全部 200 關」；codex 總數 733；全 flow 0 console error。
 - 全部 flow 0 console error／0 page error；鍵盤 Esc／Tab／skip-link 正常。
 - 截圖：`screenshots-local/ui-dev/*.png`（home／map／game／chain／wrong／level10／level100／result／codex／codex-detail／settings／tutorial／chapter-intro／reset-confirm × desktop/mobile）。
 
@@ -471,4 +486,7 @@ Playwright 覆蓋（1280×800 及 390×844，?debug=1 讀正解，唔 hardcode �
 6. **toast 唔會遮住結算**：入過關 overlay 前 `clearToasts()`，避免遊戲期間「啱晒喵」toast 疊喺星星／標題上面。
 7. **唔 hardcode 關卡數**：所有畫面用 `ctx.levels`／`ctx.chapters` 長度同內容；`levels.json` 由 2 關 → 100 關 → 最終版都唔需要改 UI。
 8. **粵拼 fallback（Issue #1）**：`Idiom.cantonese` 資料未 ready 或空字串時，`jyutpingOf()` 回傳空字串，UI 完全唔顯示粵拼行／徽章；有值先顯示。搜尋 haystack 亦只加有值嘅粵拼。
+10. **進階篇 layout（Issue #2）**：棋盤 gap 用 CSS var（`.board--dense/--ultra`），`fitCellSize` 讀實際 gap 計 cell；MIN_CELL 26px；桌面高度不足時寧願頁面捲都唔縮到不可點；8×8／chain 7 行都經 390／1280 實測。
+11. **地圖效能（Issue #2）**：場景 SVG 初始 `.is-static`；IntersectionObserver 只 observer 已解鎖章節（鎖定章節永遠 static）；`.chapter { content-visibility:auto; contain-intrinsic-size:auto 340px }`；手機停用 sticky topbar／HUD／字庫 `backdrop-filter`、鎖定章節唔用 CSS filter（改用 opacity）。cat-animator 亦提供 `autoPauseOffscreenScenes()`，本 UI 自帶 observer 已達同樣效果（p95 17.2ms），如日後統一可改用該 helper。
+12. **完成全部 200 關文案**：`result.ts` 以 `ctx.levels` 最後一關判斷，動態顯示「完成全部 ${levels.length} 關」，唔會 hardcode 100／200。
 9. **QA 回饋修正（2026-10-28）**：圖鑑拼音搜尋支援無聲調輸入（NFD 去調）；0 結果時清空 grid 舊 DOM（避免 E2E locator count 誤判）；deep link 到未解鎖／不存在關卡改成「先 `replaceRoute('#/map')`、後 `showToast`」，避免 toast 喺同一次 render 被 `clearToasts()` 清走（BUG-QA-3）。

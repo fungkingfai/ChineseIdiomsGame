@@ -3,7 +3,7 @@
  * 驗證 src/data/idioms.json 是否符合 docs/PLAN.md §5.1 的成語資料契約。
  *
  * 用法：
- *   node scripts/verify-idioms.mjs                 # 完整驗收（總數下限 420）
+ *   node scripts/verify-idioms.mjs                 # 完整驗收（總數下限 688，Issue #2）
  *   IDIOM_MIN_TOTAL=150 node scripts/verify-idioms.mjs   # 開發期暫時放寬總數下限
  *
  * 檢查項目：
@@ -15,7 +15,7 @@
  *   6. meaning / origin 的漢字數（15–60 / 15–90）
  *   7. sourceBook 格式《…》、tier 1–5、tags 1–3 個
  *   8. 總數、tier 分佈
- *   9. 接龍連通性：可接龍成語數、接龍鏈數、常用連接字覆蓋
+ *   9. 接龍連通性：可接龍成語數（≥250）、最長鏈（≥7）、常用連接字覆蓋
  *
  * 全部通過 → exit 0；任何錯誤 → 列出後 exit 1。
  */
@@ -27,9 +27,10 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_PATH = resolve(ROOT, 'src/data/idioms.json');
 
 // ---- 驗收門檻（可由環境變數放寬總數，其餘固定） ----
-const MIN_TOTAL = Number(process.env.IDIOM_MIN_TOTAL ?? 420);
-const MIN_TIER = { 1: 70, 2: 100, 3: 100, 4: 80, 5: 50 };
-const MIN_CHAINED = 150; // 尾字＝另一成語首字的成語數下限
+const MIN_TOTAL = Number(process.env.IDIOM_MIN_TOTAL ?? 688); // Issue #2：基礎 488＋進階 ≥200
+const MIN_TIER = { 1: 70, 2: 110, 3: 185, 4: 185, 5: 120 };
+const MIN_CHAINED = 250; // 尾字＝另一成語首字的成語數下限（進階篇 chain 6–7 關需要）
+const MIN_LONGEST_CHAIN = 7; // 最長接龍鏈下限
 const CANTONESE_SYLLABLE = /^[a-z]+[1-6]$/;
 const MEANING_MIN = 15;
 const MEANING_MAX = 60;
@@ -284,6 +285,32 @@ function longestFrom(idiom, depth = 0) {
 let longestChain = 0;
 for (const idiom of idioms) longestChain = Math.max(longestChain, longestFrom(idiom));
 
+// 最長「簡單接龍鏈」（每個成語只用一次）：有上限的 DFS，確保真正可生成 ≥ MIN_LONGEST_CHAIN 步的 chain 關。
+const SIMPLE_CHAIN_CAP = 150000;
+let longestSimpleChain = 0;
+let simpleExpansions = 0;
+function dfsSimple(path, inPath) {
+  if (simpleExpansions > SIMPLE_CHAIN_CAP) return;
+  simpleExpansions += 1;
+  if (path.length > longestSimpleChain) longestSimpleChain = path.length;
+  if (path.length >= 12) return; // 驗收只需 ≥7，搜到 12 步已綽綽有餘
+  const last = path[path.length - 1];
+  const nexts = (byChar.get(last[3])?.heads ?? []).filter((other) => !inPath.has(other.word));
+  for (const next of nexts) {
+    path.push(next.word);
+    inPath.add(next.word);
+    dfsSimple(path, inPath);
+    path.pop();
+    inPath.delete(next.word);
+    if (simpleExpansions > SIMPLE_CHAIN_CAP) return;
+  }
+}
+for (const idiom of idioms) {
+  dfsSimple([idiom.word], new Set([idiom.word]));
+  if (simpleExpansions > SIMPLE_CHAIN_CAP) break;
+}
+if (longestSimpleChain < MIN_LONGEST_CHAIN) fail(`最長簡單接龍鏈只有 ${longestSimpleChain} 步，少於下限 ${MIN_LONGEST_CHAIN}`);
+
 // 常用連接字覆蓋：字本身要有成語做「首字」，亦要有成語做「尾字」，才算真正接得通。
 const connectorReport = [];
 let jointCovered = 0;
@@ -310,7 +337,7 @@ console.log(`id／word 唯一：${idSeen.size} 個 id、${wordSeen.size} 個成�
 console.log(`粵拼（cantonese）：${cantoneseCount}/${idioms.length} 條（4 音節、帶聲調數字）`);
 line();
 console.log(`接龍統計：${chainedCount} 筆可接龍（下限 ${MIN_CHAINED}）、${linkCount} 條接龍鏈接`);
-console.log(`參與接龍的成語：${participants.size} 筆；最長接龍（估算）：${longestChain} 步`);
+console.log(`參與接龍的成語：${participants.size} 筆；最長接龍（估算）：${longestChain} 步；最長簡單接龍：${longestSimpleChain} 步（下限 ${MIN_LONGEST_CHAIN}）`);
 console.log(`常用連接字：${jointCovered}/${CONNECTORS.length} 個兩端齊備`);
 const missing = connectorReport.filter((row) => !row.ok);
 if (missing.length) {

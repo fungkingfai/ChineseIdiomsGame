@@ -25,6 +25,9 @@ export function createHomeScreen(ctx: AppContext): Screen {
   const next = nextPlayableLevel(ctx.save, totalLevels);
   const percent = totalLevels > 0 ? stars / (totalLevels * 3) : 0;
   const started = cleared > 0;
+  // Issue #2：20 章／200 關之後換成進階篇文案（資料未 ready 時保持舊文案）
+  const scenePhrase = ctx.chapters.length >= 20 ? '二十個和風／奇幻場景' : '十個和風庭園';
+  const levelPhrase = ctx.levels.length >= 200 ? '二百關' : '一百關';
   const heroLine = HERO_LINES[Math.floor(Math.random() * HERO_LINES.length)];
 
   const el = fromHtml(`
@@ -45,7 +48,7 @@ export function createHomeScreen(ctx: AppContext): Screen {
           <div>
             <p class="kicker kicker--pink">${icon.paw} 喵～歡迎嚟到</p>
             <h1 class="home__title">貓咪成語<span class="home__title-accent">大冒險</span></h1>
-            <p class="home__tagline">跟住店長貓阿墨同小貓糰子，喺十個和風庭園收集成語靈珠，一齊挑戰一百關喵。</p>
+            <p class="home__tagline">跟住店長貓阿墨同小貓糰子，喺${scenePhrase}收集成語靈珠，一齊挑戰${levelPhrase}喵。</p>
           </div>
           <div class="home__progress card card--paper" data-testid="home-progress">
             <div class="home__progress-head">
@@ -74,7 +77,7 @@ export function createHomeScreen(ctx: AppContext): Screen {
               </button>
             </div>
           </div>
-          <p class="home__credit">v1.0.1 · 貓貓製作 · 100% 離線可玩</p>
+          <p class="home__credit">v1.1.0 · 貓貓製作 · 100% 離線可玩</p>
         </section>
       </div>
     </main>

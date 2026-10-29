@@ -1,7 +1,7 @@
 {
   "name": "chineseidiomsgame",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "《貓咪成語大冒險》— 貓貓風格成語填字／接龍網頁遊戲（100 關，繁體中文）",
   "type": "module",
   "scripts": {

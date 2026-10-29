@@ -72,10 +72,10 @@ export function createSettingsScreen(ctx: AppContext): Screen {
             ${catSVG('amo', 'wink', { size: 68 })}
             ${catSVG('dango', 'happy', { size: 68 })}
           </div>
-          <p>《貓咪成語大冒險》— 跟住店長貓阿墨同小貓糰子，透過成語填字同接龍，收集一百關嘅成語靈珠。</p>
+          <p>《貓咪成語大冒險》— 跟住店長貓阿墨同小貓糰子，透過成語填字同接龍，收集二百關嘅成語靈珠。</p>
           <p>所有資料同音效都喺你部機度產生，唔會連去任何伺服器，搭地鐵冇網絡都玩到喵。</p>
           <div class="settings__version">
-            <span class="badge badge--gold">v1.0.1</span>
+            <span class="badge badge--gold">v1.1.0</span>
             <span class="badge badge--muted">單機 · 離線可玩</span>
           </div>
           <p class="credit">貓貓角色：阿墨（黑貓店長）· 糰子（橘虎斑）｜由 DSH Agent Team 用愛心同成語整成。</p>

@@ -6768,5 +6768,3417 @@
       "情感",
       "做事"
     ]
+  },
+  {
+    "id": "jing-jing-ye-ye",
+    "word": "兢兢業業",
+    "pinyin": "jīng jīng yè yè",
+    "cantonese": "ging1 ging1 jip6 jip6",
+    "meaning": "小心謹慎、認真負責，形容做事一絲不苟、不敢懈怠。",
+    "origin": "《尚書·皋陶謨》載「兢兢業業，一日二日萬幾」，勉人處理政事須小心謹慎、日日勤勉。",
+    "sourceBook": "《尚書·皋陶謨》",
+    "tier": 3,
+    "tags": [
+      "做事",
+      "品格"
+    ]
+  },
+  {
+    "id": "ke-qin-ke-jian",
+    "word": "克勤克儉",
+    "pinyin": "kè qín kè jiǎn",
+    "cantonese": "hak1 kan4 hak1 gim6",
+    "meaning": "既能勤勞又能節儉，形容持家做事勤勉節省。",
+    "origin": "《尚書·大禹謨》載「克勤于邦，克儉于家」，讚大禹治國勤勞、持家節儉。",
+    "sourceBook": "《尚書·大禹謨》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "生活"
+    ]
+  },
+  {
+    "id": "gong-kui-yi-kui",
+    "word": "功虧一簣",
+    "pinyin": "gōng kuī yī kuì",
+    "cantonese": "gung1 kwai1 jat1 gwai6",
+    "meaning": "堆山只差最後一筐土而停止，比喻功業接近完成卻半途而廢。",
+    "origin": "《尚書·旅獒》載「為山九仞，功虧一簣」，喻差最後一步而前功盡棄。",
+    "sourceBook": "《尚書·旅獒》",
+    "tier": 3,
+    "tags": [
+      "做事",
+      "堅持"
+    ]
+  },
+  {
+    "id": "wan-wu-sang-zhi",
+    "word": "玩物喪志",
+    "pinyin": "wán wù sàng zhì",
+    "cantonese": "wun6 mat6 song3 zi3",
+    "meaning": "沉迷玩賞喜好的事物而喪失志向，形容因嗜好廢棄正事。",
+    "origin": "《尚書·旅獒》載「玩人喪德，玩物喪志」，戒人勿沉迷玩好而失本志。",
+    "sourceBook": "《尚書·旅獒》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "做事"
+    ]
+  },
+  {
+    "id": "xin-lao-ri-zhuo",
+    "word": "心勞日拙",
+    "pinyin": "xīn láo rì zhuō",
+    "cantonese": "sam1 lou4 jat6 zyut3",
+    "meaning": "費盡心機卻日漸顯得笨拙，形容弄虛作假終究徒勞。",
+    "origin": "《尚書·周官》載「作德，心逸日休；作偽，心勞日拙」，謂作假者費力而無功。",
+    "sourceBook": "《尚書·周官》",
+    "tier": 5,
+    "tags": [
+      "做事",
+      "品格"
+    ]
+  },
+  {
+    "id": "duo-cai-duo-yi",
+    "word": "多才多藝",
+    "pinyin": "duō cái duō yì",
+    "cantonese": "do1 coi4 do1 ngai6",
+    "meaning": "具有多方面的才能和技藝，形容人本領全面。",
+    "origin": "《尚書·金滕》載周公自述「予仁若考，能多材多藝」，後作多才多藝。",
+    "sourceBook": "《尚書·金滕》",
+    "tier": 3,
+    "tags": [
+      "人物",
+      "藝術"
+    ]
+  },
+  {
+    "id": "hao-wen-ze-yu",
+    "word": "好問則裕",
+    "pinyin": "hào wèn zé yù",
+    "cantonese": "hou2 man6 zak1 jyu6",
+    "meaning": "喜歡向別人請教，學問便會日益充實豐富。",
+    "origin": "《尚書·仲虺之誥》載「好問則裕，自用則小」，勉人謙虛好問、勿剛愎自用。",
+    "sourceBook": "《尚書·仲虺之誥》",
+    "tier": 5,
+    "tags": [
+      "學習"
+    ]
+  },
+  {
+    "id": "lv-shuang-jian-bing",
+    "word": "履霜堅冰",
+    "pinyin": "lǚ shuāng jiān bīng",
+    "cantonese": "lei5 soeng1 gin1 bing1",
+    "meaning": "踏到薄霜便知嚴冬堅冰將至，比喻由細微跡象預見嚴重後果。",
+    "origin": "《易經·坤卦》載「履霜堅冰至」，說明見微知著、防患於未然。",
+    "sourceBook": "《易經·坤卦》",
+    "tier": 5,
+    "tags": [
+      "思維",
+      "自然"
+    ]
+  },
+  {
+    "id": "xian-long-zai-tian",
+    "word": "見龍在田",
+    "pinyin": "xiàn lóng zài tián",
+    "cantonese": "jin6 lung4 zoi6 tin4",
+    "meaning": "龍出現在田野，比喻有才德的人嶄露頭角、開始受到賞識。",
+    "origin": "《易經·乾卦》載「見龍在田，利見大人」，喻賢者初現於世、時機有利。",
+    "sourceBook": "《易經·乾卦》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "哲理"
+    ]
+  },
+  {
+    "id": "fei-long-zai-tian",
+    "word": "飛龍在天",
+    "pinyin": "fēi lóng zài tiān",
+    "cantonese": "fei1 lung4 zoi6 tin1",
+    "meaning": "龍飛騰於天空，比喻事物處於最興旺、最得意的階段。",
+    "origin": "《易經·乾卦》載「飛龍在天，利見大人」，象徵事業達到高峰、大展所長。",
+    "sourceBook": "《易經·乾卦》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "哲理"
+    ]
+  },
+  {
+    "id": "kang-long-you-hui",
+    "word": "亢龍有悔",
+    "pinyin": "kàng lóng yǒu huǐ",
+    "cantonese": "kong3 lung4 jau5 fui3",
+    "meaning": "龍飛得過高便有悔恨，比喻盛極必衰、得意時須知進退。",
+    "origin": "《易經·乾卦》載「亢龍有悔，盈不可久也」，戒人勿自滿過盛。",
+    "sourceBook": "《易經·乾卦》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "人物"
+    ]
+  },
+  {
+    "id": "yi-guo-san-gong",
+    "word": "一國三公",
+    "pinyin": "yī guó sān gōng",
+    "cantonese": "jat1 gwok3 saam1 gung1",
+    "meaning": "一個國家有三個君主，比喻政出多門、權責不一。",
+    "origin": "《左傳·僖公五年》載「一國三公，吾誰適從」，形容權力分散、無所適從。",
+    "sourceBook": "《左傳·僖公五年》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "人物"
+    ]
+  },
+  {
+    "id": "jia-dao-fa-guo",
+    "word": "假道伐虢",
+    "pinyin": "jiǎ dào fá guó",
+    "cantonese": "gaa2 dou6 fat6 gwik1",
+    "meaning": "借別國道路去攻打第三國，比喻借機擴張、一舉兩得。",
+    "origin": "《左傳·僖公五年》載晉獻公向虞國借道伐虢，滅虢後回師順道滅虞。",
+    "sourceBook": "《左傳·僖公五年》",
+    "tier": 5,
+    "tags": [
+      "歷史",
+      "軍事"
+    ]
+  },
+  {
+    "id": "fu-che-xiang-yi",
+    "word": "輔車相依",
+    "pinyin": "fǔ chē xiāng yī",
+    "cantonese": "fu6 geoi1 soeng1 ji1",
+    "meaning": "面頰與牙床互相依靠，比喻關係密切、互相依存。",
+    "origin": "《左傳·僖公五年》載「輔車相依，唇亡齒寒」，說明虞虢兩國利害相連。",
+    "sourceBook": "《左傳·僖公五年》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "思維"
+    ]
+  },
+  {
+    "id": "biao-li-shan-he",
+    "word": "表裡山河",
+    "pinyin": "biǎo lǐ shān hé",
+    "cantonese": "biu2 leoi5 saan1 ho4",
+    "meaning": "外有山河、內有山險，形容地勢險要、易守難攻。",
+    "origin": "《左傳·僖公二十八年》載「表裡山河，必無害也」，形容晉國地勢險固。",
+    "sourceBook": "《左傳·僖公二十八年》",
+    "tier": 5,
+    "tags": [
+      "自然",
+      "社會"
+    ]
+  },
+  {
+    "id": "shi-zhi-wei-zhuang",
+    "word": "師直為壯",
+    "pinyin": "shī zhí wéi zhuàng",
+    "cantonese": "si1 zik6 wai4 zong3",
+    "meaning": "出兵有正當理由，士氣便會壯盛，形容師出有名則力量強。",
+    "origin": "《左傳·僖公二十八年》載「師直為壯，曲為老」，指正義之師士氣高昂。",
+    "sourceBook": "《左傳·僖公二十八年》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "哲理"
+    ]
+  },
+  {
+    "id": "li-bing-mo-ma",
+    "word": "厲兵秣馬",
+    "pinyin": "lì bīng mò mǎ",
+    "cantonese": "lai6 bing1 mut6 maa5",
+    "meaning": "磨利兵器、餵飽戰馬，形容加緊準備作戰。",
+    "origin": "《左傳·僖公三十三年》載秦軍「束載、厲兵、秣馬矣」，形容準備作戰。",
+    "sourceBook": "《左傳·僖公三十三年》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "做事"
+    ]
+  },
+  {
+    "id": "yu-yong-ke-gu",
+    "word": "餘勇可賈",
+    "pinyin": "yú yǒng kě gǔ",
+    "cantonese": "jyu4 jung5 ho2 gaa2",
+    "meaning": "還有剩餘的勇氣可以出賣，形容勇氣有餘、仍有餘力。",
+    "origin": "《左傳·成公二年》載「欲勇者賈余餘勇」，後以餘勇可賈比喻尚有餘力可用。",
+    "sourceBook": "《左傳·成公二年》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "勇氣"
+    ]
+  },
+  {
+    "id": "mie-ci-zhao-shi",
+    "word": "滅此朝食",
+    "pinyin": "miè cǐ zhāo shí",
+    "cantonese": "mit6 ci2 ciu4 sik6",
+    "meaning": "消滅敵人後才吃早飯，形容同仇敵愾、急切求勝。",
+    "origin": "《左傳·成公二年》載齊侯曰「余姑翦滅此而朝食」，表示先滅敵再進食。",
+    "sourceBook": "《左傳·成公二年》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "決心"
+    ]
+  },
+  {
+    "id": "kun-shou-you-dou",
+    "word": "困獸猶鬥",
+    "pinyin": "kùn shòu yóu dòu",
+    "cantonese": "kwan3 sau3 jau4 dau3",
+    "meaning": "被困的野獸仍會搏鬥，比喻陷入絕境者必會盡力反抗。",
+    "origin": "《左傳·宣公十二年》載「困獸猶鬥，況國相乎」，喻劣勢者仍會拼命抵抗。",
+    "sourceBook": "《左傳·宣公十二年》",
+    "tier": 4,
+    "tags": [
+      "動物",
+      "軍事"
+    ]
+  },
+  {
+    "id": "gang-bi-zi-yong",
+    "word": "剛愎自用",
+    "pinyin": "gāng bì zì yòng",
+    "cantonese": "gong1 bik1 zi6 jung6",
+    "meaning": "固執任性、自以為是，形容不肯接受別人意見。",
+    "origin": "《左傳·宣公十二年》載「其佐先縠，剛愎不仁，未肯用命」，形容固執自專。",
+    "sourceBook": "《左傳·宣公十二年》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "bian-chang-mo-ji",
+    "word": "鞭長莫及",
+    "pinyin": "biān cháng mò jí",
+    "cantonese": "bin1 coeng4 mok6 kap6",
+    "meaning": "鞭子雖長也打不到馬腹，比喻力量或影響範圍有限、照顧不到。",
+    "origin": "《左傳·宣公十五年》載「雖鞭之長，不及馬腹」，喻力所不及。",
+    "sourceBook": "《左傳·宣公十五年》",
+    "tier": 3,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "er-yu-wo-zha",
+    "word": "爾虞我詐",
+    "pinyin": "ěr yú wǒ zhà",
+    "cantonese": "ji5 jyu4 ngo5 zaa3",
+    "meaning": "彼此互相欺騙、互相提防，形容人與人之間互不信任。",
+    "origin": "《左傳·宣公十五年》載「我無爾詐，爾無我虞」，後反用為爾虞我詐。",
+    "sourceBook": "《左傳·宣公十五年》",
+    "tier": 3,
+    "tags": [
+      "說話",
+      "社會"
+    ]
+  },
+  {
+    "id": "xi-tian-duo-niu",
+    "word": "蹊田奪牛",
+    "pinyin": "xī tián duó niú",
+    "cantonese": "hai4 tin4 dyut6 ngau4",
+    "meaning": "牛踏壞人田地就被奪走，比喻懲罰過重、因小失大。",
+    "origin": "《左傳·宣公十一年》載「牽牛以蹊人之田，而奪之牛」，喻罰不當罪。",
+    "sourceBook": "《左傳·宣公十一年》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "做事"
+    ]
+  },
+  {
+    "id": "tong-xin-ji-shou",
+    "word": "痛心疾首",
+    "pinyin": "tòng xīn jí shǒu",
+    "cantonese": "tung3 sam1 zat6 sau2",
+    "meaning": "心痛頭痛，形容痛恨悲傷或悔恨到了極點。",
+    "origin": "《左傳·成公十三年》載「諸侯備聞此言，斯是用痛心疾首」，形容極度痛恨。",
+    "sourceBook": "《左傳·成公十三年》",
+    "tier": 3,
+    "tags": [
+      "情感"
+    ]
+  },
+  {
+    "id": "duo-nan-xing-bang",
+    "word": "多難興邦",
+    "pinyin": "duō nàn xīng bāng",
+    "cantonese": "do1 naan6 hing1 bong1",
+    "meaning": "多遭患難反而使國家興盛，形容困境能激發奮發圖強。",
+    "origin": "《左傳·昭公四年》載「或多難以固其國，啟其疆土」，說明憂患可興國。",
+    "sourceBook": "《左傳·昭公四年》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "哲理"
+    ]
+  },
+  {
+    "id": "fang-wei-du-jian",
+    "word": "防微杜漸",
+    "pinyin": "fáng wēi dù jiàn",
+    "cantonese": "fong4 mei4 dou6 zim6",
+    "meaning": "在錯誤或壞事剛露苗頭時就加以防止，形容防患於未然。",
+    "origin": "《後漢書·丁鴻傳》載「若敕政責躬，杜漸防萌，則凶妖銷滅」，後作防微杜漸。",
+    "sourceBook": "《後漢書·丁鴻傳》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "liang-shang-jun-zi",
+    "word": "梁上君子",
+    "pinyin": "liáng shàng jūn zǐ",
+    "cantonese": "loeng4 soeng6 gwan1 zi2",
+    "meaning": "躲在屋樑上的君子，原指小偷，後借指竊賊。",
+    "origin": "《後漢書·陳寔傳》載有賊夜入其室藏於梁上，陳寔稱之為「梁上君子」。",
+    "sourceBook": "《後漢書·陳寔傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "社會"
+    ]
+  },
+  {
+    "id": "xi-bu-xia-nuan",
+    "word": "席不暇暖",
+    "pinyin": "xí bù xiá nuǎn",
+    "cantonese": "zik6 bat1 haa6 nyun5",
+    "meaning": "連坐席都來不及坐暖，形容奔波忙碌、無暇休息。",
+    "origin": "《世說新語·德行》載「武王式商容之閭，席不暇暖」，喻忙於訪賢而未及安坐。",
+    "sourceBook": "《世說新語·德行》",
+    "tier": 4,
+    "tags": [
+      "生活",
+      "做事"
+    ]
+  },
+  {
+    "id": "shi-ren-ya-hui",
+    "word": "拾人牙慧",
+    "pinyin": "shí rén yá huì",
+    "cantonese": "sap6 jan4 ngaa4 wai6",
+    "meaning": "拾取別人吃剩的殘渣，比喻抄襲或重複別人的言論。",
+    "origin": "《世說新語·文學》載「殷中軍云：康伯未得我牙後慧」，後作拾人牙慧。",
+    "sourceBook": "《世說新語·文學》",
+    "tier": 4,
+    "tags": [
+      "說話",
+      "寫作"
+    ]
+  },
+  {
+    "id": "shen-wu-chang-wu",
+    "word": "身無長物",
+    "pinyin": "shēn wú cháng wù",
+    "cantonese": "san1 mou4 zoeng6 mat6",
+    "meaning": "身上沒有多餘的東西，形容生活簡樸、家貧無長物。",
+    "origin": "《世說新語·德行》載王恭曰「恭作人無長物」，表示自己別無多餘財物。",
+    "sourceBook": "《世說新語·德行》",
+    "tier": 4,
+    "tags": [
+      "生活",
+      "品格"
+    ]
+  },
+  {
+    "id": "wu-xia-a-meng",
+    "word": "吳下阿蒙",
+    "pinyin": "wú xià ā méng",
+    "cantonese": "ng4 haa6 aa3 mung4",
+    "meaning": "吳下的阿蒙，比喻學識淺陋的人，也指人已有長進。",
+    "origin": "《三國志·吳書·呂蒙傳》裴注引《江表傳》載魯肅稱呂蒙「吳下阿蒙」，後呂蒙發憤成材。",
+    "sourceBook": "《三國志·吳書·呂蒙傳》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "學習"
+    ]
+  },
+  {
+    "id": "shi-bie-san-ri",
+    "word": "士別三日",
+    "pinyin": "shì bié sān rì",
+    "cantonese": "si6 bit6 saam1 jat6",
+    "meaning": "讀書人分別幾天，形容人進步神速、令人另眼相看。",
+    "origin": "《三國志·吳書·呂蒙傳》裴注引《江表傳》載「士別三日，即更刮目相待」。",
+    "sourceBook": "《三國志·吳書·呂蒙傳》",
+    "tier": 4,
+    "tags": [
+      "學習",
+      "人物"
+    ]
+  },
+  {
+    "id": "qi-qin-qi-zong",
+    "word": "七擒七縱",
+    "pinyin": "qī qín qī zòng",
+    "cantonese": "cat1 kam4 cat1 zung3",
+    "meaning": "七次擒獲又七次釋放，形容以德服人、使人真心歸順。",
+    "origin": "《三國志·蜀書·諸葛亮傳》裴注引《漢晉春秋》載諸葛亮七擒七縱孟獲，終使其心服。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "軍事"
+    ]
+  },
+  {
+    "id": "ju-gong-jin-cui",
+    "word": "鞠躬盡瘁",
+    "pinyin": "jū gōng jìn cuì",
+    "cantonese": "guk1 gung1 zeon6 seoi6",
+    "meaning": "彎身盡力、竭盡勞苦，形容為國為民辛勤付出。",
+    "origin": "《三國志·蜀書·諸葛亮傳》裴注引《漢晉春秋》載《後出師表》「鞠躬盡瘁，死而後已」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 3,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "wang-zi-fei-bo",
+    "word": "妄自菲薄",
+    "pinyin": "wàng zì fěi bó",
+    "cantonese": "mong5 zi6 fei2 bok6",
+    "meaning": "過分看輕自己，形容自卑、對自己缺乏信心。",
+    "origin": "《三國志·蜀書·諸葛亮傳》載《前出師表》「不宜妄自菲薄，引喻失義」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 3,
+    "tags": [
+      "情感",
+      "品格"
+    ]
+  },
+  {
+    "id": "zuo-jian-fan-ke",
+    "word": "作姦犯科",
+    "pinyin": "zuò jiān fàn kē",
+    "cantonese": "zok3 gaan1 faan6 fo1",
+    "meaning": "為非作歹、觸犯法令，形容破壞法紀、違法亂紀。",
+    "origin": "《三國志·蜀書·諸葛亮傳》載《前出師表》「若有作姦犯科及為忠善者，宜付有司論其刑賞」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "法律"
+    ]
+  },
+  {
+    "id": "yin-yu-shi-yi",
+    "word": "引喻失義",
+    "pinyin": "yǐn yù shī yì",
+    "cantonese": "jan5 jyu6 sat1 ji6",
+    "meaning": "引用比喻不當而失去原意，形容說話引據失當。",
+    "origin": "《三國志·蜀書·諸葛亮傳》載《前出師表》「引喻失義，以塞忠諫之路也」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 5,
+    "tags": [
+      "說話",
+      "寫作"
+    ]
+  },
+  {
+    "id": "ji-ri-er-dai",
+    "word": "計日而待",
+    "pinyin": "jì rì ér dài",
+    "cantonese": "gai3 jat6 ji4 doi6",
+    "meaning": "可以計算日子等待，形容事情不久便能實現。",
+    "origin": "《三國志·蜀書·諸葛亮傳》載《前出師表》「願陛下親之信之，則漢室之隆，可計日而待也」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 5,
+    "tags": [
+      "思維",
+      "做事"
+    ]
+  },
+  {
+    "id": "gou-quan-xing-ming",
+    "word": "苟全性命",
+    "pinyin": "gǒu quán xìng mìng",
+    "cantonese": "gau2 cyun4 sing3 ming6",
+    "meaning": "苟且保全性命，形容在亂世中只求活命、不問功名。",
+    "origin": "《三國志·蜀書·諸葛亮傳》載《前出師表》「苟全性命於亂世，不求聞達於諸侯」。",
+    "sourceBook": "《三國志·蜀書·諸葛亮傳》",
+    "tier": 5,
+    "tags": [
+      "生活",
+      "人物"
+    ]
+  },
+  {
+    "id": "dai-ren-zhuo-dao",
+    "word": "代人捉刀",
+    "pinyin": "dài rén zhuō dāo",
+    "cantonese": "doi6 jan4 zuk1 dou1",
+    "meaning": "代替別人拿刀，後指代人寫文章或辦事。",
+    "origin": "《世說新語·容止》載曹操使崔琰代見匈奴使，自己捉刀立床頭，後稱代人作文為捉刀。",
+    "sourceBook": "《世說新語·容止》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "寫作"
+    ]
+  },
+  {
+    "id": "chu-qiu-dui-qi",
+    "word": "楚囚對泣",
+    "pinyin": "chǔ qiú duì qì",
+    "cantonese": "co2 cau4 deoi3 jap1",
+    "meaning": "被俘的楚囚相對哭泣，比喻身處困境而束手無策、相對悲泣。",
+    "origin": "《世說新語·言語》載「當共戮力王室，何至作楚囚相對」，後作楚囚對泣。",
+    "sourceBook": "《世說新語·言語》",
+    "tier": 5,
+    "tags": [
+      "情感",
+      "社會"
+    ]
+  },
+  {
+    "id": "da-sha-jiang-qing",
+    "word": "大廈將傾",
+    "pinyin": "dà shà jiāng qīng",
+    "cantonese": "daai6 haa6 zoeng1 king1",
+    "meaning": "高大的房屋將要倒塌，比喻局勢危急、政權將垮。",
+    "origin": "《文中子·事君》載「大廈將傾，非一木所支也」，喻危局非一人之力可挽。",
+    "sourceBook": "《文中子·事君》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "思維"
+    ]
+  },
+  {
+    "id": "yi-mu-nan-zhi",
+    "word": "一木難支",
+    "pinyin": "yī mù nán zhī",
+    "cantonese": "jat1 muk6 naan4 zi1",
+    "meaning": "一根木頭難以支撐大廈，比喻單憑一人難以挽救危局。",
+    "origin": "《文中子·事君》載「大廈將傾，非一木所支也」，後作一木難支。",
+    "sourceBook": "《文中子·事君》",
+    "tier": 5,
+    "tags": [
+      "做事",
+      "社會"
+    ]
+  },
+  {
+    "id": "ding-zu-zhi-shi",
+    "word": "鼎足之勢",
+    "pinyin": "dǐng zú zhī shì",
+    "cantonese": "ding2 zuk1 zi1 sai3",
+    "meaning": "像鼎的三隻腳般並立，形容三方勢力對峙、互相牽制。",
+    "origin": "《史記·淮陰侯列傳》載「三分天下，鼎足而居」，喻三方並立之勢。",
+    "sourceBook": "《史記·淮陰侯列傳》",
+    "tier": 5,
+    "tags": [
+      "歷史",
+      "社會"
+    ]
+  },
+  {
+    "id": "zhu-lu-zhong-yuan",
+    "word": "逐鹿中原",
+    "pinyin": "zhú lù zhōng yuán",
+    "cantonese": "zuk6 luk6 zung1 jyun4",
+    "meaning": "在中原追逐獵物，比喻群雄爭奪天下。",
+    "origin": "《史記·淮陰侯列傳》載「秦失其鹿，天下共逐之」，後作逐鹿中原。",
+    "sourceBook": "《史記·淮陰侯列傳》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "軍事"
+    ]
+  },
+  {
+    "id": "fu-ren-zhi-ren",
+    "word": "婦人之仁",
+    "pinyin": "fù rén zhī rén",
+    "cantonese": "fu5 jan4 zi1 jan4",
+    "meaning": "像婦人般的小恩小惠，形容見識短淺、不識大體。",
+    "origin": "《史記·淮陰侯列傳》載韓信評項羽「此所謂婦人之仁也」，指其仁愛狹小。",
+    "sourceBook": "《史記·淮陰侯列傳》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "qiu-hao-wu-fan",
+    "word": "秋毫無犯",
+    "pinyin": "qiū háo wú fàn",
+    "cantonese": "cau1 hou4 mou4 faan6",
+    "meaning": "連一根秋毫也不侵犯，形容軍紀嚴明、不擾百姓。",
+    "origin": "《史記·項羽本紀》載劉邦入關「秋毫不敢有所近」，後概括為秋毫無犯。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "品格"
+    ]
+  },
+  {
+    "id": "mu-hou-er-guan",
+    "word": "沐猴而冠",
+    "pinyin": "mù hóu ér guàn",
+    "cantonese": "muk6 hau4 ji4 gun3",
+    "meaning": "獼猴戴上帽子，比喻虛有儀表而無實學，或小人竊據高位。",
+    "origin": "《史記·項羽本紀》載「人言楚人沐猴而冠耳，果然」，諷項羽徒具威儀。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "動物"
+    ]
+  },
+  {
+    "id": "yi-jue-ci-xiong",
+    "word": "一決雌雄",
+    "pinyin": "yī jué cí xióng",
+    "cantonese": "jat1 kyut3 ci1 hung4",
+    "meaning": "一次較量決出勝負，形容與對手作最後決戰。",
+    "origin": "《史記·項羽本紀》載項羽謂漢王「願與漢王挑戰決雌雄」，後作一決雌雄。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "做事"
+    ]
+  },
+  {
+    "id": "gao-wu-jian-ling",
+    "word": "高屋建瓴",
+    "pinyin": "gāo wū jiàn líng",
+    "cantonese": "gou1 uk1 gin3 ling4",
+    "meaning": "在高屋頂上倒水，比喻居高臨下、勢不可擋。",
+    "origin": "《史記·高祖本紀》載「譬猶居高屋之上建瓴水也」，形容形勢有利、攻勢凌厲。",
+    "sourceBook": "《史記·高祖本紀》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "思維"
+    ]
+  },
+  {
+    "id": "lv-jian-bu-xian",
+    "word": "屢見不鮮",
+    "pinyin": "lǚ jiàn bù xiān",
+    "cantonese": "leoi5 gin3 bat1 sin2",
+    "meaning": "多次見到就不覺得新鮮，形容事物常見、不足為奇。",
+    "origin": "《史記·酈生陸賈列傳》載「數見不鮮，無久慁公為也」，後作屢見不鮮。",
+    "sourceBook": "《史記·酈生陸賈列傳》",
+    "tier": 4,
+    "tags": [
+      "生活",
+      "社會"
+    ]
+  },
+  {
+    "id": "xiao-gui-cao-sui",
+    "word": "蕭規曹隨",
+    "pinyin": "xiāo guī cáo suí",
+    "cantonese": "siu1 kwai1 cou4 ceoi4",
+    "meaning": "蕭何立法、曹參遵循，比喻後任沿襲前人的成規。",
+    "origin": "《史記·曹相國世家》載曹參為相「舉事無所變更，一遵蕭何約束」，後稱蕭規曹隨。",
+    "sourceBook": "《史記·曹相國世家》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "做事"
+    ]
+  },
+  {
+    "id": "qu-er-dai-zhi",
+    "word": "取而代之",
+    "pinyin": "qǔ ér dài zhī",
+    "cantonese": "ceoi2 ji4 doi6 zi1",
+    "meaning": "奪取別人的地位而代替他，形容野心勃勃、意圖篡奪。",
+    "origin": "《史記·項羽本紀》載項羽見秦始皇出遊曰「彼可取而代也」，後作取而代之。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "人物"
+    ]
+  },
+  {
+    "id": "xian-fa-zhi-ren",
+    "word": "先發制人",
+    "pinyin": "xiān fā zhì rén",
+    "cantonese": "sin1 faat3 zai3 jan4",
+    "meaning": "先動手就能制服對方，形容搶佔先機、掌握主動。",
+    "origin": "《史記·項羽本紀》載項梁曰「先即制人，後則為人所制」，後作先發制人。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 3,
+    "tags": [
+      "做事",
+      "軍事"
+    ]
+  },
+  {
+    "id": "fen-shu-keng-ru",
+    "word": "焚書坑儒",
+    "pinyin": "fén shū kēng rú",
+    "cantonese": "fan4 syu1 haang1 jyu4",
+    "meaning": "焚燒典籍、坑殺儒生，形容統治者摧殘文化、壓制言論。",
+    "origin": "《史記·秦始皇本紀》載秦始皇焚詩書、坑術士，後稱焚書坑儒。",
+    "sourceBook": "《史記·秦始皇本紀》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "文化"
+    ]
+  },
+  {
+    "id": "nu-fa-chong-guan",
+    "word": "怒髮衝冠",
+    "pinyin": "nù fà chōng guān",
+    "cantonese": "nou6 faat3 cung1 gun1",
+    "meaning": "憤怒得頭髮直豎頂起帽子，形容極度憤怒。",
+    "origin": "《史記·廉頗藺相如列傳》載藺相如「怒髮上衝冠」，形容盛怒之貌。",
+    "sourceBook": "《史記·廉頗藺相如列傳》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "人物"
+    ]
+  },
+  {
+    "id": "wen-jing-zhi-jiao",
+    "word": "刎頸之交",
+    "pinyin": "wěn jǐng zhī jiāo",
+    "cantonese": "man5 geng2 zi1 gaau1",
+    "meaning": "割頸同死的交情，形容友誼深厚、生死與共。",
+    "origin": "《史記·廉頗藺相如列傳》載廉頗與藺相如「卒相與驩，為刎頸之交」。",
+    "sourceBook": "《史記·廉頗藺相如列傳》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "人物"
+    ]
+  },
+  {
+    "id": "qian-ju-hou-gong",
+    "word": "前倨後恭",
+    "pinyin": "qián jù hòu gōng",
+    "cantonese": "cin4 geoi3 hau6 gung1",
+    "meaning": "先前傲慢而後來恭敬，形容態度因對方地位而改變。",
+    "origin": "《戰國策·秦策一》載蘇秦富貴歸家，嫂「前倨而後卑」，後作前倨後恭。",
+    "sourceBook": "《戰國策·秦策一》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "說話"
+    ]
+  },
+  {
+    "id": "gao-shan-yang-zhi",
+    "word": "高山仰止",
+    "pinyin": "gāo shān yǎng zhǐ",
+    "cantonese": "gou1 saan1 joeng5 zi2",
+    "meaning": "仰望高山，比喻對崇高品德的仰慕與嚮往。",
+    "origin": "《詩經·小雅·車舝》載「高山仰止，景行行止」，以高山喻崇高德行，令人仰望效法。",
+    "sourceBook": "《詩經·小雅·車舝》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "學習"
+    ]
+  },
+  {
+    "id": "tou-tao-bao-li",
+    "word": "投桃報李",
+    "pinyin": "tóu táo bào lǐ",
+    "cantonese": "tau4 tou4 bou3 lei5",
+    "meaning": "別人送桃就回贈李子，比喻友好往來、知恩圖報。",
+    "origin": "《詩經·大雅·抑》載「投我以桃，報之以李」，說明以德報德、禮尚往來。",
+    "sourceBook": "《詩經·大雅·抑》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "社會"
+    ]
+  },
+  {
+    "id": "yuan-fei-li-tian",
+    "word": "鳶飛戾天",
+    "pinyin": "yuān fēi lì tiān",
+    "cantonese": "jyun1 fei1 leoi6 tin1",
+    "meaning": "老鷹飛上高空，比喻萬物各得其所，也指人追求高遠。",
+    "origin": "《詩經·大雅·旱麓》載「鳶飛戾天，魚躍于淵」，形容萬物各遂其性、生機蓬勃。",
+    "sourceBook": "《詩經·大雅·旱麓》",
+    "tier": 5,
+    "tags": [
+      "自然",
+      "哲理"
+    ]
+  },
+  {
+    "id": "xin-shi-dan-dan",
+    "word": "信誓旦旦",
+    "pinyin": "xìn shì dàn dàn",
+    "cantonese": "seon3 sai6 daan3 daan3",
+    "meaning": "誓言誠懇真切，形容信誓確鑿、表示真心。",
+    "origin": "《詩經·衛風·氓》載「信誓旦旦，不思其反」，本指男子誓言誠懇，後反諷負心。",
+    "sourceBook": "《詩經·衛風·氓》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "說話"
+    ]
+  },
+  {
+    "id": "su-xing-ye-mei",
+    "word": "夙興夜寐",
+    "pinyin": "sù xīng yè mèi",
+    "cantonese": "suk1 hing1 je6 mei6",
+    "meaning": "早起晚睡、日夜操勞，形容勤勞不懈、十分辛苦。",
+    "origin": "《詩經·衛風·氓》載「夙興夜寐，靡有朝矣」，形容從早到晚辛勤勞動。",
+    "sourceBook": "《詩經·衛風·氓》",
+    "tier": 4,
+    "tags": [
+      "堅持",
+      "生活"
+    ]
+  },
+  {
+    "id": "qiao-xiao-qian-xi",
+    "word": "巧笑倩兮",
+    "pinyin": "qiǎo xiào qiàn xī",
+    "cantonese": "haau2 siu3 sin6 hai4",
+    "meaning": "笑起來嘴角美好動人，形容女子笑容嬌美。",
+    "origin": "《詩經·衛風·碩人》載「巧笑倩兮，美目盼兮」，描寫衛莊姜笑容與眼神之美。",
+    "sourceBook": "《詩經·衛風·碩人》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "情感"
+    ]
+  },
+  {
+    "id": "mei-mu-pan-xi",
+    "word": "美目盼兮",
+    "pinyin": "měi mù pàn xī",
+    "cantonese": "mei5 muk6 paan3 hai4",
+    "meaning": "美麗的眼睛黑白分明、顧盼有神，形容女子眼神動人。",
+    "origin": "《詩經·衛風·碩人》載「巧笑倩兮，美目盼兮」，形容衛莊姜眼波流轉之美。",
+    "sourceBook": "《詩經·衛風·碩人》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "情感"
+    ]
+  },
+  {
+    "id": "feng-yu-ru-hui",
+    "word": "風雨如晦",
+    "pinyin": "fēng yǔ rú huì",
+    "cantonese": "fung1 jyu5 jyu4 fui3",
+    "meaning": "風雨交加、天色昏暗如夜，比喻局勢黑暗動盪。",
+    "origin": "《詩經·鄭風·風雨》載「風雨如晦，雞鳴不已」，以風雨昏暗喻亂世，讚君子不改其度。",
+    "sourceBook": "《詩經·鄭風·風雨》",
+    "tier": 5,
+    "tags": [
+      "自然",
+      "情感"
+    ]
+  },
+  {
+    "id": "feng-yu-piao-yao",
+    "word": "風雨飄搖",
+    "pinyin": "fēng yǔ piāo yáo",
+    "cantonese": "fung1 jyu5 piu1 jiu4",
+    "meaning": "在風雨中飄蕩不定，比喻局勢動盪、岌岌可危。",
+    "origin": "《詩經·豳風·鴟鴞》載「予室翹翹，風雨所漂搖」，後作風雨飄搖，喻局勢不穩。",
+    "sourceBook": "《詩經·豳風·鴟鴞》",
+    "tier": 4,
+    "tags": [
+      "自然",
+      "社會"
+    ]
+  },
+  {
+    "id": "wei-yu-chou-mou",
+    "word": "未雨綢繆",
+    "pinyin": "wèi yǔ chóu móu",
+    "cantonese": "mei6 jyu5 cau4 mau4",
+    "meaning": "趁天未下雨先修補門窗，比喻事先做好準備。",
+    "origin": "《詩經·豳風·鴟鴞》載「迨天之未陰雨，徹彼桑土，綢繆牖戶」，喻預先防備。",
+    "sourceBook": "《詩經·豳風·鴟鴞》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "qiu-shui-yi-ren",
+    "word": "秋水伊人",
+    "pinyin": "qiū shuǐ yī rén",
+    "cantonese": "cau1 seoi2 ji1 jan4",
+    "meaning": "面對秋水思念那人，形容對意中人的深切懷念。",
+    "origin": "《詩經·秦風·蒹葭》載「所謂伊人，在水一方」，寫秋日水邊追尋所思之人，後作秋水伊人。",
+    "sourceBook": "《詩經·秦風·蒹葭》",
+    "tier": 5,
+    "tags": [
+      "情感",
+      "自然"
+    ]
+  },
+  {
+    "id": "zhan-zhan-jing-jing",
+    "word": "戰戰兢兢",
+    "pinyin": "zhàn zhàn jīng jīng",
+    "cantonese": "zin3 zin3 ging1 ging1",
+    "meaning": "恐懼謹慎、小心戒備，形容做事極為小心謹慎。",
+    "origin": "《詩經·小雅·小旻》載「戰戰兢兢，如臨深淵，如履薄冰」，形容戒慎恐懼之狀。",
+    "sourceBook": "《詩經·小雅·小旻》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "ru-lin-shen-yuan",
+    "word": "如臨深淵",
+    "pinyin": "rú lín shēn yuān",
+    "cantonese": "jyu4 lam4 sam1 jyun1",
+    "meaning": "像站在深潭邊一樣，比喻身處險境、心存戒懼。",
+    "origin": "《詩經·小雅·小旻》載「如臨深淵，如履薄冰」，形容小心謹慎、不敢大意。",
+    "sourceBook": "《詩經·小雅·小旻》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "ru-lv-bo-bing",
+    "word": "如履薄冰",
+    "pinyin": "rú lǚ bó bīng",
+    "cantonese": "jyu4 lei5 bok6 bing1",
+    "meaning": "像走在薄冰上一樣，比喻處境危險、行事必須謹慎。",
+    "origin": "《詩經·小雅·小旻》載「戰戰兢兢，如臨深淵，如履薄冰」，喻步步謹慎。",
+    "sourceBook": "《詩經·小雅·小旻》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "zhan-zhuan-fan-ce",
+    "word": "輾轉反側",
+    "pinyin": "zhǎn zhuǎn fǎn cè",
+    "cantonese": "zin2 zyun2 faan2 zak1",
+    "meaning": "翻來覆去睡不著，形容心中有事、難以入睡。",
+    "origin": "《詩經·周南·關雎》載「求之不得，寤寐思服。悠哉悠哉，輾轉反側」，寫思念之切。",
+    "sourceBook": "《詩經·周南·關雎》",
+    "tier": 4,
+    "tags": [
+      "情感"
+    ]
+  },
+  {
+    "id": "qiu-zhi-bu-de",
+    "word": "求之不得",
+    "pinyin": "qiú zhī bù dé",
+    "cantonese": "kau4 zi1 bat1 dak1",
+    "meaning": "尋求卻得不到，形容十分渴望而難以如願。",
+    "origin": "《詩經·周南·關雎》載「求之不得，寤寐思服」，形容渴慕而不可得的心情。",
+    "sourceBook": "《詩經·周南·關雎》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "生活"
+    ]
+  },
+  {
+    "id": "meng-mei-yi-qiu",
+    "word": "夢寐以求",
+    "pinyin": "mèng mèi yǐ qiú",
+    "cantonese": "mung6 mei6 ji5 kau4",
+    "meaning": "連睡夢中都在追求，形容願望十分殷切。",
+    "origin": "《詩經·周南·關雎》載「窈窕淑女，寤寐求之」，後人概括為夢寐以求。",
+    "sourceBook": "《詩經·周南·關雎》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "思維"
+    ]
+  },
+  {
+    "id": "xue-ni-hong-zhao",
+    "word": "雪泥鴻爪",
+    "pinyin": "xuě ní hóng zhǎo",
+    "cantonese": "syut3 nai4 hung4 zaau2",
+    "meaning": "鴻雁在雪泥上留下爪印，比喻往事遺留的痕跡。",
+    "origin": "宋·蘇軾《和子由澠池懷舊》載「人生到處知何似，應似飛鴻踏雪泥」，喻人生行蹤無定。",
+    "sourceBook": "《東坡全集·和子由澠池懷舊》",
+    "tier": 5,
+    "tags": [
+      "自然",
+      "人生"
+    ]
+  },
+  {
+    "id": "shan-yu-yu-lai",
+    "word": "山雨欲來",
+    "pinyin": "shān yǔ yù lái",
+    "cantonese": "saan1 jyu5 juk6 loi4",
+    "meaning": "山間大雨將至，比喻重大事件即將發生的緊張氣氛。",
+    "origin": "唐·許渾《咸陽城東樓》載「溪雲初起日沉閣，山雨欲來風滿樓」，喻形勢醞釀巨變。",
+    "sourceBook": "《全唐詩·咸陽城東樓》",
+    "tier": 4,
+    "tags": [
+      "自然",
+      "社會"
+    ]
+  },
+  {
+    "id": "liu-an-hua-ming",
+    "word": "柳暗花明",
+    "pinyin": "liǔ àn huā míng",
+    "cantonese": "lau5 am3 faa1 ming4",
+    "meaning": "柳色深綠、花朵明豔，比喻絕處逢生、出現轉機。",
+    "origin": "宋·陸游《遊山西村》載「山重水複疑無路，柳暗花明又一村」，喻困境中忽現轉機。",
+    "sourceBook": "《劍南詩稿·遊山西村》",
+    "tier": 3,
+    "tags": [
+      "自然",
+      "人生"
+    ]
+  },
+  {
+    "id": "shan-chong-shui-fu",
+    "word": "山重水複",
+    "pinyin": "shān chóng shuǐ fù",
+    "cantonese": "saan1 cung5 seoi2 fuk1",
+    "meaning": "山巒重疊、水流環繞，形容山水阻隔、路途遙遠。",
+    "origin": "宋·陸游《遊山西村》載「山重水複疑無路，柳暗花明又一村」，寫山徑曲折、前行艱難。",
+    "sourceBook": "《劍南詩稿·遊山西村》",
+    "tier": 4,
+    "tags": [
+      "自然",
+      "人生"
+    ]
+  },
+  {
+    "id": "ma-fang-nan-shan",
+    "word": "馬放南山",
+    "pinyin": "mǎ fàng nán shān",
+    "cantonese": "maa5 fong3 naam4 saan1",
+    "meaning": "把戰馬放歸南山，比喻天下太平、不再用兵。",
+    "origin": "《尚書·武成》載周武王滅商後「歸馬于華山之陽，放牛于桃林之野」，後作馬放南山。",
+    "sourceBook": "《尚書·武成》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "生活"
+    ]
+  },
+  {
+    "id": "mai-du-huan-zhu",
+    "word": "買櫝還珠",
+    "pinyin": "mǎi dú huán zhū",
+    "cantonese": "maai5 duk6 waan4 zyu1",
+    "meaning": "買下木匣卻退還珍珠，比喻取捨不當、捨本逐末。",
+    "origin": "《韓非子·外儲說左上》載楚人賣珠於鄭，以名貴木匣盛之，鄭人買櫝而還珠。",
+    "sourceBook": "《韓非子·外儲說左上》",
+    "tier": 5,
+    "tags": [
+      "寓言",
+      "做事"
+    ]
+  },
+  {
+    "id": "hui-ji-ji-yi",
+    "word": "諱疾忌醫",
+    "pinyin": "huì jí jì yī",
+    "cantonese": "wai5 zat6 gei6 ji1",
+    "meaning": "隱瞞病情、不肯醫治，比喻掩飾缺點、拒絕改正。",
+    "origin": "《韓非子·喻老》載扁鵲屢勸蔡桓公治病，桓公諱疾忌醫，終病發而死。",
+    "sourceBook": "《韓非子·喻老》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "生活"
+    ]
+  },
+  {
+    "id": "bing-ru-gao-huang",
+    "word": "病入膏肓",
+    "pinyin": "bìng rù gāo huāng",
+    "cantonese": "bing6 jap6 gou1 fong1",
+    "meaning": "病情嚴重到藥力難及，比喻問題嚴重、無法挽救。",
+    "origin": "《左傳·成公十年》載醫緩診晉景公曰「疾不可為也，在肓之上，膏之下」，後作病入膏肓。",
+    "sourceBook": "《左傳·成公十年》",
+    "tier": 3,
+    "tags": [
+      "生活",
+      "社會"
+    ]
+  },
+  {
+    "id": "lao-ma-shi-tu",
+    "word": "老馬識途",
+    "pinyin": "lǎo mǎ shí tú",
+    "cantonese": "lou5 maa5 sik1 tou4",
+    "meaning": "老馬認得走過的路，比喻經驗豐富的人能指引方向。",
+    "origin": "《韓非子·說林上》載管仲隨桓公伐孤竹迷路，放老馬引路而得道，喻經驗可貴。",
+    "sourceBook": "《韓非子·說林上》",
+    "tier": 3,
+    "tags": [
+      "寓言",
+      "動物"
+    ]
+  },
+  {
+    "id": "guan-bao-zhi-jiao",
+    "word": "管鮑之交",
+    "pinyin": "guǎn bào zhī jiāo",
+    "cantonese": "gun2 baau1 zi1 gaau1",
+    "meaning": "管仲與鮑叔牙的交情，比喻彼此了解、情誼深厚的友誼。",
+    "origin": "《史記·管晏列傳》載管仲曰「生我者父母，知我者鮑子也」，後稱知己之交為管鮑之交。",
+    "sourceBook": "《史記·管晏列傳》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "人物"
+    ]
+  },
+  {
+    "id": "yi-hu-zhi-ye",
+    "word": "一狐之腋",
+    "pinyin": "yī hú zhī yè",
+    "cantonese": "jat1 wu4 zi1 jik6",
+    "meaning": "一隻狐狸腋下的皮毛，比喻量少而珍貴的事物。",
+    "origin": "《史記·趙世家》載「千羊之皮，不如一狐之腋」，喻少而精勝過多而濫。",
+    "sourceBook": "《史記·趙世家》",
+    "tier": 5,
+    "tags": [
+      "思維",
+      "財富"
+    ]
+  },
+  {
+    "id": "yang-zhi-hu-pi",
+    "word": "羊質虎皮",
+    "pinyin": "yáng zhì hǔ pí",
+    "cantonese": "joeng4 zat1 fu2 pei4",
+    "meaning": "羊的身子披著虎皮，比喻外強中乾、徒有虛表。",
+    "origin": "漢·揚雄《法言·吾子》載「羊質而虎皮，見草而說，見豺而戰」，喻外表嚇人而內心怯弱。",
+    "sourceBook": "《法言·吾子》",
+    "tier": 5,
+    "tags": [
+      "寓言",
+      "人物"
+    ]
+  },
+  {
+    "id": "se-li-nei-ren",
+    "word": "色厲內荏",
+    "pinyin": "sè lì nèi rěn",
+    "cantonese": "sik1 lai6 noi6 jam5",
+    "meaning": "外表嚴厲而內心怯懦，形容裝腔作勢、色厲內虛。",
+    "origin": "《論語·陽貨》載「色厲而內荏，譬諸小人，其猶穿窬之盜也與」，形容外強中怯。",
+    "sourceBook": "《論語·陽貨》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "huan-de-huan-shi",
+    "word": "患得患失",
+    "pinyin": "huàn dé huàn shī",
+    "cantonese": "waan6 dak1 waan6 sat1",
+    "meaning": "未得時擔心得不到，得到後又怕失去，形容計較個人得失。",
+    "origin": "《論語·陽貨》載「其未得之也，患得之；既得之，患失之」，後作患得患失。",
+    "sourceBook": "《論語·陽貨》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "情感"
+    ]
+  },
+  {
+    "id": "wu-suo-bu-zhi",
+    "word": "無所不至",
+    "pinyin": "wú suǒ bù zhì",
+    "cantonese": "mou4 so2 bat1 zi3",
+    "meaning": "沒有什麼事做不出來，形容壞事做盡，也指關懷備至。",
+    "origin": "《論語·陽貨》載「苟患失之，無所不至矣」，指為保私利而無所不為。",
+    "sourceBook": "《論語·陽貨》",
+    "tier": 5,
+    "tags": [
+      "人物",
+      "社會"
+    ]
+  },
+  {
+    "id": "miao-er-bu-xiu",
+    "word": "苗而不秀",
+    "pinyin": "miáo ér bù xiù",
+    "cantonese": "miu4 ji4 bat1 sau3",
+    "meaning": "禾苗長大卻不開花結穗，比喻人資質雖好卻未能成材。",
+    "origin": "《論語·子罕》載「苗而不秀者有矣夫！秀而不實者有矣夫」，喻有始無終、未能成器。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "人生"
+    ]
+  },
+  {
+    "id": "xiu-er-bu-shi",
+    "word": "秀而不實",
+    "pinyin": "xiù ér bù shí",
+    "cantonese": "sau3 ji4 bat1 sat6",
+    "meaning": "開花卻不結果，比喻外表好看而內裡空虛、未能成事。",
+    "origin": "《論語·子罕》載「秀而不實者有矣夫」，喻才華外露而根基不實。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "人生"
+    ]
+  },
+  {
+    "id": "shi-zhe-ru-si",
+    "word": "逝者如斯",
+    "pinyin": "shì zhě rú sī",
+    "cantonese": "sai6 ze2 jyu4 si1",
+    "meaning": "流逝的時光像河水一樣，形容光陰不停、一去不返。",
+    "origin": "《論語·子罕》載孔子在川上曰「逝者如斯夫，不舍晝夜」，感嘆時光流逝。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "時間",
+      "哲理"
+    ]
+  },
+  {
+    "id": "song-bai-hou-diao",
+    "word": "松柏後凋",
+    "pinyin": "sōng bǎi hòu diāo",
+    "cantonese": "cung4 paak3 hau6 diu1",
+    "meaning": "松柏在歲寒中最後凋零，比喻君子在逆境中堅守節操。",
+    "origin": "《論語·子罕》載「歲寒，然後知松柏之後彫也」，以松柏喻堅貞不屈的品格。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "自然"
+    ]
+  },
+  {
+    "id": "xun-xun-shan-you",
+    "word": "循循善誘",
+    "pinyin": "xún xún shàn yòu",
+    "cantonese": "ceon4 ceon4 sin6 jau5",
+    "meaning": "善於有步驟地引導別人，形容教導有方。",
+    "origin": "《論語·子罕》載顏淵曰「夫子循循然善誘人」，讚孔子教導循序漸進。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 4,
+    "tags": [
+      "學習",
+      "人物"
+    ]
+  },
+  {
+    "id": "yu-ba-bu-neng",
+    "word": "欲罷不能",
+    "pinyin": "yù bà bù néng",
+    "cantonese": "juk6 baa6 bat1 nang4",
+    "meaning": "想停下來卻停不了，形容被深深吸引、無法自制。",
+    "origin": "《論語·子罕》載顏淵曰「夫子循循然善誘人……欲罷不能」，表示想停止學習也不能。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 4,
+    "tags": [
+      "學習",
+      "情感"
+    ]
+  },
+  {
+    "id": "zhuo-er-bu-qun",
+    "word": "卓爾不群",
+    "pinyin": "zhuó ěr bù qún",
+    "cantonese": "coek3 ji5 bat1 kwan4",
+    "meaning": "卓越出眾、與眾不同，形容才德超群、不同凡俗。",
+    "origin": "《漢書·河間獻王傳》贊曰「夫唯大雅，卓爾不群」，後用以形容人才德超群、與眾不同。",
+    "sourceBook": "《漢書·河間獻王傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "yang-zhi-mi-gao",
+    "word": "仰之彌高",
+    "pinyin": "yǎng zhī mí gāo",
+    "cantonese": "joeng5 zi1 nei4 gou1",
+    "meaning": "越仰望越覺得高遠，形容德行學問高深，令人景仰。",
+    "origin": "《論語·子罕》載顏淵曰「仰之彌高，鑽之彌堅」，讚孔子之道高深難及。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "品格"
+    ]
+  },
+  {
+    "id": "zuan-zhi-mi-jian",
+    "word": "鑽之彌堅",
+    "pinyin": "zuān zhī mí jiān",
+    "cantonese": "zyun3 zi1 nei4 gin1",
+    "meaning": "越鑽研越覺得堅實深奧，形容學問精深、耐人探究。",
+    "origin": "《論語·子罕》載顏淵曰「仰之彌高，鑽之彌堅」，形容孔子之道愈研究愈覺深厚。",
+    "sourceBook": "《論語·子罕》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "品格"
+    ]
+  },
+  {
+    "id": "sheng-er-zhi-zhi",
+    "word": "生而知之",
+    "pinyin": "shēng ér zhī zhī",
+    "cantonese": "sang1 ji4 zi1 zi1",
+    "meaning": "天生就懂得道理，形容天資聰穎、不待學習。",
+    "origin": "《論語·季氏》載「生而知之者，上也；學而知之者，次也」，指天生明白者是上等。",
+    "sourceBook": "《論語·季氏》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "哲理"
+    ]
+  },
+  {
+    "id": "kun-er-xue-zhi",
+    "word": "困而學之",
+    "pinyin": "kùn ér xué zhī",
+    "cantonese": "kwan3 ji4 hok6 zi1",
+    "meaning": "遇到困惑才去學習，形容勉力向學、補救不足。",
+    "origin": "《論語·季氏》載「困而學之，又其次也」，指遇困難才學習者再次一等。",
+    "sourceBook": "《論語·季氏》",
+    "tier": 5,
+    "tags": [
+      "學習"
+    ]
+  },
+  {
+    "id": "qiu-ren-de-ren",
+    "word": "求仁得仁",
+    "pinyin": "qiú rén dé rén",
+    "cantonese": "kau4 jan4 dak1 jan4",
+    "meaning": "追求仁德而得到仁德，形容如願以償、死而無憾。",
+    "origin": "《論語·述而》載「求仁而得仁，又何怨」，指伯夷叔齊讓國求仁，得其所願。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "人生"
+    ]
+  },
+  {
+    "id": "bao-hu-ping-he",
+    "word": "暴虎馮河",
+    "pinyin": "bào hǔ píng hé",
+    "cantonese": "bou6 fu2 fung4 ho4",
+    "meaning": "空手打虎、徒步過河，比喻有勇無謀、冒險逞強。",
+    "origin": "《論語·述而》載「暴虎馮河，死而無悔者，吾不與也」，指徒逞血氣之勇。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "勇氣",
+      "做事"
+    ]
+  },
+  {
+    "id": "lin-shi-er-ju",
+    "word": "臨事而懼",
+    "pinyin": "lín shì ér jù",
+    "cantonese": "lam4 si6 ji4 geoi6",
+    "meaning": "遇到事情心存戒懼，形容做事謹慎、不輕率。",
+    "origin": "《論語·述而》載「臨事而懼，好謀而成者也」，讚人遇事謹慎、善於謀劃。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "hao-mou-er-cheng",
+    "word": "好謀而成",
+    "pinyin": "hào móu ér chéng",
+    "cantonese": "hou2 mau4 ji4 sing4",
+    "meaning": "善於謀劃而成就事情，形容有策略、能成事。",
+    "origin": "《論語·述而》載「臨事而懼，好謀而成者也」，指遇事謹慎且善於謀劃者能成功。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "le-yi-wang-you",
+    "word": "樂以忘憂",
+    "pinyin": "lè yǐ wàng yōu",
+    "cantonese": "lok6 ji5 mong4 jau1",
+    "meaning": "快樂得忘記憂愁，形容專注所好、心境開朗。",
+    "origin": "《論語·述而》載孔子自述「發憤忘食，樂以忘憂，不知老之將至云爾」。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "情感",
+      "學習"
+    ]
+  },
+  {
+    "id": "ze-shan-er-cong",
+    "word": "擇善而從",
+    "pinyin": "zé shàn ér cóng",
+    "cantonese": "zaak6 sin6 ji4 cung4",
+    "meaning": "選擇好的去遵從，形容善於學習、從善如流。",
+    "origin": "《論語·述而》載「三人行，必有我師焉。擇其善者而從之，其不善者而改之」。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "學習"
+    ]
+  },
+  {
+    "id": "shu-er-bu-zuo",
+    "word": "述而不作",
+    "pinyin": "shù ér bù zuò",
+    "cantonese": "seot6 ji4 bat1 zok3",
+    "meaning": "只闡述前人學說而不自己創作，形容尊重傳統、謹守師承。",
+    "origin": "《論語·述而》載孔子曰「述而不作，信而好古，竊比於我老彭」。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "寫作",
+      "學習"
+    ]
+  },
+  {
+    "id": "xin-er-hao-gu",
+    "word": "信而好古",
+    "pinyin": "xìn ér hào gǔ",
+    "cantonese": "seon3 ji4 hou2 gu2",
+    "meaning": "誠信而又喜愛古代文化，形容好學崇古。",
+    "origin": "《論語·述而》載孔子曰「述而不作，信而好古」，表示信奉古道、愛好古學。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "品格"
+    ]
+  },
+  {
+    "id": "mo-er-zhi-zhi",
+    "word": "默而識之",
+    "pinyin": "mò ér zhì zhī",
+    "cantonese": "mak6 ji4 sik1 zi1",
+    "meaning": "默默記住所學，形容用心記憶、不事張揚。",
+    "origin": "《論語·述而》載孔子曰「默而識之，學而不厭，誨人不倦，何有於我哉」。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "學習"
+    ]
+  },
+  {
+    "id": "gong-hu-yi-duan",
+    "word": "攻乎異端",
+    "pinyin": "gōng hū yì duān",
+    "cantonese": "gung1 fu4 ji6 dyun1",
+    "meaning": "鑽研不合正道的學說，形容治學偏離正途。",
+    "origin": "《論語·為政》載孔子曰「攻乎異端，斯害也已」，指鑽研異端學說會有害。",
+    "sourceBook": "《論語·為政》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "思維"
+    ]
+  },
+  {
+    "id": "duo-wen-que-yi",
+    "word": "多聞闕疑",
+    "pinyin": "duō wén quē yí",
+    "cantonese": "do1 man4 kyut3 ji4",
+    "meaning": "多聽聞而保留疑惑，形容求知謹慎、不妄下判斷。",
+    "origin": "《論語·為政》載「多聞闕疑，慎言其餘，則寡尤」，指多聽而存疑，說話謹慎。",
+    "sourceBook": "《論語·為政》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "說話"
+    ]
+  },
+  {
+    "id": "jin-shan-jin-mei",
+    "word": "盡善盡美",
+    "pinyin": "jìn shàn jìn měi",
+    "cantonese": "zeon6 sin6 zeon6 mei5",
+    "meaning": "完善又美好，形容事物達到最理想的地步。",
+    "origin": "《論語·八佾》載孔子評《韶》樂「盡美矣，又盡善也」，後作盡善盡美。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 3,
+    "tags": [
+      "藝術",
+      "品格"
+    ]
+  },
+  {
+    "id": "le-er-bu-yin",
+    "word": "樂而不淫",
+    "pinyin": "lè ér bù yín",
+    "cantonese": "lok6 ji4 bat1 jam4",
+    "meaning": "快樂而不過分放縱，形容情感表達有節制。",
+    "origin": "《論語·八佾》載「《關雎》樂而不淫，哀而不傷」，指詩樂情感適度而合禮。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "情感"
+    ]
+  },
+  {
+    "id": "ai-er-bu-shang",
+    "word": "哀而不傷",
+    "pinyin": "āi ér bù shāng",
+    "cantonese": "oi1 ji4 bat1 soeng1",
+    "meaning": "悲傷而不至於傷身，形容情感哀痛而有節制。",
+    "origin": "《論語·八佾》載「《關雎》樂而不淫，哀而不傷」，讚詩歌情感表達適度。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "情感"
+    ]
+  },
+  {
+    "id": "liao-ru-zhi-zhang",
+    "word": "了如指掌",
+    "pinyin": "liǎo rú zhǐ zhǎng",
+    "cantonese": "liu5 jyu4 zi2 zoeng2",
+    "meaning": "清楚得像指著自己的手掌，形容對事情了解透徹。",
+    "origin": "《論語·八佾》載孔子論禘禮曰「知其說者之於天下也，其如示諸斯乎」，指其掌，後作了如指掌。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 4,
+    "tags": [
+      "思維",
+      "學習"
+    ]
+  },
+  {
+    "id": "cheng-shi-bu-shuo",
+    "word": "成事不說",
+    "pinyin": "chéng shì bù shuō",
+    "cantonese": "sing4 si6 bat1 syut3",
+    "meaning": "事情已成定局就不再勸說，形容事後不必再說。",
+    "origin": "《論語·八佾》載「成事不說，遂事不諫，既往不咎」，指已做成的事不必再議論。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 5,
+    "tags": [
+      "說話",
+      "做事"
+    ]
+  },
+  {
+    "id": "ji-wang-bu-jiu",
+    "word": "既往不咎",
+    "pinyin": "jì wǎng bù jiù",
+    "cantonese": "gei3 wong5 bat1 gau3",
+    "meaning": "過去的錯誤不再追究，形容寬大為懷、著眼將來。",
+    "origin": "《論語·八佾》載「成事不說，遂事不諫，既往不咎」，指已往之過不再責備。",
+    "sourceBook": "《論語·八佾》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "做事"
+    ]
+  },
+  {
+    "id": "xia-chong-yu-bing",
+    "word": "夏蟲語冰",
+    "pinyin": "xià chóng yǔ bīng",
+    "cantonese": "haa6 cung4 jyu5 bing1",
+    "meaning": "不能跟夏天的蟲談冰，比喻見識受環境限制、無法理解高深道理。",
+    "origin": "《莊子·秋水》載「夏蟲不可以語於冰者，篤於時也」，說明見識受限者難以論大道。",
+    "sourceBook": "《莊子·秋水》",
+    "tier": 5,
+    "tags": [
+      "寓言",
+      "思維"
+    ]
+  },
+  {
+    "id": "tai-cang-ti-mi",
+    "word": "太倉稊米",
+    "pinyin": "tài cāng tí mǐ",
+    "cantonese": "taai3 cong1 tai4 mai5",
+    "meaning": "大糧倉中的一粒小米，比喻極其渺小、微不足道。",
+    "origin": "《莊子·秋水》載「計中國之在海內，不似稊米之在大倉乎」，喻所佔位置極微小。",
+    "sourceBook": "《莊子·秋水》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "自然"
+    ]
+  },
+  {
+    "id": "zhuang-zhou-meng-die",
+    "word": "莊周夢蝶",
+    "pinyin": "zhuāng zhōu mèng dié",
+    "cantonese": "zong1 zau1 mung6 dip6",
+    "meaning": "莊周夢見自己化作蝴蝶，比喻人生如夢、物我難分。",
+    "origin": "《莊子·齊物論》載「昔者莊周夢為胡蝶，栩栩然胡蝶也」，醒後不知是莊周夢蝶還是蝶夢莊周。",
+    "sourceBook": "《莊子·齊物論》",
+    "tier": 5,
+    "tags": [
+      "寓言",
+      "哲理"
+    ]
+  },
+  {
+    "id": "gu-pen-er-ge",
+    "word": "鼓盆而歌",
+    "pinyin": "gǔ pén ér gē",
+    "cantonese": "gu2 pun4 ji4 go1",
+    "meaning": "敲著瓦盆唱歌，原指莊子妻死後達觀而歌，後形容對生死豁達。",
+    "origin": "《莊子·至樂》載莊子妻死，惠子弔之，莊子「箕踞鼓盆而歌」，說明生死如四時運行。",
+    "sourceBook": "《莊子·至樂》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "情感"
+    ]
+  },
+  {
+    "id": "mu-wu-quan-niu",
+    "word": "目無全牛",
+    "pinyin": "mù wú quán niú",
+    "cantonese": "muk6 mou4 cyun4 ngau4",
+    "meaning": "眼中已看不到整頭牛，形容技藝純熟、能透徹掌握事物規律。",
+    "origin": "《莊子·養生主》載庖丁曰「三年之後，未嘗見全牛也」，喻技藝精進、洞悉肌理。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "學習"
+    ]
+  },
+  {
+    "id": "pi-xi-dao-qiao",
+    "word": "批郤導竅",
+    "pinyin": "pī xì dǎo qiào",
+    "cantonese": "pai1 gwik1 dou6 hiu3",
+    "meaning": "順著骨節空隙下刀，比喻做事順應規律、善於掌握關鍵。",
+    "origin": "《莊子·養生主》載庖丁解牛「批大郤，導大窾」，喻依循事物本理而行。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "做事"
+    ]
+  },
+  {
+    "id": "de-yu-wang-quan",
+    "word": "得魚忘筌",
+    "pinyin": "dé yú wàng quán",
+    "cantonese": "dak1 jyu4 mong4 cyun4",
+    "meaning": "捕到魚就忘了捕魚的竹器，比喻達到目的後就忘了憑藉。",
+    "origin": "《莊子·外物》載「筌者所以在魚，得魚而忘筌」，喻得意忘言、不執著於工具。",
+    "sourceBook": "《莊子·外物》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "情感"
+    ]
+  },
+  {
+    "id": "de-yi-wang-yan",
+    "word": "得意忘言",
+    "pinyin": "dé yì wàng yán",
+    "cantonese": "dak1 ji3 mong4 jin4",
+    "meaning": "領會了意旨就忘了言語，形容重在領悟而不拘泥字句。",
+    "origin": "《莊子·外物》載「言者所以在意，得意而忘言」，指言語只是達意的工具。",
+    "sourceBook": "《莊子·外物》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "說話"
+    ]
+  },
+  {
+    "id": "hao-liang-zhi-shang",
+    "word": "濠梁之上",
+    "pinyin": "háo liáng zhī shàng",
+    "cantonese": "hou4 loeng4 zi1 soeng6",
+    "meaning": "莊子與惠子論魚之樂的橋上，比喻悠閒論道、體會物我之趣。",
+    "origin": "《莊子·秋水》載莊子與惠子遊於濠梁之上，辯論「子非魚，安知魚之樂」。",
+    "sourceBook": "《莊子·秋水》",
+    "tier": 5,
+    "tags": [
+      "哲理",
+      "寓言"
+    ]
+  },
+  {
+    "id": "hui-hui-you-yu",
+    "word": "恢恢有餘",
+    "pinyin": "huī huī yǒu yú",
+    "cantonese": "fui1 fui1 jau5 jyu4",
+    "meaning": "刀刃運轉寬綽而有餘地，形容技藝純熟、處理事情從容不迫。",
+    "origin": "《莊子·養生主》載「彼節者有間，而刀刃者無厚，以無厚入有間，恢恢乎其於遊刃必有餘地矣」。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "做事"
+    ]
+  },
+  {
+    "id": "xin-fa-yu-xing",
+    "word": "新發於硎",
+    "pinyin": "xīn fā yú xíng",
+    "cantonese": "san1 faat3 jyu1 jing4",
+    "meaning": "刀刃像剛從磨刀石磨出般鋒利，形容鋒芒畢露、技藝精純。",
+    "origin": "《莊子·養生主》載庖丁之刀「十九年矣，所解數千牛矣，而刀刃若新發於硎」。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 5,
+    "tags": [
+      "藝術",
+      "做事"
+    ]
+  },
+  {
+    "id": "chou-chu-man-zhi",
+    "word": "躊躇滿志",
+    "pinyin": "chóu chú mǎn zhì",
+    "cantonese": "cau4 cyu4 mun5 zi3",
+    "meaning": "從容自得、心滿意足，形容對自己的成果十分得意。",
+    "origin": "《莊子·養生主》載庖丁解牛後「提刀而立，為之四顧，為之躊躇滿志」，形容自得之態。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "情感"
+    ]
+  },
+  {
+    "id": "shan-dao-er-cang",
+    "word": "善刀而藏",
+    "pinyin": "shàn dāo ér cáng",
+    "cantonese": "sin6 dou1 ji4 cong4",
+    "meaning": "把刀擦拭乾淨收藏起來，比喻善於收斂鋒芒、待時而動。",
+    "origin": "《莊子·養生主》載庖丁解牛後「善刀而藏之」，喻懂得收歛、不炫耀才能。",
+    "sourceBook": "《莊子·養生主》",
+    "tier": 5,
+    "tags": [
+      "做事",
+      "哲理"
+    ]
+  },
+  {
+    "id": "da-sheng-ji-hu",
+    "word": "大聲疾呼",
+    "pinyin": "dà shēng jí hū",
+    "cantonese": "daai6 seng1 zat6 fu1",
+    "meaning": "大聲而急促地呼喊，形容極力提倡或緊急呼籲。",
+    "origin": "唐·韓愈《後十九日復上宰相書》載「大聲疾呼而望其仁之也」，形容急切呼籲求助。",
+    "sourceBook": "《昌黎先生集·後十九日復上宰相書》",
+    "tier": 4,
+    "tags": [
+      "說話",
+      "社會"
+    ]
+  },
+  {
+    "id": "can-geng-leng-zhi",
+    "word": "殘羹冷炙",
+    "pinyin": "cán gēng lěng zhì",
+    "cantonese": "caan4 gang1 laang5 zek3",
+    "meaning": "吃剩的湯羹和冷了的烤肉，比喻別人施捨的剩餘恩惠。",
+    "origin": "唐·杜甫《奉贈韋左丞丈二十二韻》載「殘杯與冷炙，到處潛悲辛」，寫寄人籬下之苦。",
+    "sourceBook": "《杜工部集·奉贈韋左丞丈二十二韻》",
+    "tier": 5,
+    "tags": [
+      "生活",
+      "財富"
+    ]
+  },
+  {
+    "id": "zhong-ming-ding-shi",
+    "word": "鐘鳴鼎食",
+    "pinyin": "zhōng míng dǐng shí",
+    "cantonese": "zung1 ming4 ding2 sik6",
+    "meaning": "擊鐘列鼎而食，形容古代貴族豪門的奢侈生活。",
+    "origin": "唐·王勃《滕王閣序》載「閭閻撲地，鐘鳴鼎食之家」，形容富貴人家的排場。",
+    "sourceBook": "《王子安集·滕王閣序》",
+    "tier": 5,
+    "tags": [
+      "財富",
+      "生活"
+    ]
+  },
+  {
+    "id": "fei-ma-qing-qiu",
+    "word": "肥馬輕裘",
+    "pinyin": "féi mǎ qīng qiú",
+    "cantonese": "fei4 maa5 hing1 kau4",
+    "meaning": "騎肥壯的馬、穿輕暖的皮裘，形容生活豪華闊綽。",
+    "origin": "《論語·雍也》載「赤之適齊也，乘肥馬，衣輕裘」，形容公西華出使時排場奢華。",
+    "sourceBook": "《論語·雍也》",
+    "tier": 5,
+    "tags": [
+      "財富",
+      "生活"
+    ]
+  },
+  {
+    "id": "dan-si-piao-yin",
+    "word": "簞食瓢飲",
+    "pinyin": "dān sì piáo yǐn",
+    "cantonese": "daan1 sik6 piu4 jam2",
+    "meaning": "一竹籃飯、一瓢水，形容生活清貧而安貧樂道。",
+    "origin": "《論語·雍也》載顏回「一簞食，一瓢飲，在陋巷，人不堪其憂，回也不改其樂」。",
+    "sourceBook": "《論語·雍也》",
+    "tier": 5,
+    "tags": [
+      "生活",
+      "品格"
+    ]
+  },
+  {
+    "id": "qu-gong-er-zhen",
+    "word": "曲肱而枕",
+    "pinyin": "qū gōng ér zhěn",
+    "cantonese": "kuk1 gwang1 ji4 zam3",
+    "meaning": "彎起手臂作枕頭，形容生活簡樸而自得其樂。",
+    "origin": "《論語·述而》載孔子曰「飯疏食飲水，曲肱而枕之，樂亦在其中矣」。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "生活",
+      "情感"
+    ]
+  },
+  {
+    "id": "fu-gui-fu-yun",
+    "word": "富貴浮雲",
+    "pinyin": "fù guì fú yún",
+    "cantonese": "fu3 gwai3 fau4 wan4",
+    "meaning": "把富貴看作天上的浮雲，形容輕視名利、志趣高潔。",
+    "origin": "《論語·述而》載孔子曰「不義而富且貴，於我如浮雲」，表示不義之財不足取。",
+    "sourceBook": "《論語·述而》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "人生"
+    ]
+  },
+  {
+    "id": "dan-si-hu-jiang",
+    "word": "簞食壺漿",
+    "pinyin": "dān sì hú jiāng",
+    "cantonese": "daan1 sik6 wu4 zoeng1",
+    "meaning": "用竹籃盛飯、壺裝酒漿，形容百姓熱烈歡迎軍隊。",
+    "origin": "《孟子·梁惠王下》載「簞食壺漿，以迎王師」，形容人民歡迎仁義之師。",
+    "sourceBook": "《孟子·梁惠王下》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "生活"
+    ]
+  },
+  {
+    "id": "yi-mao-bu-ba",
+    "word": "一毛不拔",
+    "pinyin": "yī máo bù bá",
+    "cantonese": "jat1 mou4 bat1 bat6",
+    "meaning": "連一根汗毛也不肯拔，形容極端自私吝嗇。",
+    "origin": "《孟子·盡心上》載楊朱「拔一毛而利天下，不為也」，後作一毛不拔，喻慳吝。",
+    "sourceBook": "《孟子·盡心上》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "財富"
+    ]
+  },
+  {
+    "id": "wei-fu-bu-ren",
+    "word": "為富不仁",
+    "pinyin": "wéi fù bù rén",
+    "cantonese": "wai4 fu3 bat1 jan4",
+    "meaning": "只顧發財而不講仁義，形容富人刻薄寡恩。",
+    "origin": "《孟子·滕文公上》載「陽虎曰：為富不仁矣，為仁不富矣」，指求富與行仁相悖。",
+    "sourceBook": "《孟子·滕文公上》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "財富"
+    ]
+  },
+  {
+    "id": "ce-yin-zhi-xin",
+    "word": "惻隱之心",
+    "pinyin": "cè yǐn zhī xīn",
+    "cantonese": "cak1 jan2 zi1 sam1",
+    "meaning": "對別人苦難的同情憐憫之心，形容人有仁愛之心。",
+    "origin": "《孟子·公孫丑上》載「惻隱之心，仁之端也」，指同情心是仁德的開端。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "情感"
+    ]
+  },
+  {
+    "id": "xiu-wu-zhi-xin",
+    "word": "羞惡之心",
+    "pinyin": "xiū wù zhī xīn",
+    "cantonese": "sau1 ok3 zi1 sam1",
+    "meaning": "對自己不當行為感到羞恥、對壞事感到厭惡之心。",
+    "origin": "《孟子·公孫丑上》載「羞惡之心，義之端也」，指知羞惡是義的開端。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "情感"
+    ]
+  },
+  {
+    "id": "ci-rang-zhi-xin",
+    "word": "辭讓之心",
+    "pinyin": "cí ràng zhī xīn",
+    "cantonese": "ci4 joeng6 zi1 sam1",
+    "meaning": "懂得推辭謙讓之心，形容人有禮貌、不爭奪。",
+    "origin": "《孟子·公孫丑上》載「辭讓之心，禮之端也」，指謙讓是禮的開端。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "情感"
+    ]
+  },
+  {
+    "id": "shi-fei-zhi-xin",
+    "word": "是非之心",
+    "pinyin": "shì fēi zhī xīn",
+    "cantonese": "si6 fei1 zi1 sam1",
+    "meaning": "分辨對錯之心，形容人有判斷是非善惡的能力。",
+    "origin": "《孟子·公孫丑上》載「是非之心，智之端也」，指明辨是非是智慧的開端。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "思維"
+    ]
+  },
+  {
+    "id": "yu-yu-xiong-zhang",
+    "word": "魚與熊掌",
+    "pinyin": "yú yǔ xióng zhǎng",
+    "cantonese": "jyu4 jyu5 hung4 zoeng2",
+    "meaning": "魚和熊掌都想得到，比喻兩樣美好的事物難以兼得。",
+    "origin": "《孟子·告子上》載「魚，我所欲也；熊掌，亦我所欲也。二者不可得兼」，喻取捨之難。",
+    "sourceBook": "《孟子·告子上》",
+    "tier": 4,
+    "tags": [
+      "哲理",
+      "生活"
+    ]
+  },
+  {
+    "id": "de-long-wang-shu",
+    "word": "得隴望蜀",
+    "pinyin": "dé lǒng wàng shǔ",
+    "cantonese": "dak1 lung5 mong6 suk6",
+    "meaning": "取得隴地又想蜀地，比喻貪得無厭、不知滿足。",
+    "origin": "《後漢書·岑彭傳》載光武帝曰「人苦不知足，既平隴，復望蜀」，後作得隴望蜀。",
+    "sourceBook": "《後漢書·岑彭傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "思維"
+    ]
+  },
+  {
+    "id": "yin-zhen-zhi-ke",
+    "word": "飲鴆止渴",
+    "pinyin": "yǐn zhèn zhǐ kě",
+    "cantonese": "jam2 zam6 zi2 hot3",
+    "meaning": "喝毒酒解渴，比喻用有害的方法解決眼前問題而不顧後患。",
+    "origin": "《後漢書·霍諝傳》載「譬猶療飢於附子，止渴於酖毒」，後作飲鴆止渴。",
+    "sourceBook": "《後漢書·霍諝傳》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "cheng-ren-zhi-wei",
+    "word": "乘人之危",
+    "pinyin": "chéng rén zhī wēi",
+    "cantonese": "sing4 jan4 zi1 ngai4",
+    "meaning": "趁別人危難時加以侵害，形容乘人之危、落井下石。",
+    "origin": "《後漢書·蓋勳傳》載「乘人之危，非仁也」，指不應趁人之危謀利。",
+    "sourceBook": "《後漢書·蓋勳傳》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "做事"
+    ]
+  },
+  {
+    "id": "ju-an-qi-mei",
+    "word": "舉案齊眉",
+    "pinyin": "jǔ àn qí méi",
+    "cantonese": "geoi2 on3 cai4 mei4",
+    "meaning": "把托盤舉到與眉毛齊高，形容夫妻相敬如賓、互相尊重。",
+    "origin": "《後漢書·梁鴻傳》載梁鴻妻孟光送飯時「舉案齊眉」，不敢仰視，形容夫妻相敬。",
+    "sourceBook": "《後漢書·梁鴻傳》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "家庭"
+    ]
+  },
+  {
+    "id": "tan-guan-xiang-qing",
+    "word": "彈冠相慶",
+    "pinyin": "tán guān xiāng qìng",
+    "cantonese": "taan4 gun3 soeng1 hing3",
+    "meaning": "彈去帽上灰塵互相慶賀，形容因朋友將出仕而互相慶幸。",
+    "origin": "《漢書·王吉傳》載「王陽在位，貢公彈冠」，後作彈冠相慶，喻準備出仕。",
+    "sourceBook": "《漢書·王吉傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "社會"
+    ]
+  },
+  {
+    "id": "ru-huo-ru-tu",
+    "word": "如火如荼",
+    "pinyin": "rú huǒ rú tú",
+    "cantonese": "jyu4 fo2 jyu4 tou4",
+    "meaning": "像火一樣紅、像茅草花一樣白，形容聲勢浩大、場面熱烈。",
+    "origin": "《國語·吳語》載吳軍陣容「望之如火，望之如荼」，後形容氣勢旺盛。",
+    "sourceBook": "《國語·吳語》",
+    "tier": 3,
+    "tags": [
+      "自然",
+      "軍事"
+    ]
+  },
+  {
+    "id": "biao-xin-li-yi",
+    "word": "標新立異",
+    "pinyin": "biāo xīn lì yì",
+    "cantonese": "biu1 san1 laap6 ji6",
+    "meaning": "提出新奇的見解、樹立獨特的風格，形容刻意出奇、不同流俗。",
+    "origin": "《世說新語·文學》載支道林「卓然標新理於二家之表，立異義於眾賢之外」。",
+    "sourceBook": "《世說新語·文學》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "思維"
+    ]
+  },
+  {
+    "id": "han-niu-chong-dong",
+    "word": "汗牛充棟",
+    "pinyin": "hàn niú chōng dòng",
+    "cantonese": "hon6 ngau4 cung1 dung3",
+    "meaning": "書籍搬運時堆滿屋子、使牛馬出汗，形容藏書或著作極多。",
+    "origin": "唐·柳宗元《陸文通先生墓表》載「其為書，處則充棟宇，出則汗牛馬」，形容著述宏富。",
+    "sourceBook": "《柳河東集·陸文通先生墓表》",
+    "tier": 4,
+    "tags": [
+      "學習",
+      "寫作"
+    ]
+  },
+  {
+    "id": "kai-juan-you-yi",
+    "word": "開卷有益",
+    "pinyin": "kāi juàn yǒu yì",
+    "cantonese": "hoi1 gyun2 jau5 jik1",
+    "meaning": "打開書本閱讀就會有好處，勉人勤於讀書。",
+    "origin": "宋·王闢之《澠水燕談錄·文儒》載宋太宗曰「開卷有益，朕不以為勞也」。",
+    "sourceBook": "《澠水燕談錄·文儒》",
+    "tier": 3,
+    "tags": [
+      "學習"
+    ]
+  },
+  {
+    "id": "kai-men-yi-dao",
+    "word": "開門揖盜",
+    "pinyin": "kāi mén yī dào",
+    "cantonese": "hoi1 mun4 jap1 dou6",
+    "meaning": "打開大門迎接強盜，比喻引進壞人、自招禍患。",
+    "origin": "《三國志·吳書·吳主傳》載「是猶開門而揖盜，未可以為仁也」，喻引狼入室。",
+    "sourceBook": "《三國志·吳書·吳主傳》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "做事"
+    ]
+  },
+  {
+    "id": "men-ke-luo-que",
+    "word": "門可羅雀",
+    "pinyin": "mén kě luó què",
+    "cantonese": "mun4 ho2 lo4 zoek3",
+    "meaning": "門外可以張網捕雀，形容來客稀少、門庭冷落。",
+    "origin": "《史記·汲鄭列傳》載翟公罷官後「門外可設雀羅」，形容賓客絕跡。",
+    "sourceBook": "《史記·汲鄭列傳》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "生活"
+    ]
+  },
+  {
+    "id": "men-ting-ruo-shi",
+    "word": "門庭若市",
+    "pinyin": "mén tíng ruò shì",
+    "cantonese": "mun4 ting4 joek6 si5",
+    "meaning": "門前庭院熱鬧得像市場，形容來往的人極多、非常熱鬧。",
+    "origin": "《戰國策·齊策一》載鄒忌諷齊王納諫後「群臣進諫，門庭若市」。",
+    "sourceBook": "《戰國策·齊策一》",
+    "tier": 3,
+    "tags": [
+      "社會",
+      "生活"
+    ]
+  },
+  {
+    "id": "yi-fei-chong-tian",
+    "word": "一飛沖天",
+    "pinyin": "yī fēi chōng tiān",
+    "cantonese": "jat1 fei1 cung1 tin1",
+    "meaning": "一飛就衝上雲霄，比喻平時無聞而一舉取得驚人成就。",
+    "origin": "《史記·滑稽列傳》載齊威王曰「此鳥不飛則已，一飛沖天；不鳴則已，一鳴驚人」。",
+    "sourceBook": "《史記·滑稽列傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "做事"
+    ]
+  },
+  {
+    "id": "tan-he-rong-yi",
+    "word": "談何容易",
+    "pinyin": "tán hé róng yì",
+    "cantonese": "taam4 ho4 jung4 ji6",
+    "meaning": "說起來哪裡容易，形容事情做起來比談論難得多。",
+    "origin": "《漢書·東方朔傳》載「談何容易」，指臣下向君主進言並不容易。",
+    "sourceBook": "《漢書·東方朔傳》",
+    "tier": 4,
+    "tags": [
+      "說話",
+      "做事"
+    ]
+  },
+  {
+    "id": "qu-xue-e-shi",
+    "word": "曲學阿世",
+    "pinyin": "qū xué ē shì",
+    "cantonese": "kuk1 hok6 o1 sai3",
+    "meaning": "歪曲學術以迎合世俗，形容違背真理、曲意逢迎。",
+    "origin": "《史記·儒林列傳》載轅固生曰「務正學以言，無曲學以阿世」，戒學者勿迎合權勢。",
+    "sourceBook": "《史記·儒林列傳》",
+    "tier": 5,
+    "tags": [
+      "學習",
+      "品格"
+    ]
+  },
+  {
+    "id": "bi-men-si-guo",
+    "word": "閉門思過",
+    "pinyin": "bì mén sī guò",
+    "cantonese": "bai3 mun4 si1 gwo3",
+    "meaning": "關起門來反省自己的過錯，形容誠心悔過。",
+    "origin": "《漢書·韓延壽傳》載「延壽閉閣思過」，指其自省過失，後作閉門思過。",
+    "sourceBook": "《漢書·韓延壽傳》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "做事"
+    ]
+  },
+  {
+    "id": "qin-zei-qin-wang",
+    "word": "擒賊擒王",
+    "pinyin": "qín zéi qín wáng",
+    "cantonese": "kam4 caak6 kam4 wong4",
+    "meaning": "捉賊先捉首領，比喻做事要抓住關鍵、解決主要矛盾。",
+    "origin": "唐·杜甫《前出塞》載「射人先射馬，擒賊先擒王」，後喻做事須先除首惡。",
+    "sourceBook": "《杜工部集·前出塞》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "做事"
+    ]
+  },
+  {
+    "id": "bing-gui-shen-su",
+    "word": "兵貴神速",
+    "pinyin": "bīng guì shén sù",
+    "cantonese": "bing1 gwai3 san4 cuk1",
+    "meaning": "用兵貴在行動神速，形容把握戰機、迅速行動。",
+    "origin": "《三國志·魏書·郭嘉傳》載郭嘉勸曹操「兵貴神速」，宜急行輕兵掩其不意。",
+    "sourceBook": "《三國志·魏書·郭嘉傳》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "做事"
+    ]
+  },
+  {
+    "id": "yan-qi-xi-gu",
+    "word": "偃旗息鼓",
+    "pinyin": "yǎn qí xī gǔ",
+    "cantonese": "jin2 kei4 sik1 gu2",
+    "meaning": "放倒旗幟、停止擊鼓，形容隱蔽行動，也指停止戰鬥。",
+    "origin": "《三國志·蜀書·趙雲傳》裴注引《雲別傳》載趙雲「開門偃旗息鼓」，以疑兵退敵。",
+    "sourceBook": "《三國志·蜀書·趙雲傳》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "做事"
+    ]
+  },
+  {
+    "id": "pi-jian-zhi-rui",
+    "word": "披堅執銳",
+    "pinyin": "pī jiān zhí ruì",
+    "cantonese": "pei1 gin1 zap1 jeoi6",
+    "meaning": "身穿鎧甲、手執兵器，形容將士親臨戰場奮勇作戰。",
+    "origin": "《史記·項羽本紀》載「夫被堅執銳，義不如公」，指親身披甲執兵衝鋒。",
+    "sourceBook": "《史記·項羽本紀》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "勇氣"
+    ]
+  },
+  {
+    "id": "jian-bi-qing-ye",
+    "word": "堅壁清野",
+    "pinyin": "jiān bì qīng yě",
+    "cantonese": "gin1 bik1 cing1 je5",
+    "meaning": "加固堡壘、轉移物資使敵人無所獲，形容困敵的作戰策略。",
+    "origin": "《三國志·魏書·荀彧傳》載「今東方皆已收麥，必堅壁清野以待將軍」，指固守清野之策。",
+    "sourceBook": "《三國志·魏書·荀彧傳》",
+    "tier": 4,
+    "tags": [
+      "軍事",
+      "思維"
+    ]
+  },
+  {
+    "id": "zhi-zhi-si-di",
+    "word": "置之死地",
+    "pinyin": "zhì zhī sǐ dì",
+    "cantonese": "zi3 zi1 sei2 dei6",
+    "meaning": "把人置於必死之地，後用以比喻斷絕退路、激發決心。",
+    "origin": "《史記·淮陰侯列傳》載「陷之死地而後生，置之亡地而後存」，指絕境反能求生。",
+    "sourceBook": "《史記·淮陰侯列傳》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "哲理"
+    ]
+  },
+  {
+    "id": "bi-jie-wo-ying",
+    "word": "彼竭我盈",
+    "pinyin": "bǐ jié wǒ yíng",
+    "cantonese": "bei2 kit3 ngo5 jing4",
+    "meaning": "對方士氣衰竭而我方士氣旺盛，形容掌握反攻時機。",
+    "origin": "《左傳·莊公十年》載曹劌曰「彼竭我盈，故克之」，說明待敵疲而我銳時出擊。",
+    "sourceBook": "《左傳·莊公十年》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "思維"
+    ]
+  },
+  {
+    "id": "zhe-luan-qi-mi",
+    "word": "轍亂旗靡",
+    "pinyin": "zhé luàn qí mǐ",
+    "cantonese": "cit3 lyun6 kei4 mei5",
+    "meaning": "車轍混亂、旗幟倒伏，形容軍隊潰敗逃亡的狼狽景象。",
+    "origin": "《左傳·莊公十年》載曹劌「視其轍亂，望其旗靡，故逐之」，判斷齊軍真敗。",
+    "sourceBook": "《左傳·莊公十年》",
+    "tier": 5,
+    "tags": [
+      "軍事",
+      "歷史"
+    ]
+  },
+  {
+    "id": "shi-qi-mo-ji",
+    "word": "噬臍莫及",
+    "pinyin": "shì qí mò jí",
+    "cantonese": "sai6 ci4 mok6 kap6",
+    "meaning": "想咬自己的肚臍卻咬不到，比喻後悔已遲、無法挽回。",
+    "origin": "《左傳·莊公六年》載「亡鄧國者，必此人也。若不早圖，後君噬齊，其及圖之乎」，後作噬臍莫及。",
+    "sourceBook": "《左傳·莊公六年》",
+    "tier": 5,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "wan-huo-zi-fen",
+    "word": "玩火自焚",
+    "pinyin": "wán huǒ zì fén",
+    "cantonese": "waan4 fo2 zi6 fan4",
+    "meaning": "玩弄火的人終會燒到自己，比喻冒險害人反害自己。",
+    "origin": "《左傳·隱公四年》載「夫兵猶火也，弗戢，將自焚也」，喻濫用武力必自招禍患。",
+    "sourceBook": "《左傳·隱公四年》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "社會"
+    ]
+  },
+  {
+    "id": "zhong-pan-qin-li",
+    "word": "眾叛親離",
+    "pinyin": "zhòng pàn qīn lí",
+    "cantonese": "zung3 bun6 can1 lei4",
+    "meaning": "眾人背叛、親信離散，形容完全失去人心、孤立無援。",
+    "origin": "《左傳·隱公四年》載「阻兵無眾，安忍無親，眾叛親離，難以濟矣」。",
+    "sourceBook": "《左傳·隱公四年》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "情感"
+    ]
+  },
+  {
+    "id": "wang-kai-yi-mian",
+    "word": "網開一面",
+    "pinyin": "wǎng kāi yī miàn",
+    "cantonese": "mong5 hoi1 jat1 min6",
+    "meaning": "把羅網打開一面，比喻寬大處理、給人一條生路。",
+    "origin": "《史記·殷本紀》載商湯見捕獵者四面張網，命撤去三面，只留一面，諸侯稱其仁德。",
+    "sourceBook": "《史記·殷本紀》",
+    "tier": 3,
+    "tags": [
+      "社會",
+      "品格"
+    ]
+  },
+  {
+    "id": "qing-jun-ru-weng",
+    "word": "請君入甕",
+    "pinyin": "qǐng jūn rù wèng",
+    "cantonese": "cing2 gwan1 jap6 ung3",
+    "meaning": "請對方進到大甕裡，比喻用對方的手段整治對方。",
+    "origin": "《資治通鑑·唐紀》載周興設計以甕烤人，來俊臣如法請其入甕，周興惶恐認罪。",
+    "sourceBook": "《資治通鑑·唐紀》",
+    "tier": 4,
+    "tags": [
+      "計謀",
+      "歷史"
+    ]
+  },
+  {
+    "id": "xiao-li-cang-dao",
+    "word": "笑裡藏刀",
+    "pinyin": "xiào lǐ cáng dāo",
+    "cantonese": "siu3 leoi5 cong4 dou1",
+    "meaning": "笑容裡暗藏殺機，形容表面和善而內心陰險。",
+    "origin": "《舊唐書·李義府傳》載李義府「貌狀溫恭，與人語必嬉怡微笑，而褊忌陰賊」，時人稱其笑中有刀。",
+    "sourceBook": "《舊唐書·李義府傳》",
+    "tier": 3,
+    "tags": [
+      "說話",
+      "品格"
+    ]
+  },
+  {
+    "id": "tuo-mian-zi-gan",
+    "word": "唾面自乾",
+    "pinyin": "tuò miàn zì gān",
+    "cantonese": "to3 min6 zi6 gon1",
+    "meaning": "別人吐口水在臉上，不擦去而讓它自然乾，形容極度忍讓、不與人爭。",
+    "origin": "《新唐書·婁師德傳》載婁師德教弟「人唾汝面，怒汝也；汝拭之，乃逆其意……不拭自乾，當笑而受之」。",
+    "sourceBook": "《新唐書·婁師德傳》",
+    "tier": 5,
+    "tags": [
+      "品格",
+      "情感"
+    ]
+  },
+  {
+    "id": "pou-fu-cang-zhu",
+    "word": "剖腹藏珠",
+    "pinyin": "pōu fù cáng zhū",
+    "cantonese": "fau2 fuk1 cong4 zyu1",
+    "meaning": "剖開肚子藏珍珠，比喻為財物而傷害自身、輕重倒置。",
+    "origin": "《資治通鑑·唐紀》載唐太宗謂侍臣：西域胡人剖身藏珠，愛珠甚於身，人皆笑之。",
+    "sourceBook": "《資治通鑑·唐紀》",
+    "tier": 5,
+    "tags": [
+      "生活",
+      "思維"
+    ]
+  },
+  {
+    "id": "qi-ling-ba-luo",
+    "word": "七零八落",
+    "pinyin": "qī líng bā luò",
+    "cantonese": "cat1 ling4 baat3 lok6",
+    "meaning": "形容零散稀疏、殘缺不全，也形容散亂不整齊。",
+    "origin": "宋·釋惟白《建中靖國續燈錄·卷六》載「無味之談，七零八落」，後形容零散殘缺、散亂不整。",
+    "sourceBook": "《建中靖國續燈錄·卷六》",
+    "tier": 2,
+    "tags": [
+      "生活",
+      "情感"
+    ]
+  },
+  {
+    "id": "chun-feng-de-yi",
+    "word": "春風得意",
+    "pinyin": "chūn fēng dé yì",
+    "cantonese": "ceon1 fung1 dak1 ji3",
+    "meaning": "形容科舉及第或事情順利時得意洋洋的心情。",
+    "origin": "唐·孟郊《登科後》載「春風得意馬蹄疾，一日看盡長安花」，寫登第後的暢快得意。",
+    "sourceBook": "《全唐詩·登科後》",
+    "tier": 2,
+    "tags": [
+      "情感",
+      "人物"
+    ]
+  },
+  {
+    "id": "ming-luo-sun-shan",
+    "word": "名落孫山",
+    "pinyin": "míng luò sūn shān",
+    "cantonese": "ming4 lok6 syun1 saan1",
+    "meaning": "名字排在孫山之後，比喻考試或選拔未被錄取。",
+    "origin": "宋·范公偁《過庭錄》載孫山以榜末回鄉，鄉人問其子得失，答「賢郎更在孫山外」。",
+    "sourceBook": "《過庭錄》",
+    "tier": 2,
+    "tags": [
+      "學習",
+      "人物"
+    ]
+  },
+  {
+    "id": "yi-yi-dai-shui",
+    "word": "一衣帶水",
+    "pinyin": "yī yī dài shuǐ",
+    "cantonese": "jat1 ji1 daai3 seoi2",
+    "meaning": "像一條衣帶般窄的河水，形容兩地僅一水之隔、距離很近。",
+    "origin": "《南史·陳後主紀》載隋文帝曰「我為百姓父母，豈可一衣帶水不拯之乎」，後喻僅一水之隔。",
+    "sourceBook": "《南史·陳後主紀》",
+    "tier": 3,
+    "tags": [
+      "自然",
+      "社會"
+    ]
+  },
+  {
+    "id": "luo-hua-liu-shui",
+    "word": "落花流水",
+    "pinyin": "luò huā liú shuǐ",
+    "cantonese": "lok6 faa1 lau4 seoi2",
+    "meaning": "落花隨流水飄去，形容暮春景色，也比喻慘敗或境遇零落。",
+    "origin": "唐·李群玉《奉和張舍人送秦鍊師歸岑公山》載「蘭浦蒼蒼春欲暮，落花流水怨離襟」，後喻殘敗。",
+    "sourceBook": "《全唐詩·奉和張舍人送秦鍊師歸岑公山》",
+    "tier": 3,
+    "tags": [
+      "自然",
+      "情感"
+    ]
+  },
+  {
+    "id": "kong-xue-lai-feng",
+    "word": "空穴來風",
+    "pinyin": "kōng xué lái fēng",
+    "cantonese": "hung1 jyut6 loi4 fung1",
+    "meaning": "有了洞穴才會有風進來，比喻消息或傳言並非完全沒有原因。",
+    "origin": "戰國楚·宋玉《風賦》載「枳句來巢，空穴來風」，本喻事出有因，後多指流言有因。",
+    "sourceBook": "《文選·風賦》",
+    "tier": 4,
+    "tags": [
+      "說話",
+      "思維"
+    ]
+  },
+  {
+    "id": "liang-xiu-qing-feng",
+    "word": "兩袖清風",
+    "pinyin": "liǎng xiù qīng fēng",
+    "cantonese": "loeng5 zau6 cing1 fung1",
+    "meaning": "兩袖只有清風，形容為官清廉、沒有積蓄。",
+    "origin": "元·陳基《次韻吳江道中》載「兩袖清風身欲飄，杖藜隨月步長橋」，後以喻為官廉潔。",
+    "sourceBook": "《元詩選·次韻吳江道中》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "生活"
+    ]
+  },
+  {
+    "id": "shu-quan-fei-ri",
+    "word": "蜀犬吠日",
+    "pinyin": "shǔ quǎn fèi rì",
+    "cantonese": "suk6 hyun2 fai6 jat6",
+    "meaning": "四川多雨少晴，狗見日出便吠，比喻少見多怪、少見而大驚小怪。",
+    "origin": "唐·柳宗元《答韋中立論師道書》載「庸、蜀之南，恆雨少日，日出則犬吠」，喻少見多怪。",
+    "sourceBook": "《柳河東集·答韋中立論師道書》",
+    "tier": 5,
+    "tags": [
+      "寓言",
+      "動物"
+    ]
+  },
+  {
+    "id": "bu-gong-dai-tian",
+    "word": "不共戴天",
+    "pinyin": "bù gòng dài tiān",
+    "cantonese": "bat1 gung6 daai3 tin1",
+    "meaning": "不願與敵人同頂一片天，形容仇恨極深、勢不兩立。",
+    "origin": "《禮記·曲禮上》載「父之仇，弗與共戴天」，指殺父之仇不共戴天，後喻深仇大恨。",
+    "sourceBook": "《禮記·曲禮上》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "社會"
+    ]
+  },
+  {
+    "id": "shou-bi-nan-shan",
+    "word": "壽比南山",
+    "pinyin": "shòu bǐ nán shān",
+    "cantonese": "sau6 bei2 naam4 saan1",
+    "meaning": "壽命像南山一樣長久，形容長壽，常用作祝壽之詞。",
+    "origin": "《詩經·小雅·天保》載「如月之恆，如日之升，如南山之壽」，後作壽比南山，祝人長壽。",
+    "sourceBook": "《詩經·小雅·天保》",
+    "tier": 3,
+    "tags": [
+      "情感",
+      "祝福"
+    ]
+  },
+  {
+    "id": "fang-hu-gui-shan",
+    "word": "放虎歸山",
+    "pinyin": "fàng hǔ guī shān",
+    "cantonese": "fong3 fu2 gwai1 saan1",
+    "meaning": "把老虎放回山中，比喻放走敵人，留下無窮後患。",
+    "origin": "《三國志·蜀書·劉巴傳》裴注引《零陵先賢傳》載劉巴諫劉璋「若使備討張魯，是放虎於山林也」。",
+    "sourceBook": "《三國志·蜀書·劉巴傳》",
+    "tier": 3,
+    "tags": [
+      "寓言",
+      "動物"
+    ]
+  },
+  {
+    "id": "lu-si-shei-shou",
+    "word": "鹿死誰手",
+    "pinyin": "lù sǐ shéi shǒu",
+    "cantonese": "luk6 sei2 seoi4 sau2",
+    "meaning": "不知鹿會死在誰手裡，比喻勝負未定、結果難料。",
+    "origin": "《晉書·石勒載記下》載石勒曰與光武並驅中原「未知鹿死誰手」，後喻勝負未分。",
+    "sourceBook": "《晉書·石勒載記下》",
+    "tier": 3,
+    "tags": [
+      "歷史",
+      "競爭"
+    ]
+  },
+  {
+    "id": "mei-zhong-bu-zu",
+    "word": "美中不足",
+    "pinyin": "měi zhōng bù zú",
+    "cantonese": "mei5 zung1 bat1 zuk1",
+    "meaning": "大體美好但仍有小缺陷，形容好中帶有遺憾。",
+    "origin": "明·凌濛初《初刻拍案驚奇·卷二十七》載「破鏡重圓……尚為美中不足」，指美事仍有缺憾。",
+    "sourceBook": "《初刻拍案驚奇·卷二十七》",
+    "tier": 3,
+    "tags": [
+      "生活",
+      "情感"
+    ]
+  },
+  {
+    "id": "yi-ke-qian-jin",
+    "word": "一刻千金",
+    "pinyin": "yī kè qiān jīn",
+    "cantonese": "jat1 hak1 cin1 gam1",
+    "meaning": "一刻時光價值千金，形容時間極其寶貴。",
+    "origin": "宋·蘇軾《春宵》詩載「春宵一刻值千金，花有清香月有陰」，形容良夜時光珍貴。",
+    "sourceBook": "《東坡全集·春宵》",
+    "tier": 4,
+    "tags": [
+      "時間"
+    ]
+  },
+  {
+    "id": "bo-luan-fan-zheng",
+    "word": "撥亂反正",
+    "pinyin": "bō luàn fǎn zhèng",
+    "cantonese": "but6 lyun6 faan2 zing3",
+    "meaning": "治理混亂、使局面回復正道，形容扭轉敗局、重歸正常。",
+    "origin": "《公羊傳·哀公十四年》載「撥亂世，反諸正，莫近諸《春秋》」，後作撥亂反正。",
+    "sourceBook": "《公羊傳·哀公十四年》",
+    "tier": 3,
+    "tags": [
+      "社會",
+      "歷史"
+    ]
+  },
+  {
+    "id": "xiang-mao-tang-tang",
+    "word": "相貌堂堂",
+    "pinyin": "xiàng mào táng táng",
+    "cantonese": "soeng3 maau6 tong4 tong4",
+    "meaning": "儀表端正雄偉、氣度不凡，形容男子相貌出眾。",
+    "origin": "明·吳承恩《西遊記·第五十四回》載「御弟相貌堂堂，丰姿英俊」，形容儀表堂堂。",
+    "sourceBook": "《西遊記·第五十四回》",
+    "tier": 4,
+    "tags": [
+      "人物"
+    ]
+  },
+  {
+    "id": "yan-bi-you-zhong",
+    "word": "言必有中",
+    "pinyin": "yán bì yǒu zhòng",
+    "cantonese": "jin4 bit1 jau5 zung1",
+    "meaning": "一說話就切中要害，形容說話精當、見解準確。",
+    "origin": "《論語·先進》載「夫人不言，言必有中」，讚閔子騫平日寡言而說話必中肯。",
+    "sourceBook": "《論語·先進》",
+    "tier": 5,
+    "tags": [
+      "說話",
+      "思維"
+    ]
+  },
+  {
+    "id": "hu-tong-you-wu",
+    "word": "互通有無",
+    "pinyin": "hù tōng yǒu wú",
+    "cantonese": "wu6 tung1 jau5 mou4",
+    "meaning": "互相交換有無，形容彼此調劑餘缺、互相幫助。",
+    "origin": "唐·韓愈《原道》載「為之賈，以通其有無」，指商人互通貨物之有無，後喻互相支援。",
+    "sourceBook": "《昌黎先生集·原道》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "做事"
+    ]
+  },
+  {
+    "id": "liao-sheng-yu-wu",
+    "word": "聊勝於無",
+    "pinyin": "liáo shèng yú wú",
+    "cantonese": "liu4 sing3 jyu1 mou4",
+    "meaning": "比完全沒有好一些，形容數目雖少聊可自慰。",
+    "origin": "晉·陶淵明《和劉柴桑》詩載「弱女雖非男，慰情聊勝無」，後作聊勝於無。",
+    "sourceBook": "《陶淵明集·和劉柴桑》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "生活"
+    ]
+  },
+  {
+    "id": "min-bu-liao-sheng",
+    "word": "民不聊生",
+    "pinyin": "mín bù liáo shēng",
+    "cantonese": "man4 bat1 liu4 sang1",
+    "meaning": "百姓無法賴以生活，形容人民生活極度困苦。",
+    "origin": "《史記·張耳陳餘列傳》載「財匱力盡，民不聊生」，形容百姓生計斷絕。",
+    "sourceBook": "《史記·張耳陳餘列傳》",
+    "tier": 3,
+    "tags": [
+      "社會"
+    ]
+  },
+  {
+    "id": "you-zhi-jing-cheng",
+    "word": "有志竟成",
+    "pinyin": "yǒu zhì jìng chéng",
+    "cantonese": "jau5 zi3 ging2 sing4",
+    "meaning": "有志向終能成功，形容立志堅定、努力不懈。",
+    "origin": "《後漢書·耿弇傳》載光武帝謂耿弇「有志者事竟成也」，後作有志竟成。",
+    "sourceBook": "《後漢書·耿弇傳》",
+    "tier": 3,
+    "tags": [
+      "堅持",
+      "學習"
+    ]
+  },
+  {
+    "id": "qi-an-tou-ming",
+    "word": "棄暗投明",
+    "pinyin": "qì àn tóu míng",
+    "cantonese": "hei3 am3 tau4 ming4",
+    "meaning": "離開黑暗、投向光明，比喻脫離惡勢力而歸向正道。",
+    "origin": "元·尚仲賢《單鞭奪槊·楔子》載「背暗投明，古之常理」，後作棄暗投明。",
+    "sourceBook": "《單鞭奪槊·楔子》",
+    "tier": 4,
+    "tags": [
+      "歷史",
+      "人物"
+    ]
+  },
+  {
+    "id": "xian-jian-zhi-ming",
+    "word": "先見之明",
+    "pinyin": "xiān jiàn zhī míng",
+    "cantonese": "sin1 gin3 zi1 ming4",
+    "meaning": "能預先看清形勢的能力，形容有遠見、早有預料。",
+    "origin": "《後漢書·楊彪傳》載「愧無日磾先見之明」，後以先見之明讚人有遠見。",
+    "sourceBook": "《後漢書·楊彪傳》",
+    "tier": 4,
+    "tags": [
+      "思維",
+      "人物"
+    ]
+  },
+  {
+    "id": "miao-bi-sheng-hua",
+    "word": "妙筆生花",
+    "pinyin": "miào bǐ shēng huā",
+    "cantonese": "miu6 bat1 sang1 faa1",
+    "meaning": "筆下生出花朵，形容文筆優美、才思橫溢。",
+    "origin": "五代·王仁裕《開元天寶遺事·夢筆頭生花》載李白少時夢筆頭生花，後天才贍逸，名聞天下。",
+    "sourceBook": "《開元天寶遺事·夢筆頭生花》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "寫作"
+    ]
+  },
+  {
+    "id": "miao-shou-hui-chun",
+    "word": "妙手回春",
+    "pinyin": "miào shǒu huí chūn",
+    "cantonese": "miu6 sau2 wui4 ceon1",
+    "meaning": "高手能使春天重回，形容醫術高明、能起死回生。",
+    "origin": "清·李寶嘉《官場現形記·第二十回》載藥鋪匾額有「妙手回春」，讚醫者醫術高明。",
+    "sourceBook": "《官場現形記·第二十回》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "生活"
+    ]
+  },
+  {
+    "id": "ceng-jing-cang-hai",
+    "word": "曾經滄海",
+    "pinyin": "céng jīng cāng hǎi",
+    "cantonese": "cang4 ging1 cong1 hoi2",
+    "meaning": "曾見過大海，形容見識廣博，也比喻經歷豐富、難再動心。",
+    "origin": "唐·元稹《離思》詩載「曾經滄海難為水，除卻巫山不是雲」，喻見識廣後難有他戀。",
+    "sourceBook": "《全唐詩·離思》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "人生"
+    ]
+  },
+  {
+    "id": "bao-xin-jiu-huo",
+    "word": "抱薪救火",
+    "pinyin": "bào xīn jiù huǒ",
+    "cantonese": "pou5 san1 gau3 fo2",
+    "meaning": "抱著柴草去救火，比喻方法錯誤、反而使禍害擴大。",
+    "origin": "《史記·魏世家》載「以地事秦，譬猶抱薪救火，薪不盡，火不滅」，喻助長災禍。",
+    "sourceBook": "《史記·魏世家》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "da-shu-te-shu",
+    "word": "大書特書",
+    "pinyin": "dà shū tè shū",
+    "cantonese": "daai6 syu1 dak6 syu1",
+    "meaning": "用大字特別記載，形容事情重要、值得大書特書。",
+    "origin": "唐·韓愈《答元侍御書》載「將大書特書，屢書不一書而已也」，指值得詳細記載。",
+    "sourceBook": "《昌黎先生集·答元侍御書》",
+    "tier": 4,
+    "tags": [
+      "寫作",
+      "說話"
+    ]
+  },
+  {
+    "id": "miao-bu-ke-yan",
+    "word": "妙不可言",
+    "pinyin": "miào bù kě yán",
+    "cantonese": "miu6 bat1 ho2 jin4",
+    "meaning": "美妙得無法用言語形容，形容事物極其美妙。",
+    "origin": "晉·郭璞《江賦》載「妙不可盡之於言，事不可窮之於筆」，後作妙不可言。",
+    "sourceBook": "《文選·江賦》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "情感"
+    ]
+  },
+  {
+    "id": "zhang-yi-zhi-yan",
+    "word": "仗義執言",
+    "pinyin": "zhàng yì zhí yán",
+    "cantonese": "zoeng6 ji6 zap1 jin4",
+    "meaning": "主持正義、說公道話，形容見義勇為、敢於直言。",
+    "origin": "明·馮夢龍《警世通言·卷十二》載范汝為「仗義執言，救民水火」，形容主持正義。",
+    "sourceBook": "《警世通言·卷十二》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "說話"
+    ]
+  },
+  {
+    "id": "chang-suo-yu-yan",
+    "word": "暢所欲言",
+    "pinyin": "chàng suǒ yù yán",
+    "cantonese": "coeng3 so2 juk6 jin4",
+    "meaning": "痛快地說出想說的話，形容毫無顧忌、盡情傾吐。",
+    "origin": "明·李清《三垣筆記·崇禎》載「故開元不能暢所欲言」，指不能盡情陳述意見。",
+    "sourceBook": "《三垣筆記·崇禎》",
+    "tier": 4,
+    "tags": [
+      "說話"
+    ]
+  },
+  {
+    "id": "san-yan-liang-yu",
+    "word": "三言兩語",
+    "pinyin": "sān yán liǎng yǔ",
+    "cantonese": "saam1 jin4 loeng5 jyu5",
+    "meaning": "用三兩句話，形容話語簡短、言簡意賅。",
+    "origin": "元·關漢卿《救風塵·第二折》載「我到那裏，三言兩句，肯寫休書，萬事俱休」，形容話語簡短。",
+    "sourceBook": "《救風塵·第二折》",
+    "tier": 3,
+    "tags": [
+      "說話"
+    ]
+  },
+  {
+    "id": "hu-yan-luan-yu",
+    "word": "胡言亂語",
+    "pinyin": "hú yán luàn yǔ",
+    "cantonese": "wu4 jin4 lyun6 jyu5",
+    "meaning": "隨口亂說、毫無根據，形容言語荒唐、沒有條理。",
+    "origin": "宋·釋普濟《五燈會元·卷十六》載「一個說長說短，一個胡言亂語」，形容言語荒唐。",
+    "sourceBook": "《五燈會元·卷十六》",
+    "tier": 3,
+    "tags": [
+      "說話"
+    ]
+  },
+  {
+    "id": "yi-qi-yong-shi",
+    "word": "意氣用事",
+    "pinyin": "yì qì yòng shì",
+    "cantonese": "ji3 hei3 jung6 si6",
+    "meaning": "憑一時衝動和情緒處理事情，形容不夠冷靜理智。",
+    "origin": "清·吳敬梓《儒林外史·第四十六回》載「究竟還是意氣用事」，指因一時意氣而處事。",
+    "sourceBook": "《儒林外史·第四十六回》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "fu-yan-liao-shi",
+    "word": "敷衍了事",
+    "pinyin": "fū yǎn liǎo shì",
+    "cantonese": "fu1 hin2 liu5 si6",
+    "meaning": "表面應付、草草了結，形容做事不認真、得過且過。",
+    "origin": "清·李寶嘉《官場現形記·第一回》載「禮生見他們參差不齊，也只好由他們敷衍了事」。",
+    "sourceBook": "《官場現形記·第一回》",
+    "tier": 3,
+    "tags": [
+      "做事"
+    ]
+  },
+  {
+    "id": "qiang-ci-duo-li",
+    "word": "強詞奪理",
+    "pinyin": "qiǎng cí duó lǐ",
+    "cantonese": "koeng5 ci4 dyut6 lei5",
+    "meaning": "明明無理卻硬要狡辯，形容強辯、不肯認錯。",
+    "origin": "明·羅貫中《三國演義·第四十三回》載「孔明所言，皆強詞奪理，均非正論」，形容無理強辯。",
+    "sourceBook": "《三國演義·第四十三回》",
+    "tier": 3,
+    "tags": [
+      "說話"
+    ]
+  },
+  {
+    "id": "tong-qing-da-li",
+    "word": "通情達理",
+    "pinyin": "tōng qíng dá lǐ",
+    "cantonese": "tung1 cing4 daat6 lei5",
+    "meaning": "通曉人情、明白道理，形容處事合情合理。",
+    "origin": "明·無名氏《後西遊記·第十二回》載「還是這位師兄通情達理」，形容明白事理。",
+    "sourceBook": "《後西遊記·第十二回》",
+    "tier": 4,
+    "tags": [
+      "品格",
+      "說話"
+    ]
+  },
+  {
+    "id": "zhi-zhi-bu-li",
+    "word": "置之不理",
+    "pinyin": "zhì zhī bù lǐ",
+    "cantonese": "zi3 zi1 bat1 lei5",
+    "meaning": "放在一邊不加理會，形容冷淡對待、不予理睬。",
+    "origin": "清·黃小配《廿載繁華夢·第十六回》載鄧儀卿「種種置之不理而已」，形容不予理會。",
+    "sourceBook": "《廿載繁華夢·第十六回》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "sheng-cai-you-dao",
+    "word": "生財有道",
+    "pinyin": "shēng cái yǒu dào",
+    "cantonese": "sang1 coi4 jau5 dou6",
+    "meaning": "賺錢有正當方法，形容善於經營、取財有道。",
+    "origin": "《禮記·大學》載「生財有大道：生之者眾，食之者寡，為之者疾，用之者舒」，後作生財有道。",
+    "sourceBook": "《禮記·大學》",
+    "tier": 4,
+    "tags": [
+      "財富",
+      "做事"
+    ]
+  },
+  {
+    "id": "gan-en-dai-de",
+    "word": "感恩戴德",
+    "pinyin": "gǎn ēn dài dé",
+    "cantonese": "gam2 jan1 daai3 dak1",
+    "meaning": "感激別人的恩德，形容非常感謝、銘記於心。",
+    "origin": "《三國志·吳書·駱統傳》載「今皆感恩戴義，懷欲報之心」，後作感恩戴德。",
+    "sourceBook": "《三國志·吳書·駱統傳》",
+    "tier": 4,
+    "tags": [
+      "情感",
+      "品格"
+    ]
+  },
+  {
+    "id": "ge-gong-song-de",
+    "word": "歌功頌德",
+    "pinyin": "gē gōng sòng dé",
+    "cantonese": "go1 gung1 zung6 dak1",
+    "meaning": "歌頌功績與德行，形容極力讚美、奉承。",
+    "origin": "《史記·周本紀》載「民皆歌樂之，頌其德」，後作歌功頌德，指頌揚功德。",
+    "sourceBook": "《史記·周本紀》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "說話"
+    ]
+  },
+  {
+    "id": "san-cong-si-de",
+    "word": "三從四德",
+    "pinyin": "sān cóng sì dé",
+    "cantonese": "saam1 cung4 sei3 dak1",
+    "meaning": "舊時婦女須遵守的三從與四德，指封建禮教對婦女的規範。",
+    "origin": "《儀禮·喪服·子夏傳》載「婦人有三從之義」；《周禮·天官》載婦德、婦言、婦容、婦功四德。",
+    "sourceBook": "《儀禮·喪服》",
+    "tier": 4,
+    "tags": [
+      "社會",
+      "家庭"
+    ]
+  },
+  {
+    "id": "yi-de-fu-ren",
+    "word": "以德服人",
+    "pinyin": "yǐ dé fú rén",
+    "cantonese": "ji5 dak1 fuk6 jan4",
+    "meaning": "用德行使人信服，形容以德化人、令人心悅誠服。",
+    "origin": "《孟子·公孫丑上》載「以德服人者，中心悅而誠服也」，指以德服人方能得人心。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "社會"
+    ]
+  },
+  {
+    "id": "yi-li-fu-ren",
+    "word": "以力服人",
+    "pinyin": "yǐ lì fú rén",
+    "cantonese": "ji5 lik6 fuk6 jan4",
+    "meaning": "憑武力使人屈服，形容以強力壓服而非心服。",
+    "origin": "《孟子·公孫丑上》載「以力服人者，非心服也，力不贍也」，指武力屈服非真心歸服。",
+    "sourceBook": "《孟子·公孫丑上》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "品格"
+    ]
+  },
+  {
+    "id": "yi-mao-qu-ren",
+    "word": "以貌取人",
+    "pinyin": "yǐ mào qǔ rén",
+    "cantonese": "ji5 maau6 ceoi2 jan4",
+    "meaning": "只憑外貌評價或選用人才，形容以貌取人、失之偏頗。",
+    "origin": "《史記·仲尼弟子列傳》載孔子曰「以貌取人，失之子羽」，指單憑外貌衡量人會出錯。",
+    "sourceBook": "《史記·仲尼弟子列傳》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "品格"
+    ]
+  },
+  {
+    "id": "ping-yi-jin-ren",
+    "word": "平易近人",
+    "pinyin": "píng yì jìn rén",
+    "cantonese": "ping4 ji6 gan6 jan4",
+    "meaning": "態度溫和、容易接近，形容和藹可親、沒有架子。",
+    "origin": "《史記·魯周公世家》載「平易近民，民必歸之」，後作平易近人，形容態度和藹。",
+    "sourceBook": "《史記·魯周公世家》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "人物"
+    ]
+  },
+  {
+    "id": "tui-ji-ji-ren",
+    "word": "推己及人",
+    "pinyin": "tuī jǐ jí rén",
+    "cantonese": "teoi1 gei2 kap6 jan4",
+    "meaning": "把自己的心意推及別人，形容設身處地為人著想。",
+    "origin": "《論語·衛靈公》載「己所不欲，勿施於人」，朱熹集註謂「推己及物」，後作推己及人。",
+    "sourceBook": "《論語·衛靈公》",
+    "tier": 3,
+    "tags": [
+      "品格",
+      "思維"
+    ]
+  },
+  {
+    "id": "zan-bu-jue-kou",
+    "word": "讚不絕口",
+    "pinyin": "zàn bù jué kǒu",
+    "cantonese": "zaan3 bat1 zyut6 hau2",
+    "meaning": "讚美得停不了口，形容十分讚賞、連聲稱好。",
+    "origin": "清·曹雪芹《紅樓夢·第六十四回》載「寶玉看了，讚不絕口」，形容連聲稱讚。",
+    "sourceBook": "《紅樓夢·第六十四回》",
+    "tier": 3,
+    "tags": [
+      "情感",
+      "說話"
+    ]
+  },
+  {
+    "id": "li-bu-cong-xin",
+    "word": "力不從心",
+    "pinyin": "lì bù cóng xīn",
+    "cantonese": "lik6 bat1 cung4 sam1",
+    "meaning": "力量不足以實現心意，形容能力有限、心有餘而力不足。",
+    "origin": "《後漢書·西域傳》載「如諸國力不從心，東西南北自在也」，指力量不能如願。",
+    "sourceBook": "《後漢書·西域傳》",
+    "tier": 3,
+    "tags": [
+      "情感",
+      "做事"
+    ]
+  },
+  {
+    "id": "sha-fei-ku-xin",
+    "word": "煞費苦心",
+    "pinyin": "shà fèi kǔ xīn",
+    "cantonese": "saat3 fai3 fu2 sam1",
+    "meaning": "費盡心思、苦心經營，形容非常用心、絞盡腦汁。",
+    "origin": "清·彭養鷗《黑籍冤魂·第三回》載「這煎煙方法，我是煞費苦心，三番五次的試驗」。",
+    "sourceBook": "《黑籍冤魂·第三回》",
+    "tier": 4,
+    "tags": [
+      "做事",
+      "思維"
+    ]
+  },
+  {
+    "id": "pi-xing-dai-yue",
+    "word": "披星戴月",
+    "pinyin": "pī xīng dài yuè",
+    "cantonese": "pei1 sing1 daai3 jyut6",
+    "meaning": "頂著星星、戴著月亮，形容早出晚歸、日夜奔波。",
+    "origin": "元·無名氏《冤家債主·第一折》載「這大的孩兒披星戴月，早起晚眠」，形容日夜操勞。",
+    "sourceBook": "《冤家債主·第一折》",
+    "tier": 4,
+    "tags": [
+      "堅持",
+      "生活"
+    ]
+  },
+  {
+    "id": "chu-mu-jing-xin",
+    "word": "觸目驚心",
+    "pinyin": "chù mù jīng xīn",
+    "cantonese": "zuk1 muk6 ging1 sam1",
+    "meaning": "看到情況嚴重而內心震驚，形容景象令人駭異。",
+    "origin": "唐·韓愈《貞曜先生墓誌銘》載「及其為詩，劌目怵心」，後演為觸目驚心，形容所見令人震駭。",
+    "sourceBook": "《昌黎先生集·貞曜先生墓誌銘》",
+    "tier": 3,
+    "tags": [
+      "情感"
+    ]
+  },
+  {
+    "id": "qing-tong-shou-zu",
+    "word": "情同手足",
+    "pinyin": "qíng tóng shǒu zú",
+    "cantonese": "cing4 tung4 sau2 zuk1",
+    "meaning": "感情好得像兄弟一樣，形容朋友之間情誼深厚。",
+    "origin": "唐·李華《弔古戰場文》載「誰無兄弟，如足如手」，後作情同手足，喻情誼如兄弟。",
+    "sourceBook": "《全唐文·弔古戰場文》",
+    "tier": 4,
+    "tags": [
+      "情感"
+    ]
+  },
+  {
+    "id": "tian-ma-xing-kong",
+    "word": "天馬行空",
+    "pinyin": "tiān mǎ xíng kōng",
+    "cantonese": "tin1 maa5 hang4 hung1",
+    "meaning": "神馬騰空奔馳，比喻才思豪放、不受拘束。",
+    "origin": "元·劉廷振《薩天錫詩集序》載「殆猶天馬行空而步驟不凡」，形容文思超逸、不拘常格。",
+    "sourceBook": "《全元文·薩天錫詩集序》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "思維"
+    ]
+  },
+  {
+    "id": "ren-zhong-zhi-long",
+    "word": "人中之龍",
+    "pinyin": "rén zhōng zhī lóng",
+    "cantonese": "jan4 zung1 zi1 lung4",
+    "meaning": "人群中的龍，比喻才華出眾、超群絕倫的人。",
+    "origin": "《晉書·宋纖傳》載「吾而今而後知先生人中之龍也」，後以人中之龍喻傑出人物。",
+    "sourceBook": "《晉書·宋纖傳》",
+    "tier": 4,
+    "tags": [
+      "人物"
+    ]
+  },
+  {
+    "id": "cang-long-wo-hu",
+    "word": "藏龍臥虎",
+    "pinyin": "cáng lóng wò hǔ",
+    "cantonese": "cong4 lung4 ngo6 fu2",
+    "meaning": "藏著龍、臥著虎，比喻潛藏未露的人才或隱伏的力量。",
+    "origin": "北周·庾信《同會河陽公新造山池聊得寓目》詩載「暗石疑藏虎，盤根似臥龍」，後作藏龍臥虎。",
+    "sourceBook": "《庾子山集·同會河陽公新造山池聊得寓目》",
+    "tier": 4,
+    "tags": [
+      "人物",
+      "社會"
+    ]
+  },
+  {
+    "id": "xiang-long-fu-hu",
+    "word": "降龍伏虎",
+    "pinyin": "xiáng lóng fú hǔ",
+    "cantonese": "hong4 lung4 fuk6 fu2",
+    "meaning": "能使龍降服、虎馴伏，形容本領高強、法力廣大。",
+    "origin": "唐·道宣《續高僧傳·習禪一》載僧稠以錫杖解兩虎相鬥，後以降龍伏虎喻本領高強。",
+    "sourceBook": "《續高僧傳·習禪一》",
+    "tier": 4,
+    "tags": [
+      "神話",
+      "人物"
+    ]
+  },
+  {
+    "id": "ru-lang-si-hu",
+    "word": "如狼似虎",
+    "pinyin": "rú láng sì hǔ",
+    "cantonese": "jyu4 long4 ci5 fu2",
+    "meaning": "像狼虎一樣兇猛，形容凶狠殘暴或勇猛異常。",
+    "origin": "《尉繚子·武議》載「一人之兵，如狼似虎，如風如雨」，形容勇猛兇悍。",
+    "sourceBook": "《尉繚子·武議》",
+    "tier": 4,
+    "tags": [
+      "動物",
+      "社會"
+    ]
+  },
+  {
+    "id": "dian-shi-cheng-jin",
+    "word": "點石成金",
+    "pinyin": "diǎn shí chéng jīn",
+    "cantonese": "dim2 sek6 sing4 gam1",
+    "meaning": "手指一點石頭變成黃金，比喻化平凡為神奇、技藝神奇。",
+    "origin": "漢·劉向《列仙傳·許遜》載許遜「點石化金，以足逋賦」，後喻神奇本領或化腐朽為神奇。",
+    "sourceBook": "《列仙傳·許遜》",
+    "tier": 3,
+    "tags": [
+      "神話",
+      "財富"
+    ]
+  },
+  {
+    "id": "xi-mo-ru-jin",
+    "word": "惜墨如金",
+    "pinyin": "xī mò rú jīn",
+    "cantonese": "sik1 mak6 jyu4 gam1",
+    "meaning": "珍惜墨汁像珍惜黃金，形容寫作嚴謹、不輕易下筆。",
+    "origin": "明·陶宗儀《輟耕錄·卷八》載「李成惜墨如金，是也」，形容畫家下筆謹慎、不浪費筆墨。",
+    "sourceBook": "《輟耕錄·卷八》",
+    "tier": 4,
+    "tags": [
+      "藝術",
+      "寫作"
+    ]
+  },
+  {
+    "id": "dong-ruo-guan-huo",
+    "word": "洞若觀火",
+    "pinyin": "dòng ruò guān huǒ",
+    "cantonese": "dung6 joek6 gun1 fo2",
+    "meaning": "清楚得像看火一樣，形容觀察事物明白透徹。",
+    "origin": "《尚書·盤庚上》載「予若觀火」，後作洞若觀火，形容對事物看得十分清楚。",
+    "sourceBook": "《尚書·盤庚上》",
+    "tier": 5,
+    "tags": [
+      "思維"
+    ]
+  },
+  {
+    "id": "kang-zhuang-da-dao",
+    "word": "康莊大道",
+    "pinyin": "kāng zhuāng dà dào",
+    "cantonese": "hong1 zong1 daai6 dou6",
+    "meaning": "寬闊平坦的大路，比喻光明的前途或正確的道路。",
+    "origin": "《爾雅·釋宮》載「四達謂之衢，五達謂之康，六達謂之莊」，後以康莊大道喻光明前途。",
+    "sourceBook": "《爾雅·釋宮》",
+    "tier": 3,
+    "tags": [
+      "社會",
+      "人生"
+    ]
+  },
+  {
+    "id": "yi-wu-suo-you",
+    "word": "一無所有",
+    "pinyin": "yī wú suǒ yǒu",
+    "cantonese": "jat1 mou4 so2 jau5",
+    "meaning": "什麼都沒有，形容極度貧窮或空無所有。",
+    "origin": "《敦煌變文集·廬山遠公話》載「萬法皆無，一無所有」，形容空無一物，後多指貧無所有。",
+    "sourceBook": "《敦煌變文集·廬山遠公話》",
+    "tier": 3,
+    "tags": [
+      "生活",
+      "財富"
+    ]
+  },
+  {
+    "id": "tou-tou-shi-dao",
+    "word": "頭頭是道",
+    "pinyin": "tóu tóu shì dào",
+    "cantonese": "tau4 tau4 si6 dou6",
+    "meaning": "說話做事條理分明、處處在理，形容有條不紊。",
+    "origin": "《續傳燈錄·慧力洞源禪師》載「方知頭頭皆是道，法法本圓成」，後作頭頭是道，喻處處合宜。",
+    "sourceBook": "《續傳燈錄·慧力洞源禪師》",
+    "tier": 4,
+    "tags": [
+      "說話",
+      "思維"
+    ]
+  },
+  {
+    "id": "hai-yan-he-qing",
+    "word": "海晏河清",
+    "pinyin": "hǎi yàn hé qīng",
+    "cantonese": "hoi2 aan3 ho4 cing1",
+    "meaning": "大海平靜、黃河澄清，比喻天下太平、政治清明。",
+    "origin": "唐·鄭錫《日中有王子賦》載「河清海晏，時和歲豐」，後作海晏河清，形容天下太平。",
+    "sourceBook": "《全唐文·日中有王字賦》",
+    "tier": 5,
+    "tags": [
+      "社會",
+      "自然"
+    ]
+  },
+  {
+    "id": "xian-tian-bu-zu",
+    "word": "先天不足",
+    "pinyin": "xiān tiān bù zú",
+    "cantonese": "sin1 tin1 bat1 zuk1",
+    "meaning": "天生體質或條件有所欠缺，形容事物本身基礎薄弱。",
+    "origin": "清·李汝珍《鏡花緣·第二十六回》載「老人之子，先天不足，亦或日中無影」，指天生體質虛弱。",
+    "sourceBook": "《鏡花緣·第二十六回》",
+    "tier": 4,
+    "tags": [
+      "生活",
+      "思維"
+    ]
   }
 ]

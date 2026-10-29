@@ -568,7 +568,9 @@
   z-index: 3;
 }
 .snow-layer,
-.rain-layer {
+.rain-layer,
+.ember-layer,
+.bubble-layer {
   z-index: 4;
 }
 .confetti-layer {
@@ -797,6 +799,82 @@
   50% {
     opacity: 1;
     transform: scale(1.2);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 4f-2. 火山餘燼（DOM 粒子，animate.spawnEmbers）
+ * ───────────────────────────────────────────────────────────── */
+
+.ember-mote {
+  position: absolute;
+  bottom: -8vh;
+  width: var(--ember-size, 5px);
+  height: var(--ember-size, 5px);
+  border-radius: 50%;
+  background: #ffb45c;
+  box-shadow: 0 0 7px 2px rgba(255, 140, 70, 0.55);
+  animation: ember-rise ease-out infinite;
+  will-change: transform, opacity;
+}
+
+.ember-mote--gold {
+  background: #ffd98a;
+  box-shadow: 0 0 8px 3px rgba(255, 217, 138, 0.55);
+}
+.ember-mote--red {
+  background: #ff7a4d;
+  box-shadow: 0 0 7px 2px rgba(255, 122, 77, 0.5);
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(var(--ember-drift, 20px), -66vh, 0) scale(0.9);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(calc(var(--ember-drift, 20px) * 1.4), -104vh, 0) scale(0.4);
+    opacity: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 4f-3. 海底氣泡（DOM 粒子，animate.spawnBubbles）
+ * ───────────────────────────────────────────────────────────── */
+
+.bubble-mote {
+  position: absolute;
+  bottom: -8vh;
+  width: var(--bubble-size, 8px);
+  height: var(--bubble-size, 8px);
+  border-radius: 50%;
+  border: 1.6px solid rgba(223, 248, 255, 0.8);
+  background: rgba(216, 248, 255, 0.14);
+  animation: bubble-rise linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(var(--bubble-drift, 24px), -96vh, 0) scale(1.05);
+    opacity: 0;
   }
 }
 
@@ -1262,6 +1340,257 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+ * 5b. 進階篇場景點綴（第 11–20 章）
+ *     library / volcano / desert / aurora / underwater /
+ *     skycastle / shrine / harbor / firefly / zenith
+ *     全部只動 transform / opacity；每張場景 6–18 個動畫節點。
+ * ───────────────────────────────────────────────────────────── */
+
+/* 火山餘燼上升 */
+.chapter-scene .scene-ember {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-ember-rise 5.6s ease-in infinite;
+}
+@keyframes scene-ember-rise {
+  0% {
+    transform: translate(0, 12px) scale(0.5);
+    opacity: 0;
+  }
+  14% {
+    opacity: 1;
+  }
+  60% {
+    transform: translate(7px, -58px) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-5px, -128px) scale(0.35);
+    opacity: 0;
+  }
+}
+
+/* 海底氣泡上升 */
+.chapter-scene .scene-bubble {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-bubble-rise 7.2s ease-in infinite;
+}
+@keyframes scene-bubble-rise {
+  0% {
+    transform: translate(0, 18px) scale(0.55);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(11px, -172px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* 極光緞帶 */
+.chapter-scene .scene-aurora {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-aurora-wave 16s ease-in-out infinite alternate;
+}
+@keyframes scene-aurora-wave {
+  0% {
+    transform: translateX(-12px) skewX(-1.6deg) scaleY(1);
+  }
+  100% {
+    transform: translateX(16px) skewX(2deg) scaleY(1.04);
+  }
+}
+
+/* 海草擺動 */
+.chapter-scene .scene-seaweed {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: scene-seaweed-sway 4.8s ease-in-out infinite;
+}
+@keyframes scene-seaweed-sway {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* 水母脈動 */
+.chapter-scene .scene-jelly {
+  transform-box: fill-box;
+  transform-origin: 50% 60%;
+  animation: scene-jelly-pulse 5.4s ease-in-out infinite;
+}
+@keyframes scene-jelly-pulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.05, 0.94);
+  }
+}
+
+/* 小魚游動 */
+.chapter-scene .scene-fish {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-fish-swim 9s ease-in-out infinite alternate;
+}
+@keyframes scene-fish-swim {
+  0% {
+    transform: translateX(-14px);
+  }
+  100% {
+    transform: translateX(16px);
+  }
+}
+
+/* 瀑布流動 */
+.chapter-scene .scene-waterfall {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: scene-waterfall-flow 1.9s linear infinite;
+}
+@keyframes scene-waterfall-flow {
+  0% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 0.7;
+  }
+}
+
+/* 熱氣球漂浮 */
+.chapter-scene .scene-balloon {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+  animation: scene-balloon-float 7.5s ease-in-out infinite;
+}
+@keyframes scene-balloon-float {
+  0%,
+  100% {
+    transform: translateY(-7px) rotate(-1.6deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(1.6deg);
+  }
+}
+
+/* 繪馬搖擺 */
+.chapter-scene .scene-charm {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: scene-charm-sway 3.8s ease-in-out infinite;
+}
+@keyframes scene-charm-sway {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* 夜船搖晃 */
+.chapter-scene .scene-boat {
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+  animation: scene-boat-bob 5.2s ease-in-out infinite;
+}
+@keyframes scene-boat-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.4deg);
+  }
+  50% {
+    transform: translateY(2.5px) rotate(1.4deg);
+  }
+}
+
+/* 熔岩光脈動 */
+.chapter-scene .scene-lava {
+  animation: scene-lava-pulse 3.8s ease-in-out infinite;
+}
+@keyframes scene-lava-pulse {
+  0%,
+  100% {
+    opacity: 0.62;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 蠟燭火苗 */
+.chapter-scene .scene-candle {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: scene-candle-flicker 1.7s ease-in-out infinite;
+}
+@keyframes scene-candle-flicker {
+  0%,
+  100% {
+    transform: scale(1, 1);
+    opacity: 0.85;
+  }
+  35% {
+    transform: scale(0.92, 1.14);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.05, 0.95);
+    opacity: 0.9;
+  }
+}
+
+/* 浮空岩石 */
+.chapter-scene .scene-float-rock {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: scene-float-rock 6.8s ease-in-out infinite;
+}
+@keyframes scene-float-rock {
+  0%,
+  100% {
+    transform: translateY(-7px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* 水面／燈光倒影閃爍 */
+.chapter-scene .scene-shimmer {
+  animation: scene-shimmer 3.4s ease-in-out infinite;
+}
+@keyframes scene-shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
  * 6. 減少動態效果
  *    - 系統 prefers-reduced-motion: reduce
  *    - 用戶設定 html/body/.reduced-motion
@@ -1282,6 +1611,8 @@
   .snow-layer,
   .rain-layer,
   .star-layer,
+  .ember-layer,
+  .bubble-layer,
   .cinematic-layer {
     display: none !important;
   }
@@ -1303,6 +1634,8 @@
 .reduced-motion .snow-layer,
 .reduced-motion .rain-layer,
 .reduced-motion .star-layer,
+.reduced-motion .ember-layer,
+.reduced-motion .bubble-layer,
 .reduced-motion .cinematic-layer,
 .petal-layer.reduced-motion,
 .confetti-layer.reduced-motion,
@@ -1310,6 +1643,8 @@
 .snow-layer.reduced-motion,
 .rain-layer.reduced-motion,
 .star-layer.reduced-motion,
+.ember-layer.reduced-motion,
+.bubble-layer.reduced-motion,
 .cinematic-layer.reduced-motion {
   display: none !important;
 }
@@ -1323,7 +1658,9 @@
   .firefly:nth-child(n + 9),
   .snowflake:nth-child(n + 17),
   .raindrop:nth-child(n + 25),
-  .star-mote:nth-child(n + 13) {
+  .star-mote:nth-child(n + 13),
+  .ember-mote:nth-child(n + 13),
+  .bubble-mote:nth-child(n + 13) {
     display: none;
   }
 

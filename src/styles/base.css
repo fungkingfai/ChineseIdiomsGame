@@ -402,3 +402,18 @@ html.reduced-motion *::after {
     opacity: 0;
   }
 }
+
+
+/* 手機：sticky topbar 唔用 backdrop-filter（軟件 render／低階機會拖慢捲動） */
+@media (max-width: 899px) {
+  .topbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: linear-gradient(
+      180deg,
+      rgba(253, 246, 236, 0.99) 0%,
+      rgba(253, 246, 236, 0.95) 76%,
+      rgba(253, 246, 236, 0) 100%
+    );
+  }
+}
