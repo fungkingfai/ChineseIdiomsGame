@@ -127,9 +127,9 @@ Runner 自行 `npm run build`、開 `vite preview --port 4390 --strictPort` 子�
 | # | 步驟 | 桌面 | 手機 |
 | --- | --- | --- | --- |
 | 1 | 首頁載入、`?debug=1` 資料（**200 關／20 章／733 成語**）、主 CTA、進度 0/200 | ✅ | ✅ |
-| 2 | 地圖：**20 章、200 個關卡按鈕**、基礎篇／進階篇分區、Level 1 當前、Level 2 未解鎖、總星數 0/600 | ✅ | ✅ |
+| 2 | 地圖：**20 章、200 個關卡按鈕**、`map-section-basic`／`map-section-advanced` 分區、Level 1 當前、Level 2 未解鎖、總星數 0/600 | ✅ | ✅ |
 | 3 | Level 1：`chapter-intro`＋`tutorial-overlay` 處理、棋盤格數／字庫卡數／提示次數／錯誤數、截圖 | ✅ | ✅ |
-| 4 | 真實點 `cell`＋`bank` 完成 Level 1 → `result-overlay` 3 星、成語卡齊全、**每張卡「普」＋「粵」雙拼音（`result-idiom-jyutping-<id>`）**、手機 overlay 無 overflow | ✅ | ✅ |
+| 4 | 真實點 `cell`＋`bank` 完成 Level 1 → `result-overlay` 3 星、成語卡齊全、**每張卡「普」＋「粵」雙拼音（`result-idiom-jyutping-<id>`）**、**非最終關唔會顯示 `result-final-all`**、手機 overlay 無 overflow | ✅ | ✅ |
 | 5 | `next-level-btn` → Level 2（hash `#/game/2`），已看過教學／章節故事唔再彈 | ✅ | ✅ |
 | 6 | 返回地圖（桌面用 `Esc`、手機用 `game-back`）：Level 1 3 星、總星數 **3/600**、Level 3 未解鎖 | ✅ | ✅ |
 | 7 | 首頁「繼續第 2 關」、已過 **1/200**、總星數 3/600；**reload 後保留**（localStorage 驗證） | ✅ | ✅ |
@@ -137,10 +137,10 @@ Runner 自行 `npm run build`、開 `vite preview --port 4390 --strictPort` 子�
 | 9 | 設定：音效關／減少動態開 → `html.reduced-motion` → **reload 後仍保留**、localStorage 驗證 | ✅ | ✅ |
 | 10 | 重置進度：`reset-confirm` 取消唔清、確認後關卡／圖鑑清空、設定回復預設 | ✅ | ✅ |
 | 11 | 錯誤路由／未解鎖關卡：`#/game/2`（重置後）→ 地圖＋提示 toast；`#/game/999` → 地圖＋提示 toast；`#/unknown-route` → 首頁 | ✅ | ✅ |
-| 12 | **Issue #2**：seed Level 1–100 全 3 星 → 首頁「繼續第 101 關」、已過 100/200、地圖 20 章、第 11 章解鎖、總星數 300/600；截圖 `map-advanced` | ✅ | ✅ |
+| 12 | **Issue #2**：seed Level 1–100 全 3 星 → 首頁「繼續第 101 關」、已過 100/200、地圖 20 章、`map-section-advanced` 含 `chapter-11`（藏經閣）、總星數 300/600；截圖 `map-advanced` | ✅ | ✅ |
 | 13 | **Level 101（進階 fill）**：第 11 章 `chapter-intro`（新場景 `scene-library`、章名）→ 完成 4 成語 fill → 3 星過關 → 下一關 102；截圖 `chapter-intro-11`／`game-101`／`result-101` | ✅ | ✅ |
 | 14 | **Level 105（進階 chain 6）**：完成 6 句接龍 → 3 星過關；截圖 `chain-6`／`result-105` | ✅ | ✅ |
-| 15 | **chain 7＋第 200 關完成**：Level 155（進階 7 句 chain）截圖 `chain-7`；seed 到 199 → 完成 Level 200 → 過關按鈕「全部完成！返回地圖」＋「恭喜完成全部 200 關」、localStorage 記錄 3 星；截圖 `game-200`／`result-200` | ✅ | ✅ |
+| 15 | **chain 7＋第 200 關完成**：Level 155（進階 7 句 chain）截圖 `chain-7`；seed 到 199 → 完成 Level 200 → 過關按鈕「全部完成！返回地圖」＋`result-final-all`「恭喜完成全部 200 關！你係成語大師喵～」、localStorage 記錄 3 星；截圖 `game-200`／`result-200` | ✅ | ✅ |
 
 - 每步驟後檢查 **console.error／pageerror／requestfailed**：**0 個**；全程**零外部網路請求**。
 - 手機每步驟另外驗證 **無橫向溢出**（`scrollWidth <= innerWidth`）：20 章地圖、4–5 成語棋盤、6–7 行 chain、過關 overlay panel 都涵蓋。
@@ -156,7 +156,7 @@ Runner 自行 `npm run build`、開 `vite preview --port 4390 --strictPort` 子�
 
 ## 6. 其他驗證
 
-- `node scripts/qa-testids.mjs`：PLAN §7.4 全部 **43/43 testid**（36 固定＋7 動態）靜態存在，掃到 **51 個 testid 字串**（進階地圖 section、粵拼等新增）。E2E 亦動態驗證實際可用。
+- `node scripts/qa-testids.mjs`：PLAN §7.4 全部 **43/43 testid**（36 固定＋7 動態）靜態存在，掃到 **51 個 testid 字串**。E2E 另外動態斷言 ui-dev 新增嘅 `map-section-basic`／`map-section-advanced`（地圖分區）同 `result-final-all`（第 200 關祝賀 banner）。
 - `node scripts/verify-idioms.mjs`：**PASS**——**733 條成語、粵拼 733/733、332 筆可接龍（最長簡單接龍 12 步）**；11 項 warning（sourceBook 篇名，見 §8 DATA-WARN-1）。
 - `npm run check`：tsc strict **exit 0**。
 - `npm run build`：成功（Vite build 470 ms）。
@@ -210,7 +210,7 @@ Runner 自行 `npm run build`、開 `vite preview --port 4390 --strictPort` 子�
 2. 誘餌改為 **min(章節目標, 22−空格)**，唔再要求實際章節平均誘餌單調上升；
 3. 進階篇平均 tier ≥3.8 要等最終 ≥688 冷僻成語資料（interim 3.74 已預期，最終 4.00 PASS）；
 4. 難度 trend 第 11 章 tier／第 18 章誘餌按上列規則對齊後 PASS。
-另外新增 **基礎篇 v1.1 freeze 測試**（Level 1–100 逐關與 baseline JSON 完全相同）同 **scenes.test.ts**（20 場景 SVG 契約）。
+另外新增 **基礎篇 v1.1 freeze 測試**（Level 1–100 逐關與 baseline JSON 完全相同）、**scenes.test.ts**（20 場景 SVG 契約），以及 ui-dev 新 testid 回歸（`map-section-basic`／`map-section-advanced`／`result-final-all`，E2E 30/30 重跑 PASS）。
 
 **Issue #1（粵拼）驗收：0 個產品 bug。** 資料（488/488）與 UI（雙拼音顯示、粵拼搜尋）一次過 PASS；QA 過程只修正自己 E2E 嘅 selector（`result-idiom-*` 前綴撞到新 `result-idiom-jyutping-*`，已改用 `article[data-testid^="result-idiom-"]`），並喺一次合併流程中撞到 mobile context 偶發首屏 timeout（單獨重跑及之後多次全套均 PASS，已加 failure 診斷輸出；見 §10 第 10 點）。
 
@@ -468,7 +468,8 @@ npm run build                → ✓ built in 470ms（JS 693.77 kB / gzip 205.41
 | Level 101（進階 fill） | mode=fill、4 成語（PLAN §4.5 公式）、棋盤／字庫數正確、真實點擊完成 → 3 星、下一關 102 | ✅ desktop＋mobile |
 | Level 105（進階 chain 6） | mode=chain、6 句、rows=6／cols=4、24 格、完成 → 3 星 | ✅ desktop＋mobile |
 | chain 7（Level 155） | 7 句、rows=7／cols=4、28 格、截圖 `chain-7` | ✅ desktop＋mobile |
-| 第 200 關完成文案 | seed 到 199 → Level 200 chain 7 完成 → 按鈕「全部完成！返回地圖」、overlay「恭喜完成全部 200 關」、localStorage 記錄 3 星 | ✅ desktop＋mobile |
+| 第 200 關完成文案 | seed 到 199 → Level 200 chain 7 完成 → 按鈕「全部完成！返回地圖」、`result-final-all` banner「恭喜完成全部 200 關！你係成語大師喵～」、localStorage 記錄 3 星；非最終關唔會顯示 banner | ✅ desktop＋mobile |
+| 地圖分區 testid | `map-section-basic`／`map-section-advanced` 各 1 個；進階分區內含 `chapter-11` | ✅ desktop＋mobile |
 | 響應式／穩定性 | 20 章地圖、4–5 成語棋盤、6–7 行 chain、結果 panel 手機無橫向溢出；0 console error／pageerror／failed request；畫面無 undefined | ✅ desktop＋mobile |
 
 ### 14.3 截圖（Issue #2 相關）

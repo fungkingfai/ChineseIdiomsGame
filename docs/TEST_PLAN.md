@@ -141,7 +141,7 @@
 ### 5.2 桌面流程（1280×800，15 步）
 
 1. 首頁：`home-screen`、`home-start`、`home-continue`（開始第 1 關）、`home-progress`（0/200）；截圖 `home-desktop.png`。
-2. 地圖：`map-screen`、`chapter-1`…`chapter-20`、200 個 `level-btn-*`、基礎篇／進階篇分區、`map-stars-total` 0/600；截圖 `map-desktop.png`。
+2. 地圖：`map-screen`、`chapter-1`…`chapter-20`、200 個 `level-btn-*`、`map-section-basic`／`map-section-advanced` 分區、`map-stars-total` 0/600；截圖 `map-desktop.png`。
 3. 入 Level 1：處理 `chapter-intro`（`chapter-intro-ok`）→ `tutorial-overlay`（`tutorial-ok`）；棋盤／字庫出現；截圖 `game-desktop.png`。
 4. 由 `?debug=1` 讀 Level 1 正解 → 逐格點 `cell` 再點對應 `bank` → `result-overlay` 3 星、成語卡數量正確、**雙拼音（普通話＋粵拼）**；截圖 `result-desktop.png`。
 5. 點 `next-level-btn` → Level 2 `game-screen`（hash `#/game/2`），教學／章節故事唔再彈。
@@ -154,7 +154,7 @@
 12. **Issue #2 seed**：`localStorage` seed Level 1–100 全 3 星 → 首頁「繼續第 101 關」、已過 100/200、地圖 20 章、第 11 章解鎖、總星數 300/600；截圖 `map-advanced-desktop.png`。
 13. **Level 101（進階 fill）**：第 11 章 `chapter-intro`（新場景 `scene-library`＋章名）→ 4 成語 fill → 3 星過關 → 下一關 102；截圖 `chapter-intro-11`／`game-101`／`result-101`。
 14. **Level 105（進階 chain 6）**：完成 6 句接龍 → 3 星過關；截圖 `chain-6`／`result-105`。
-15. **chain 7＋第 200 關完成**：Level 155（7 句 chain）截圖 `chain-7`；seed 到 199 → 完成 Level 200 → 「全部完成！返回地圖」＋「恭喜完成全部 200 關」、localStorage 3 星；截圖 `game-200`／`result-200`。
+15. **chain 7＋第 200 關完成**：Level 155（7 句 chain）截圖 `chain-7`；seed 到 199 → 完成 Level 200 → 「全部完成！返回地圖」＋`result-final-all`「恭喜完成全部 200 關！你係成語大師喵～」、localStorage 3 星；非最終關唔會有 `result-final-all`。截圖 `game-200`／`result-200`。
 16. 全程：每個畫面收集 `console.error`、`pageerror`、failed request；0 個＝PASS。
 
 ### 5.3 手機流程（390×844, isMobile）
@@ -281,6 +281,7 @@ GitHub Issue #2：加多 100 關、更多變化、更少見成語、加難度。
 | 可解性 | `tests/unit/levels.test.ts`（真引擎） | 200/200 `isSolved()`、全部 3 星、零錯誤 | ✅ PASS |
 | 進階 E2E | `e2e/specs.mjs` steps 12–15 | 地圖 20 章／200 關、首頁繼續 101、第 11 章故事、Level 101／105／155／200、全部完成文案、手機無 overflow、0 console error | ✅ desktop＋mobile |
 | 截圖 | `npm run shots` | 進階地圖／第 11 章故事／Level 101／chain 6／chain 7／Level 200 | ✅ 40 張（新增 18 張） |
+| UI 新 testid | `e2e/specs.mjs` | `map-section-basic`／`map-section-advanced` 地圖分區；`result-final-all` 第 200 關祝賀 banner（非最終關唔顯示） | ✅ desktop＋mobile |
 
 > 詳見 `docs/QA_REPORT.md` §14。進階篇 Level 101 實際係 4 成語 fill、Level 105 係 chain 6（依 PLAN §4.5 公式）；chain 7 由 Level 155 起，E2E 已覆蓋並截圖。
 
